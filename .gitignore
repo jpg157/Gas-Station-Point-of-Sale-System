@@ -7,6 +7,19 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
+# Windows OS files
+Thumbs.db
+ehthumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer log files
+*.log
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -22,6 +35,10 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+
+# User-specific files for Visual Studio
+.vs/
+.vscode/
 
 # .NET Core
 project.lock.json
