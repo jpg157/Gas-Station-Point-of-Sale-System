@@ -20,3 +20,4 @@ Example:
 -	Card is selected and "key enter" is confirmed/pressed - the function in the form calls a function in PaymentController
 
 -	It handles any exceptions thrown (thrown if an error occured and payment was not successful) by updating winforms ui to show error message(s)
+

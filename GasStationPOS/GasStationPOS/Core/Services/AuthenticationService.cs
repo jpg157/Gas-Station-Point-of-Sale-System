@@ -10,3 +10,4 @@ namespace GasStationPOS.Core.Services
     {
     }
 }
+

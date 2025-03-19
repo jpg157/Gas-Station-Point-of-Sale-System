@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CartItem.cs" />
+    <Compile Include="Core\Services\AuthenticationService.cs" />
+    <Compile Include="Core\Services\InventoryService.cs" />
+    <Compile Include="Core\Services\LoginService.cs" />
+    <Compile Include="Core\Services\RegistrationService.cs" />
+    <Compile Include="Core\Services\ReportService.cs" />
+    <Compile Include="Core\Services\TransactionService.cs" />
+    <Compile Include="Core\Utils\PasswordEncryption.cs" />
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,13 +88,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\Controllers\" />
     <Folder Include="Core\Database\" />
     <Folder Include="Core\Models\" />
-    <Folder Include="Core\Services\" />
-    <Folder Include="Core\Utils\" />
     <Folder Include="Resources\" />
     <Folder Include="UI\UIFormValidation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\Controllers\Explanation_of_controllers.txt" />
+    <Content Include="Core\Services\Explanation_of_services.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
