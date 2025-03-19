@@ -81,15 +81,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\Controllers\" />
     <Folder Include="Core\Database\" />
     <Folder Include="Core\Models\" />
     <Folder Include="Core\Services\" />
     <Folder Include="Core\Utils\" />
     <Folder Include="Resources\" />
     <Folder Include="UI\UIFormValidation\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Core\Controllers\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
