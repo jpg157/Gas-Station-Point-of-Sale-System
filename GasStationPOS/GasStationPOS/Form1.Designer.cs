@@ -49,7 +49,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.pnlFuelPumps = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelFuelPumps = new System.Windows.Forms.TableLayoutPanel();
             this.btnFuelPump8 = new System.Windows.Forms.Button();
             this.btnFuelPump7 = new System.Windows.Forms.Button();
             this.btnFuelPump6 = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             this.btnFuelPump2 = new System.Windows.Forms.Button();
             this.btnFuelPump1 = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
-            this.pnlCheckout = new System.Windows.Forms.Panel();
+            this.pnlSubtotal = new System.Windows.Forms.Panel();
             this.labelRemaining = new System.Windows.Forms.Label();
             this.labelTendered = new System.Windows.Forms.Label();
             this.labelSubtotal = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.TenderedText = new System.Windows.Forms.Label();
             this.SubtotalText = new System.Windows.Forms.Label();
             this.listCart = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labalCartHeader = new System.Windows.Forms.Label();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.tableLayoutPanelProducts = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddGasCan = new System.Windows.Forms.Button();
@@ -119,20 +119,69 @@
             this.btnQty1 = new System.Windows.Forms.Button();
             this.timerDateTime = new System.Windows.Forms.Timer(this.components);
             this.pnlBottomNavBack = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelBottomNavBack = new System.Windows.Forms.TableLayoutPanel();
             this.btnBack = new System.Windows.Forms.Button();
+            this.pnlSelectCartItem = new System.Windows.Forms.Panel();
+            this.labelSelectedItem = new System.Windows.Forms.Label();
+            this.tableLayoutPanelSelectCartItem = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnChangePrice = new System.Windows.Forms.Button();
+            this.pnlFuelConfirmation = new System.Windows.Forms.Panel();
+            this.labelFuelConfirmation = new System.Windows.Forms.Label();
+            this.pnlFuelTypeSelect = new System.Windows.Forms.Panel();
+            this.labelPumpNum = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFuelRegular = new System.Windows.Forms.Button();
+            this.btnFuelPlus = new System.Windows.Forms.Button();
+            this.btnFuelSupreme = new System.Windows.Forms.Button();
+            this.labelEnterGrade = new System.Windows.Forms.Label();
+            this.pnlAddFuelAmount = new System.Windows.Forms.Panel();
+            this.labelFuelType = new System.Windows.Forms.Label();
+            this.labelFuelPrice = new System.Windows.Forms.Label();
+            this.tableLayoutPanelFuelCalculator = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFuelCalculator7 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator8 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator9 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator4 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator5 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator6 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator1 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator2 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator3 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator0 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator00 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator000 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFuelCalculator10 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator20 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator50 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator75 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator100 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator120 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator150 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator25 = new System.Windows.Forms.Button();
+            this.btnFuelCalculatorBackspace = new System.Windows.Forms.Button();
+            this.btnFuelCalculatorEnter = new System.Windows.Forms.Button();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
             this.tableLayoutPanelNavTop.SuspendLayout();
             this.pnlFuelPumps.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanelFuelPumps.SuspendLayout();
             this.pnlCart.SuspendLayout();
-            this.pnlCheckout.SuspendLayout();
+            this.pnlSubtotal.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.tableLayoutPanelProducts.SuspendLayout();
             this.tableLayoutPanelQuantity.SuspendLayout();
             this.pnlBottomNavBack.SuspendLayout();
+            this.tableLayoutPanelBottomNavBack.SuspendLayout();
+            this.pnlSelectCartItem.SuspendLayout();
+            this.tableLayoutPanelSelectCartItem.SuspendLayout();
+            this.pnlFuelConfirmation.SuspendLayout();
+            this.pnlFuelTypeSelect.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlAddFuelAmount.SuspendLayout();
+            this.tableLayoutPanelFuelCalculator.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,6 +299,7 @@
             this.btnPayFuel.TabIndex = 7;
             this.btnPayFuel.Text = "Pay Fuel";
             this.btnPayFuel.UseVisualStyleBackColor = false;
+            this.btnPayFuel.Click += new System.EventHandler(this.btnPayFuel_Click);
             // 
             // btnPayout
             // 
@@ -428,44 +478,45 @@
             // 
             this.pnlFuelPumps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFuelPumps.Controls.Add(this.tableLayoutPanel1);
+            this.pnlFuelPumps.Controls.Add(this.tableLayoutPanelFuelPumps);
             this.pnlFuelPumps.Location = new System.Drawing.Point(1153, 55);
             this.pnlFuelPumps.Name = "pnlFuelPumps";
             this.pnlFuelPumps.Size = new System.Drawing.Size(327, 589);
             this.pnlFuelPumps.TabIndex = 2;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelFuelPumps
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump8, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnFuelPump1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(327, 589);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanelFuelPumps.ColumnCount = 1;
+            this.tableLayoutPanelFuelPumps.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump8, 0, 7);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump7, 0, 6);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump6, 0, 5);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump5, 0, 4);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump4, 0, 3);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump3, 0, 2);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump2, 0, 1);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump1, 0, 0);
+            this.tableLayoutPanelFuelPumps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelFuelPumps.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelFuelPumps.Name = "tableLayoutPanelFuelPumps";
+            this.tableLayoutPanelFuelPumps.RowCount = 8;
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanelFuelPumps.Size = new System.Drawing.Size(327, 589);
+            this.tableLayoutPanelFuelPumps.TabIndex = 0;
             // 
             // btnFuelPump8
             // 
             this.btnFuelPump8.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump8.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump8.Location = new System.Drawing.Point(3, 514);
@@ -475,12 +526,14 @@
             this.btnFuelPump8.Text = "8";
             this.btnFuelPump8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump8.UseVisualStyleBackColor = false;
+            this.btnFuelPump8.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump7
             // 
             this.btnFuelPump7.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump7.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump7.Location = new System.Drawing.Point(3, 441);
@@ -490,12 +543,14 @@
             this.btnFuelPump7.Text = "7";
             this.btnFuelPump7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump7.UseVisualStyleBackColor = false;
+            this.btnFuelPump7.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump6
             // 
             this.btnFuelPump6.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump6.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump6.Location = new System.Drawing.Point(3, 368);
@@ -505,12 +560,14 @@
             this.btnFuelPump6.Text = "6";
             this.btnFuelPump6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump6.UseVisualStyleBackColor = false;
+            this.btnFuelPump6.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump5
             // 
             this.btnFuelPump5.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump5.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump5.Location = new System.Drawing.Point(3, 295);
@@ -520,12 +577,14 @@
             this.btnFuelPump5.Text = "5";
             this.btnFuelPump5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump5.UseVisualStyleBackColor = false;
+            this.btnFuelPump5.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump4
             // 
             this.btnFuelPump4.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump4.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump4.Location = new System.Drawing.Point(3, 222);
@@ -535,12 +594,14 @@
             this.btnFuelPump4.Text = "4";
             this.btnFuelPump4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump4.UseVisualStyleBackColor = false;
+            this.btnFuelPump4.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump3
             // 
             this.btnFuelPump3.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump3.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump3.Location = new System.Drawing.Point(3, 149);
@@ -550,12 +611,14 @@
             this.btnFuelPump3.Text = "3";
             this.btnFuelPump3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump3.UseVisualStyleBackColor = false;
+            this.btnFuelPump3.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump2
             // 
             this.btnFuelPump2.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump2.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump2.Location = new System.Drawing.Point(3, 76);
@@ -565,12 +628,14 @@
             this.btnFuelPump2.Text = "2";
             this.btnFuelPump2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump2.UseVisualStyleBackColor = false;
+            this.btnFuelPump2.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // btnFuelPump1
             // 
             this.btnFuelPump1.BackColor = System.Drawing.Color.DarkRed;
             this.btnFuelPump1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFuelPump1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFuelPump1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelPump1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelPump1.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFuelPump1.Location = new System.Drawing.Point(3, 3);
@@ -580,34 +645,35 @@
             this.btnFuelPump1.Text = "1";
             this.btnFuelPump1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump1.UseVisualStyleBackColor = false;
+            this.btnFuelPump1.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // pnlCart
             // 
             this.pnlCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlCart.Controls.Add(this.pnlCheckout);
+            this.pnlCart.Controls.Add(this.pnlSubtotal);
             this.pnlCart.Controls.Add(this.listCart);
-            this.pnlCart.Controls.Add(this.label1);
+            this.pnlCart.Controls.Add(this.labalCartHeader);
             this.pnlCart.Location = new System.Drawing.Point(0, 55);
             this.pnlCart.Name = "pnlCart";
             this.pnlCart.Size = new System.Drawing.Size(441, 583);
             this.pnlCart.TabIndex = 3;
             // 
-            // pnlCheckout
+            // pnlSubtotal
             // 
-            this.pnlCheckout.BackColor = System.Drawing.Color.Tan;
-            this.pnlCheckout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCheckout.Controls.Add(this.labelRemaining);
-            this.pnlCheckout.Controls.Add(this.labelTendered);
-            this.pnlCheckout.Controls.Add(this.labelSubtotal);
-            this.pnlCheckout.Controls.Add(this.remainingText);
-            this.pnlCheckout.Controls.Add(this.TenderedText);
-            this.pnlCheckout.Controls.Add(this.SubtotalText);
-            this.pnlCheckout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlCheckout.Location = new System.Drawing.Point(0, 485);
-            this.pnlCheckout.Name = "pnlCheckout";
-            this.pnlCheckout.Size = new System.Drawing.Size(441, 98);
-            this.pnlCheckout.TabIndex = 2;
+            this.pnlSubtotal.BackColor = System.Drawing.Color.Tan;
+            this.pnlSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSubtotal.Controls.Add(this.labelRemaining);
+            this.pnlSubtotal.Controls.Add(this.labelTendered);
+            this.pnlSubtotal.Controls.Add(this.labelSubtotal);
+            this.pnlSubtotal.Controls.Add(this.remainingText);
+            this.pnlSubtotal.Controls.Add(this.TenderedText);
+            this.pnlSubtotal.Controls.Add(this.SubtotalText);
+            this.pnlSubtotal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlSubtotal.Location = new System.Drawing.Point(0, 485);
+            this.pnlSubtotal.Name = "pnlSubtotal";
+            this.pnlSubtotal.Size = new System.Drawing.Size(441, 98);
+            this.pnlSubtotal.TabIndex = 2;
             // 
             // labelRemaining
             // 
@@ -676,20 +742,21 @@
             this.listCart.Name = "listCart";
             this.listCart.Size = new System.Drawing.Size(441, 551);
             this.listCart.TabIndex = 1;
+            this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
-            // label1
+            // labalCartHeader
             // 
-            this.label1.BackColor = System.Drawing.Color.Tan;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(441, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Description                                                                    Qt" +
+            this.labalCartHeader.BackColor = System.Drawing.Color.Tan;
+            this.labalCartHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labalCartHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labalCartHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labalCartHeader.Location = new System.Drawing.Point(0, 0);
+            this.labalCartHeader.Name = "labalCartHeader";
+            this.labalCartHeader.Size = new System.Drawing.Size(441, 32);
+            this.labalCartHeader.TabIndex = 0;
+            this.labalCartHeader.Text = "Description                                                                    Qt" +
     "y              Price       Total";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labalCartHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlProducts
             // 
@@ -1507,36 +1574,38 @@
             // 
             // pnlBottomNavBack
             // 
-            this.pnlBottomNavBack.Controls.Add(this.tableLayoutPanel2);
+            this.pnlBottomNavBack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBottomNavBack.Controls.Add(this.tableLayoutPanelBottomNavBack);
             this.pnlBottomNavBack.Location = new System.Drawing.Point(0, 643);
             this.pnlBottomNavBack.Name = "pnlBottomNavBack";
             this.pnlBottomNavBack.Size = new System.Drawing.Size(1480, 82);
             this.pnlBottomNavBack.TabIndex = 5;
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanelBottomNavBack
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Gray;
-            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tableLayoutPanel2.ColumnCount = 10;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.btnBack, 9, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1480, 82);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanelBottomNavBack.BackColor = System.Drawing.Color.Gray;
+            this.tableLayoutPanelBottomNavBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanelBottomNavBack.ColumnCount = 10;
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelBottomNavBack.Controls.Add(this.btnBack, 9, 0);
+            this.tableLayoutPanelBottomNavBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelBottomNavBack.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelBottomNavBack.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelBottomNavBack.Name = "tableLayoutPanelBottomNavBack";
+            this.tableLayoutPanelBottomNavBack.RowCount = 1;
+            this.tableLayoutPanelBottomNavBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelBottomNavBack.Size = new System.Drawing.Size(1480, 82);
+            this.tableLayoutPanelBottomNavBack.TabIndex = 1;
             // 
             // btnBack
             // 
@@ -1551,6 +1620,659 @@
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // pnlSelectCartItem
+            // 
+            this.pnlSelectCartItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlSelectCartItem.BackColor = System.Drawing.Color.Black;
+            this.pnlSelectCartItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSelectCartItem.Controls.Add(this.labelSelectedItem);
+            this.pnlSelectCartItem.Controls.Add(this.tableLayoutPanelSelectCartItem);
+            this.pnlSelectCartItem.Location = new System.Drawing.Point(661, 236);
+            this.pnlSelectCartItem.Name = "pnlSelectCartItem";
+            this.pnlSelectCartItem.Size = new System.Drawing.Size(272, 197);
+            this.pnlSelectCartItem.TabIndex = 3;
+            this.pnlSelectCartItem.Visible = false;
+            // 
+            // labelSelectedItem
+            // 
+            this.labelSelectedItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSelectedItem.BackColor = System.Drawing.Color.Firebrick;
+            this.labelSelectedItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectedItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelSelectedItem.Location = new System.Drawing.Point(3, 4);
+            this.labelSelectedItem.Name = "labelSelectedItem";
+            this.labelSelectedItem.Size = new System.Drawing.Size(261, 62);
+            this.labelSelectedItem.TabIndex = 1;
+            this.labelSelectedItem.Text = "label1";
+            this.labelSelectedItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanelSelectCartItem
+            // 
+            this.tableLayoutPanelSelectCartItem.ColumnCount = 1;
+            this.tableLayoutPanelSelectCartItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSelectCartItem.Controls.Add(this.btnRemoveItem, 0, 1);
+            this.tableLayoutPanelSelectCartItem.Controls.Add(this.btnChangePrice, 0, 0);
+            this.tableLayoutPanelSelectCartItem.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanelSelectCartItem.Location = new System.Drawing.Point(0, 68);
+            this.tableLayoutPanelSelectCartItem.Name = "tableLayoutPanelSelectCartItem";
+            this.tableLayoutPanelSelectCartItem.RowCount = 2;
+            this.tableLayoutPanelSelectCartItem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSelectCartItem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSelectCartItem.Size = new System.Drawing.Size(268, 125);
+            this.tableLayoutPanelSelectCartItem.TabIndex = 0;
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.BackColor = System.Drawing.Color.Gray;
+            this.btnRemoveItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveItem.Location = new System.Drawing.Point(3, 65);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(262, 57);
+            this.btnRemoveItem.TabIndex = 2;
+            this.btnRemoveItem.Text = "Remove Item";
+            this.btnRemoveItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
+            // 
+            // btnChangePrice
+            // 
+            this.btnChangePrice.BackColor = System.Drawing.Color.Gray;
+            this.btnChangePrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnChangePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePrice.Location = new System.Drawing.Point(3, 3);
+            this.btnChangePrice.Name = "btnChangePrice";
+            this.btnChangePrice.Size = new System.Drawing.Size(262, 56);
+            this.btnChangePrice.TabIndex = 1;
+            this.btnChangePrice.Text = "Change Price";
+            this.btnChangePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangePrice.UseVisualStyleBackColor = false;
+            // 
+            // pnlFuelConfirmation
+            // 
+            this.pnlFuelConfirmation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlFuelConfirmation.BackColor = System.Drawing.Color.Black;
+            this.pnlFuelConfirmation.Controls.Add(this.labelFuelConfirmation);
+            this.pnlFuelConfirmation.Location = new System.Drawing.Point(624, 201);
+            this.pnlFuelConfirmation.Name = "pnlFuelConfirmation";
+            this.pnlFuelConfirmation.Size = new System.Drawing.Size(352, 285);
+            this.pnlFuelConfirmation.TabIndex = 6;
+            this.pnlFuelConfirmation.Visible = false;
+            // 
+            // labelFuelConfirmation
+            // 
+            this.labelFuelConfirmation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFuelConfirmation.BackColor = System.Drawing.Color.DimGray;
+            this.labelFuelConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelFuelConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFuelConfirmation.Location = new System.Drawing.Point(8, 9);
+            this.labelFuelConfirmation.Name = "labelFuelConfirmation";
+            this.labelFuelConfirmation.Size = new System.Drawing.Size(337, 268);
+            this.labelFuelConfirmation.TabIndex = 0;
+            this.labelFuelConfirmation.Text = "Starting a fuel transaction\r\n\r\n\r\n\r\nPlease select from the available\r\n\r\nhighlighte" +
+    "d pumps to proceed\r\n";
+            this.labelFuelConfirmation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlFuelTypeSelect
+            // 
+            this.pnlFuelTypeSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlFuelTypeSelect.BackColor = System.Drawing.Color.Black;
+            this.pnlFuelTypeSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFuelTypeSelect.Controls.Add(this.labelEnterGrade);
+            this.pnlFuelTypeSelect.Controls.Add(this.labelPumpNum);
+            this.pnlFuelTypeSelect.Controls.Add(this.tableLayoutPanel1);
+            this.pnlFuelTypeSelect.Location = new System.Drawing.Point(668, 210);
+            this.pnlFuelTypeSelect.Name = "pnlFuelTypeSelect";
+            this.pnlFuelTypeSelect.Size = new System.Drawing.Size(272, 271);
+            this.pnlFuelTypeSelect.TabIndex = 7;
+            this.pnlFuelTypeSelect.Visible = false;
+            // 
+            // labelPumpNum
+            // 
+            this.labelPumpNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPumpNum.BackColor = System.Drawing.Color.Firebrick;
+            this.labelPumpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPumpNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelPumpNum.Location = new System.Drawing.Point(3, 4);
+            this.labelPumpNum.Name = "labelPumpNum";
+            this.labelPumpNum.Size = new System.Drawing.Size(263, 50);
+            this.labelPumpNum.TabIndex = 1;
+            this.labelPumpNum.Text = "label1";
+            this.labelPumpNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btnFuelSupreme, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnFuelPlus, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnFuelRegular, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 88);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 178);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnFuelRegular
+            // 
+            this.btnFuelRegular.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelRegular.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelRegular.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelRegular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelRegular.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelRegular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFuelRegular.Location = new System.Drawing.Point(3, 3);
+            this.btnFuelRegular.Name = "btnFuelRegular";
+            this.btnFuelRegular.Size = new System.Drawing.Size(262, 53);
+            this.btnFuelRegular.TabIndex = 1;
+            this.btnFuelRegular.Text = "Regular";
+            this.btnFuelRegular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuelRegular.UseVisualStyleBackColor = false;
+            this.btnFuelRegular.Click += new System.EventHandler(this.btnFuelType_Click);
+            // 
+            // btnFuelPlus
+            // 
+            this.btnFuelPlus.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelPlus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelPlus.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelPlus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFuelPlus.Location = new System.Drawing.Point(3, 62);
+            this.btnFuelPlus.Name = "btnFuelPlus";
+            this.btnFuelPlus.Size = new System.Drawing.Size(262, 53);
+            this.btnFuelPlus.TabIndex = 2;
+            this.btnFuelPlus.Text = "Plus";
+            this.btnFuelPlus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuelPlus.UseVisualStyleBackColor = false;
+            this.btnFuelPlus.Click += new System.EventHandler(this.btnFuelType_Click);
+            // 
+            // btnFuelSupreme
+            // 
+            this.btnFuelSupreme.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelSupreme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelSupreme.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelSupreme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelSupreme.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelSupreme.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFuelSupreme.Location = new System.Drawing.Point(3, 121);
+            this.btnFuelSupreme.Name = "btnFuelSupreme";
+            this.btnFuelSupreme.Size = new System.Drawing.Size(262, 54);
+            this.btnFuelSupreme.TabIndex = 3;
+            this.btnFuelSupreme.Text = "Supreme";
+            this.btnFuelSupreme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuelSupreme.UseVisualStyleBackColor = false;
+            this.btnFuelSupreme.Click += new System.EventHandler(this.btnFuelType_Click);
+            // 
+            // labelEnterGrade
+            // 
+            this.labelEnterGrade.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelEnterGrade.BackColor = System.Drawing.Color.Firebrick;
+            this.labelEnterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnterGrade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelEnterGrade.Location = new System.Drawing.Point(3, 54);
+            this.labelEnterGrade.Name = "labelEnterGrade";
+            this.labelEnterGrade.Size = new System.Drawing.Size(263, 31);
+            this.labelEnterGrade.TabIndex = 2;
+            this.labelEnterGrade.Text = "Enter Grade";
+            this.labelEnterGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlAddFuelAmount
+            // 
+            this.pnlAddFuelAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlAddFuelAmount.BackColor = System.Drawing.Color.Black;
+            this.pnlAddFuelAmount.Controls.Add(this.btnFuelCalculatorEnter);
+            this.pnlAddFuelAmount.Controls.Add(this.btnFuelCalculatorBackspace);
+            this.pnlAddFuelAmount.Controls.Add(this.tableLayoutPanel2);
+            this.pnlAddFuelAmount.Controls.Add(this.tableLayoutPanelFuelCalculator);
+            this.pnlAddFuelAmount.Controls.Add(this.labelFuelPrice);
+            this.pnlAddFuelAmount.Controls.Add(this.labelFuelType);
+            this.pnlAddFuelAmount.Location = new System.Drawing.Point(590, 144);
+            this.pnlAddFuelAmount.Name = "pnlAddFuelAmount";
+            this.pnlAddFuelAmount.Size = new System.Drawing.Size(428, 434);
+            this.pnlAddFuelAmount.TabIndex = 8;
+            this.pnlAddFuelAmount.Visible = false;
+            // 
+            // labelFuelType
+            // 
+            this.labelFuelType.BackColor = System.Drawing.Color.Firebrick;
+            this.labelFuelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFuelType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelFuelType.Location = new System.Drawing.Point(10, 13);
+            this.labelFuelType.Name = "labelFuelType";
+            this.labelFuelType.Size = new System.Drawing.Size(306, 62);
+            this.labelFuelType.TabIndex = 0;
+            this.labelFuelType.Text = "label1";
+            this.labelFuelType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFuelPrice
+            // 
+            this.labelFuelPrice.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.labelFuelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFuelPrice.ForeColor = System.Drawing.Color.Firebrick;
+            this.labelFuelPrice.Location = new System.Drawing.Point(26, 80);
+            this.labelFuelPrice.Name = "labelFuelPrice";
+            this.labelFuelPrice.Size = new System.Drawing.Size(276, 50);
+            this.labelFuelPrice.TabIndex = 1;
+            this.labelFuelPrice.Text = "0.00";
+            this.labelFuelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanelFuelCalculator
+            // 
+            this.tableLayoutPanelFuelCalculator.ColumnCount = 3;
+            this.tableLayoutPanelFuelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelFuelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelFuelCalculator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator000, 2, 3);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator00, 1, 3);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator0, 0, 3);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator3, 2, 2);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator2, 1, 2);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator1, 0, 2);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator6, 2, 1);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator5, 1, 1);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator4, 0, 1);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator9, 2, 0);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator8, 1, 0);
+            this.tableLayoutPanelFuelCalculator.Controls.Add(this.btnFuelCalculator7, 0, 0);
+            this.tableLayoutPanelFuelCalculator.Location = new System.Drawing.Point(3, 134);
+            this.tableLayoutPanelFuelCalculator.Name = "tableLayoutPanelFuelCalculator";
+            this.tableLayoutPanelFuelCalculator.RowCount = 4;
+            this.tableLayoutPanelFuelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelFuelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelFuelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelFuelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelFuelCalculator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelFuelCalculator.Size = new System.Drawing.Size(316, 233);
+            this.tableLayoutPanelFuelCalculator.TabIndex = 2;
+            // 
+            // btnFuelCalculator7
+            // 
+            this.btnFuelCalculator7.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator7.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator7.Location = new System.Drawing.Point(3, 3);
+            this.btnFuelCalculator7.Name = "btnFuelCalculator7";
+            this.btnFuelCalculator7.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator7.TabIndex = 0;
+            this.btnFuelCalculator7.Text = "7";
+            this.btnFuelCalculator7.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator7.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator8
+            // 
+            this.btnFuelCalculator8.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator8.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator8.Location = new System.Drawing.Point(108, 3);
+            this.btnFuelCalculator8.Name = "btnFuelCalculator8";
+            this.btnFuelCalculator8.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator8.TabIndex = 1;
+            this.btnFuelCalculator8.Text = "8";
+            this.btnFuelCalculator8.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator8.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator9
+            // 
+            this.btnFuelCalculator9.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator9.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator9.Location = new System.Drawing.Point(213, 3);
+            this.btnFuelCalculator9.Name = "btnFuelCalculator9";
+            this.btnFuelCalculator9.Size = new System.Drawing.Size(100, 52);
+            this.btnFuelCalculator9.TabIndex = 2;
+            this.btnFuelCalculator9.Text = "9";
+            this.btnFuelCalculator9.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator9.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator4
+            // 
+            this.btnFuelCalculator4.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator4.Location = new System.Drawing.Point(3, 61);
+            this.btnFuelCalculator4.Name = "btnFuelCalculator4";
+            this.btnFuelCalculator4.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator4.TabIndex = 3;
+            this.btnFuelCalculator4.Text = "4";
+            this.btnFuelCalculator4.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator4.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator5
+            // 
+            this.btnFuelCalculator5.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator5.Location = new System.Drawing.Point(108, 61);
+            this.btnFuelCalculator5.Name = "btnFuelCalculator5";
+            this.btnFuelCalculator5.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator5.TabIndex = 4;
+            this.btnFuelCalculator5.Text = "5";
+            this.btnFuelCalculator5.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator5.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator6
+            // 
+            this.btnFuelCalculator6.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator6.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator6.Location = new System.Drawing.Point(213, 61);
+            this.btnFuelCalculator6.Name = "btnFuelCalculator6";
+            this.btnFuelCalculator6.Size = new System.Drawing.Size(100, 52);
+            this.btnFuelCalculator6.TabIndex = 5;
+            this.btnFuelCalculator6.Text = "6";
+            this.btnFuelCalculator6.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator6.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator1
+            // 
+            this.btnFuelCalculator1.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator1.Location = new System.Drawing.Point(3, 119);
+            this.btnFuelCalculator1.Name = "btnFuelCalculator1";
+            this.btnFuelCalculator1.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator1.TabIndex = 6;
+            this.btnFuelCalculator1.Text = "1";
+            this.btnFuelCalculator1.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator1.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator2
+            // 
+            this.btnFuelCalculator2.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator2.Location = new System.Drawing.Point(108, 119);
+            this.btnFuelCalculator2.Name = "btnFuelCalculator2";
+            this.btnFuelCalculator2.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator2.TabIndex = 7;
+            this.btnFuelCalculator2.Text = "2";
+            this.btnFuelCalculator2.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator2.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator3
+            // 
+            this.btnFuelCalculator3.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator3.Location = new System.Drawing.Point(213, 119);
+            this.btnFuelCalculator3.Name = "btnFuelCalculator3";
+            this.btnFuelCalculator3.Size = new System.Drawing.Size(100, 52);
+            this.btnFuelCalculator3.TabIndex = 8;
+            this.btnFuelCalculator3.Text = "3";
+            this.btnFuelCalculator3.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator3.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator0
+            // 
+            this.btnFuelCalculator0.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator0.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator0.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator0.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator0.Location = new System.Drawing.Point(3, 177);
+            this.btnFuelCalculator0.Name = "btnFuelCalculator0";
+            this.btnFuelCalculator0.Size = new System.Drawing.Size(99, 53);
+            this.btnFuelCalculator0.TabIndex = 9;
+            this.btnFuelCalculator0.Text = "0";
+            this.btnFuelCalculator0.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator0.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator00
+            // 
+            this.btnFuelCalculator00.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator00.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator00.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator00.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator00.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator00.Location = new System.Drawing.Point(108, 177);
+            this.btnFuelCalculator00.Name = "btnFuelCalculator00";
+            this.btnFuelCalculator00.Size = new System.Drawing.Size(99, 53);
+            this.btnFuelCalculator00.TabIndex = 10;
+            this.btnFuelCalculator00.Text = "00";
+            this.btnFuelCalculator00.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator00.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator000
+            // 
+            this.btnFuelCalculator000.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator000.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator000.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator000.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator000.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator000.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator000.Location = new System.Drawing.Point(213, 177);
+            this.btnFuelCalculator000.Name = "btnFuelCalculator000";
+            this.btnFuelCalculator000.Size = new System.Drawing.Size(100, 53);
+            this.btnFuelCalculator000.TabIndex = 11;
+            this.btnFuelCalculator000.Text = "000";
+            this.btnFuelCalculator000.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator000.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator25, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator20, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator10, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator150, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator120, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator100, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator75, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator50, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(322, 13);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(101, 411);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // btnFuelCalculator10
+            // 
+            this.btnFuelCalculator10.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator10.Location = new System.Drawing.Point(3, 3);
+            this.btnFuelCalculator10.Name = "btnFuelCalculator10";
+            this.btnFuelCalculator10.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator10.TabIndex = 1;
+            this.btnFuelCalculator10.Text = "10.00";
+            this.btnFuelCalculator10.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator10.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator20
+            // 
+            this.btnFuelCalculator20.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator20.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator20.Location = new System.Drawing.Point(3, 54);
+            this.btnFuelCalculator20.Name = "btnFuelCalculator20";
+            this.btnFuelCalculator20.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator20.TabIndex = 2;
+            this.btnFuelCalculator20.Text = "20.00";
+            this.btnFuelCalculator20.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator20.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator50
+            // 
+            this.btnFuelCalculator50.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator50.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator50.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator50.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator50.Location = new System.Drawing.Point(3, 156);
+            this.btnFuelCalculator50.Name = "btnFuelCalculator50";
+            this.btnFuelCalculator50.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator50.TabIndex = 3;
+            this.btnFuelCalculator50.Text = "50.00";
+            this.btnFuelCalculator50.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator50.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator75
+            // 
+            this.btnFuelCalculator75.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator75.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator75.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator75.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator75.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator75.Location = new System.Drawing.Point(3, 207);
+            this.btnFuelCalculator75.Name = "btnFuelCalculator75";
+            this.btnFuelCalculator75.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator75.TabIndex = 4;
+            this.btnFuelCalculator75.Text = "75.00";
+            this.btnFuelCalculator75.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator75.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator100
+            // 
+            this.btnFuelCalculator100.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator100.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator100.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator100.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator100.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator100.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator100.Location = new System.Drawing.Point(3, 258);
+            this.btnFuelCalculator100.Name = "btnFuelCalculator100";
+            this.btnFuelCalculator100.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator100.TabIndex = 5;
+            this.btnFuelCalculator100.Text = "100.00";
+            this.btnFuelCalculator100.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator100.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator120
+            // 
+            this.btnFuelCalculator120.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator120.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator120.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator120.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator120.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator120.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator120.Location = new System.Drawing.Point(3, 309);
+            this.btnFuelCalculator120.Name = "btnFuelCalculator120";
+            this.btnFuelCalculator120.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator120.TabIndex = 6;
+            this.btnFuelCalculator120.Text = "120.00";
+            this.btnFuelCalculator120.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator120.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator150
+            // 
+            this.btnFuelCalculator150.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator150.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator150.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator150.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator150.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator150.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator150.Location = new System.Drawing.Point(3, 360);
+            this.btnFuelCalculator150.Name = "btnFuelCalculator150";
+            this.btnFuelCalculator150.Size = new System.Drawing.Size(95, 48);
+            this.btnFuelCalculator150.TabIndex = 7;
+            this.btnFuelCalculator150.Text = "150.00";
+            this.btnFuelCalculator150.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator150.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator25
+            // 
+            this.btnFuelCalculator25.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator25.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator25.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator25.Location = new System.Drawing.Point(3, 105);
+            this.btnFuelCalculator25.Name = "btnFuelCalculator25";
+            this.btnFuelCalculator25.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator25.TabIndex = 8;
+            this.btnFuelCalculator25.Text = "25.00";
+            this.btnFuelCalculator25.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator25.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculatorBackspace
+            // 
+            this.btnFuelCalculatorBackspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFuelCalculatorBackspace.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculatorBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculatorBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculatorBackspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculatorBackspace.Location = new System.Drawing.Point(6, 371);
+            this.btnFuelCalculatorBackspace.Name = "btnFuelCalculatorBackspace";
+            this.btnFuelCalculatorBackspace.Size = new System.Drawing.Size(154, 53);
+            this.btnFuelCalculatorBackspace.TabIndex = 10;
+            this.btnFuelCalculatorBackspace.Text = "Backspace";
+            this.btnFuelCalculatorBackspace.UseVisualStyleBackColor = false;
+            this.btnFuelCalculatorBackspace.Click += new System.EventHandler(this.btnFuelCalculatorBackspace_Click);
+            // 
+            // btnFuelCalculatorEnter
+            // 
+            this.btnFuelCalculatorEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFuelCalculatorEnter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculatorEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculatorEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculatorEnter.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculatorEnter.Location = new System.Drawing.Point(166, 371);
+            this.btnFuelCalculatorEnter.Name = "btnFuelCalculatorEnter";
+            this.btnFuelCalculatorEnter.Size = new System.Drawing.Size(150, 53);
+            this.btnFuelCalculatorEnter.TabIndex = 11;
+            this.btnFuelCalculatorEnter.Text = "Enter";
+            this.btnFuelCalculatorEnter.UseVisualStyleBackColor = false;
+            this.btnFuelCalculatorEnter.Click += new System.EventHandler(this.btnFuelCalculatorEnter_Click);
             // 
             // MainForm
             // 
@@ -1564,6 +2286,10 @@
             this.Controls.Add(this.pnlTopNavMain);
             this.Controls.Add(this.pnlBottomNavMain);
             this.Controls.Add(this.pnlBottomNavBack);
+            this.Controls.Add(this.pnlFuelConfirmation);
+            this.Controls.Add(this.pnlSelectCartItem);
+            this.Controls.Add(this.pnlFuelTypeSelect);
+            this.Controls.Add(this.pnlAddFuelAmount);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -1573,13 +2299,21 @@
             this.tableLayoutPanelNavTop.ResumeLayout(false);
             this.tableLayoutPanelNavTop.PerformLayout();
             this.pnlFuelPumps.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanelFuelPumps.ResumeLayout(false);
             this.pnlCart.ResumeLayout(false);
-            this.pnlCheckout.ResumeLayout(false);
+            this.pnlSubtotal.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);
             this.tableLayoutPanelProducts.ResumeLayout(false);
             this.tableLayoutPanelQuantity.ResumeLayout(false);
             this.pnlBottomNavBack.ResumeLayout(false);
+            this.tableLayoutPanelBottomNavBack.ResumeLayout(false);
+            this.pnlSelectCartItem.ResumeLayout(false);
+            this.tableLayoutPanelSelectCartItem.ResumeLayout(false);
+            this.pnlFuelConfirmation.ResumeLayout(false);
+            this.pnlFuelTypeSelect.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlAddFuelAmount.ResumeLayout(false);
+            this.tableLayoutPanelFuelCalculator.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1599,7 +2333,7 @@
         private System.Windows.Forms.Button btnHaltPump;
         private System.Windows.Forms.Button btnHaltAllPumps;
         private System.Windows.Forms.Panel pnlFuelPumps;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFuelPumps;
         private System.Windows.Forms.Button btnFuelPump8;
         private System.Windows.Forms.Button btnFuelPump7;
         private System.Windows.Forms.Button btnFuelPump6;
@@ -1609,9 +2343,9 @@
         private System.Windows.Forms.Button btnFuelPump2;
         private System.Windows.Forms.Button btnFuelPump1;
         private System.Windows.Forms.Panel pnlCart;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labalCartHeader;
         private System.Windows.Forms.ListBox listCart;
-        private System.Windows.Forms.Panel pnlCheckout;
+        private System.Windows.Forms.Panel pnlSubtotal;
         private System.Windows.Forms.Label remainingText;
         private System.Windows.Forms.Label TenderedText;
         private System.Windows.Forms.Label SubtotalText;
@@ -1676,8 +2410,49 @@
         private System.Windows.Forms.Panel pnlBottomNavBack;
         private System.Windows.Forms.Button btnPayCash;
         private System.Windows.Forms.Button btnPayCard;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBottomNavBack;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel pnlSelectCartItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSelectCartItem;
+        private System.Windows.Forms.Button btnRemoveItem;
+        private System.Windows.Forms.Button btnChangePrice;
+        private System.Windows.Forms.Label labelSelectedItem;
+        private System.Windows.Forms.Panel pnlFuelConfirmation;
+        private System.Windows.Forms.Label labelFuelConfirmation;
+        private System.Windows.Forms.Panel pnlFuelTypeSelect;
+        private System.Windows.Forms.Label labelPumpNum;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnFuelRegular;
+        private System.Windows.Forms.Label labelEnterGrade;
+        private System.Windows.Forms.Button btnFuelSupreme;
+        private System.Windows.Forms.Button btnFuelPlus;
+        private System.Windows.Forms.Panel pnlAddFuelAmount;
+        private System.Windows.Forms.Label labelFuelType;
+        private System.Windows.Forms.Label labelFuelPrice;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFuelCalculator;
+        private System.Windows.Forms.Button btnFuelCalculator7;
+        private System.Windows.Forms.Button btnFuelCalculator000;
+        private System.Windows.Forms.Button btnFuelCalculator00;
+        private System.Windows.Forms.Button btnFuelCalculator0;
+        private System.Windows.Forms.Button btnFuelCalculator3;
+        private System.Windows.Forms.Button btnFuelCalculator2;
+        private System.Windows.Forms.Button btnFuelCalculator1;
+        private System.Windows.Forms.Button btnFuelCalculator6;
+        private System.Windows.Forms.Button btnFuelCalculator5;
+        private System.Windows.Forms.Button btnFuelCalculator4;
+        private System.Windows.Forms.Button btnFuelCalculator9;
+        private System.Windows.Forms.Button btnFuelCalculator8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnFuelCalculator150;
+        private System.Windows.Forms.Button btnFuelCalculator120;
+        private System.Windows.Forms.Button btnFuelCalculator100;
+        private System.Windows.Forms.Button btnFuelCalculator75;
+        private System.Windows.Forms.Button btnFuelCalculator50;
+        private System.Windows.Forms.Button btnFuelCalculator20;
+        private System.Windows.Forms.Button btnFuelCalculator10;
+        private System.Windows.Forms.Button btnFuelCalculatorEnter;
+        private System.Windows.Forms.Button btnFuelCalculatorBackspace;
+        private System.Windows.Forms.Button btnFuelCalculator25;
     }
 }
 
