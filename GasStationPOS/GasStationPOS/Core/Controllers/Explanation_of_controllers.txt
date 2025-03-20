@@ -1,0 +1,23 @@
+﻿
+Controllers folder is for handling data or "requests" passed from the form
+
+Purpose of Controller:
+-	Controllers is a coordinator of services logic with the UI form logic
+
+-	Handles incoming "requests" from the UI forms, and delegates main business logic to services
+
+-	Does not do data manipulation, it instead delegates that to services
+
+Example:
+
+-	Form uses the functions of the controllers to update database, 
+	and gets a value returned or exception, indicating if payment was successful or not
+
+-	Based on that returned value from the controller, the form displays either success view or error view
+
+----
+
+-	Card is selected and "key enter" is confirmed/pressed - the function in the form calls a function in PaymentController
+
+-	It handles any exceptions thrown (thrown if an error occured and payment was not successful) by updating winforms ui to show error message(s)
+

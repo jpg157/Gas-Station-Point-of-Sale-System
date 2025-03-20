@@ -1,0 +1,19 @@
+﻿
+Services folder contains business logic of application.
+
+-	Does data manipulation and interacts directly with database to get or retrieve data
+
+Example:
+
+-	Compare user credentials (username and password) with database - to check if a valid user exists (AuthenticationService)
+
+-	Get data to create pdf receipt (ReceiptService)
+
+-	Get product inventory quantity (InventoryService)
+
+----
+
+-	Card is selected and "key enter" is confirmed/pressed - the function in the form calls a function in PaymentController
+
+-	It handles any exceptions thrown (thrown if an error occured and payment was not successful) by updating winforms ui to show error message(s)
+
