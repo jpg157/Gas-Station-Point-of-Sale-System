@@ -8,16 +8,17 @@ using System.Threading.Tasks;
 namespace GasStationPOS.Core.Models.Product
 {
 
-    enum FuelType
+    enum FuelGrade
     {
-        GASOLINE,
-        DIESEL
+        REGULAR,
+        PLUS,
+        SUPREME
     }
 
     class FuelProduct : Product
     {
         [Required]
-        public FuelType FuelType { get; set; }
+        public FuelGrade FuelGrade { get; set; }
 
         [Required]
         [Range(0.0, 10000.0, ErrorMessage = "Fuel volume must be between 0.0 and 10000.0 L")]
@@ -27,7 +28,7 @@ namespace GasStationPOS.Core.Models.Product
         {
             string strRet = $@"
                 {base.ToString()}
-                Fuel Type: {FuelType}
+                Fuel Grade: {FuelGrade}
                 Fuel Volume Litres: {FuelVolumeLitres}
                 ";
             return strRet;
