@@ -31,7 +31,17 @@ namespace GasStationPOS
             { "FIREWOOD", 13.99m },
             { "PC COOLANT 1.85L", 19.99m },
             { "PC COOLANT 3.78L", 33.99m },
-            { "10L GAS CAN", 3.99m }
+            { "10L GAS CAN", 3.99m },
+            { "PIZZA SLICE SMALL", 1.29m },
+            { "PIZZA SLICE LARGE", 2.09m },
+            { "HOTDOG", 1.49m },
+            { "POTATO WEDGES", 2.29m },
+            { "CHICKEN SANDWICH", 3.99m },
+            { "VEG SANDWICH", 2.49m },
+            { "DASANI WATER BOTTLE 591ML", 2.69m },
+            { "PURELIFE WATER BOTTLE 500ML", 2.59m },
+            { "FIJI WATER BOTTLE 500ML", 3.49m },
+            { "SMART WATER BOTTLE 350ML", 3.59m }
         };
         private decimal subtotal = 0;
         private decimal tendered = 0; // Will be updated later

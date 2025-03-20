@@ -87,18 +87,17 @@
             this.btnAddEngOil10W30 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnVegSandwich = new System.Windows.Forms.Button();
+            this.btnChickenSandwich = new System.Windows.Forms.Button();
             this.btnAddEngOil5W30 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnWedges = new System.Windows.Forms.Button();
+            this.btnHotdog = new System.Windows.Forms.Button();
+            this.btnPizzaLarge = new System.Windows.Forms.Button();
+            this.btnPureLifeWater = new System.Windows.Forms.Button();
             this.btnAddLotto10 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSmartWater = new System.Windows.Forms.Button();
+            this.btnFijiWater = new System.Windows.Forms.Button();
+            this.btnDasaniWater = new System.Windows.Forms.Button();
             this.btnAddLotto1 = new System.Windows.Forms.Button();
             this.btnAddHotBevSmall = new System.Windows.Forms.Button();
             this.btnAddHotBevLarge = new System.Windows.Forms.Button();
@@ -129,39 +128,40 @@
             this.pnlFuelConfirmation = new System.Windows.Forms.Panel();
             this.labelFuelConfirmation = new System.Windows.Forms.Label();
             this.pnlFuelTypeSelect = new System.Windows.Forms.Panel();
+            this.labelEnterGrade = new System.Windows.Forms.Label();
             this.labelPumpNum = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnFuelRegular = new System.Windows.Forms.Button();
-            this.btnFuelPlus = new System.Windows.Forms.Button();
             this.btnFuelSupreme = new System.Windows.Forms.Button();
-            this.labelEnterGrade = new System.Windows.Forms.Label();
+            this.btnFuelPlus = new System.Windows.Forms.Button();
+            this.btnFuelRegular = new System.Windows.Forms.Button();
             this.pnlAddFuelAmount = new System.Windows.Forms.Panel();
-            this.labelFuelType = new System.Windows.Forms.Label();
-            this.labelFuelPrice = new System.Windows.Forms.Label();
-            this.tableLayoutPanelFuelCalculator = new System.Windows.Forms.TableLayoutPanel();
-            this.btnFuelCalculator7 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator8 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator9 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator4 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator5 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator6 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator1 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator2 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator3 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator0 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator00 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator000 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnFuelCalculator10 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator20 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator50 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator75 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator100 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator120 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator150 = new System.Windows.Forms.Button();
-            this.btnFuelCalculator25 = new System.Windows.Forms.Button();
-            this.btnFuelCalculatorBackspace = new System.Windows.Forms.Button();
             this.btnFuelCalculatorEnter = new System.Windows.Forms.Button();
+            this.btnFuelCalculatorBackspace = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFuelCalculator25 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator20 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator10 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator150 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator120 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator100 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator75 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator50 = new System.Windows.Forms.Button();
+            this.tableLayoutPanelFuelCalculator = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFuelCalculator000 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator00 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator0 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator3 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator2 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator1 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator6 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator5 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator4 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator9 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator8 = new System.Windows.Forms.Button();
+            this.btnFuelCalculator7 = new System.Windows.Forms.Button();
+            this.labelFuelPrice = new System.Windows.Forms.Label();
+            this.labelFuelType = new System.Windows.Forms.Label();
+            this.btnPizzaSmall = new System.Windows.Forms.Button();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
@@ -181,8 +181,8 @@
             this.pnlFuelTypeSelect.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlAddFuelAmount.SuspendLayout();
-            this.tableLayoutPanelFuelCalculator.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanelFuelCalculator.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBottomNavMain
@@ -396,7 +396,7 @@
             this.btnHaltAllPumps.BackColor = System.Drawing.Color.DarkRed;
             this.btnHaltAllPumps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHaltAllPumps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHaltAllPumps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHaltAllPumps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHaltAllPumps.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnHaltAllPumps.Location = new System.Drawing.Point(126, 3);
             this.btnHaltAllPumps.Name = "btnHaltAllPumps";
@@ -410,7 +410,7 @@
             this.btnHaltPump.BackColor = System.Drawing.Color.Orange;
             this.btnHaltPump.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHaltPump.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHaltPump.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHaltPump.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHaltPump.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnHaltPump.Location = new System.Drawing.Point(249, 3);
             this.btnHaltPump.Name = "btnHaltPump";
@@ -661,6 +661,7 @@
             // 
             // pnlSubtotal
             // 
+            this.pnlSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSubtotal.BackColor = System.Drawing.Color.Tan;
             this.pnlSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSubtotal.Controls.Add(this.labelRemaining);
@@ -669,10 +670,9 @@
             this.pnlSubtotal.Controls.Add(this.remainingText);
             this.pnlSubtotal.Controls.Add(this.TenderedText);
             this.pnlSubtotal.Controls.Add(this.SubtotalText);
-            this.pnlSubtotal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSubtotal.Location = new System.Drawing.Point(0, 485);
+            this.pnlSubtotal.Location = new System.Drawing.Point(0, 486);
             this.pnlSubtotal.Name = "pnlSubtotal";
-            this.pnlSubtotal.Size = new System.Drawing.Size(441, 98);
+            this.pnlSubtotal.Size = new System.Drawing.Size(441, 97);
             this.pnlSubtotal.TabIndex = 2;
             // 
             // labelRemaining
@@ -734,13 +734,14 @@
             // 
             // listCart
             // 
-            this.listCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listCart.FormattingEnabled = true;
             this.listCart.ItemHeight = 15;
             this.listCart.Location = new System.Drawing.Point(0, 32);
             this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(441, 551);
+            this.listCart.Size = new System.Drawing.Size(441, 469);
             this.listCart.TabIndex = 1;
             this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
@@ -748,7 +749,6 @@
             // 
             this.labalCartHeader.BackColor = System.Drawing.Color.Tan;
             this.labalCartHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labalCartHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.labalCartHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labalCartHeader.Location = new System.Drawing.Point(0, 0);
             this.labalCartHeader.Name = "labalCartHeader";
@@ -783,6 +783,7 @@
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelProducts.Controls.Add(this.btnPizzaSmall, 2, 1);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddGasCan, 5, 5);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddCoolant378, 4, 5);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddCoolant185, 3, 5);
@@ -800,18 +801,16 @@
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddEngOil10W30, 1, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.button15, 5, 2);
             this.tableLayoutPanelProducts.Controls.Add(this.button14, 4, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.button13, 3, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.button12, 2, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnVegSandwich, 3, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnChickenSandwich, 2, 2);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddEngOil5W30, 1, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.button10, 5, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.button9, 4, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.button8, 3, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.button7, 2, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnWedges, 5, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnHotdog, 4, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnPizzaLarge, 3, 1);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddLotto10, 1, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.button5, 5, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.button4, 4, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.button3, 3, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.button2, 2, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnSmartWater, 5, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnFijiWater, 4, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnDasaniWater, 2, 0);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddLotto1, 1, 0);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddHotBevSmall, 0, 0);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddHotBevLarge, 0, 1);
@@ -819,6 +818,7 @@
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddPropaneExch, 0, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddWindshieldWasher, 0, 5);
             this.tableLayoutPanelProducts.Controls.Add(this.btnAddPropane, 0, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnPureLifeWater, 3, 0);
             this.tableLayoutPanelProducts.Location = new System.Drawing.Point(3, 51);
             this.tableLayoutPanelProducts.Name = "tableLayoutPanelProducts";
             this.tableLayoutPanelProducts.RowCount = 6;
@@ -881,7 +881,7 @@
             // 
             // btnAddFirewood
             // 
-            this.btnAddFirewood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(81)))), ((int)(((byte)(36)))));
+            this.btnAddFirewood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnAddFirewood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddFirewood.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddFirewood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1093,35 +1093,37 @@
             this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button14.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btnVegSandwich
             // 
-            this.button13.BackColor = System.Drawing.Color.Silver;
-            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button13.Location = new System.Drawing.Point(339, 173);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(106, 79);
-            this.button13.TabIndex = 23;
-            this.button13.Text = "-";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnVegSandwich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnVegSandwich.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVegSandwich.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVegSandwich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVegSandwich.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnVegSandwich.Location = new System.Drawing.Point(339, 173);
+            this.btnVegSandwich.Name = "btnVegSandwich";
+            this.btnVegSandwich.Size = new System.Drawing.Size(106, 79);
+            this.btnVegSandwich.TabIndex = 23;
+            this.btnVegSandwich.Text = "VEG SANDWICH";
+            this.btnVegSandwich.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVegSandwich.UseVisualStyleBackColor = false;
+            this.btnVegSandwich.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button12
+            // btnChickenSandwich
             // 
-            this.button12.BackColor = System.Drawing.Color.Silver;
-            this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button12.Location = new System.Drawing.Point(227, 173);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(106, 79);
-            this.button12.TabIndex = 22;
-            this.button12.Text = "-";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnChickenSandwich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChickenSandwich.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnChickenSandwich.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnChickenSandwich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChickenSandwich.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnChickenSandwich.Location = new System.Drawing.Point(227, 173);
+            this.btnChickenSandwich.Name = "btnChickenSandwich";
+            this.btnChickenSandwich.Size = new System.Drawing.Size(106, 79);
+            this.btnChickenSandwich.TabIndex = 22;
+            this.btnChickenSandwich.Text = "CHICKEN SANDWICH";
+            this.btnChickenSandwich.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnChickenSandwich.UseVisualStyleBackColor = false;
+            this.btnChickenSandwich.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // btnAddEngOil5W30
             // 
@@ -1139,65 +1141,69 @@
             this.btnAddEngOil5W30.UseVisualStyleBackColor = false;
             this.btnAddEngOil5W30.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button10
+            // btnWedges
             // 
-            this.button10.BackColor = System.Drawing.Color.Silver;
-            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.Location = new System.Drawing.Point(563, 88);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(112, 79);
-            this.button10.TabIndex = 20;
-            this.button10.Text = "-";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnWedges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnWedges.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnWedges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnWedges.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWedges.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnWedges.Location = new System.Drawing.Point(563, 88);
+            this.btnWedges.Name = "btnWedges";
+            this.btnWedges.Size = new System.Drawing.Size(112, 79);
+            this.btnWedges.TabIndex = 20;
+            this.btnWedges.Text = "POTATO WEDGES";
+            this.btnWedges.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnWedges.UseVisualStyleBackColor = false;
+            this.btnWedges.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button9
+            // btnHotdog
             // 
-            this.button9.BackColor = System.Drawing.Color.Silver;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.Location = new System.Drawing.Point(451, 88);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(106, 79);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "-";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnHotdog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnHotdog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHotdog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHotdog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHotdog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHotdog.Location = new System.Drawing.Point(451, 88);
+            this.btnHotdog.Name = "btnHotdog";
+            this.btnHotdog.Size = new System.Drawing.Size(106, 79);
+            this.btnHotdog.TabIndex = 19;
+            this.btnHotdog.Text = "HOTDOG";
+            this.btnHotdog.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHotdog.UseVisualStyleBackColor = false;
+            this.btnHotdog.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button8
+            // btnPizzaLarge
             // 
-            this.button8.BackColor = System.Drawing.Color.Silver;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(339, 88);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(106, 79);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "-";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnPizzaLarge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPizzaLarge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPizzaLarge.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPizzaLarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPizzaLarge.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPizzaLarge.Location = new System.Drawing.Point(339, 88);
+            this.btnPizzaLarge.Name = "btnPizzaLarge";
+            this.btnPizzaLarge.Size = new System.Drawing.Size(106, 79);
+            this.btnPizzaLarge.TabIndex = 18;
+            this.btnPizzaLarge.Text = "PIZZA SLICE LARGE";
+            this.btnPizzaLarge.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPizzaLarge.UseVisualStyleBackColor = false;
+            this.btnPizzaLarge.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button7
+            // btnPureLifeWater
             // 
-            this.button7.BackColor = System.Drawing.Color.Silver;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(227, 88);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(106, 79);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "-";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnPureLifeWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnPureLifeWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPureLifeWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPureLifeWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPureLifeWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPureLifeWater.Location = new System.Drawing.Point(339, 3);
+            this.btnPureLifeWater.Name = "btnPureLifeWater";
+            this.btnPureLifeWater.Size = new System.Drawing.Size(106, 79);
+            this.btnPureLifeWater.TabIndex = 17;
+            this.btnPureLifeWater.Text = "PURELIFE WATER BOTTLE 500ML";
+            this.btnPureLifeWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPureLifeWater.UseVisualStyleBackColor = false;
+            this.btnPureLifeWater.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // btnAddLotto10
             // 
@@ -1215,65 +1221,53 @@
             this.btnAddLotto10.UseVisualStyleBackColor = false;
             this.btnAddLotto10.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button5
+            // btnSmartWater
             // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(563, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 79);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "-";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnSmartWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnSmartWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSmartWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSmartWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSmartWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSmartWater.Location = new System.Drawing.Point(563, 3);
+            this.btnSmartWater.Name = "btnSmartWater";
+            this.btnSmartWater.Size = new System.Drawing.Size(112, 79);
+            this.btnSmartWater.TabIndex = 15;
+            this.btnSmartWater.Text = "SMART WATER BOTTLE 350ML";
+            this.btnSmartWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSmartWater.UseVisualStyleBackColor = false;
+            this.btnSmartWater.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button4
+            // btnFijiWater
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(451, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 79);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "-";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnFijiWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnFijiWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFijiWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFijiWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFijiWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFijiWater.Location = new System.Drawing.Point(451, 3);
+            this.btnFijiWater.Name = "btnFijiWater";
+            this.btnFijiWater.Size = new System.Drawing.Size(106, 79);
+            this.btnFijiWater.TabIndex = 14;
+            this.btnFijiWater.Text = "FIJI WATER BOTTLE 500ML";
+            this.btnFijiWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFijiWater.UseVisualStyleBackColor = false;
+            this.btnFijiWater.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // button3
+            // btnDasaniWater
             // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(339, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 79);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "-";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(227, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 79);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "-";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDasaniWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnDasaniWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDasaniWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDasaniWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDasaniWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDasaniWater.Location = new System.Drawing.Point(227, 3);
+            this.btnDasaniWater.Name = "btnDasaniWater";
+            this.btnDasaniWater.Size = new System.Drawing.Size(106, 79);
+            this.btnDasaniWater.TabIndex = 12;
+            this.btnDasaniWater.Text = "DASANI WATER BOTTLE 591ML";
+            this.btnDasaniWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDasaniWater.UseVisualStyleBackColor = false;
+            this.btnDasaniWater.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // btnAddLotto1
             // 
@@ -1735,6 +1729,19 @@
             this.pnlFuelTypeSelect.TabIndex = 7;
             this.pnlFuelTypeSelect.Visible = false;
             // 
+            // labelEnterGrade
+            // 
+            this.labelEnterGrade.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelEnterGrade.BackColor = System.Drawing.Color.Firebrick;
+            this.labelEnterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnterGrade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelEnterGrade.Location = new System.Drawing.Point(3, 54);
+            this.labelEnterGrade.Name = "labelEnterGrade";
+            this.labelEnterGrade.Size = new System.Drawing.Size(263, 31);
+            this.labelEnterGrade.TabIndex = 2;
+            this.labelEnterGrade.Text = "Enter Grade";
+            this.labelEnterGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelPumpNum
             // 
             this.labelPumpNum.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1765,22 +1772,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 178);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnFuelRegular
+            // btnFuelSupreme
             // 
-            this.btnFuelRegular.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelRegular.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelRegular.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelRegular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelRegular.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelRegular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFuelRegular.Location = new System.Drawing.Point(3, 3);
-            this.btnFuelRegular.Name = "btnFuelRegular";
-            this.btnFuelRegular.Size = new System.Drawing.Size(262, 53);
-            this.btnFuelRegular.TabIndex = 1;
-            this.btnFuelRegular.Text = "Regular";
-            this.btnFuelRegular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelRegular.UseVisualStyleBackColor = false;
-            this.btnFuelRegular.Click += new System.EventHandler(this.btnFuelType_Click);
+            this.btnFuelSupreme.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelSupreme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelSupreme.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelSupreme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelSupreme.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelSupreme.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFuelSupreme.Location = new System.Drawing.Point(3, 121);
+            this.btnFuelSupreme.Name = "btnFuelSupreme";
+            this.btnFuelSupreme.Size = new System.Drawing.Size(262, 54);
+            this.btnFuelSupreme.TabIndex = 3;
+            this.btnFuelSupreme.Text = "Supreme";
+            this.btnFuelSupreme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuelSupreme.UseVisualStyleBackColor = false;
+            this.btnFuelSupreme.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
             // btnFuelPlus
             // 
@@ -1799,35 +1806,22 @@
             this.btnFuelPlus.UseVisualStyleBackColor = false;
             this.btnFuelPlus.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
-            // btnFuelSupreme
+            // btnFuelRegular
             // 
-            this.btnFuelSupreme.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelSupreme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelSupreme.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelSupreme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelSupreme.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelSupreme.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFuelSupreme.Location = new System.Drawing.Point(3, 121);
-            this.btnFuelSupreme.Name = "btnFuelSupreme";
-            this.btnFuelSupreme.Size = new System.Drawing.Size(262, 54);
-            this.btnFuelSupreme.TabIndex = 3;
-            this.btnFuelSupreme.Text = "Supreme";
-            this.btnFuelSupreme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelSupreme.UseVisualStyleBackColor = false;
-            this.btnFuelSupreme.Click += new System.EventHandler(this.btnFuelType_Click);
-            // 
-            // labelEnterGrade
-            // 
-            this.labelEnterGrade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelEnterGrade.BackColor = System.Drawing.Color.Firebrick;
-            this.labelEnterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnterGrade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelEnterGrade.Location = new System.Drawing.Point(3, 54);
-            this.labelEnterGrade.Name = "labelEnterGrade";
-            this.labelEnterGrade.Size = new System.Drawing.Size(263, 31);
-            this.labelEnterGrade.TabIndex = 2;
-            this.labelEnterGrade.Text = "Enter Grade";
-            this.labelEnterGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFuelRegular.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelRegular.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelRegular.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelRegular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelRegular.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelRegular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFuelRegular.Location = new System.Drawing.Point(3, 3);
+            this.btnFuelRegular.Name = "btnFuelRegular";
+            this.btnFuelRegular.Size = new System.Drawing.Size(262, 53);
+            this.btnFuelRegular.TabIndex = 1;
+            this.btnFuelRegular.Text = "Regular";
+            this.btnFuelRegular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFuelRegular.UseVisualStyleBackColor = false;
+            this.btnFuelRegular.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
             // pnlAddFuelAmount
             // 
@@ -1845,29 +1839,189 @@
             this.pnlAddFuelAmount.TabIndex = 8;
             this.pnlAddFuelAmount.Visible = false;
             // 
-            // labelFuelType
+            // btnFuelCalculatorEnter
             // 
-            this.labelFuelType.BackColor = System.Drawing.Color.Firebrick;
-            this.labelFuelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFuelType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelFuelType.Location = new System.Drawing.Point(10, 13);
-            this.labelFuelType.Name = "labelFuelType";
-            this.labelFuelType.Size = new System.Drawing.Size(306, 62);
-            this.labelFuelType.TabIndex = 0;
-            this.labelFuelType.Text = "label1";
-            this.labelFuelType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFuelCalculatorEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFuelCalculatorEnter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculatorEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculatorEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculatorEnter.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculatorEnter.Location = new System.Drawing.Point(166, 371);
+            this.btnFuelCalculatorEnter.Name = "btnFuelCalculatorEnter";
+            this.btnFuelCalculatorEnter.Size = new System.Drawing.Size(150, 53);
+            this.btnFuelCalculatorEnter.TabIndex = 11;
+            this.btnFuelCalculatorEnter.Text = "Enter";
+            this.btnFuelCalculatorEnter.UseVisualStyleBackColor = false;
+            this.btnFuelCalculatorEnter.Click += new System.EventHandler(this.btnFuelCalculatorEnter_Click);
             // 
-            // labelFuelPrice
+            // btnFuelCalculatorBackspace
             // 
-            this.labelFuelPrice.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.labelFuelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFuelPrice.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelFuelPrice.Location = new System.Drawing.Point(26, 80);
-            this.labelFuelPrice.Name = "labelFuelPrice";
-            this.labelFuelPrice.Size = new System.Drawing.Size(276, 50);
-            this.labelFuelPrice.TabIndex = 1;
-            this.labelFuelPrice.Text = "0.00";
-            this.labelFuelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFuelCalculatorBackspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFuelCalculatorBackspace.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculatorBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculatorBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculatorBackspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculatorBackspace.Location = new System.Drawing.Point(6, 371);
+            this.btnFuelCalculatorBackspace.Name = "btnFuelCalculatorBackspace";
+            this.btnFuelCalculatorBackspace.Size = new System.Drawing.Size(154, 53);
+            this.btnFuelCalculatorBackspace.TabIndex = 10;
+            this.btnFuelCalculatorBackspace.Text = "Backspace";
+            this.btnFuelCalculatorBackspace.UseVisualStyleBackColor = false;
+            this.btnFuelCalculatorBackspace.Click += new System.EventHandler(this.btnFuelCalculatorBackspace_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator25, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator20, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator10, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator150, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator120, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator100, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator75, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator50, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(322, 13);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(101, 411);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // btnFuelCalculator25
+            // 
+            this.btnFuelCalculator25.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator25.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator25.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator25.Location = new System.Drawing.Point(3, 105);
+            this.btnFuelCalculator25.Name = "btnFuelCalculator25";
+            this.btnFuelCalculator25.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator25.TabIndex = 8;
+            this.btnFuelCalculator25.Text = "25.00";
+            this.btnFuelCalculator25.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator25.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator20
+            // 
+            this.btnFuelCalculator20.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator20.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator20.Location = new System.Drawing.Point(3, 54);
+            this.btnFuelCalculator20.Name = "btnFuelCalculator20";
+            this.btnFuelCalculator20.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator20.TabIndex = 2;
+            this.btnFuelCalculator20.Text = "20.00";
+            this.btnFuelCalculator20.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator20.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator10
+            // 
+            this.btnFuelCalculator10.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator10.Location = new System.Drawing.Point(3, 3);
+            this.btnFuelCalculator10.Name = "btnFuelCalculator10";
+            this.btnFuelCalculator10.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator10.TabIndex = 1;
+            this.btnFuelCalculator10.Text = "10.00";
+            this.btnFuelCalculator10.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator10.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator150
+            // 
+            this.btnFuelCalculator150.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator150.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator150.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator150.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator150.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator150.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator150.Location = new System.Drawing.Point(3, 360);
+            this.btnFuelCalculator150.Name = "btnFuelCalculator150";
+            this.btnFuelCalculator150.Size = new System.Drawing.Size(95, 48);
+            this.btnFuelCalculator150.TabIndex = 7;
+            this.btnFuelCalculator150.Text = "150.00";
+            this.btnFuelCalculator150.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator150.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator120
+            // 
+            this.btnFuelCalculator120.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator120.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator120.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator120.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator120.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator120.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator120.Location = new System.Drawing.Point(3, 309);
+            this.btnFuelCalculator120.Name = "btnFuelCalculator120";
+            this.btnFuelCalculator120.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator120.TabIndex = 6;
+            this.btnFuelCalculator120.Text = "120.00";
+            this.btnFuelCalculator120.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator120.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator100
+            // 
+            this.btnFuelCalculator100.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator100.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator100.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator100.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator100.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator100.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator100.Location = new System.Drawing.Point(3, 258);
+            this.btnFuelCalculator100.Name = "btnFuelCalculator100";
+            this.btnFuelCalculator100.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator100.TabIndex = 5;
+            this.btnFuelCalculator100.Text = "100.00";
+            this.btnFuelCalculator100.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator100.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator75
+            // 
+            this.btnFuelCalculator75.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator75.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator75.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator75.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator75.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator75.Location = new System.Drawing.Point(3, 207);
+            this.btnFuelCalculator75.Name = "btnFuelCalculator75";
+            this.btnFuelCalculator75.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator75.TabIndex = 4;
+            this.btnFuelCalculator75.Text = "75.00";
+            this.btnFuelCalculator75.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator75.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculator50
+            // 
+            this.btnFuelCalculator50.BackColor = System.Drawing.Color.DimGray;
+            this.btnFuelCalculator50.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator50.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator50.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator50.Location = new System.Drawing.Point(3, 156);
+            this.btnFuelCalculator50.Name = "btnFuelCalculator50";
+            this.btnFuelCalculator50.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator50.TabIndex = 3;
+            this.btnFuelCalculator50.Text = "50.00";
+            this.btnFuelCalculator50.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator50.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
             // tableLayoutPanelFuelCalculator
             // 
@@ -1898,165 +2052,21 @@
             this.tableLayoutPanelFuelCalculator.Size = new System.Drawing.Size(316, 233);
             this.tableLayoutPanelFuelCalculator.TabIndex = 2;
             // 
-            // btnFuelCalculator7
+            // btnFuelCalculator000
             // 
-            this.btnFuelCalculator7.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator7.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator7.Location = new System.Drawing.Point(3, 3);
-            this.btnFuelCalculator7.Name = "btnFuelCalculator7";
-            this.btnFuelCalculator7.Size = new System.Drawing.Size(99, 52);
-            this.btnFuelCalculator7.TabIndex = 0;
-            this.btnFuelCalculator7.Text = "7";
-            this.btnFuelCalculator7.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator7.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator8
-            // 
-            this.btnFuelCalculator8.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator8.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator8.Location = new System.Drawing.Point(108, 3);
-            this.btnFuelCalculator8.Name = "btnFuelCalculator8";
-            this.btnFuelCalculator8.Size = new System.Drawing.Size(99, 52);
-            this.btnFuelCalculator8.TabIndex = 1;
-            this.btnFuelCalculator8.Text = "8";
-            this.btnFuelCalculator8.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator8.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator9
-            // 
-            this.btnFuelCalculator9.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator9.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator9.Location = new System.Drawing.Point(213, 3);
-            this.btnFuelCalculator9.Name = "btnFuelCalculator9";
-            this.btnFuelCalculator9.Size = new System.Drawing.Size(100, 52);
-            this.btnFuelCalculator9.TabIndex = 2;
-            this.btnFuelCalculator9.Text = "9";
-            this.btnFuelCalculator9.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator9.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator4
-            // 
-            this.btnFuelCalculator4.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator4.Location = new System.Drawing.Point(3, 61);
-            this.btnFuelCalculator4.Name = "btnFuelCalculator4";
-            this.btnFuelCalculator4.Size = new System.Drawing.Size(99, 52);
-            this.btnFuelCalculator4.TabIndex = 3;
-            this.btnFuelCalculator4.Text = "4";
-            this.btnFuelCalculator4.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator4.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator5
-            // 
-            this.btnFuelCalculator5.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator5.Location = new System.Drawing.Point(108, 61);
-            this.btnFuelCalculator5.Name = "btnFuelCalculator5";
-            this.btnFuelCalculator5.Size = new System.Drawing.Size(99, 52);
-            this.btnFuelCalculator5.TabIndex = 4;
-            this.btnFuelCalculator5.Text = "5";
-            this.btnFuelCalculator5.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator5.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator6
-            // 
-            this.btnFuelCalculator6.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator6.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator6.Location = new System.Drawing.Point(213, 61);
-            this.btnFuelCalculator6.Name = "btnFuelCalculator6";
-            this.btnFuelCalculator6.Size = new System.Drawing.Size(100, 52);
-            this.btnFuelCalculator6.TabIndex = 5;
-            this.btnFuelCalculator6.Text = "6";
-            this.btnFuelCalculator6.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator6.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator1
-            // 
-            this.btnFuelCalculator1.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator1.Location = new System.Drawing.Point(3, 119);
-            this.btnFuelCalculator1.Name = "btnFuelCalculator1";
-            this.btnFuelCalculator1.Size = new System.Drawing.Size(99, 52);
-            this.btnFuelCalculator1.TabIndex = 6;
-            this.btnFuelCalculator1.Text = "1";
-            this.btnFuelCalculator1.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator1.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator2
-            // 
-            this.btnFuelCalculator2.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator2.Location = new System.Drawing.Point(108, 119);
-            this.btnFuelCalculator2.Name = "btnFuelCalculator2";
-            this.btnFuelCalculator2.Size = new System.Drawing.Size(99, 52);
-            this.btnFuelCalculator2.TabIndex = 7;
-            this.btnFuelCalculator2.Text = "2";
-            this.btnFuelCalculator2.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator2.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator3
-            // 
-            this.btnFuelCalculator3.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator3.Location = new System.Drawing.Point(213, 119);
-            this.btnFuelCalculator3.Name = "btnFuelCalculator3";
-            this.btnFuelCalculator3.Size = new System.Drawing.Size(100, 52);
-            this.btnFuelCalculator3.TabIndex = 8;
-            this.btnFuelCalculator3.Text = "3";
-            this.btnFuelCalculator3.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator3.Click += new System.EventHandler(this.btnFuelCalculator_Click);
-            // 
-            // btnFuelCalculator0
-            // 
-            this.btnFuelCalculator0.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator0.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator0.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator0.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator0.Location = new System.Drawing.Point(3, 177);
-            this.btnFuelCalculator0.Name = "btnFuelCalculator0";
-            this.btnFuelCalculator0.Size = new System.Drawing.Size(99, 53);
-            this.btnFuelCalculator0.TabIndex = 9;
-            this.btnFuelCalculator0.Text = "0";
-            this.btnFuelCalculator0.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator0.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator000.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator000.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator000.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator000.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator000.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator000.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator000.Location = new System.Drawing.Point(213, 177);
+            this.btnFuelCalculator000.Name = "btnFuelCalculator000";
+            this.btnFuelCalculator000.Size = new System.Drawing.Size(100, 53);
+            this.btnFuelCalculator000.TabIndex = 11;
+            this.btnFuelCalculator000.Text = "000";
+            this.btnFuelCalculator000.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator000.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
             // btnFuelCalculator00
             // 
@@ -2074,205 +2084,205 @@
             this.btnFuelCalculator00.UseVisualStyleBackColor = false;
             this.btnFuelCalculator00.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator000
+            // btnFuelCalculator0
             // 
-            this.btnFuelCalculator000.BackColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator000.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator000.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator000.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator000.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator000.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator000.Location = new System.Drawing.Point(213, 177);
-            this.btnFuelCalculator000.Name = "btnFuelCalculator000";
-            this.btnFuelCalculator000.Size = new System.Drawing.Size(100, 53);
-            this.btnFuelCalculator000.TabIndex = 11;
-            this.btnFuelCalculator000.Text = "000";
-            this.btnFuelCalculator000.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator000.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator0.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator0.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator0.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator0.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator0.Location = new System.Drawing.Point(3, 177);
+            this.btnFuelCalculator0.Name = "btnFuelCalculator0";
+            this.btnFuelCalculator0.Size = new System.Drawing.Size(99, 53);
+            this.btnFuelCalculator0.TabIndex = 9;
+            this.btnFuelCalculator0.Text = "0";
+            this.btnFuelCalculator0.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator0.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // tableLayoutPanel2
+            // btnFuelCalculator3
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator25, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator20, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator10, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator150, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator120, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator100, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator75, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator50, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(322, 13);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 8;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(101, 411);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.btnFuelCalculator3.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator3.Location = new System.Drawing.Point(213, 119);
+            this.btnFuelCalculator3.Name = "btnFuelCalculator3";
+            this.btnFuelCalculator3.Size = new System.Drawing.Size(100, 52);
+            this.btnFuelCalculator3.TabIndex = 8;
+            this.btnFuelCalculator3.Text = "3";
+            this.btnFuelCalculator3.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator3.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator10
+            // btnFuelCalculator2
             // 
-            this.btnFuelCalculator10.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator10.Location = new System.Drawing.Point(3, 3);
-            this.btnFuelCalculator10.Name = "btnFuelCalculator10";
-            this.btnFuelCalculator10.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator10.TabIndex = 1;
-            this.btnFuelCalculator10.Text = "10.00";
-            this.btnFuelCalculator10.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator10.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator2.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator2.Location = new System.Drawing.Point(108, 119);
+            this.btnFuelCalculator2.Name = "btnFuelCalculator2";
+            this.btnFuelCalculator2.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator2.TabIndex = 7;
+            this.btnFuelCalculator2.Text = "2";
+            this.btnFuelCalculator2.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator2.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator20
+            // btnFuelCalculator1
             // 
-            this.btnFuelCalculator20.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator20.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator20.Location = new System.Drawing.Point(3, 54);
-            this.btnFuelCalculator20.Name = "btnFuelCalculator20";
-            this.btnFuelCalculator20.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator20.TabIndex = 2;
-            this.btnFuelCalculator20.Text = "20.00";
-            this.btnFuelCalculator20.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator20.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator1.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator1.Location = new System.Drawing.Point(3, 119);
+            this.btnFuelCalculator1.Name = "btnFuelCalculator1";
+            this.btnFuelCalculator1.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator1.TabIndex = 6;
+            this.btnFuelCalculator1.Text = "1";
+            this.btnFuelCalculator1.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator1.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator50
+            // btnFuelCalculator6
             // 
-            this.btnFuelCalculator50.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator50.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator50.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator50.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator50.Location = new System.Drawing.Point(3, 156);
-            this.btnFuelCalculator50.Name = "btnFuelCalculator50";
-            this.btnFuelCalculator50.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator50.TabIndex = 3;
-            this.btnFuelCalculator50.Text = "50.00";
-            this.btnFuelCalculator50.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator50.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator6.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator6.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator6.Location = new System.Drawing.Point(213, 61);
+            this.btnFuelCalculator6.Name = "btnFuelCalculator6";
+            this.btnFuelCalculator6.Size = new System.Drawing.Size(100, 52);
+            this.btnFuelCalculator6.TabIndex = 5;
+            this.btnFuelCalculator6.Text = "6";
+            this.btnFuelCalculator6.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator6.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator75
+            // btnFuelCalculator5
             // 
-            this.btnFuelCalculator75.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator75.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator75.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator75.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator75.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator75.Location = new System.Drawing.Point(3, 207);
-            this.btnFuelCalculator75.Name = "btnFuelCalculator75";
-            this.btnFuelCalculator75.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator75.TabIndex = 4;
-            this.btnFuelCalculator75.Text = "75.00";
-            this.btnFuelCalculator75.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator75.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator5.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator5.Location = new System.Drawing.Point(108, 61);
+            this.btnFuelCalculator5.Name = "btnFuelCalculator5";
+            this.btnFuelCalculator5.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator5.TabIndex = 4;
+            this.btnFuelCalculator5.Text = "5";
+            this.btnFuelCalculator5.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator5.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator100
+            // btnFuelCalculator4
             // 
-            this.btnFuelCalculator100.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator100.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator100.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator100.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator100.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator100.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator100.Location = new System.Drawing.Point(3, 258);
-            this.btnFuelCalculator100.Name = "btnFuelCalculator100";
-            this.btnFuelCalculator100.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator100.TabIndex = 5;
-            this.btnFuelCalculator100.Text = "100.00";
-            this.btnFuelCalculator100.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator100.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator4.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator4.Location = new System.Drawing.Point(3, 61);
+            this.btnFuelCalculator4.Name = "btnFuelCalculator4";
+            this.btnFuelCalculator4.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator4.TabIndex = 3;
+            this.btnFuelCalculator4.Text = "4";
+            this.btnFuelCalculator4.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator4.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator120
+            // btnFuelCalculator9
             // 
-            this.btnFuelCalculator120.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator120.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator120.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator120.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator120.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator120.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator120.Location = new System.Drawing.Point(3, 309);
-            this.btnFuelCalculator120.Name = "btnFuelCalculator120";
-            this.btnFuelCalculator120.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator120.TabIndex = 6;
-            this.btnFuelCalculator120.Text = "120.00";
-            this.btnFuelCalculator120.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator120.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator9.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator9.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator9.Location = new System.Drawing.Point(213, 3);
+            this.btnFuelCalculator9.Name = "btnFuelCalculator9";
+            this.btnFuelCalculator9.Size = new System.Drawing.Size(100, 52);
+            this.btnFuelCalculator9.TabIndex = 2;
+            this.btnFuelCalculator9.Text = "9";
+            this.btnFuelCalculator9.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator9.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator150
+            // btnFuelCalculator8
             // 
-            this.btnFuelCalculator150.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator150.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator150.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator150.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator150.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator150.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator150.Location = new System.Drawing.Point(3, 360);
-            this.btnFuelCalculator150.Name = "btnFuelCalculator150";
-            this.btnFuelCalculator150.Size = new System.Drawing.Size(95, 48);
-            this.btnFuelCalculator150.TabIndex = 7;
-            this.btnFuelCalculator150.Text = "150.00";
-            this.btnFuelCalculator150.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator150.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator8.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator8.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator8.Location = new System.Drawing.Point(108, 3);
+            this.btnFuelCalculator8.Name = "btnFuelCalculator8";
+            this.btnFuelCalculator8.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator8.TabIndex = 1;
+            this.btnFuelCalculator8.Text = "8";
+            this.btnFuelCalculator8.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator8.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculator25
+            // btnFuelCalculator7
             // 
-            this.btnFuelCalculator25.BackColor = System.Drawing.Color.DimGray;
-            this.btnFuelCalculator25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelCalculator25.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculator25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculator25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculator25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator25.Location = new System.Drawing.Point(3, 105);
-            this.btnFuelCalculator25.Name = "btnFuelCalculator25";
-            this.btnFuelCalculator25.Size = new System.Drawing.Size(95, 45);
-            this.btnFuelCalculator25.TabIndex = 8;
-            this.btnFuelCalculator25.Text = "25.00";
-            this.btnFuelCalculator25.UseVisualStyleBackColor = false;
-            this.btnFuelCalculator25.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            this.btnFuelCalculator7.BackColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFuelCalculator7.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculator7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculator7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculator7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculator7.Location = new System.Drawing.Point(3, 3);
+            this.btnFuelCalculator7.Name = "btnFuelCalculator7";
+            this.btnFuelCalculator7.Size = new System.Drawing.Size(99, 52);
+            this.btnFuelCalculator7.TabIndex = 0;
+            this.btnFuelCalculator7.Text = "7";
+            this.btnFuelCalculator7.UseVisualStyleBackColor = false;
+            this.btnFuelCalculator7.Click += new System.EventHandler(this.btnFuelCalculator_Click);
             // 
-            // btnFuelCalculatorBackspace
+            // labelFuelPrice
             // 
-            this.btnFuelCalculatorBackspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFuelCalculatorBackspace.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculatorBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculatorBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculatorBackspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculatorBackspace.Location = new System.Drawing.Point(6, 371);
-            this.btnFuelCalculatorBackspace.Name = "btnFuelCalculatorBackspace";
-            this.btnFuelCalculatorBackspace.Size = new System.Drawing.Size(154, 53);
-            this.btnFuelCalculatorBackspace.TabIndex = 10;
-            this.btnFuelCalculatorBackspace.Text = "Backspace";
-            this.btnFuelCalculatorBackspace.UseVisualStyleBackColor = false;
-            this.btnFuelCalculatorBackspace.Click += new System.EventHandler(this.btnFuelCalculatorBackspace_Click);
+            this.labelFuelPrice.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.labelFuelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFuelPrice.ForeColor = System.Drawing.Color.Firebrick;
+            this.labelFuelPrice.Location = new System.Drawing.Point(26, 80);
+            this.labelFuelPrice.Name = "labelFuelPrice";
+            this.labelFuelPrice.Size = new System.Drawing.Size(276, 50);
+            this.labelFuelPrice.TabIndex = 1;
+            this.labelFuelPrice.Text = "0.00";
+            this.labelFuelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnFuelCalculatorEnter
+            // labelFuelType
             // 
-            this.btnFuelCalculatorEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFuelCalculatorEnter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculatorEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculatorEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculatorEnter.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculatorEnter.Location = new System.Drawing.Point(166, 371);
-            this.btnFuelCalculatorEnter.Name = "btnFuelCalculatorEnter";
-            this.btnFuelCalculatorEnter.Size = new System.Drawing.Size(150, 53);
-            this.btnFuelCalculatorEnter.TabIndex = 11;
-            this.btnFuelCalculatorEnter.Text = "Enter";
-            this.btnFuelCalculatorEnter.UseVisualStyleBackColor = false;
-            this.btnFuelCalculatorEnter.Click += new System.EventHandler(this.btnFuelCalculatorEnter_Click);
+            this.labelFuelType.BackColor = System.Drawing.Color.Firebrick;
+            this.labelFuelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFuelType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelFuelType.Location = new System.Drawing.Point(10, 13);
+            this.labelFuelType.Name = "labelFuelType";
+            this.labelFuelType.Size = new System.Drawing.Size(306, 62);
+            this.labelFuelType.TabIndex = 0;
+            this.labelFuelType.Text = "label1";
+            this.labelFuelType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnPizzaSmall
+            // 
+            this.btnPizzaSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPizzaSmall.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPizzaSmall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPizzaSmall.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPizzaSmall.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPizzaSmall.Location = new System.Drawing.Point(227, 88);
+            this.btnPizzaSmall.Name = "btnPizzaSmall";
+            this.btnPizzaSmall.Size = new System.Drawing.Size(106, 79);
+            this.btnPizzaSmall.TabIndex = 41;
+            this.btnPizzaSmall.Text = "PIZZA SLICE SMALL";
+            this.btnPizzaSmall.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPizzaSmall.UseVisualStyleBackColor = false;
+            this.btnPizzaSmall.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // MainForm
             // 
@@ -2313,8 +2323,8 @@
             this.pnlFuelTypeSelect.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnlAddFuelAmount.ResumeLayout(false);
-            this.tableLayoutPanelFuelCalculator.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanelFuelCalculator.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2388,18 +2398,17 @@
         private System.Windows.Forms.Button btnAddEngOil10W30;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnVegSandwich;
+        private System.Windows.Forms.Button btnChickenSandwich;
         private System.Windows.Forms.Button btnAddEngOil5W30;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnWedges;
+        private System.Windows.Forms.Button btnHotdog;
+        private System.Windows.Forms.Button btnPizzaLarge;
+        private System.Windows.Forms.Button btnPureLifeWater;
         private System.Windows.Forms.Button btnAddLotto10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSmartWater;
+        private System.Windows.Forms.Button btnFijiWater;
+        private System.Windows.Forms.Button btnDasaniWater;
         private System.Windows.Forms.Button btnAddLotto1;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Timer timerDateTime;
@@ -2453,6 +2462,7 @@
         private System.Windows.Forms.Button btnFuelCalculatorEnter;
         private System.Windows.Forms.Button btnFuelCalculatorBackspace;
         private System.Windows.Forms.Button btnFuelCalculator25;
+        private System.Windows.Forms.Button btnPizzaSmall;
     }
 }
 
