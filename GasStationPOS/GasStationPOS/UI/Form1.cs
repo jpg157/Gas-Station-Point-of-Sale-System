@@ -11,9 +11,24 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace GasStationPOS
 {
+    /// <summary>
+    /// MainForm class for managing the Gas Station Point of Sale (POS) system. 
+    /// It handles user interactions with the interface, such as adding products to the cart, 
+    /// updating subtotal and remaining balance, and processing transactions. The form includes 
+    /// functionality for displaying current date and time, selecting quantities, and managing the cart. 
+    /// It also manages fuel transactions, including selecting fuel types and updating fuel price amounts.
+    /// 
+    /// Author: Mansib Talukder
+    /// Author: Jason Lau
+    /// Author: Vincent Fung
+    /// Date: 19 March 2025
+    ///
     public partial class MainForm : Form
     {
-        private int selectedQuantity = 1; // Default quantity
+        // Default quantity
+        private int selectedQuantity = 1; 
+
+        // Dictionary to store product names and their associated prices
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>
         {
             { "HOT BEVERAGE 12OZ", 2.00m },
@@ -43,34 +58,51 @@ namespace GasStationPOS
             { "FIJI WATER BOTTLE 500ML", 3.49m },
             { "SMART WATER BOTTLE 350ML", 3.59m }
         };
+
+        // Variables to track the subtotal and the amount tendered by the customer
         private decimal subtotal = 0;
         private decimal tendered = 0; // Will be updated later
+
+        // Flag to manage the activation state of fuel pumps
         private bool fuelPumpsActivated = false;
 
-        // Fuel prices
+        // Fuel prices for different fuel types
         private decimal fuelRegularPriceCAD = 1.649m;
         private decimal fuelPlusPriceCAD = 1.849m;
         private decimal fuelSupremePriceCad = 2.049m;
-        private string fuelAmountInput = "";
-        private decimal fuelPrice = 0.00m; // Holds the selected fuel price
 
+        // Variable to store the input for fuel amount and selected fuel price
+        private string fuelAmountInput = "";
+        private decimal fuelPrice = 0.00m;
+
+        /// <summary>
+        /// Constructor to initialize the MainForm
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event triggered when the form is loaded
+        /// </summary>
         private void MainForm_Load(object sender, EventArgs e)
         {
             timerDateTime.Start(); // Start the timer on form load
         }
 
+        /// <summary>
+        /// Event triggered to update the date and time display
+        /// </summary>
         private void timerDateTime_Tick(object sender, EventArgs e)
         {
             // Update the label with the current date and time
             lblDateTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
-        // Quantity Button Click Event
+        /// <summary>
+        /// Event handler for selecting the quantity of products
+        /// </summary>
         private void QuantityButton_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -81,7 +113,9 @@ namespace GasStationPOS
         }
 
 
-        // Helper Method to update the visibility of pay buttons
+        /// <summary>
+        /// Helper Method to toggle the visibility of pay buttons
+        /// </summary>
         private void UpdatePayButtonVisibility()
         {
             if (listCart.Items.Count == 0)
@@ -96,7 +130,9 @@ namespace GasStationPOS
             }
         }
 
-        // Hides visibility modified panels
+        /// <summary>
+        /// Helper method to hide all modified panels
+        /// </summary>
         private void HidePanels()
         {
             pnlProducts.Visible = false;
@@ -108,7 +144,9 @@ namespace GasStationPOS
             pnlAddFuelAmount.Visible = false;
         }
 
-
+        /// <summary>
+        /// Method to update the UI after adding items to the cart
+        /// </summary>
         private void UpdateAfterAddingToCart()
         {
             labelSubtotal.Text = $"${subtotal:F2}";
@@ -123,7 +161,9 @@ namespace GasStationPOS
             UpdatePayButtonVisibility();
         }
 
-        // Product Button Click Event
+        /// <summary>
+        /// Event handler for adding products to the cart
+        /// </summary>
         private void ProductButton_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -143,6 +183,9 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// // Event handler for clearing the cart
+        /// </summary>
         private void btnClear_Click(object sender, EventArgs e)
         {
             listCart.Items.Clear();
@@ -155,7 +198,9 @@ namespace GasStationPOS
             UpdatePayButtonVisibility();
         }
 
-        // Click on Cart Item
+        /// <summary>
+        /// Event handler for selecting a cart item
+        /// </summary>
         private void listCart_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
@@ -173,6 +218,9 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Helper method to reset the UI to its initial state
+        /// </summary>
         private void reset()
         {
             // Show pnlProducts, pnlBottomNavMain
@@ -190,13 +238,17 @@ namespace GasStationPOS
             fuelAmountInput = "";
         }
 
-        // Back Button Click
+        /// <summary>
+        /// Event handler for the back button click
+        /// </summary>
         private void btnBack_Click(object sender, EventArgs e)
         {
             reset();
         }
 
-        // Remove Item Button Click
+        /// <summary>
+        /// Event handler for removing an item from the cart
+        /// </summary>
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
             if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
@@ -227,6 +279,10 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Highlights the fuel pump buttons 
+        /// by changing their border color to gold and border size to 3.
+        /// </summary>
         private void HighlightFuelPumps()
         {
             for (int i = 1; i <= 8; i++)
@@ -240,6 +296,10 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Resets the appearance of all fuel pump buttons 
+        /// by changing their border color to black and border size to 1.
+        /// </summary>
         private void UnhighlightFuelPumps()
         {
             for (int i = 1; i <= 8; i++)
@@ -253,6 +313,10 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Handles the "Pay Fuel" button click event, hides other panels, shows the fuel confirmation panel,
+        /// and highlights the fuel pumps for selection.
+        /// </summary>
         private void btnPayFuel_Click(object sender, EventArgs e)
         {
             // Show pnlFuelConfirmation, pnlBottomNavBack
@@ -265,6 +329,11 @@ namespace GasStationPOS
             fuelPumpsActivated = true;
         }
 
+        /// <summary>
+        /// Handles the fuel pump selection by updating the pump number label 
+        /// and navigating to the fuel type selection panel. 
+        /// Highlights the selected fuel pump and unhighlights the others.
+        /// </summary>
         private void btnFuelPump_Click(object sender, EventArgs e)
         {
             if (fuelPumpsActivated == false)
@@ -296,6 +365,10 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Handles the fuel type selection by updating the label with the selected fuel type 
+        /// and showing the fuel amount input panel.
+        /// </summary>
         private void btnFuelType_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -314,6 +387,10 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Handles the numeric input for the fuel price calculator by appending or replacing input values.
+        /// Updates the fuel price label accordingly.
+        /// </summary>
         private void btnFuelCalculator_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -343,6 +420,9 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Updates the fuel price label by converting the input fuel amount to a decimal format and displaying it.
+        /// </summary>
         private void UpdateFuelPriceLabel()
         {
             if (string.IsNullOrEmpty(fuelAmountInput))
@@ -356,6 +436,10 @@ namespace GasStationPOS
             labelFuelPrice.Text = amount.ToString("0.00");
         }
 
+        /// <summary>
+        /// Handles the backspace input for the fuel price calculator, removing the last character from the fuel input.
+        /// Updates the fuel price label accordingly.
+        /// </summary>
         private void btnFuelCalculatorBackspace_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(fuelAmountInput))
@@ -365,6 +449,10 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Validates the entered fuel amount, calculates the total price, and adds the fuel to the cart if valid.
+        /// If invalid, shows an error message.
+        /// </summary>
         private void btnFuelCalculatorEnter_Click(object sender, EventArgs e)
         {
             if (decimal.TryParse(labelFuelPrice.Text, out decimal total) && total > 0)
