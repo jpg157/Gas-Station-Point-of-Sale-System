@@ -1,0 +1,4 @@
+﻿
+- Models should only contain data model structures. The only functionality should be validation (the data annotation headers on top of the instance fields)
+
+- Each model contains auto-implemented properties, that automatically generate the equivalent private fields behind the scenes.
