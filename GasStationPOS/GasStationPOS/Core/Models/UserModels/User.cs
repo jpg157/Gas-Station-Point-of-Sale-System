@@ -32,7 +32,7 @@ namespace GasStationPOS.Core.Models.UserModels
         [StringLength(1000, MinimumLength = 1, ErrorMessage = "FirstName must be between 1 and 1000 characters")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "t is required")]
+        [Required(ErrorMessage = "LastName is required")]
         [StringLength(1000, MinimumLength = 1, ErrorMessage = "LastName must be between 1 and 1000 characters")]
         public string LastName { get; set; }
 

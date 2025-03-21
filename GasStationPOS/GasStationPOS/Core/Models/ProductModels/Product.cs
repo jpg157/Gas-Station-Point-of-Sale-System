@@ -15,7 +15,7 @@ namespace GasStationPOS.Core.Models.ProductModels
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Product Name is required")]
-        [StringLength(100, MinimumLength = 1, ErrorMessage  = "Product name must be between 1 and 100 characters")]
+        [StringLength(30, MinimumLength = 1, ErrorMessage  = "Product name must be between 1 and 30 characters")]
         public string ProductName { get; set; }
 
         [Required(ErrorMessage = "Description is required")]
