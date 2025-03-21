@@ -7,21 +7,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace GasStationPOS.Core.Models.Product
+namespace GasStationPOS.Core.Models.ProductModels
 {
     abstract class Product
     {
-        [Required]
+        [Required(ErrorMessage = "Id is required")]
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required(ErrorMessage = "Product Name is required")]
+        [StringLength(30, MinimumLength = 1, ErrorMessage  = "Product name must be between 1 and 30 characters")]
         public string ProductName { get; set; }
 
-        [Required]
-        [StringLength(500)]
+        [Required(ErrorMessage = "Description is required")]
+        [StringLength(500, MinimumLength = 1, ErrorMessage = "Description must be between 1 and 500 characters")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "Price (dollars) is required")]
         [Range(0.0, 10000.0, ErrorMessage = "Price (dollars) must be between 0.0 and 10000.0")]
         public decimal PriceDollars { get; set; }
 

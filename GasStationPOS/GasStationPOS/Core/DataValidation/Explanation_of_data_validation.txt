@@ -1,0 +1,8 @@
+﻿Data validation folder contains a class DataModelValidator
+
+Contains:
+
+- A Validate method to validate all of the models, checking the validation data attributes above each of the fields. 
+It will throw an exception containing all of the error messages (on error when presenter attempts to set using invalid values).
+
+- (May contain) any data validation methods that cannot be done using validation data attributes.

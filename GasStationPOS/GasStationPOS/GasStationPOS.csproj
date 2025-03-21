@@ -48,15 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CartItem.cs" />
-    <Compile Include="Core\Models\Product\RetailProduct.cs" />
-    <Compile Include="Core\Models\Product\FuelProduct.cs" />
-    <Compile Include="Core\Models\Product\Product.cs" />
-    <Compile Include="Core\Models\Receipt\Receipt.cs" />
-    <Compile Include="Core\Models\Transaction\Transaction.cs" />
-    <Compile Include="Core\Models\User\Admin.cs" />
-    <Compile Include="Core\Models\User\Cashier.cs" />
-    <Compile Include="Core\Models\User\Manager.cs" />
-    <Compile Include="Core\Models\User\User.cs" />
+    <Compile Include="Core\Models\ProductModels\RetailProduct.cs" />
+    <Compile Include="Core\Models\ProductModels\FuelProduct.cs" />
+    <Compile Include="Core\Models\ProductModels\Product.cs" />
+    <Compile Include="Core\Models\ReceiptModels\Receipt.cs" />
+    <Compile Include="Core\Models\SessionModels\Session.cs" />
+    <Compile Include="Core\Models\TransactionModels\Transaction.cs" />
+    <Compile Include="Core\Models\UserModels\Admin.cs" />
+    <Compile Include="Core\Models\UserModels\Cashier.cs" />
+    <Compile Include="Core\Models\UserModels\Manager.cs" />
+    <Compile Include="Core\Models\UserModels\User.cs" />
     <Compile Include="Core\Services\AuthenticationService.cs" />
     <Compile Include="Core\Services\InventoryService.cs" />
     <Compile Include="Core\Services\LoginService.cs" />
@@ -99,11 +100,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Database\" />
+    <Folder Include="Core\DataValidation\" />
+    <Folder Include="Core\DTOs\" />
     <Folder Include="Resources\" />
     <Folder Include="UI\UIFormValidation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Core\Controllers\Explanation_of_controllers.txt" />
+    <Content Include="Core\Models\Explanation_of_models.txt" />
     <Content Include="Core\Services\Explanation_of_services.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
