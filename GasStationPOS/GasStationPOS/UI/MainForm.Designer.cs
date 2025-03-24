@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlBottomNavMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanelBottomNavMain = new System.Windows.Forms.TableLayoutPanel();
             this.btnPayCash = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@
             this.labalCartHeader = new System.Windows.Forms.Label();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.tableLayoutPanelProducts = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPizzaSmall = new System.Windows.Forms.Button();
             this.btnAddGasCan = new System.Windows.Forms.Button();
             this.btnAddCoolant378 = new System.Windows.Forms.Button();
             this.btnAddCoolant185 = new System.Windows.Forms.Button();
@@ -93,7 +95,6 @@
             this.btnWedges = new System.Windows.Forms.Button();
             this.btnHotdog = new System.Windows.Forms.Button();
             this.btnPizzaLarge = new System.Windows.Forms.Button();
-            this.btnPureLifeWater = new System.Windows.Forms.Button();
             this.btnAddLotto10 = new System.Windows.Forms.Button();
             this.btnSmartWater = new System.Windows.Forms.Button();
             this.btnFijiWater = new System.Windows.Forms.Button();
@@ -105,6 +106,7 @@
             this.btnAddPropaneExch = new System.Windows.Forms.Button();
             this.btnAddWindshieldWasher = new System.Windows.Forms.Button();
             this.btnAddPropane = new System.Windows.Forms.Button();
+            this.btnPureLifeWater = new System.Windows.Forms.Button();
             this.tableLayoutPanelQuantity = new System.Windows.Forms.TableLayoutPanel();
             this.btnQty999 = new System.Windows.Forms.Button();
             this.btnQty100 = new System.Windows.Forms.Button();
@@ -161,7 +163,18 @@
             this.btnFuelCalculator7 = new System.Windows.Forms.Button();
             this.labelFuelPrice = new System.Windows.Forms.Label();
             this.labelFuelType = new System.Windows.Forms.Label();
-            this.btnPizzaSmall = new System.Windows.Forms.Button();
+            this.tabelLayoutPanelLogin = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxLoginMenu = new System.Windows.Forms.PictureBox();
+            this.panelLoginMenu = new System.Windows.Forms.Panel();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.labelLoginDescription = new System.Windows.Forms.Label();
+            this.textBoxAccountID = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelAccountID = new System.Windows.Forms.Label();
+            this.labelLoginError = new System.Windows.Forms.Label();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
@@ -183,6 +196,10 @@
             this.pnlAddFuelAmount.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanelFuelCalculator.SuspendLayout();
+            this.tabelLayoutPanelLogin.SuspendLayout();
+            this.tableLayoutPanelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginMenu)).BeginInit();
+            this.panelLoginMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBottomNavMain
@@ -476,7 +493,7 @@
             // 
             // pnlFuelPumps
             // 
-            this.pnlFuelPumps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pnlFuelPumps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlFuelPumps.Controls.Add(this.tableLayoutPanelFuelPumps);
             this.pnlFuelPumps.Location = new System.Drawing.Point(1153, 55);
@@ -649,7 +666,7 @@
             // 
             // pnlCart
             // 
-            this.pnlCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pnlCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlCart.Controls.Add(this.pnlSubtotal);
             this.pnlCart.Controls.Add(this.listCart);
@@ -760,8 +777,8 @@
             // 
             // pnlProducts
             // 
-            this.pnlProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProducts.BackColor = System.Drawing.Color.Silver;
             this.pnlProducts.Controls.Add(this.tableLayoutPanelProducts);
@@ -773,8 +790,8 @@
             // 
             // tableLayoutPanelProducts
             // 
-            this.tableLayoutPanelProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tableLayoutPanelProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelProducts.ColumnCount = 6;
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -830,6 +847,22 @@
             this.tableLayoutPanelProducts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.Size = new System.Drawing.Size(678, 512);
             this.tableLayoutPanelProducts.TabIndex = 1;
+            // 
+            // btnPizzaSmall
+            // 
+            this.btnPizzaSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPizzaSmall.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPizzaSmall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPizzaSmall.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPizzaSmall.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPizzaSmall.Location = new System.Drawing.Point(227, 88);
+            this.btnPizzaSmall.Name = "btnPizzaSmall";
+            this.btnPizzaSmall.Size = new System.Drawing.Size(106, 79);
+            this.btnPizzaSmall.TabIndex = 41;
+            this.btnPizzaSmall.Text = "PIZZA SLICE SMALL";
+            this.btnPizzaSmall.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPizzaSmall.UseVisualStyleBackColor = false;
+            this.btnPizzaSmall.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // btnAddGasCan
             // 
@@ -1189,22 +1222,6 @@
             this.btnPizzaLarge.UseVisualStyleBackColor = false;
             this.btnPizzaLarge.Click += new System.EventHandler(this.ProductButton_Click);
             // 
-            // btnPureLifeWater
-            // 
-            this.btnPureLifeWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
-            this.btnPureLifeWater.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPureLifeWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPureLifeWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPureLifeWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPureLifeWater.Location = new System.Drawing.Point(339, 3);
-            this.btnPureLifeWater.Name = "btnPureLifeWater";
-            this.btnPureLifeWater.Size = new System.Drawing.Size(106, 79);
-            this.btnPureLifeWater.TabIndex = 17;
-            this.btnPureLifeWater.Text = "PURELIFE WATER BOTTLE 500ML";
-            this.btnPureLifeWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPureLifeWater.UseVisualStyleBackColor = false;
-            this.btnPureLifeWater.Click += new System.EventHandler(this.ProductButton_Click);
-            // 
             // btnAddLotto10
             // 
             this.btnAddLotto10.BackColor = System.Drawing.Color.DarkRed;
@@ -1379,9 +1396,25 @@
             this.btnAddPropane.UseVisualStyleBackColor = false;
             this.btnAddPropane.Click += new System.EventHandler(this.ProductButton_Click);
             // 
+            // btnPureLifeWater
+            // 
+            this.btnPureLifeWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnPureLifeWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPureLifeWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPureLifeWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPureLifeWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPureLifeWater.Location = new System.Drawing.Point(339, 3);
+            this.btnPureLifeWater.Name = "btnPureLifeWater";
+            this.btnPureLifeWater.Size = new System.Drawing.Size(106, 79);
+            this.btnPureLifeWater.TabIndex = 17;
+            this.btnPureLifeWater.Text = "PURELIFE WATER BOTTLE 500ML";
+            this.btnPureLifeWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPureLifeWater.UseVisualStyleBackColor = false;
+            this.btnPureLifeWater.Click += new System.EventHandler(this.ProductButton_Click);
+            // 
             // tableLayoutPanelQuantity
             // 
-            this.tableLayoutPanelQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tableLayoutPanelQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelQuantity.ColumnCount = 10;
             this.tableLayoutPanelQuantity.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -1568,7 +1601,7 @@
             // 
             // pnlBottomNavBack
             // 
-            this.pnlBottomNavBack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlBottomNavBack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBottomNavBack.Controls.Add(this.tableLayoutPanelBottomNavBack);
             this.pnlBottomNavBack.Location = new System.Drawing.Point(0, 643);
@@ -1631,8 +1664,8 @@
             // 
             // labelSelectedItem
             // 
-            this.labelSelectedItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.labelSelectedItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSelectedItem.BackColor = System.Drawing.Color.Firebrick;
             this.labelSelectedItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1701,8 +1734,8 @@
             // 
             // labelFuelConfirmation
             // 
-            this.labelFuelConfirmation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.labelFuelConfirmation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFuelConfirmation.BackColor = System.Drawing.Color.DimGray;
             this.labelFuelConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2268,21 +2301,151 @@
             this.labelFuelType.Text = "label1";
             this.labelFuelType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnPizzaSmall
+            // tabelLayoutPanelLogin
             // 
-            this.btnPizzaSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPizzaSmall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPizzaSmall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPizzaSmall.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPizzaSmall.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPizzaSmall.Location = new System.Drawing.Point(227, 88);
-            this.btnPizzaSmall.Name = "btnPizzaSmall";
-            this.btnPizzaSmall.Size = new System.Drawing.Size(106, 79);
-            this.btnPizzaSmall.TabIndex = 41;
-            this.btnPizzaSmall.Text = "PIZZA SLICE SMALL";
-            this.btnPizzaSmall.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPizzaSmall.UseVisualStyleBackColor = false;
-            this.btnPizzaSmall.Click += new System.EventHandler(this.ProductButton_Click);
+            this.tabelLayoutPanelLogin.ColumnCount = 3;
+            this.tabelLayoutPanelLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tabelLayoutPanelLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tabelLayoutPanelLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tabelLayoutPanelLogin.Controls.Add(this.tableLayoutPanelMenu, 1, 1);
+            this.tabelLayoutPanelLogin.Location = new System.Drawing.Point(0, 0);
+            this.tabelLayoutPanelLogin.Name = "tabelLayoutPanelLogin";
+            this.tabelLayoutPanelLogin.RowCount = 3;
+            this.tabelLayoutPanelLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tabelLayoutPanelLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tabelLayoutPanelLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tabelLayoutPanelLogin.Size = new System.Drawing.Size(1480, 725);
+            this.tabelLayoutPanelLogin.TabIndex = 9;
+            // 
+            // tableLayoutPanelMenu
+            // 
+            this.tableLayoutPanelMenu.ColumnCount = 2;
+            this.tableLayoutPanelMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanelMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanelMenu.Controls.Add(this.pictureBoxLoginMenu, 0, 0);
+            this.tableLayoutPanelMenu.Controls.Add(this.panelLoginMenu, 1, 0);
+            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(225, 111);
+            this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
+            this.tableLayoutPanelMenu.RowCount = 1;
+            this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(1030, 501);
+            this.tableLayoutPanelMenu.TabIndex = 0;
+            // 
+            // pictureBoxLoginMenu
+            // 
+            this.pictureBoxLoginMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoginMenu.Image")));
+            this.pictureBoxLoginMenu.InitialImage = null;
+            this.pictureBoxLoginMenu.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLoginMenu.Name = "pictureBoxLoginMenu";
+            this.pictureBoxLoginMenu.Size = new System.Drawing.Size(406, 495);
+            this.pictureBoxLoginMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLoginMenu.TabIndex = 0;
+            this.pictureBoxLoginMenu.TabStop = false;
+            // 
+            // panelLoginMenu
+            // 
+            this.panelLoginMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelLoginMenu.Controls.Add(this.labelLoginError);
+            this.panelLoginMenu.Controls.Add(this.labelAccountID);
+            this.panelLoginMenu.Controls.Add(this.buttonLogin);
+            this.panelLoginMenu.Controls.Add(this.textBoxPassword);
+            this.panelLoginMenu.Controls.Add(this.textBoxAccountID);
+            this.panelLoginMenu.Controls.Add(this.labelPassword);
+            this.panelLoginMenu.Controls.Add(this.labelLoginDescription);
+            this.panelLoginMenu.Controls.Add(this.labelLogin);
+            this.panelLoginMenu.Location = new System.Drawing.Point(415, 3);
+            this.panelLoginMenu.Name = "panelLoginMenu";
+            this.panelLoginMenu.Size = new System.Drawing.Size(612, 495);
+            this.panelLoginMenu.TabIndex = 1;
+            // 
+            // labelLogin
+            // 
+            this.labelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.Location = new System.Drawing.Point(-1, 39);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(615, 55);
+            this.labelLogin.TabIndex = 0;
+            this.labelLogin.Text = "Log In";
+            this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelLoginDescription
+            // 
+            this.labelLoginDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoginDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoginDescription.Location = new System.Drawing.Point(-1, 108);
+            this.labelLoginDescription.Name = "labelLoginDescription";
+            this.labelLoginDescription.Size = new System.Drawing.Size(612, 29);
+            this.labelLoginDescription.TabIndex = 1;
+            this.labelLoginDescription.Text = "Login to start your session";
+            this.labelLoginDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxAccountID
+            // 
+            this.textBoxAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccountID.Location = new System.Drawing.Point(165, 196);
+            this.textBoxAccountID.Name = "textBoxAccountID";
+            this.textBoxAccountID.Size = new System.Drawing.Size(276, 44);
+            this.textBoxAccountID.TabIndex = 4;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.textBoxPassword.Location = new System.Drawing.Point(169, 279);
+            this.textBoxPassword.Multiline = true;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '⛽';
+            this.textBoxPassword.Size = new System.Drawing.Size(272, 41);
+            this.textBoxPassword.TabIndex = 5;
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonLogin.Location = new System.Drawing.Point(97, 352);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(409, 67);
+            this.buttonLogin.TabIndex = 6;
+            this.buttonLogin.Text = "Log In";
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Location = new System.Drawing.Point(165, 251);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(92, 24);
+            this.labelPassword.TabIndex = 2;
+            this.labelPassword.Text = "Password";
+            // 
+            // labelAccountID
+            // 
+            this.labelAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelAccountID.AutoSize = true;
+            this.labelAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccountID.Location = new System.Drawing.Point(161, 165);
+            this.labelAccountID.Name = "labelAccountID";
+            this.labelAccountID.Size = new System.Drawing.Size(107, 24);
+            this.labelAccountID.TabIndex = 7;
+            this.labelAccountID.Text = "Account ID:";
+            // 
+            // labelLoginError
+            // 
+            this.labelLoginError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoginError.ForeColor = System.Drawing.Color.Red;
+            this.labelLoginError.Location = new System.Drawing.Point(0, 435);
+            this.labelLoginError.Name = "labelLoginError";
+            this.labelLoginError.Size = new System.Drawing.Size(612, 29);
+            this.labelLoginError.TabIndex = 8;
+            this.labelLoginError.Text = "Error: username or password incorrect";
+            this.labelLoginError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -2290,6 +2453,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1480, 725);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.pnlFuelPumps);
@@ -2325,6 +2489,11 @@
             this.pnlAddFuelAmount.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanelFuelCalculator.ResumeLayout(false);
+            this.tabelLayoutPanelLogin.ResumeLayout(false);
+            this.tableLayoutPanelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginMenu)).EndInit();
+            this.panelLoginMenu.ResumeLayout(false);
+            this.panelLoginMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2463,6 +2632,18 @@
         private System.Windows.Forms.Button btnFuelCalculatorBackspace;
         private System.Windows.Forms.Button btnFuelCalculator25;
         private System.Windows.Forms.Button btnPizzaSmall;
+        private System.Windows.Forms.TableLayoutPanel tabelLayoutPanelLogin;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenu;
+        private System.Windows.Forms.PictureBox pictureBoxLoginMenu;
+        private System.Windows.Forms.Panel panelLoginMenu;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxAccountID;
+        private System.Windows.Forms.Label labelLoginDescription;
+        private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelAccountID;
+        private System.Windows.Forms.Label labelLoginError;
     }
 }
 
