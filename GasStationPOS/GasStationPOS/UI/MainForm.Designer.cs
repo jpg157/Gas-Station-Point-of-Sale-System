@@ -167,14 +167,14 @@
             this.tableLayoutPanelMenu = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLoginMenu = new System.Windows.Forms.PictureBox();
             this.panelLoginMenu = new System.Windows.Forms.Panel();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.labelLoginDescription = new System.Windows.Forms.Label();
-            this.textBoxAccountID = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.labelAccountID = new System.Windows.Forms.Label();
             this.labelLoginError = new System.Windows.Forms.Label();
+            this.labelAccountID = new System.Windows.Forms.Label();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxAccountID = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelLoginDescription = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
@@ -2358,47 +2358,29 @@
             this.panelLoginMenu.Size = new System.Drawing.Size(612, 495);
             this.panelLoginMenu.TabIndex = 1;
             // 
-            // labelLogin
+            // labelLoginError
             // 
-            this.labelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogin.Location = new System.Drawing.Point(-1, 39);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(615, 55);
-            this.labelLogin.TabIndex = 0;
-            this.labelLogin.Text = "Log In";
-            this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelLoginError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoginError.ForeColor = System.Drawing.Color.Red;
+            this.labelLoginError.Location = new System.Drawing.Point(0, 435);
+            this.labelLoginError.Name = "labelLoginError";
+            this.labelLoginError.Size = new System.Drawing.Size(612, 29);
+            this.labelLoginError.TabIndex = 8;
+            this.labelLoginError.Text = "Error: username or password incorrect";
+            this.labelLoginError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelLoginError.Visible = false;
             // 
-            // labelLoginDescription
+            // labelAccountID
             // 
-            this.labelLoginDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelLoginDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoginDescription.Location = new System.Drawing.Point(-1, 108);
-            this.labelLoginDescription.Name = "labelLoginDescription";
-            this.labelLoginDescription.Size = new System.Drawing.Size(612, 29);
-            this.labelLoginDescription.TabIndex = 1;
-            this.labelLoginDescription.Text = "Login to start your session";
-            this.labelLoginDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxAccountID
-            // 
-            this.textBoxAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccountID.Location = new System.Drawing.Point(165, 196);
-            this.textBoxAccountID.Name = "textBoxAccountID";
-            this.textBoxAccountID.Size = new System.Drawing.Size(276, 44);
-            this.textBoxAccountID.TabIndex = 4;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBoxPassword.Location = new System.Drawing.Point(169, 279);
-            this.textBoxPassword.Multiline = true;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '⛽';
-            this.textBoxPassword.Size = new System.Drawing.Size(272, 41);
-            this.textBoxPassword.TabIndex = 5;
+            this.labelAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelAccountID.AutoSize = true;
+            this.labelAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccountID.Location = new System.Drawing.Point(161, 165);
+            this.labelAccountID.Name = "labelAccountID";
+            this.labelAccountID.Size = new System.Drawing.Size(107, 24);
+            this.labelAccountID.TabIndex = 7;
+            this.labelAccountID.Text = "Account ID:";
             // 
             // buttonLogin
             // 
@@ -2412,6 +2394,27 @@
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.textBoxPassword.Location = new System.Drawing.Point(169, 279);
+            this.textBoxPassword.Multiline = true;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '⛽';
+            this.textBoxPassword.Size = new System.Drawing.Size(272, 41);
+            this.textBoxPassword.TabIndex = 5;
+            // 
+            // textBoxAccountID
+            // 
+            this.textBoxAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAccountID.Location = new System.Drawing.Point(165, 196);
+            this.textBoxAccountID.Name = "textBoxAccountID";
+            this.textBoxAccountID.Size = new System.Drawing.Size(276, 44);
+            this.textBoxAccountID.TabIndex = 4;
             // 
             // labelPassword
             // 
@@ -2424,28 +2427,27 @@
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Password";
             // 
-            // labelAccountID
+            // labelLoginDescription
             // 
-            this.labelAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelAccountID.AutoSize = true;
-            this.labelAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountID.Location = new System.Drawing.Point(161, 165);
-            this.labelAccountID.Name = "labelAccountID";
-            this.labelAccountID.Size = new System.Drawing.Size(107, 24);
-            this.labelAccountID.TabIndex = 7;
-            this.labelAccountID.Text = "Account ID:";
+            this.labelLoginDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLoginDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoginDescription.Location = new System.Drawing.Point(-1, 108);
+            this.labelLoginDescription.Name = "labelLoginDescription";
+            this.labelLoginDescription.Size = new System.Drawing.Size(612, 29);
+            this.labelLoginDescription.TabIndex = 1;
+            this.labelLoginDescription.Text = "Login to start your session";
+            this.labelLoginDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelLoginError
+            // labelLogin
             // 
-            this.labelLoginError.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelLoginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoginError.ForeColor = System.Drawing.Color.Red;
-            this.labelLoginError.Location = new System.Drawing.Point(0, 435);
-            this.labelLoginError.Name = "labelLoginError";
-            this.labelLoginError.Size = new System.Drawing.Size(612, 29);
-            this.labelLoginError.TabIndex = 8;
-            this.labelLoginError.Text = "Error: username or password incorrect";
-            this.labelLoginError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.Location = new System.Drawing.Point(-1, 39);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(615, 55);
+            this.labelLogin.TabIndex = 0;
+            this.labelLogin.Text = "Log In";
+            this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 

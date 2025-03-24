@@ -1,13 +1,11 @@
-﻿using System;
+﻿using GasStationPOS.MockDatabase;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace GasStationPOS
 {
@@ -26,7 +24,7 @@ namespace GasStationPOS
     public partial class MainForm : Form
     {
         // Default quantity
-        private int selectedQuantity = 1; 
+        private int selectedQuantity = 1;
 
         // Dictionary to store product names and their associated prices
         private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>
@@ -75,11 +73,16 @@ namespace GasStationPOS
         private string fuelAmountInput = "";
         private decimal fuelPrice = 0.00m;
 
+        // Path for the Mock Database
+        private readonly string dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MockDatabase", "data.json");
+        private Database database = new Database();
+
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
         public MainForm()
         {
+            setupDatabase(); // Setup the user database
             InitializeComponent();
         }
 
@@ -139,7 +142,7 @@ namespace GasStationPOS
             pnlBottomNavMain.Visible = false;
             pnlBottomNavBack.Visible = false;
             pnlFuelConfirmation.Visible = false;
-            pnlFuelTypeSelect.Visible = false; 
+            pnlFuelTypeSelect.Visible = false;
             pnlSelectCartItem.Visible = false;
             pnlAddFuelAmount.Visible = false;
         }
@@ -214,7 +217,7 @@ namespace GasStationPOS
                 // Show pnlSelectCartItem, pnlBottomNavBack
                 HidePanels();
                 pnlSelectCartItem.Visible = true;
-                pnlBottomNavBack.Visible = true;                
+                pnlBottomNavBack.Visible = true;
             }
         }
 
@@ -354,7 +357,7 @@ namespace GasStationPOS
                 // Show the pnlFuelTypeSelection panel
                 HidePanels();
                 pnlFuelTypeSelect.Visible = true;
-                pnlBottomNavBack.Visible= true;
+                pnlBottomNavBack.Visible = true;
 
                 UnhighlightFuelPumps();
 
@@ -492,6 +495,79 @@ namespace GasStationPOS
             {
                 MessageBox.Show("Please enter a valid fuel amount.");
             }
+        }
+
+        /// <summary>
+        /// Sets up the user database by reading the JSON file and deserializing it.
+        /// </summary>
+        private void setupDatabase()
+        {
+            try
+            {
+                // Ensure the database file exists
+                if (!File.Exists(dataPath))
+                {
+                    MessageBox.Show($"Database file not found at: {dataPath}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Read and deserialize JSON
+                string jsonString = File.ReadAllText(dataPath);
+                database = JsonSerializer.Deserialize<Database>(jsonString, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                }) ?? new Database(); // Ensure database is never null
+
+                // Ensure Accounts list is initialized
+                if (database.Accounts == null)
+                {
+                    database.Accounts = new List<Account>();
+                    MessageBox.Show("Warning: No accounts found in database.", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading database: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Handles all the login logic.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            // Retrieve user input
+            string enteredAccountID = textBoxAccountID.Text.Trim();
+            string enteredPassword = textBoxPassword.Text;
+
+            // Check if inputs are empty
+            if (string.IsNullOrEmpty(enteredAccountID) || string.IsNullOrEmpty(enteredPassword))
+            {
+                labelLoginError.Text = "Error: Please enter both username and password.";
+                labelLoginError.Visible = true;
+                return;
+            }
+
+            // Validate user credentials
+            Account userAccount = database.Accounts
+                .FirstOrDefault(acc => acc.AccountID == enteredAccountID && acc.Password == enteredPassword);
+
+            if (userAccount == null)
+            {
+                labelLoginError.Text = "Error: Username or password incorrect.";
+                labelLoginError.Visible = true;
+                return;
+            }
+
+            // Successful login
+            tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
+
+            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
