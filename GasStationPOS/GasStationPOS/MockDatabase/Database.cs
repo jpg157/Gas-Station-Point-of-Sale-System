@@ -6,7 +6,7 @@ namespace GasStationPOS.MockDatabase
     /// <summary>
     /// Represents the database that stores user accounts.
     /// </summary>
-    class Database
+    public class Database
     {
         [JsonPropertyName("Accounts")]
         public List<Account> Accounts { get; set; } = new List<Account>();
@@ -15,7 +15,7 @@ namespace GasStationPOS.MockDatabase
     /// <summary>
     /// Represents a user account in the database.
     /// </summary>
-    class Account
+    public class Account
     {
         [JsonPropertyName("AccountID")]
         public string AccountID { get; set; } = "";

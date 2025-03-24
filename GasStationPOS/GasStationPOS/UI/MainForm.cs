@@ -554,10 +554,7 @@ namespace GasStationPOS
             }
 
             // Validate user credentials
-            Account userAccount = database.Accounts
-                .FirstOrDefault(acc => acc.AccountID == enteredAccountID && acc.Password == enteredPassword);
-
-            if (userAccount == null)
+            if (!AuthenticationHelper.ValidateAccount(enteredAccountID, enteredPassword, database))
             {
                 labelLoginError.Text = "Error: Username or password incorrect.";
                 labelLoginError.Visible = true;
@@ -566,7 +563,6 @@ namespace GasStationPOS
 
             // Successful login
             tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
-
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
