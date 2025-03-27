@@ -2182,6 +2182,9 @@
             // 
             // tabelLayoutPanelLogin
             // 
+            this.tabelLayoutPanelLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabelLayoutPanelLogin.ColumnCount = 3;
             this.tabelLayoutPanelLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tabelLayoutPanelLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -2203,6 +2206,7 @@
             this.tableLayoutPanelMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanelMenu.Controls.Add(this.pictureBoxLoginMenu, 0, 0);
             this.tableLayoutPanelMenu.Controls.Add(this.panelLoginMenu, 1, 0);
+            this.tableLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMenu.Location = new System.Drawing.Point(225, 111);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
             this.tableLayoutPanelMenu.RowCount = 1;
@@ -2212,6 +2216,7 @@
             // 
             // pictureBoxLoginMenu
             // 
+            this.pictureBoxLoginMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxLoginMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoginMenu.Image")));
             this.pictureBoxLoginMenu.InitialImage = null;
             this.pictureBoxLoginMenu.Location = new System.Drawing.Point(3, 3);
@@ -2232,6 +2237,7 @@
             this.panelLoginMenu.Controls.Add(this.labelPassword);
             this.panelLoginMenu.Controls.Add(this.labelLoginDescription);
             this.panelLoginMenu.Controls.Add(this.labelLogin);
+            this.panelLoginMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLoginMenu.Location = new System.Drawing.Point(415, 3);
             this.panelLoginMenu.Name = "panelLoginMenu";
             this.panelLoginMenu.Size = new System.Drawing.Size(612, 495);
@@ -2248,7 +2254,6 @@
             this.labelLoginError.TabIndex = 8;
             this.labelLoginError.Text = "Error: username or password incorrect";
             this.labelLoginError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelLoginError.Visible = false;
             // 
             // labelAccountID
             // 
