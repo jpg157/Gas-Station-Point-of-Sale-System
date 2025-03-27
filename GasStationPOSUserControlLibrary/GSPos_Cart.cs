@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace GasStationPOSUserControlLibrary
 {
-    public partial class GSPos_Cart: UserControl
+    public partial class GSPos_Cart : UserControl
     {
         public GSPos_Cart()
         {
@@ -57,7 +59,7 @@ namespace GasStationPOSUserControlLibrary
         /// </summary>
         /// <returns></returns>
         public Boolean IsListCartEmpty()
-        { 
+        {
             return listCart.SelectedIndex != -1 && listCart.SelectedItem != null;
         }
 
@@ -66,7 +68,7 @@ namespace GasStationPOSUserControlLibrary
         /// </summary>
         /// <returns></returns>
         public string GetListCartItemString()
-        { 
+        {
             return listCart.SelectedItem.ToString();
         }
 
@@ -76,7 +78,7 @@ namespace GasStationPOSUserControlLibrary
         /// <returns></returns>
         public CartItem GetCartItem()
         {
-            return (CartItem) listCart.SelectedItem;
+            return (CartItem)listCart.SelectedItem;
         }
 
         /// <summary>
@@ -86,6 +88,24 @@ namespace GasStationPOSUserControlLibrary
         public void RemoveItemFromCart(CartItem selectedItem)
         {
             listCart.Items.Remove(selectedItem);
+        }
+
+        /// <summary>
+        /// Public event that gets exposed,
+        /// so main could know that an item was selected.
+        /// </summary>
+        public event EventHandler CartItemSelected;
+
+        /// <summary>
+        /// If the selected item index was changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="labelSelectedItem"></param>
+        private void listCart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Raises the event
+            CartItemSelected?.Invoke(this, EventArgs.Empty);
         }
     }
 }

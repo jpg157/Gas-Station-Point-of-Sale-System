@@ -137,6 +137,7 @@
             this.listCart.Name = "listCart";
             this.listCart.Size = new System.Drawing.Size(441, 469);
             this.listCart.TabIndex = 1;
+            this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
             // labalCartHeader
             // 

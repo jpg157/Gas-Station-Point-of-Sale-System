@@ -206,7 +206,7 @@ namespace GasStationPOS
         /// <summary>
         /// Event handler for selecting a cart item
         /// </summary>
-        private void listCart_SelectedIndexChanged(object sender, EventArgs e)
+        private void GsPos_Cart_CartItemSelected(object sender, EventArgs e)
         {
             if (gsPos_Cart.IsListCartEmpty())
             {

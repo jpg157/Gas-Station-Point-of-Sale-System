@@ -2336,6 +2336,7 @@
             this.gsPos_Cart.Name = "gsPos_Cart";
             this.gsPos_Cart.Size = new System.Drawing.Size(441, 583);
             this.gsPos_Cart.TabIndex = 1;
+            this.gsPos_Cart.CartItemSelected += new System.EventHandler(this.GsPos_Cart_CartItemSelected);
             // 
             // MainForm
             // 
@@ -2343,6 +2344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1480, 725);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.gsPos_Cart);
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.pnlFuelPumps);
@@ -2353,7 +2355,6 @@
             this.Controls.Add(this.pnlSelectCartItem);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
