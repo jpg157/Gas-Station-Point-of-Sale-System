@@ -44,10 +44,10 @@
             // 
             // pnlCart
             // 
-            this.pnlCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlCart.Controls.Add(this.pnlSubtotal);
             this.pnlCart.Controls.Add(this.listCart);
             this.pnlCart.Controls.Add(this.labalCartHeader);
+            this.pnlCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCart.Location = new System.Drawing.Point(0, 0);
             this.pnlCart.Name = "pnlCart";
             this.pnlCart.Size = new System.Drawing.Size(441, 583);
@@ -55,7 +55,6 @@
             // 
             // pnlSubtotal
             // 
-            this.pnlSubtotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlSubtotal.BackColor = System.Drawing.Color.Tan;
             this.pnlSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSubtotal.Controls.Add(this.labelRemaining);
@@ -64,6 +63,7 @@
             this.pnlSubtotal.Controls.Add(this.remainingText);
             this.pnlSubtotal.Controls.Add(this.TenderedText);
             this.pnlSubtotal.Controls.Add(this.SubtotalText);
+            this.pnlSubtotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlSubtotal.Location = new System.Drawing.Point(0, 486);
             this.pnlSubtotal.Name = "pnlSubtotal";
             this.pnlSubtotal.Size = new System.Drawing.Size(441, 97);
@@ -128,14 +128,13 @@
             // 
             // listCart
             // 
-            this.listCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listCart.FormattingEnabled = true;
             this.listCart.ItemHeight = 15;
             this.listCart.Location = new System.Drawing.Point(0, 32);
             this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(441, 469);
+            this.listCart.Size = new System.Drawing.Size(441, 551);
             this.listCart.TabIndex = 1;
             this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
@@ -143,6 +142,7 @@
             // 
             this.labalCartHeader.BackColor = System.Drawing.Color.Tan;
             this.labalCartHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labalCartHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.labalCartHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labalCartHeader.Location = new System.Drawing.Point(0, 0);
             this.labalCartHeader.Name = "labalCartHeader";
