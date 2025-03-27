@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Windows.Forms;
+using GasStationPOSUserControlLibrary;
 
 namespace GasStationPOS
 {
@@ -121,7 +122,7 @@ namespace GasStationPOS
         /// </summary>
         private void UpdatePayButtonVisibility()
         {
-            if (listCart.Items.Count == 0)
+            if (gsPos_Cart.GetCartItemsCount() == 0)
             {
                 btnPayCard.Visible = false;
                 btnPayCash.Visible = false;
@@ -152,10 +153,11 @@ namespace GasStationPOS
         /// </summary>
         private void UpdateAfterAddingToCart()
         {
-            labelSubtotal.Text = $"${subtotal:F2}";
-
-            // Update Remaining
-            labelRemaining.Text = $"${(tendered - subtotal):F2}";
+            // Updates the subtitle and ramining labels
+            gsPos_Cart.UpdateSubtitleAndRemainingLabels(
+                $"${subtotal:F2}",
+                $"${(tendered - subtotal):F2}"
+                );
 
             // Reset selectedQuantity
             selectedQuantity = 1;
@@ -178,7 +180,7 @@ namespace GasStationPOS
 
                 CartItem cartItem = new CartItem(productName, selectedQuantity, price, total);
 
-                listCart.Items.Add(cartItem);
+                gsPos_Cart.AddItemToCart(cartItem);
 
                 // Update subtotal
                 subtotal += total;
@@ -191,11 +193,11 @@ namespace GasStationPOS
         /// </summary>
         private void btnClear_Click(object sender, EventArgs e)
         {
-            listCart.Items.Clear();
+            gsPos_Cart.ClearCart();
+
+            // Handled by the program
             subtotal = 0;
             selectedQuantity = 1;
-            labelSubtotal.Text = "";
-            labelRemaining.Text = "";
 
             // Hide payment buttons
             UpdatePayButtonVisibility();
@@ -206,9 +208,9 @@ namespace GasStationPOS
         /// </summary>
         private void listCart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
+            if (gsPos_Cart.IsListCartEmpty())
             {
-                string selectedItem = listCart.SelectedItem.ToString();
+                string selectedItem = gsPos_Cart.GetListCartItemString();
                 string itemName = selectedItem.Split('\t')[0].Trim();  // Extract item name
 
                 // Update the label in pnlSelectCartItem with the selected item name
@@ -254,15 +256,15 @@ namespace GasStationPOS
         /// </summary>
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
-            if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
+            if (gsPos_Cart.IsListCartEmpty())
             {
                 // Get the selected item from the list
-                var selectedItem = listCart.SelectedItem as CartItem;
+                var selectedItem = gsPos_Cart.GetCartItem();
 
                 if (selectedItem != null)
                 {
                     // Remove the selected item from the list
-                    listCart.Items.Remove(selectedItem);
+                    gsPos_Cart.RemoveItemFromCart(selectedItem);
 
                     // Show pnlProducts, pnlBottomNavMain
                     HidePanels();
@@ -271,10 +273,12 @@ namespace GasStationPOS
 
                     // Update the subtotal after removing the item
                     subtotal -= selectedItem.TotalPrice;
-                    labelSubtotal.Text = $"${subtotal:F2}"; // Update the label displaying the subtotal
 
-                    // Update Remaining
-                    labelRemaining.Text = $"${(tendered - subtotal):F2}";
+                    // Updates the subtitle and remaining labels
+                    gsPos_Cart.UpdateSubtitleAndRemainingLabels(
+                        $"${subtotal:F2}",
+                        $"${(tendered - subtotal):F2}"
+                        );
 
                     // if the cart is empty, hide payment buttons
                     UpdatePayButtonVisibility();
@@ -484,7 +488,7 @@ namespace GasStationPOS
 
                 // Create a CartItem and add it to the cart
                 CartItem newItem = new CartItem(labelFuelType.Text, quantity, fuelPrice, total);
-                listCart.Items.Add(newItem);
+                gsPos_Cart.AddItemToCart(newItem);
 
                 subtotal += total;
 

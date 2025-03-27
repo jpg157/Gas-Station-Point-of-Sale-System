@@ -59,16 +59,6 @@
             this.btnFuelPump3 = new System.Windows.Forms.Button();
             this.btnFuelPump2 = new System.Windows.Forms.Button();
             this.btnFuelPump1 = new System.Windows.Forms.Button();
-            this.pnlCart = new System.Windows.Forms.Panel();
-            this.pnlSubtotal = new System.Windows.Forms.Panel();
-            this.labelRemaining = new System.Windows.Forms.Label();
-            this.labelTendered = new System.Windows.Forms.Label();
-            this.labelSubtotal = new System.Windows.Forms.Label();
-            this.remainingText = new System.Windows.Forms.Label();
-            this.TenderedText = new System.Windows.Forms.Label();
-            this.SubtotalText = new System.Windows.Forms.Label();
-            this.listCart = new System.Windows.Forms.ListBox();
-            this.labalCartHeader = new System.Windows.Forms.Label();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.tableLayoutPanelProducts = new System.Windows.Forms.TableLayoutPanel();
             this.btnPizzaSmall = new System.Windows.Forms.Button();
@@ -175,14 +165,13 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelLoginDescription = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.gsPos_Cart = new GasStationPOSUserControlLibrary.GSPos_Cart();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
             this.tableLayoutPanelNavTop.SuspendLayout();
             this.pnlFuelPumps.SuspendLayout();
             this.tableLayoutPanelFuelPumps.SuspendLayout();
-            this.pnlCart.SuspendLayout();
-            this.pnlSubtotal.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.tableLayoutPanelProducts.SuspendLayout();
             this.tableLayoutPanelQuantity.SuspendLayout();
@@ -663,117 +652,6 @@
             this.btnFuelPump1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPump1.UseVisualStyleBackColor = false;
             this.btnFuelPump1.Click += new System.EventHandler(this.btnFuelPump_Click);
-            // 
-            // pnlCart
-            // 
-            this.pnlCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlCart.Controls.Add(this.pnlSubtotal);
-            this.pnlCart.Controls.Add(this.listCart);
-            this.pnlCart.Controls.Add(this.labalCartHeader);
-            this.pnlCart.Location = new System.Drawing.Point(0, 55);
-            this.pnlCart.Name = "pnlCart";
-            this.pnlCart.Size = new System.Drawing.Size(441, 583);
-            this.pnlCart.TabIndex = 3;
-            // 
-            // pnlSubtotal
-            // 
-            this.pnlSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlSubtotal.BackColor = System.Drawing.Color.Tan;
-            this.pnlSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSubtotal.Controls.Add(this.labelRemaining);
-            this.pnlSubtotal.Controls.Add(this.labelTendered);
-            this.pnlSubtotal.Controls.Add(this.labelSubtotal);
-            this.pnlSubtotal.Controls.Add(this.remainingText);
-            this.pnlSubtotal.Controls.Add(this.TenderedText);
-            this.pnlSubtotal.Controls.Add(this.SubtotalText);
-            this.pnlSubtotal.Location = new System.Drawing.Point(0, 486);
-            this.pnlSubtotal.Name = "pnlSubtotal";
-            this.pnlSubtotal.Size = new System.Drawing.Size(441, 97);
-            this.pnlSubtotal.TabIndex = 2;
-            // 
-            // labelRemaining
-            // 
-            this.labelRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRemaining.Location = new System.Drawing.Point(303, 55);
-            this.labelRemaining.Name = "labelRemaining";
-            this.labelRemaining.Size = new System.Drawing.Size(137, 44);
-            this.labelRemaining.TabIndex = 5;
-            this.labelRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelTendered
-            // 
-            this.labelTendered.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTendered.Location = new System.Drawing.Point(308, 27);
-            this.labelTendered.Name = "labelTendered";
-            this.labelTendered.Size = new System.Drawing.Size(128, 28);
-            this.labelTendered.TabIndex = 4;
-            this.labelTendered.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelSubtotal
-            // 
-            this.labelSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubtotal.Location = new System.Drawing.Point(299, 4);
-            this.labelSubtotal.Name = "labelSubtotal";
-            this.labelSubtotal.Size = new System.Drawing.Size(137, 23);
-            this.labelSubtotal.TabIndex = 3;
-            this.labelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // remainingText
-            // 
-            this.remainingText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainingText.Location = new System.Drawing.Point(191, 55);
-            this.remainingText.Name = "remainingText";
-            this.remainingText.Size = new System.Drawing.Size(122, 44);
-            this.remainingText.TabIndex = 2;
-            this.remainingText.Text = "Remaining";
-            this.remainingText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TenderedText
-            // 
-            this.TenderedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenderedText.Location = new System.Drawing.Point(193, 27);
-            this.TenderedText.Name = "TenderedText";
-            this.TenderedText.Size = new System.Drawing.Size(100, 28);
-            this.TenderedText.TabIndex = 1;
-            this.TenderedText.Text = "Tendered";
-            this.TenderedText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SubtotalText
-            // 
-            this.SubtotalText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubtotalText.Location = new System.Drawing.Point(192, 4);
-            this.SubtotalText.Name = "SubtotalText";
-            this.SubtotalText.Size = new System.Drawing.Size(100, 23);
-            this.SubtotalText.TabIndex = 0;
-            this.SubtotalText.Text = "Subtotal";
-            this.SubtotalText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // listCart
-            // 
-            this.listCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listCart.FormattingEnabled = true;
-            this.listCart.ItemHeight = 15;
-            this.listCart.Location = new System.Drawing.Point(0, 32);
-            this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(441, 469);
-            this.listCart.TabIndex = 1;
-            this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
-            // 
-            // labalCartHeader
-            // 
-            this.labalCartHeader.BackColor = System.Drawing.Color.Tan;
-            this.labalCartHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labalCartHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labalCartHeader.Location = new System.Drawing.Point(0, 0);
-            this.labalCartHeader.Name = "labalCartHeader";
-            this.labalCartHeader.Size = new System.Drawing.Size(441, 32);
-            this.labalCartHeader.TabIndex = 0;
-            this.labalCartHeader.Text = "Description                                                                    Qt" +
-    "y              Price       Total";
-            this.labalCartHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlProducts
             // 
@@ -1916,7 +1794,7 @@
             this.tableLayoutPanel2.Controls.Add(this.btnFuelCalculator50, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(322, 13);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowCount = 9;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -1925,6 +1803,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(101, 411);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
@@ -1936,9 +1815,9 @@
             this.btnFuelCalculator25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator25.Location = new System.Drawing.Point(3, 105);
+            this.btnFuelCalculator25.Location = new System.Drawing.Point(3, 99);
             this.btnFuelCalculator25.Name = "btnFuelCalculator25";
-            this.btnFuelCalculator25.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator25.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator25.TabIndex = 8;
             this.btnFuelCalculator25.Text = "25.00";
             this.btnFuelCalculator25.UseVisualStyleBackColor = false;
@@ -1952,9 +1831,9 @@
             this.btnFuelCalculator20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator20.Location = new System.Drawing.Point(3, 54);
+            this.btnFuelCalculator20.Location = new System.Drawing.Point(3, 51);
             this.btnFuelCalculator20.Name = "btnFuelCalculator20";
-            this.btnFuelCalculator20.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator20.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator20.TabIndex = 2;
             this.btnFuelCalculator20.Text = "20.00";
             this.btnFuelCalculator20.UseVisualStyleBackColor = false;
@@ -1970,7 +1849,7 @@
             this.btnFuelCalculator10.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnFuelCalculator10.Location = new System.Drawing.Point(3, 3);
             this.btnFuelCalculator10.Name = "btnFuelCalculator10";
-            this.btnFuelCalculator10.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator10.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator10.TabIndex = 1;
             this.btnFuelCalculator10.Text = "10.00";
             this.btnFuelCalculator10.UseVisualStyleBackColor = false;
@@ -1984,9 +1863,9 @@
             this.btnFuelCalculator150.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator150.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator150.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator150.Location = new System.Drawing.Point(3, 360);
+            this.btnFuelCalculator150.Location = new System.Drawing.Point(3, 339);
             this.btnFuelCalculator150.Name = "btnFuelCalculator150";
-            this.btnFuelCalculator150.Size = new System.Drawing.Size(95, 48);
+            this.btnFuelCalculator150.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator150.TabIndex = 7;
             this.btnFuelCalculator150.Text = "150.00";
             this.btnFuelCalculator150.UseVisualStyleBackColor = false;
@@ -2000,9 +1879,9 @@
             this.btnFuelCalculator120.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator120.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator120.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator120.Location = new System.Drawing.Point(3, 309);
+            this.btnFuelCalculator120.Location = new System.Drawing.Point(3, 291);
             this.btnFuelCalculator120.Name = "btnFuelCalculator120";
-            this.btnFuelCalculator120.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator120.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator120.TabIndex = 6;
             this.btnFuelCalculator120.Text = "120.00";
             this.btnFuelCalculator120.UseVisualStyleBackColor = false;
@@ -2016,9 +1895,9 @@
             this.btnFuelCalculator100.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator100.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator100.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator100.Location = new System.Drawing.Point(3, 258);
+            this.btnFuelCalculator100.Location = new System.Drawing.Point(3, 243);
             this.btnFuelCalculator100.Name = "btnFuelCalculator100";
-            this.btnFuelCalculator100.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator100.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator100.TabIndex = 5;
             this.btnFuelCalculator100.Text = "100.00";
             this.btnFuelCalculator100.UseVisualStyleBackColor = false;
@@ -2032,9 +1911,9 @@
             this.btnFuelCalculator75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator75.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator75.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator75.Location = new System.Drawing.Point(3, 207);
+            this.btnFuelCalculator75.Location = new System.Drawing.Point(3, 195);
             this.btnFuelCalculator75.Name = "btnFuelCalculator75";
-            this.btnFuelCalculator75.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator75.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator75.TabIndex = 4;
             this.btnFuelCalculator75.Text = "75.00";
             this.btnFuelCalculator75.UseVisualStyleBackColor = false;
@@ -2048,9 +1927,9 @@
             this.btnFuelCalculator50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuelCalculator50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuelCalculator50.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculator50.Location = new System.Drawing.Point(3, 156);
+            this.btnFuelCalculator50.Location = new System.Drawing.Point(3, 147);
             this.btnFuelCalculator50.Name = "btnFuelCalculator50";
-            this.btnFuelCalculator50.Size = new System.Drawing.Size(95, 45);
+            this.btnFuelCalculator50.Size = new System.Drawing.Size(95, 42);
             this.btnFuelCalculator50.TabIndex = 3;
             this.btnFuelCalculator50.Text = "50.00";
             this.btnFuelCalculator50.UseVisualStyleBackColor = false;
@@ -2449,15 +2328,23 @@
             this.labelLogin.Text = "Log In";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // gsPos_Cart
+            // 
+            this.gsPos_Cart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gsPos_Cart.Location = new System.Drawing.Point(0, 57);
+            this.gsPos_Cart.Name = "gsPos_Cart";
+            this.gsPos_Cart.Size = new System.Drawing.Size(441, 583);
+            this.gsPos_Cart.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1480, 725);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
+            this.Controls.Add(this.gsPos_Cart);
             this.Controls.Add(this.pnlProducts);
-            this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.pnlFuelPumps);
             this.Controls.Add(this.pnlTopNavMain);
             this.Controls.Add(this.pnlBottomNavMain);
@@ -2466,6 +2353,7 @@
             this.Controls.Add(this.pnlSelectCartItem);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -2476,8 +2364,6 @@
             this.tableLayoutPanelNavTop.PerformLayout();
             this.pnlFuelPumps.ResumeLayout(false);
             this.tableLayoutPanelFuelPumps.ResumeLayout(false);
-            this.pnlCart.ResumeLayout(false);
-            this.pnlSubtotal.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);
             this.tableLayoutPanelProducts.ResumeLayout(false);
             this.tableLayoutPanelQuantity.ResumeLayout(false);
@@ -2523,13 +2409,6 @@
         private System.Windows.Forms.Button btnFuelPump3;
         private System.Windows.Forms.Button btnFuelPump2;
         private System.Windows.Forms.Button btnFuelPump1;
-        private System.Windows.Forms.Panel pnlCart;
-        private System.Windows.Forms.Label labalCartHeader;
-        private System.Windows.Forms.ListBox listCart;
-        private System.Windows.Forms.Panel pnlSubtotal;
-        private System.Windows.Forms.Label remainingText;
-        private System.Windows.Forms.Label TenderedText;
-        private System.Windows.Forms.Label SubtotalText;
         private System.Windows.Forms.Panel pnlProducts;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelQuantity;
         private System.Windows.Forms.Button btnQty999;
@@ -2549,9 +2428,6 @@
         private System.Windows.Forms.Button btnAddPropaneExch;
         private System.Windows.Forms.Button btnAddWindshieldWasher;
         private System.Windows.Forms.Button btnAddPropane;
-        private System.Windows.Forms.Label labelRemaining;
-        private System.Windows.Forms.Label labelTendered;
-        private System.Windows.Forms.Label labelSubtotal;
         private System.Windows.Forms.Button btnAddGasCan;
         private System.Windows.Forms.Button btnAddCoolant378;
         private System.Windows.Forms.Button btnAddCoolant185;
@@ -2646,6 +2522,7 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelAccountID;
         private System.Windows.Forms.Label labelLoginError;
+        private GasStationPOSUserControlLibrary.GSPos_Cart gsPos_Cart;
     }
 }
 
