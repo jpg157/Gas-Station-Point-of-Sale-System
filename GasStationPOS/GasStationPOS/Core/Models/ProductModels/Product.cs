@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace GasStationPOS.Core.Models.ProductModels
 {
-    abstract class Product
+    abstract class Product 
     {
         [Required(ErrorMessage = "Id is required")]
         public int Id { get; set; }
@@ -18,9 +18,9 @@ namespace GasStationPOS.Core.Models.ProductModels
         [StringLength(30, MinimumLength = 1, ErrorMessage  = "Product name must be between 1 and 30 characters")]
         public string ProductName { get; set; }
 
-        [Required(ErrorMessage = "Description is required")]
-        [StringLength(500, MinimumLength = 1, ErrorMessage = "Description must be between 1 and 500 characters")]
-        public string Description { get; set; }
+        //[Required(ErrorMessage = "Description is required")]
+        //[StringLength(500, MinimumLength = 1, ErrorMessage = "Description must be between 1 and 500 characters")]
+        //public string Description { get; set; }
 
         [Required(ErrorMessage = "Price (dollars) is required")]
         [Range(0.0, 10000.0, ErrorMessage = "Price (dollars) must be between 0.0 and 10000.0")]
@@ -31,9 +31,8 @@ namespace GasStationPOS.Core.Models.ProductModels
             string strRet = $@"
                 Product Id: {Id}
                 Product Name: {ProductName}
-                Product Description: {Description}
                 Product PriceDollars: {PriceDollars}
-                ";
+                ";//Product Description: {Description}
             return strRet;
         }
     }

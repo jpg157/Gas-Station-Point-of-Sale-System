@@ -33,9 +33,43 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.3\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.3\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.3\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CartItem.cs" />
+    <Compile Include="Core\DatabaseDTOs\RetailProductListWrapper.cs" />
+    <Compile Include="Core\Database\DatabaseConstants.cs" />
     <Compile Include="Core\Models\ProductModels\RetailProduct.cs" />
     <Compile Include="Core\Models\ProductModels\FuelProduct.cs" />
     <Compile Include="Core\Models\ProductModels\Product.cs" />
@@ -58,22 +94,45 @@
     <Compile Include="Core\Models\UserModels\Cashier.cs" />
     <Compile Include="Core\Models\UserModels\Manager.cs" />
     <Compile Include="Core\Models\UserModels\User.cs" />
+    <Compile Include="Core\Repositories\Product\FuelProductRepository.cs" />
+    <Compile Include="Core\Repositories\Product\IFuelProductRepository.cs" />
+    <Compile Include="Core\Repositories\Product\IRetailProductRepository.cs" />
+    <Compile Include="Core\Repositories\Product\RetailProductRepository.cs" />
+    <Compile Include="Core\Services\Inventory\IInventoryService.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Core\Services\AuthenticationService.cs" />
-    <Compile Include="Core\Services\InventoryService.cs" />
+    <Compile Include="Core\Services\Inventory\InventoryService.cs" />
     <Compile Include="Core\Services\LoginService.cs" />
     <Compile Include="Core\Services\RegistrationService.cs" />
     <Compile Include="Core\Services\ReportService.cs" />
     <Compile Include="Core\Services\TransactionService.cs" />
     <Compile Include="Core\Utils\PasswordEncryption.cs" />
-    <Compile Include="UI\Form1.cs">
+    <Compile Include="UI\Constants\ButtonNamePrefixes.cs" />
+    <Compile Include="UI\Constants\PaymentConstants.cs" />
+    <Compile Include="UI\Constants\QuantityConstants.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\PaymentDataWrappers\AmountRemainingWrapper.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\PaymentDataWrappers\AmountTenderedWrapper.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\PaymentDataWrappers\PaymentDataWrapper.cs" />
+    <Compile Include="UI\Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Form1.Designer.cs">
+    <Compile Include="UI\Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="UI\Form1.resx">
+    <Compile Include="UI\UIDataChangeEvents\AddFuelProductToCartEventArgs.cs" />
+    <Compile Include="UI\UIDataChangeEvents\AddRetailProductToCartEventArgs.cs" />
+    <Compile Include="UI\UIDataChangeEvents\RemoveProductEventArgs.cs" />
+    <Compile Include="UI\UIDataChangeEvents\SubmitPaymentEventArgs.cs" />
+    <Compile Include="UI\UIDataChangeEvents\UpdateQuantityEventArgs.cs" />
+    <Compile Include="UI\Utils\ButtonNameUtils.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\ModelAndDTOMappingProfiles.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\ProductDTOs\FuelProductDTO.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\ProductDTOs\ProductDTO.cs" />
+    <Compile Include="UI\ViewDataTransferObjects\ProductDTOs\RetailProductDTO.cs" />
+    <Compile Include="UI\Views\IMainView.cs" />
+    <EmbeddedResource Include="UI\Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -85,6 +144,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,21 +154,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Temp_Database\fuel_products.json" />
+    <None Include="Temp_Database\receipts.json" />
+    <None Include="Temp_Database\transactions.json" />
+    <Content Include="Temp_Database\retail_products.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Temp_Database\users.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\Database\" />
     <Folder Include="Core\DataValidation\" />
-    <Folder Include="Core\DTOs\" />
     <Folder Include="Resources\" />
     <Folder Include="UI\UIFormValidation\" />
+    <Folder Include="UI\ViewDataTransferObjects\ReceiptDTOs\" />
+    <Folder Include="UI\ViewDataTransferObjects\SessionDTOs\" />
+    <Folder Include="UI\ViewDataTransferObjects\TransactionDTOs\" />
+    <Folder Include="UI\ViewDataTransferObjects\UserDTOs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Core\Controllers\Explanation_of_controllers.txt" />
     <Content Include="Core\Models\Explanation_of_models.txt" />
     <Content Include="Core\Services\Explanation_of_services.txt" />
+    <Content Include="Temp_Database\TEMP_DB_RULES.txt" />
+    <Content Include="UI\ViewDataTransferObjects\Explanation_of_ViewDTOs.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

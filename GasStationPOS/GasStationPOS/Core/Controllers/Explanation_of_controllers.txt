@@ -1,4 +1,7 @@
 ﻿
+<Not using Controllers anymore I'm using Presenter folder>
+
+
 Controllers folder is for handling data or "requests" passed from the form
 
 Purpose of Controller:

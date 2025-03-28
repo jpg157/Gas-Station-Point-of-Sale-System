@@ -1,0 +1,6 @@
+﻿
+
+retail_products.json and fuel_products.json should never be changed
+(unless the prices/names change or we add a new product).
+
+They store the data that is displayed in the UI (the buttons), and the price information.

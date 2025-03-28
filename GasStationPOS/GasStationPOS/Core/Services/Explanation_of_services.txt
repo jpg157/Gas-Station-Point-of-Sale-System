@@ -1,9 +1,16 @@
 ﻿
 Services folder contains business logic of application.
 
--	Does data manipulation and interacts directly with database to get or retrieve data
+- Displays feature methods to the presenters (ex. IInventoryService has method GetAllRetailProductData)
 
-Example:
+- Does data manipulation for business logic purposes
+
+- Uses Repository Interfaces for CRUD operations to interact with database
+
+- Converts Models to DTOs and vice versa when getting/retreiving data with the Repository
+
+
+Examples:
 
 -	Compare user credentials (username and password) with database - to check if a valid user exists (AuthenticationService)
 

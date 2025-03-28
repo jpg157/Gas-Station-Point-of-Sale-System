@@ -9,7 +9,7 @@ using GasStationPOS.Core.Models.UserModels;
 
 namespace GasStationPOS.Core.Models.TransactionModels
 {
-    enum PaymentMethod
+    public enum PaymentMethod
     {
         CASH,
         CARD

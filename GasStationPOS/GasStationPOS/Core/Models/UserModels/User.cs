@@ -14,7 +14,7 @@ namespace GasStationPOS.Core.Models.UserModels
         CASHIER,
         MANAGER
     }
-
+     
     abstract class User
     {
         [Required(ErrorMessage = "Id is required")]

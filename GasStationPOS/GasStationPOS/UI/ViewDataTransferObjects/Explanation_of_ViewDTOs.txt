@@ -1,0 +1,19 @@
+﻿
+
+View data transfer objects (DTOs) contain classes with data that is get/set in the View form (example FuelProductDTO used in the MainForm).
+
+ONLY USE DTOs WHEN THE USER NEEDS TO INPUT ADDITIONAL DATA ALONG WITH DATA FOR THE MODEL, OR ONLY SOME OF THE DATA FROM THE MODEL
+
+	ex 1. quantity is not in FuelProduct Model, but it is required, so FuelProductDTO is created with that additional field
+
+	ex 2. DateTime TimeCreated in Admin User class should not be created in the View logic, it is created during the Model instantiation.
+
+DO NOT USE ANY INFORMATION FROM THE MODEL FOR THE DTO (do not inherit or implement from models)
+
+
+	- Instead make a copy of the data, and use a mapping profile from the model to the dto (I am using AutoMapper package)
+
+
+These DTO objects get passed by the presenter to the services to create the corresopnding models, and also existing model instance data passed from the services to the presenter to update DTO objects.
+
+Same thing as a user's string or int input being passed by the presenter to services.
