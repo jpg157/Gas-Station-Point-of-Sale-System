@@ -14,20 +14,19 @@ namespace GasStationPOS.Core.Data.Models.TransactionModels
         CASH,
         CARD
     }
-
     public class Transaction
     {
-        [Required(ErrorMessage = "Id is required")]
-        public int Id { get; set; }
+        //[Required(ErrorMessage = "Id is required")]
+        //public int Id { get; set; }
 
         [Required(ErrorMessage = "TransactionNumber is required")]
         public int TransactionNumber { get; set; } // might not need and can instead use Id
 
         [Required(ErrorMessage = "Transaction Fuel Product Items are required")]
-        public List<Tuple<FuelProduct, int>> TransactionFuelProductItems { get; set; } // Tuple (FuelProduct, quantity)
+        public List<Tuple<FuelProduct, decimal>> TransactionFuelProductItems { get; set; } // Tuple (FuelProduct, quantity)
 
         [Required(ErrorMessage = "Transaction Retail Product Items are required")]
-        public List<Tuple<RetailProduct, int>> TransactionRetailProductItems { get; set; } // Tuple (RetailProduct, quantity)
+        public List<Tuple<RetailProduct, decimal>> TransactionRetailProductItems { get; set; } // Tuple (RetailProduct, quantity)
 
         [Required(ErrorMessage = "Payment Method is required")]
         public PaymentMethod PaymentMethod { get; set; }
@@ -43,8 +42,8 @@ namespace GasStationPOS.Core.Data.Models.TransactionModels
         [Required(ErrorMessage = "Transaction Date Time is required")]
         public DateTime TransactionDateTime { get; set; }
 
-        [Required(ErrorMessage = "CashierId is required")]
-        public int CashierId { get; set; } // for Cashier Id and/or Cashier Name to store in transaction
+        //[Required(ErrorMessage = "CashierId is required")]
+        //public int CashierId { get; set; } // for Cashier Id and/or Cashier Name to store in transaction
 
         // IF TIME
 

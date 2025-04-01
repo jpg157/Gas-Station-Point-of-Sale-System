@@ -81,6 +81,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
+    <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
+    <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.Designer.cs">
+      <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CartItem.cs" />
     <Compile Include="Core\Data\Database\Json\JsonDBConstants.cs" />
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\RetailProductListWrapper.cs" />
@@ -102,7 +110,6 @@
     <Compile Include="Core\Services\Auth\IAuthenticationService.cs" />
     <Compile Include="Core\Services\Inventory\IInventoryService.cs" />
     <Compile Include="Core\Services\Inventory\InventoryService.cs" />
-    <Compile Include="Core\Services\LoginService.cs" />
     <Compile Include="Core\Services\RegistrationService.cs" />
     <Compile Include="Core\Services\ReportService.cs" />
     <Compile Include="Core\Services\Transaction_Payment\ITransactionService.cs" />
@@ -153,6 +160,9 @@
     <Content Include="Core\Data\Database\Json\MockDatabase\users.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="UI\UserControls\Payment\CardPaymentUserControl.resx">
+      <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

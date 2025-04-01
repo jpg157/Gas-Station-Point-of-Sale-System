@@ -175,6 +175,7 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelLoginDescription = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.cardPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CardPaymentUserControl();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
@@ -2410,6 +2411,15 @@
             this.labelLogin.Text = "Log In";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cardPaymentUserControl
+            // 
+            this.cardPaymentUserControl.BackColor = System.Drawing.Color.Firebrick;
+            this.cardPaymentUserControl.Location = new System.Drawing.Point(576, 224);
+            this.cardPaymentUserControl.Name = "cardPaymentUserControl";
+            this.cardPaymentUserControl.Size = new System.Drawing.Size(370, 204);
+            this.cardPaymentUserControl.TabIndex = 10;
+            this.cardPaymentUserControl.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2427,6 +2437,7 @@
             this.Controls.Add(this.pnlSelectCartItem);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
+            this.Controls.Add(this.cardPaymentUserControl);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -2607,6 +2618,7 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelAccountID;
         private System.Windows.Forms.Label labelLoginError;
+        private UI.UserControls.Payment.CardPaymentUserControl cardPaymentUserControl;
     }
 }
 

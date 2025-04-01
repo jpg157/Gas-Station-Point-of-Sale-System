@@ -9,6 +9,7 @@ using GasStationPOS.UI.Constants;
 using GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 using GasStationPOS.UI.UIFormValidation;
+using GasStationPOS.UI.UserControls.Payment;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -290,8 +291,11 @@ namespace GasStationPOS
 
             // Call transactionService.CreateTransaction function when either btnPayCard or btnPayCash buttons are clicked (passing in the respective payment method)
             // (Need to assign the corresponding PaymentMethod enum member in paramater so transactionService can can handle the correct payment type
-            btnPayCard.Click += delegate { transactionService.CreateTransaction(PaymentMethod.CARD, this.userCartProductsDataList); };
-            btnPayCash.Click += delegate { transactionService.CreateTransaction(PaymentMethod.CASH, this.userCartProductsDataList); };
+            btnPayCard.Click += PayCardButton_Click;
+            this.cardPaymentUserControl.KeyEnterButtonClicked += CardPaymentConfirmed_Click;
+
+            //btnPayCash.Click += PayCashButton_Click;                                      // ============================================ CASH PAYMENT UI - TODO ============================================
+            //this.cashPaymentUserControl.EnterButtonClicked += CashPaymentConfirmed_Click; // ============================================ CASH PAYMENT UI - TODO ============================================
         }
 
         private void AssociateLoginFormEvents()
@@ -301,36 +305,6 @@ namespace GasStationPOS
         }
 
         #endregion
-
-        // ========= Begin Region of Re-used Updated Event handlers =========
-
-        /// <summary>
-        /// Event handler for removing an item from the cart
-        /// </summary>
-        private void btnRemoveItem_Click_v2(object sender, EventArgs e)
-        {
-            if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
-            {
-                // Get the selected item from the list                                  
-                var selectedProduct = listCart.SelectedItem as ProductDTO;
-
-                if (selectedProduct != null)
-                {
-                    // Remove the product from the cart
-                    MainFormDataUpdater.RemoveProductFromCart(userCartProductsDataList, selectedProduct, paymentDataWrapper); // (remove from the userCartProductsDataList list - will update the listbox UI automatically)
-
-                    // Show pnlProducts, pnlBottomNavMain
-                    HidePanels();
-                    pnlProducts.Visible = true;
-                    pnlBottomNavMain.Visible = true;
-
-                    // if the cart is empty, hide payment buttons
-                    UpdatePayButtonVisibility();
-                }
-            }
-        }
-
-        // ========= End Region of Re-used Updated Event handlers =========
 
         /// <summary>
         /// Event triggered when the form is loaded
@@ -418,6 +392,32 @@ namespace GasStationPOS
             // Reset the fuel price amount
             labelFuelPrice.Text = "0.00";
             fuelAmountInput = "";
+        }
+
+        /// <summary>
+        /// Event handler for removing an item from the cart
+        /// </summary>
+        private void btnRemoveItem_Click_v2(object sender, EventArgs e)
+        {
+            if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
+            {
+                // Get the selected item from the list                                  
+                var selectedProduct = listCart.SelectedItem as ProductDTO;
+
+                if (selectedProduct != null)
+                {
+                    // Remove the product from the cart
+                    MainFormDataUpdater.RemoveProductFromCart(userCartProductsDataList, selectedProduct, paymentDataWrapper); // (remove from the userCartProductsDataList list - will update the listbox UI automatically)
+
+                    // Show pnlProducts, pnlBottomNavMain
+                    HidePanels();
+                    pnlProducts.Visible = true;
+                    pnlBottomNavMain.Visible = true;
+
+                    // if the cart is empty, hide payment buttons
+                    UpdatePayButtonVisibility();
+                }
+            }
         }
 
         /// <summary>
@@ -642,6 +642,52 @@ namespace GasStationPOS
                 MessageBox.Show("Please enter a valid fuel amount.");
             }
         }
+
+        // === PAYMENT Button Event Handlers ===
+        private void PayCardButton_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+
+            // Show cardPaymentUserControl1 user control
+            this.cardPaymentUserControl.Visible = true;
+        }
+
+        private void CardPaymentConfirmed_Click(object sender, EventArgs e)
+        {
+            // card pays exact amount (set tendered amount equal to the subtotal)
+            paymentDataWrapper.AmountTendered = paymentDataWrapper.Subtotal;
+
+            // create transaction using transaction service (paying with card)
+            transactionService.CreateTransaction(PaymentMethod.CARD, 
+                                                paymentDataWrapper.Subtotal, 
+                                                paymentDataWrapper.AmountTendered, 
+                                                this.userCartProductsDataList);
+
+            // hide/close the card payment user control
+            this.cardPaymentUserControl.Visible = false;
+
+            // reset UI state
+            reset();
+        }
+
+        // ============================================ CASH PAYMENT UI - TODO ============================================
+        //private void PayCashButton_Click(object sender, EventArgs e)
+        //{
+        //    //HidePanels();
+
+        //    //// Show cardPaymentUserControl1 user control
+        //    //this.cashPaymentUserControl.Visible = true;
+        //}
+
+        //private void CashPaymentConfirmed_Click(object sender, EventArgs e)
+        //{
+        //    //// create card payment
+        //    //transactionService.CreateTransaction(PaymentMethod.CASH, this.userCartProductsDataList)
+
+        //    //this.cardPaymentUserControl.Visible = false;
+
+        //    //reset();
+        //}
 
 
         // === LOGIN FORM ===
