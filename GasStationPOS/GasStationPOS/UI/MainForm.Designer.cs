@@ -2349,7 +2349,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1480, 725);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.gsPos_Cart);
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.pnlFuelPumps);
@@ -2360,6 +2359,7 @@
             this.Controls.Add(this.pnlSelectCartItem);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
