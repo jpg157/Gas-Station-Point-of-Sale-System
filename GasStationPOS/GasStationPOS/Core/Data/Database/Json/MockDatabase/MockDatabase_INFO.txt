@@ -1,0 +1,13 @@
+﻿
+Need to set the properties of the json files in prop. window (or the file cannot be found at runtime):
+
+Set:
+-  "Build Action" to "Content"
+-  "Copy to Output Directory" to "Copy if newer"
+
+----
+
+retail_products.json and fuel_products.json should never be changed
+(unless the prices/names change or we add a new product).
+
+They store the data that is displayed in the UI (the buttons), and the price information.
