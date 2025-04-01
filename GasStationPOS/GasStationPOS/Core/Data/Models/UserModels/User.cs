@@ -55,5 +55,12 @@ namespace GasStationPOS.Core.Data.Models.UserModels
 
         [Required(ErrorMessage = "Role is required")]
         public UserRole Role { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Username: {Username}, FirstName: {FirstName}, LastName: {LastName}, " +
+                   $"Email: {Email}, PhoneNumber: {PhoneNumber}, DateCreated: {DateCreated}, " +
+                   $"DateTerminated: {DateTerminated?.ToString("yyyy-MM-dd") ?? "Not Terminated"}, Role: {Role}";
+        }
     }
 }
