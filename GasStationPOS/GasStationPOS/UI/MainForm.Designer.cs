@@ -71,42 +71,42 @@
             this.labalCartHeader = new System.Windows.Forms.Label();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.tableLayoutPanelProducts = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPizzaSmall = new System.Windows.Forms.Button();
-            this.btnAddGasCan = new System.Windows.Forms.Button();
-            this.btnAddCoolant378 = new System.Windows.Forms.Button();
-            this.btnAddCoolant185 = new System.Windows.Forms.Button();
-            this.btnAddFirewood = new System.Windows.Forms.Button();
-            this.btnAddEngOil10W20 = new System.Windows.Forms.Button();
+            this.btnRp17 = new System.Windows.Forms.Button();
+            this.btnRp16 = new System.Windows.Forms.Button();
+            this.btnRp15 = new System.Windows.Forms.Button();
+            this.btnRp14 = new System.Windows.Forms.Button();
+            this.btnRp13 = new System.Windows.Forms.Button();
+            this.btnRp12 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.btnAddEngOil5W20 = new System.Windows.Forms.Button();
+            this.btnRp11 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
-            this.btnAddEngOil10W30 = new System.Windows.Forms.Button();
+            this.btnRp10 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.btnVegSandwich = new System.Windows.Forms.Button();
-            this.btnChickenSandwich = new System.Windows.Forms.Button();
-            this.btnAddEngOil5W30 = new System.Windows.Forms.Button();
-            this.btnWedges = new System.Windows.Forms.Button();
-            this.btnHotdog = new System.Windows.Forms.Button();
-            this.btnPizzaLarge = new System.Windows.Forms.Button();
-            this.btnAddLotto10 = new System.Windows.Forms.Button();
-            this.btnSmartWater = new System.Windows.Forms.Button();
-            this.btnFijiWater = new System.Windows.Forms.Button();
-            this.btnDasaniWater = new System.Windows.Forms.Button();
-            this.btnAddLotto1 = new System.Windows.Forms.Button();
-            this.btnAddHotBevSmall = new System.Windows.Forms.Button();
-            this.btnAddHotBevLarge = new System.Windows.Forms.Button();
-            this.btnAddIceCube = new System.Windows.Forms.Button();
-            this.btnAddPropaneExch = new System.Windows.Forms.Button();
-            this.btnAddWindshieldWasher = new System.Windows.Forms.Button();
-            this.btnAddPropane = new System.Windows.Forms.Button();
-            this.btnPureLifeWater = new System.Windows.Forms.Button();
+            this.btnRp22 = new System.Windows.Forms.Button();
+            this.btnRp21 = new System.Windows.Forms.Button();
+            this.btnRp9 = new System.Windows.Forms.Button();
+            this.btnRp20 = new System.Windows.Forms.Button();
+            this.btnRp19 = new System.Windows.Forms.Button();
+            this.btnRp18 = new System.Windows.Forms.Button();
+            this.btnRp8 = new System.Windows.Forms.Button();
+            this.btnRp26 = new System.Windows.Forms.Button();
+            this.btnRp25 = new System.Windows.Forms.Button();
+            this.btnRp23 = new System.Windows.Forms.Button();
+            this.btnRp7 = new System.Windows.Forms.Button();
+            this.btnRp1 = new System.Windows.Forms.Button();
+            this.btnRp2 = new System.Windows.Forms.Button();
+            this.btnRp3 = new System.Windows.Forms.Button();
+            this.btnRp4 = new System.Windows.Forms.Button();
+            this.btnRp6 = new System.Windows.Forms.Button();
+            this.btnRp5 = new System.Windows.Forms.Button();
+            this.btnRp24 = new System.Windows.Forms.Button();
             this.tableLayoutPanelQuantity = new System.Windows.Forms.TableLayoutPanel();
             this.btnQty999 = new System.Windows.Forms.Button();
             this.btnQty100 = new System.Windows.Forms.Button();
@@ -287,7 +287,6 @@
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnReview
             // 
@@ -800,42 +799,42 @@
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelProducts.Controls.Add(this.btnPizzaSmall, 2, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddGasCan, 5, 5);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddCoolant378, 4, 5);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddCoolant185, 3, 5);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddFirewood, 2, 5);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddEngOil10W20, 1, 5);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp17, 2, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp16, 5, 5);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp15, 4, 5);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp14, 3, 5);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp13, 2, 5);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp12, 1, 5);
             this.tableLayoutPanelProducts.Controls.Add(this.button25, 5, 4);
             this.tableLayoutPanelProducts.Controls.Add(this.button24, 4, 4);
             this.tableLayoutPanelProducts.Controls.Add(this.button23, 3, 4);
             this.tableLayoutPanelProducts.Controls.Add(this.button22, 2, 4);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddEngOil5W20, 1, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp11, 1, 4);
             this.tableLayoutPanelProducts.Controls.Add(this.button20, 5, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.button19, 4, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.button18, 3, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.button17, 2, 3);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddEngOil10W30, 1, 3);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp10, 1, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.button15, 5, 2);
             this.tableLayoutPanelProducts.Controls.Add(this.button14, 4, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnVegSandwich, 3, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnChickenSandwich, 2, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddEngOil5W30, 1, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnWedges, 5, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnHotdog, 4, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnPizzaLarge, 3, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddLotto10, 1, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnSmartWater, 5, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnFijiWater, 4, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnDasaniWater, 2, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddLotto1, 1, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddHotBevSmall, 0, 0);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddHotBevLarge, 0, 1);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddIceCube, 0, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddPropaneExch, 0, 3);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddWindshieldWasher, 0, 5);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnAddPropane, 0, 4);
-            this.tableLayoutPanelProducts.Controls.Add(this.btnPureLifeWater, 3, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp22, 3, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp21, 2, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp9, 1, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp20, 5, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp19, 4, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp18, 3, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp8, 1, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp26, 5, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp25, 4, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp23, 2, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp7, 1, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp1, 0, 0);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp2, 0, 1);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp3, 0, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp4, 0, 3);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp6, 0, 5);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp5, 0, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp24, 3, 0);
             this.tableLayoutPanelProducts.Location = new System.Drawing.Point(3, 51);
             this.tableLayoutPanelProducts.Name = "tableLayoutPanelProducts";
             this.tableLayoutPanelProducts.RowCount = 6;
@@ -848,101 +847,95 @@
             this.tableLayoutPanelProducts.Size = new System.Drawing.Size(678, 512);
             this.tableLayoutPanelProducts.TabIndex = 1;
             // 
-            // btnPizzaSmall
+            // btnRp17
             // 
-            this.btnPizzaSmall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPizzaSmall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPizzaSmall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPizzaSmall.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPizzaSmall.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPizzaSmall.Location = new System.Drawing.Point(227, 88);
-            this.btnPizzaSmall.Name = "btnPizzaSmall";
-            this.btnPizzaSmall.Size = new System.Drawing.Size(106, 79);
-            this.btnPizzaSmall.TabIndex = 41;
-            this.btnPizzaSmall.Text = "PIZZA SLICE SMALL";
-            this.btnPizzaSmall.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPizzaSmall.UseVisualStyleBackColor = false;
-            this.btnPizzaSmall.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRp17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp17.Location = new System.Drawing.Point(227, 88);
+            this.btnRp17.Name = "btnRp17";
+            this.btnRp17.Size = new System.Drawing.Size(106, 79);
+            this.btnRp17.TabIndex = 41;
+            this.btnRp17.Text = "PIZZA SLICE SMALL";
+            this.btnRp17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp17.UseVisualStyleBackColor = false;
             // 
-            // btnAddGasCan
+            // btnRp16
             // 
-            this.btnAddGasCan.BackColor = System.Drawing.Color.Firebrick;
-            this.btnAddGasCan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddGasCan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddGasCan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGasCan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddGasCan.Location = new System.Drawing.Point(563, 428);
-            this.btnAddGasCan.Name = "btnAddGasCan";
-            this.btnAddGasCan.Size = new System.Drawing.Size(112, 81);
-            this.btnAddGasCan.TabIndex = 40;
-            this.btnAddGasCan.Text = "10L GAS CAN";
-            this.btnAddGasCan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddGasCan.UseVisualStyleBackColor = false;
-            this.btnAddGasCan.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp16.BackColor = System.Drawing.Color.Firebrick;
+            this.btnRp16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp16.Location = new System.Drawing.Point(563, 428);
+            this.btnRp16.Name = "btnRp16";
+            this.btnRp16.Size = new System.Drawing.Size(112, 81);
+            this.btnRp16.TabIndex = 40;
+            this.btnRp16.Text = "10L GAS CAN";
+            this.btnRp16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp16.UseVisualStyleBackColor = false;
             // 
-            // btnAddCoolant378
+            // btnRp15
             // 
-            this.btnAddCoolant378.BackColor = System.Drawing.Color.Goldenrod;
-            this.btnAddCoolant378.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCoolant378.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddCoolant378.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCoolant378.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddCoolant378.Location = new System.Drawing.Point(451, 428);
-            this.btnAddCoolant378.Name = "btnAddCoolant378";
-            this.btnAddCoolant378.Size = new System.Drawing.Size(106, 81);
-            this.btnAddCoolant378.TabIndex = 39;
-            this.btnAddCoolant378.Text = "PC COOLANT 3.78L";
-            this.btnAddCoolant378.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddCoolant378.UseVisualStyleBackColor = false;
-            this.btnAddCoolant378.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp15.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnRp15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp15.Location = new System.Drawing.Point(451, 428);
+            this.btnRp15.Name = "btnRp15";
+            this.btnRp15.Size = new System.Drawing.Size(106, 81);
+            this.btnRp15.TabIndex = 39;
+            this.btnRp15.Text = "PC COOLANT 3.78L";
+            this.btnRp15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp15.UseVisualStyleBackColor = false;
             // 
-            // btnAddCoolant185
+            // btnRp14
             // 
-            this.btnAddCoolant185.BackColor = System.Drawing.Color.Goldenrod;
-            this.btnAddCoolant185.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCoolant185.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddCoolant185.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCoolant185.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddCoolant185.Location = new System.Drawing.Point(339, 428);
-            this.btnAddCoolant185.Name = "btnAddCoolant185";
-            this.btnAddCoolant185.Size = new System.Drawing.Size(106, 81);
-            this.btnAddCoolant185.TabIndex = 38;
-            this.btnAddCoolant185.Text = "PC COOLANT 1.85L";
-            this.btnAddCoolant185.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddCoolant185.UseVisualStyleBackColor = false;
-            this.btnAddCoolant185.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp14.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnRp14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp14.Location = new System.Drawing.Point(339, 428);
+            this.btnRp14.Name = "btnRp14";
+            this.btnRp14.Size = new System.Drawing.Size(106, 81);
+            this.btnRp14.TabIndex = 38;
+            this.btnRp14.Text = "PC COOLANT 1.85L";
+            this.btnRp14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp14.UseVisualStyleBackColor = false;
             // 
-            // btnAddFirewood
+            // btnRp13
             // 
-            this.btnAddFirewood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAddFirewood.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddFirewood.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddFirewood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFirewood.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddFirewood.Location = new System.Drawing.Point(227, 428);
-            this.btnAddFirewood.Name = "btnAddFirewood";
-            this.btnAddFirewood.Size = new System.Drawing.Size(106, 81);
-            this.btnAddFirewood.TabIndex = 37;
-            this.btnAddFirewood.Text = "FIREWOOD";
-            this.btnAddFirewood.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddFirewood.UseVisualStyleBackColor = false;
-            this.btnAddFirewood.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRp13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp13.Location = new System.Drawing.Point(227, 428);
+            this.btnRp13.Name = "btnRp13";
+            this.btnRp13.Size = new System.Drawing.Size(106, 81);
+            this.btnRp13.TabIndex = 37;
+            this.btnRp13.Text = "FIREWOOD";
+            this.btnRp13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp13.UseVisualStyleBackColor = false;
             // 
-            // btnAddEngOil10W20
+            // btnRp12
             // 
-            this.btnAddEngOil10W20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAddEngOil10W20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddEngOil10W20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddEngOil10W20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEngOil10W20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddEngOil10W20.Location = new System.Drawing.Point(115, 428);
-            this.btnAddEngOil10W20.Name = "btnAddEngOil10W20";
-            this.btnAddEngOil10W20.Size = new System.Drawing.Size(106, 81);
-            this.btnAddEngOil10W20.TabIndex = 36;
-            this.btnAddEngOil10W20.Text = "1L ENGINE OIL 10W20";
-            this.btnAddEngOil10W20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddEngOil10W20.UseVisualStyleBackColor = false;
-            this.btnAddEngOil10W20.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRp12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp12.Location = new System.Drawing.Point(115, 428);
+            this.btnRp12.Name = "btnRp12";
+            this.btnRp12.Size = new System.Drawing.Size(106, 81);
+            this.btnRp12.TabIndex = 36;
+            this.btnRp12.Text = "1L ENGINE OIL 10W20";
+            this.btnRp12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp12.UseVisualStyleBackColor = false;
             // 
             // button25
             // 
@@ -1004,21 +997,20 @@
             this.button22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button22.UseVisualStyleBackColor = false;
             // 
-            // btnAddEngOil5W20
+            // btnRp11
             // 
-            this.btnAddEngOil5W20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAddEngOil5W20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddEngOil5W20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddEngOil5W20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEngOil5W20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddEngOil5W20.Location = new System.Drawing.Point(115, 343);
-            this.btnAddEngOil5W20.Name = "btnAddEngOil5W20";
-            this.btnAddEngOil5W20.Size = new System.Drawing.Size(106, 79);
-            this.btnAddEngOil5W20.TabIndex = 31;
-            this.btnAddEngOil5W20.Text = "1L ENGINE OIL 5W20";
-            this.btnAddEngOil5W20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddEngOil5W20.UseVisualStyleBackColor = false;
-            this.btnAddEngOil5W20.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRp11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp11.Location = new System.Drawing.Point(115, 343);
+            this.btnRp11.Name = "btnRp11";
+            this.btnRp11.Size = new System.Drawing.Size(106, 79);
+            this.btnRp11.TabIndex = 31;
+            this.btnRp11.Text = "1L ENGINE OIL 5W20";
+            this.btnRp11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp11.UseVisualStyleBackColor = false;
             // 
             // button20
             // 
@@ -1080,21 +1072,20 @@
             this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button17.UseVisualStyleBackColor = false;
             // 
-            // btnAddEngOil10W30
+            // btnRp10
             // 
-            this.btnAddEngOil10W30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAddEngOil10W30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddEngOil10W30.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddEngOil10W30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEngOil10W30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddEngOil10W30.Location = new System.Drawing.Point(115, 258);
-            this.btnAddEngOil10W30.Name = "btnAddEngOil10W30";
-            this.btnAddEngOil10W30.Size = new System.Drawing.Size(106, 79);
-            this.btnAddEngOil10W30.TabIndex = 26;
-            this.btnAddEngOil10W30.Text = "1L ENGINE OIL 10W30";
-            this.btnAddEngOil10W30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddEngOil10W30.UseVisualStyleBackColor = false;
-            this.btnAddEngOil10W30.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRp10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp10.Location = new System.Drawing.Point(115, 258);
+            this.btnRp10.Name = "btnRp10";
+            this.btnRp10.Size = new System.Drawing.Size(106, 79);
+            this.btnRp10.TabIndex = 26;
+            this.btnRp10.Text = "1L ENGINE OIL 10W30";
+            this.btnRp10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp10.UseVisualStyleBackColor = false;
             // 
             // button15
             // 
@@ -1126,291 +1117,273 @@
             this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button14.UseVisualStyleBackColor = false;
             // 
-            // btnVegSandwich
+            // btnRp22
             // 
-            this.btnVegSandwich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnVegSandwich.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVegSandwich.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVegSandwich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVegSandwich.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVegSandwich.Location = new System.Drawing.Point(339, 173);
-            this.btnVegSandwich.Name = "btnVegSandwich";
-            this.btnVegSandwich.Size = new System.Drawing.Size(106, 79);
-            this.btnVegSandwich.TabIndex = 23;
-            this.btnVegSandwich.Text = "VEG SANDWICH";
-            this.btnVegSandwich.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVegSandwich.UseVisualStyleBackColor = false;
-            this.btnVegSandwich.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRp22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp22.Location = new System.Drawing.Point(339, 173);
+            this.btnRp22.Name = "btnRp22";
+            this.btnRp22.Size = new System.Drawing.Size(106, 79);
+            this.btnRp22.TabIndex = 23;
+            this.btnRp22.Text = "VEG SANDWICH";
+            this.btnRp22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp22.UseVisualStyleBackColor = false;
             // 
-            // btnChickenSandwich
+            // btnRp21
             // 
-            this.btnChickenSandwich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnChickenSandwich.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnChickenSandwich.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnChickenSandwich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChickenSandwich.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnChickenSandwich.Location = new System.Drawing.Point(227, 173);
-            this.btnChickenSandwich.Name = "btnChickenSandwich";
-            this.btnChickenSandwich.Size = new System.Drawing.Size(106, 79);
-            this.btnChickenSandwich.TabIndex = 22;
-            this.btnChickenSandwich.Text = "CHICKEN SANDWICH";
-            this.btnChickenSandwich.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnChickenSandwich.UseVisualStyleBackColor = false;
-            this.btnChickenSandwich.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRp21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp21.Location = new System.Drawing.Point(227, 173);
+            this.btnRp21.Name = "btnRp21";
+            this.btnRp21.Size = new System.Drawing.Size(106, 79);
+            this.btnRp21.TabIndex = 22;
+            this.btnRp21.Text = "CHICKEN SANDWICH";
+            this.btnRp21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp21.UseVisualStyleBackColor = false;
             // 
-            // btnAddEngOil5W30
+            // btnRp9
             // 
-            this.btnAddEngOil5W30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAddEngOil5W30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddEngOil5W30.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddEngOil5W30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEngOil5W30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddEngOil5W30.Location = new System.Drawing.Point(115, 173);
-            this.btnAddEngOil5W30.Name = "btnAddEngOil5W30";
-            this.btnAddEngOil5W30.Size = new System.Drawing.Size(106, 79);
-            this.btnAddEngOil5W30.TabIndex = 21;
-            this.btnAddEngOil5W30.Text = "1L ENGINE OIL 5W30";
-            this.btnAddEngOil5W30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddEngOil5W30.UseVisualStyleBackColor = false;
-            this.btnAddEngOil5W30.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRp9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp9.Location = new System.Drawing.Point(115, 173);
+            this.btnRp9.Name = "btnRp9";
+            this.btnRp9.Size = new System.Drawing.Size(106, 79);
+            this.btnRp9.TabIndex = 21;
+            this.btnRp9.Text = "1L ENGINE OIL 5W30";
+            this.btnRp9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp9.UseVisualStyleBackColor = false;
             // 
-            // btnWedges
+            // btnRp20
             // 
-            this.btnWedges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnWedges.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnWedges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnWedges.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWedges.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnWedges.Location = new System.Drawing.Point(563, 88);
-            this.btnWedges.Name = "btnWedges";
-            this.btnWedges.Size = new System.Drawing.Size(112, 79);
-            this.btnWedges.TabIndex = 20;
-            this.btnWedges.Text = "POTATO WEDGES";
-            this.btnWedges.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnWedges.UseVisualStyleBackColor = false;
-            this.btnWedges.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRp20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp20.Location = new System.Drawing.Point(563, 88);
+            this.btnRp20.Name = "btnRp20";
+            this.btnRp20.Size = new System.Drawing.Size(112, 79);
+            this.btnRp20.TabIndex = 20;
+            this.btnRp20.Text = "POTATO WEDGES";
+            this.btnRp20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp20.UseVisualStyleBackColor = false;
             // 
-            // btnHotdog
+            // btnRp19
             // 
-            this.btnHotdog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnHotdog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHotdog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHotdog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHotdog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHotdog.Location = new System.Drawing.Point(451, 88);
-            this.btnHotdog.Name = "btnHotdog";
-            this.btnHotdog.Size = new System.Drawing.Size(106, 79);
-            this.btnHotdog.TabIndex = 19;
-            this.btnHotdog.Text = "HOTDOG";
-            this.btnHotdog.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHotdog.UseVisualStyleBackColor = false;
-            this.btnHotdog.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRp19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp19.Location = new System.Drawing.Point(451, 88);
+            this.btnRp19.Name = "btnRp19";
+            this.btnRp19.Size = new System.Drawing.Size(106, 79);
+            this.btnRp19.TabIndex = 19;
+            this.btnRp19.Text = "HOTDOG";
+            this.btnRp19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp19.UseVisualStyleBackColor = false;
             // 
-            // btnPizzaLarge
+            // btnRp18
             // 
-            this.btnPizzaLarge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPizzaLarge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPizzaLarge.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPizzaLarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPizzaLarge.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPizzaLarge.Location = new System.Drawing.Point(339, 88);
-            this.btnPizzaLarge.Name = "btnPizzaLarge";
-            this.btnPizzaLarge.Size = new System.Drawing.Size(106, 79);
-            this.btnPizzaLarge.TabIndex = 18;
-            this.btnPizzaLarge.Text = "PIZZA SLICE LARGE";
-            this.btnPizzaLarge.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPizzaLarge.UseVisualStyleBackColor = false;
-            this.btnPizzaLarge.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRp18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp18.Location = new System.Drawing.Point(339, 88);
+            this.btnRp18.Name = "btnRp18";
+            this.btnRp18.Size = new System.Drawing.Size(106, 79);
+            this.btnRp18.TabIndex = 18;
+            this.btnRp18.Text = "PIZZA SLICE LARGE";
+            this.btnRp18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp18.UseVisualStyleBackColor = false;
             // 
-            // btnAddLotto10
+            // btnRp8
             // 
-            this.btnAddLotto10.BackColor = System.Drawing.Color.DarkRed;
-            this.btnAddLotto10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddLotto10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddLotto10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddLotto10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddLotto10.Location = new System.Drawing.Point(115, 88);
-            this.btnAddLotto10.Name = "btnAddLotto10";
-            this.btnAddLotto10.Size = new System.Drawing.Size(106, 79);
-            this.btnAddLotto10.TabIndex = 16;
-            this.btnAddLotto10.Text = "LOTTO TICKET $10";
-            this.btnAddLotto10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddLotto10.UseVisualStyleBackColor = false;
-            this.btnAddLotto10.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp8.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRp8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp8.Location = new System.Drawing.Point(115, 88);
+            this.btnRp8.Name = "btnRp8";
+            this.btnRp8.Size = new System.Drawing.Size(106, 79);
+            this.btnRp8.TabIndex = 16;
+            this.btnRp8.Text = "LOTTO TICKET $10";
+            this.btnRp8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp8.UseVisualStyleBackColor = false;
             // 
-            // btnSmartWater
+            // btnRp26
             // 
-            this.btnSmartWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
-            this.btnSmartWater.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSmartWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSmartWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSmartWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSmartWater.Location = new System.Drawing.Point(563, 3);
-            this.btnSmartWater.Name = "btnSmartWater";
-            this.btnSmartWater.Size = new System.Drawing.Size(112, 79);
-            this.btnSmartWater.TabIndex = 15;
-            this.btnSmartWater.Text = "SMART WATER BOTTLE 350ML";
-            this.btnSmartWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSmartWater.UseVisualStyleBackColor = false;
-            this.btnSmartWater.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnRp26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp26.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp26.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp26.Location = new System.Drawing.Point(563, 3);
+            this.btnRp26.Name = "btnRp26";
+            this.btnRp26.Size = new System.Drawing.Size(112, 79);
+            this.btnRp26.TabIndex = 15;
+            this.btnRp26.Text = "SMART WATER BOTTLE 350ML";
+            this.btnRp26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp26.UseVisualStyleBackColor = false;
             // 
-            // btnFijiWater
+            // btnRp25
             // 
-            this.btnFijiWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
-            this.btnFijiWater.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFijiWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFijiWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFijiWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFijiWater.Location = new System.Drawing.Point(451, 3);
-            this.btnFijiWater.Name = "btnFijiWater";
-            this.btnFijiWater.Size = new System.Drawing.Size(106, 79);
-            this.btnFijiWater.TabIndex = 14;
-            this.btnFijiWater.Text = "FIJI WATER BOTTLE 500ML";
-            this.btnFijiWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFijiWater.UseVisualStyleBackColor = false;
-            this.btnFijiWater.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnRp25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp25.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp25.Location = new System.Drawing.Point(451, 3);
+            this.btnRp25.Name = "btnRp25";
+            this.btnRp25.Size = new System.Drawing.Size(106, 79);
+            this.btnRp25.TabIndex = 14;
+            this.btnRp25.Text = "FIJI WATER BOTTLE 500ML";
+            this.btnRp25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp25.UseVisualStyleBackColor = false;
             // 
-            // btnDasaniWater
+            // btnRp23
             // 
-            this.btnDasaniWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
-            this.btnDasaniWater.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDasaniWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDasaniWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDasaniWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDasaniWater.Location = new System.Drawing.Point(227, 3);
-            this.btnDasaniWater.Name = "btnDasaniWater";
-            this.btnDasaniWater.Size = new System.Drawing.Size(106, 79);
-            this.btnDasaniWater.TabIndex = 12;
-            this.btnDasaniWater.Text = "DASANI WATER BOTTLE 591ML";
-            this.btnDasaniWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDasaniWater.UseVisualStyleBackColor = false;
-            this.btnDasaniWater.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnRp23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp23.Location = new System.Drawing.Point(227, 3);
+            this.btnRp23.Name = "btnRp23";
+            this.btnRp23.Size = new System.Drawing.Size(106, 79);
+            this.btnRp23.TabIndex = 12;
+            this.btnRp23.Text = "DASANI WATER BOTTLE 591ML";
+            this.btnRp23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp23.UseVisualStyleBackColor = false;
             // 
-            // btnAddLotto1
+            // btnRp7
             // 
-            this.btnAddLotto1.BackColor = System.Drawing.Color.DarkRed;
-            this.btnAddLotto1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddLotto1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddLotto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddLotto1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddLotto1.Location = new System.Drawing.Point(115, 3);
-            this.btnAddLotto1.Name = "btnAddLotto1";
-            this.btnAddLotto1.Size = new System.Drawing.Size(106, 79);
-            this.btnAddLotto1.TabIndex = 11;
-            this.btnAddLotto1.Text = "LOTTO TICKET $1";
-            this.btnAddLotto1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddLotto1.UseVisualStyleBackColor = false;
-            this.btnAddLotto1.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp7.BackColor = System.Drawing.Color.DarkRed;
+            this.btnRp7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp7.Location = new System.Drawing.Point(115, 3);
+            this.btnRp7.Name = "btnRp7";
+            this.btnRp7.Size = new System.Drawing.Size(106, 79);
+            this.btnRp7.TabIndex = 11;
+            this.btnRp7.Text = "LOTTO TICKET $1";
+            this.btnRp7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp7.UseVisualStyleBackColor = false;
             // 
-            // btnAddHotBevSmall
+            // btnRp1
             // 
-            this.btnAddHotBevSmall.BackColor = System.Drawing.Color.Silver;
-            this.btnAddHotBevSmall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddHotBevSmall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddHotBevSmall.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddHotBevSmall.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddHotBevSmall.Location = new System.Drawing.Point(3, 3);
-            this.btnAddHotBevSmall.Name = "btnAddHotBevSmall";
-            this.btnAddHotBevSmall.Size = new System.Drawing.Size(106, 79);
-            this.btnAddHotBevSmall.TabIndex = 4;
-            this.btnAddHotBevSmall.Text = "HOT BEVERAGE 12OZ";
-            this.btnAddHotBevSmall.UseVisualStyleBackColor = false;
-            this.btnAddHotBevSmall.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp1.BackColor = System.Drawing.Color.Silver;
+            this.btnRp1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp1.Location = new System.Drawing.Point(3, 3);
+            this.btnRp1.Name = "btnRp1";
+            this.btnRp1.Size = new System.Drawing.Size(106, 79);
+            this.btnRp1.TabIndex = 4;
+            this.btnRp1.Text = "\nHOT BEVERAGE 12OZ";
+            this.btnRp1.UseVisualStyleBackColor = false;
             // 
-            // btnAddHotBevLarge
+            // btnRp2
             // 
-            this.btnAddHotBevLarge.BackColor = System.Drawing.Color.Silver;
-            this.btnAddHotBevLarge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddHotBevLarge.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddHotBevLarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddHotBevLarge.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddHotBevLarge.Location = new System.Drawing.Point(3, 88);
-            this.btnAddHotBevLarge.Name = "btnAddHotBevLarge";
-            this.btnAddHotBevLarge.Size = new System.Drawing.Size(106, 79);
-            this.btnAddHotBevLarge.TabIndex = 5;
-            this.btnAddHotBevLarge.Text = "HOT BEVERAGE 24OZ";
-            this.btnAddHotBevLarge.UseVisualStyleBackColor = false;
-            this.btnAddHotBevLarge.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp2.BackColor = System.Drawing.Color.Silver;
+            this.btnRp2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp2.Location = new System.Drawing.Point(3, 88);
+            this.btnRp2.Name = "btnRp2";
+            this.btnRp2.Size = new System.Drawing.Size(106, 79);
+            this.btnRp2.TabIndex = 5;
+            this.btnRp2.Text = "HOT BEVERAGE 24OZ";
+            this.btnRp2.UseVisualStyleBackColor = false;
             // 
-            // btnAddIceCube
+            // btnRp3
             // 
-            this.btnAddIceCube.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnAddIceCube.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddIceCube.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddIceCube.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddIceCube.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddIceCube.Location = new System.Drawing.Point(3, 173);
-            this.btnAddIceCube.Name = "btnAddIceCube";
-            this.btnAddIceCube.Size = new System.Drawing.Size(106, 79);
-            this.btnAddIceCube.TabIndex = 6;
-            this.btnAddIceCube.Text = "ICE CUBE 2.3KG";
-            this.btnAddIceCube.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddIceCube.UseVisualStyleBackColor = false;
-            this.btnAddIceCube.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp3.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnRp3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp3.Location = new System.Drawing.Point(3, 173);
+            this.btnRp3.Name = "btnRp3";
+            this.btnRp3.Size = new System.Drawing.Size(106, 79);
+            this.btnRp3.TabIndex = 6;
+            this.btnRp3.Text = "ICE CUBE 2.3KG";
+            this.btnRp3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp3.UseVisualStyleBackColor = false;
             // 
-            // btnAddPropaneExch
+            // btnRp4
             // 
-            this.btnAddPropaneExch.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnAddPropaneExch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddPropaneExch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddPropaneExch.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPropaneExch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddPropaneExch.Location = new System.Drawing.Point(3, 258);
-            this.btnAddPropaneExch.Name = "btnAddPropaneExch";
-            this.btnAddPropaneExch.Size = new System.Drawing.Size(106, 79);
-            this.btnAddPropaneExch.TabIndex = 7;
-            this.btnAddPropaneExch.Text = "PROPANE EXCHANGE";
-            this.btnAddPropaneExch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddPropaneExch.UseVisualStyleBackColor = false;
-            this.btnAddPropaneExch.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp4.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnRp4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp4.Location = new System.Drawing.Point(3, 258);
+            this.btnRp4.Name = "btnRp4";
+            this.btnRp4.Size = new System.Drawing.Size(106, 79);
+            this.btnRp4.TabIndex = 7;
+            this.btnRp4.Text = "PROPANE EXCHANGE";
+            this.btnRp4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp4.UseVisualStyleBackColor = false;
             // 
-            // btnAddWindshieldWasher
+            // btnRp6
             // 
-            this.btnAddWindshieldWasher.BackColor = System.Drawing.Color.Purple;
-            this.btnAddWindshieldWasher.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddWindshieldWasher.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddWindshieldWasher.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddWindshieldWasher.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddWindshieldWasher.Location = new System.Drawing.Point(3, 428);
-            this.btnAddWindshieldWasher.Name = "btnAddWindshieldWasher";
-            this.btnAddWindshieldWasher.Size = new System.Drawing.Size(106, 81);
-            this.btnAddWindshieldWasher.TabIndex = 9;
-            this.btnAddWindshieldWasher.Text = "WINDSHIELD WASHER";
-            this.btnAddWindshieldWasher.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddWindshieldWasher.UseVisualStyleBackColor = false;
-            this.btnAddWindshieldWasher.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp6.BackColor = System.Drawing.Color.Purple;
+            this.btnRp6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp6.Location = new System.Drawing.Point(3, 428);
+            this.btnRp6.Name = "btnRp6";
+            this.btnRp6.Size = new System.Drawing.Size(106, 81);
+            this.btnRp6.TabIndex = 9;
+            this.btnRp6.Text = "WINDSHIELD WASHER";
+            this.btnRp6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp6.UseVisualStyleBackColor = false;
             // 
-            // btnAddPropane
+            // btnRp5
             // 
-            this.btnAddPropane.BackColor = System.Drawing.Color.DarkBlue;
-            this.btnAddPropane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddPropane.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddPropane.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPropane.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddPropane.Location = new System.Drawing.Point(3, 343);
-            this.btnAddPropane.Name = "btnAddPropane";
-            this.btnAddPropane.Size = new System.Drawing.Size(106, 79);
-            this.btnAddPropane.TabIndex = 10;
-            this.btnAddPropane.Text = "20LB PROPANE";
-            this.btnAddPropane.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddPropane.UseVisualStyleBackColor = false;
-            this.btnAddPropane.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp5.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnRp5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp5.Location = new System.Drawing.Point(3, 343);
+            this.btnRp5.Name = "btnRp5";
+            this.btnRp5.Size = new System.Drawing.Size(106, 79);
+            this.btnRp5.TabIndex = 10;
+            this.btnRp5.Text = "20LB PROPANE";
+            this.btnRp5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp5.UseVisualStyleBackColor = false;
             // 
-            // btnPureLifeWater
+            // btnRp24
             // 
-            this.btnPureLifeWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
-            this.btnPureLifeWater.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPureLifeWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPureLifeWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPureLifeWater.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPureLifeWater.Location = new System.Drawing.Point(339, 3);
-            this.btnPureLifeWater.Name = "btnPureLifeWater";
-            this.btnPureLifeWater.Size = new System.Drawing.Size(106, 79);
-            this.btnPureLifeWater.TabIndex = 17;
-            this.btnPureLifeWater.Text = "PURELIFE WATER BOTTLE 500ML";
-            this.btnPureLifeWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPureLifeWater.UseVisualStyleBackColor = false;
-            this.btnPureLifeWater.Click += new System.EventHandler(this.ProductButton_Click);
+            this.btnRp24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(29)))), ((int)(((byte)(163)))));
+            this.btnRp24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp24.Location = new System.Drawing.Point(339, 3);
+            this.btnRp24.Name = "btnRp24";
+            this.btnRp24.Size = new System.Drawing.Size(106, 79);
+            this.btnRp24.TabIndex = 17;
+            this.btnRp24.Text = "PURELIFE WATER BOTTLE 500ML";
+            this.btnRp24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp24.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanelQuantity
             // 
@@ -1457,7 +1430,6 @@
             this.btnQty999.TabIndex = 13;
             this.btnQty999.Text = "999x";
             this.btnQty999.UseVisualStyleBackColor = false;
-            this.btnQty999.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty100
             // 
@@ -1472,7 +1444,6 @@
             this.btnQty100.TabIndex = 12;
             this.btnQty100.Text = "100x";
             this.btnQty100.UseVisualStyleBackColor = false;
-            this.btnQty100.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty50
             // 
@@ -1487,7 +1458,6 @@
             this.btnQty50.TabIndex = 11;
             this.btnQty50.Text = "50x";
             this.btnQty50.UseVisualStyleBackColor = false;
-            this.btnQty50.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty25
             // 
@@ -1502,7 +1472,6 @@
             this.btnQty25.TabIndex = 10;
             this.btnQty25.Text = "25x";
             this.btnQty25.UseVisualStyleBackColor = false;
-            this.btnQty25.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty10
             // 
@@ -1517,7 +1486,6 @@
             this.btnQty10.TabIndex = 9;
             this.btnQty10.Text = "10x";
             this.btnQty10.UseVisualStyleBackColor = false;
-            this.btnQty10.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty5
             // 
@@ -1532,7 +1500,6 @@
             this.btnQty5.TabIndex = 8;
             this.btnQty5.Text = "5x";
             this.btnQty5.UseVisualStyleBackColor = false;
-            this.btnQty5.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty4
             // 
@@ -1547,7 +1514,6 @@
             this.btnQty4.TabIndex = 7;
             this.btnQty4.Text = "4x";
             this.btnQty4.UseVisualStyleBackColor = false;
-            this.btnQty4.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty3
             // 
@@ -1562,7 +1528,6 @@
             this.btnQty3.TabIndex = 6;
             this.btnQty3.Text = "3x";
             this.btnQty3.UseVisualStyleBackColor = false;
-            this.btnQty3.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty2
             // 
@@ -1577,7 +1542,6 @@
             this.btnQty2.TabIndex = 5;
             this.btnQty2.Text = "2x";
             this.btnQty2.UseVisualStyleBackColor = false;
-            this.btnQty2.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // btnQty1
             // 
@@ -1590,9 +1554,8 @@
             this.btnQty1.Name = "btnQty1";
             this.btnQty1.Size = new System.Drawing.Size(61, 39);
             this.btnQty1.TabIndex = 4;
-            this.btnQty1.Text = "1x";
+            this.btnQty1.Text = "1x\n";
             this.btnQty1.UseVisualStyleBackColor = false;
-            this.btnQty1.Click += new System.EventHandler(this.QuantityButton_Click);
             // 
             // timerDateTime
             // 
@@ -1705,7 +1668,6 @@
             this.btnRemoveItem.Text = "Remove Item";
             this.btnRemoveItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoveItem.UseVisualStyleBackColor = false;
-            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnChangePrice
             // 
@@ -2394,7 +2356,6 @@
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxPassword
             // 
@@ -2543,44 +2504,44 @@
         private System.Windows.Forms.Button btnQty2;
         private System.Windows.Forms.Button btnQty1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelProducts;
-        private System.Windows.Forms.Button btnAddHotBevSmall;
-        private System.Windows.Forms.Button btnAddHotBevLarge;
-        private System.Windows.Forms.Button btnAddIceCube;
-        private System.Windows.Forms.Button btnAddPropaneExch;
-        private System.Windows.Forms.Button btnAddWindshieldWasher;
-        private System.Windows.Forms.Button btnAddPropane;
+        private System.Windows.Forms.Button btnRp1;
+        private System.Windows.Forms.Button btnRp2;
+        private System.Windows.Forms.Button btnRp3;
+        private System.Windows.Forms.Button btnRp4;
+        private System.Windows.Forms.Button btnRp6;
+        private System.Windows.Forms.Button btnRp5;
         private System.Windows.Forms.Label labelRemaining;
         private System.Windows.Forms.Label labelTendered;
         private System.Windows.Forms.Label labelSubtotal;
-        private System.Windows.Forms.Button btnAddGasCan;
-        private System.Windows.Forms.Button btnAddCoolant378;
-        private System.Windows.Forms.Button btnAddCoolant185;
-        private System.Windows.Forms.Button btnAddFirewood;
-        private System.Windows.Forms.Button btnAddEngOil10W20;
+        private System.Windows.Forms.Button btnRp16;
+        private System.Windows.Forms.Button btnRp15;
+        private System.Windows.Forms.Button btnRp14;
+        private System.Windows.Forms.Button btnRp13;
+        private System.Windows.Forms.Button btnRp12;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button btnAddEngOil5W20;
+        private System.Windows.Forms.Button btnRp11;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button btnAddEngOil10W30;
+        private System.Windows.Forms.Button btnRp10;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button btnVegSandwich;
-        private System.Windows.Forms.Button btnChickenSandwich;
-        private System.Windows.Forms.Button btnAddEngOil5W30;
-        private System.Windows.Forms.Button btnWedges;
-        private System.Windows.Forms.Button btnHotdog;
-        private System.Windows.Forms.Button btnPizzaLarge;
-        private System.Windows.Forms.Button btnPureLifeWater;
-        private System.Windows.Forms.Button btnAddLotto10;
-        private System.Windows.Forms.Button btnSmartWater;
-        private System.Windows.Forms.Button btnFijiWater;
-        private System.Windows.Forms.Button btnDasaniWater;
-        private System.Windows.Forms.Button btnAddLotto1;
+        private System.Windows.Forms.Button btnRp22;
+        private System.Windows.Forms.Button btnRp21;
+        private System.Windows.Forms.Button btnRp9;
+        private System.Windows.Forms.Button btnRp20;
+        private System.Windows.Forms.Button btnRp19;
+        private System.Windows.Forms.Button btnRp18;
+        private System.Windows.Forms.Button btnRp24;
+        private System.Windows.Forms.Button btnRp8;
+        private System.Windows.Forms.Button btnRp26;
+        private System.Windows.Forms.Button btnRp25;
+        private System.Windows.Forms.Button btnRp23;
+        private System.Windows.Forms.Button btnRp7;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Timer timerDateTime;
         private System.Windows.Forms.Button btnPayout;
@@ -2633,7 +2594,7 @@
         private System.Windows.Forms.Button btnFuelCalculatorEnter;
         private System.Windows.Forms.Button btnFuelCalculatorBackspace;
         private System.Windows.Forms.Button btnFuelCalculator25;
-        private System.Windows.Forms.Button btnPizzaSmall;
+        private System.Windows.Forms.Button btnRp17;
         private System.Windows.Forms.TableLayoutPanel tabelLayoutPanelLogin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenu;
         private System.Windows.Forms.PictureBox pictureBoxLoginMenu;

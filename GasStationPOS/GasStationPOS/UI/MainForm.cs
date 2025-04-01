@@ -1,6 +1,17 @@
-﻿using GasStationPOS.MockDatabase;
+﻿using GasStationPOS.Core.Data.Models.ProductModels;
+using GasStationPOS.Core.Data.Models.TransactionModels;
+using GasStationPOS.Core.Services;
+using GasStationPOS.Core.Services.Auth;
+using GasStationPOS.Core.Services.Inventory;
+using GasStationPOS.Core.Services.Transaction_Payment;
+using GasStationPOS.UI;
+using GasStationPOS.UI.Constants;
+using GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers;
+using GasStationPOS.UI.MainFormDataSchemas.DTOs;
+using GasStationPOS.UI.UIFormValidation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,68 +34,303 @@ namespace GasStationPOS
     ///
     public partial class MainForm : Form
     {
-        // Default quantity
-        private int selectedQuantity = 1;
+        // ======================== CONSTANTS (move to a different file) ========================
+        // Fuel prices for different fuel types
+        private static readonly decimal fuelRegularPriceCAD = 1.649m;
+        private static readonly decimal fuelPlusPriceCAD = 1.849m;
+        private static readonly decimal fuelSupremePriceCad = 2.049m;
 
-        // Dictionary to store product names and their associated prices
-        private Dictionary<string, decimal> productPrices = new Dictionary<string, decimal>
-        {
-            { "HOT BEVERAGE 12OZ", 2.00m },
-            { "HOT BEVERAGE 24OZ", 2.89m },
-            { "ICE CUBE 2.3KG", 3.99m },
-            { "PROPANE EXCHANGE", 29.99m },
-            { "20LB PROPANE", 49.99m },
-            { "WINDSHIELD WASHER", 12.99m },
-            { "LOTTO TICKET $1", 1.00m },
-            { "LOTTO TICKET $10", 10.00m },
-            { "1L ENGINE OIL 5W30", 7.99m },
-            { "1L ENGINE OIL 10W30", 11.99m },
-            { "1L ENGINE OIL 5W20", 6.99m },
-            { "1L ENGINE OIL 10W20", 10.99m },
-            { "FIREWOOD", 13.99m },
-            { "PC COOLANT 1.85L", 19.99m },
-            { "PC COOLANT 3.78L", 33.99m },
-            { "10L GAS CAN", 3.99m },
-            { "PIZZA SLICE SMALL", 1.29m },
-            { "PIZZA SLICE LARGE", 2.09m },
-            { "HOTDOG", 1.49m },
-            { "POTATO WEDGES", 2.29m },
-            { "CHICKEN SANDWICH", 3.99m },
-            { "VEG SANDWICH", 2.49m },
-            { "DASANI WATER BOTTLE 591ML", 2.69m },
-            { "PURELIFE WATER BOTTLE 500ML", 2.59m },
-            { "FIJI WATER BOTTLE 500ML", 3.49m },
-            { "SMART WATER BOTTLE 350ML", 3.59m }
-        };
+        // ======================== SERVICES ========================
+        private readonly IInventoryService      inventoryService; // for retrieving all retail and fuel product data to display to the UI
+        private readonly ITransactionService    transactionService;
+        private readonly IAuthenticationService authenticationService;
 
-        // Variables to track the subtotal and the amount tendered by the customer
-        private decimal subtotal = 0;
-        private decimal tendered = 0; // Will be updated later
+        // ======================== BINDING SOURCES ========================
+
+        // binding sources allow for UI control data (Text, Label, ListBox contents, etc.) to be AUTOMATICALLY updated when connected to a data source
+        // - updates to the data source will be syncronized UI
+
+        // USER CART UNDERLYING DATA (CONTENTS WILL CHANGE)
+        private readonly BindingSource userCartProductsBindingSource;
+
+        // SUBTOTAL, AMOUNT TENDERED, AMOUNT REMAINING UNDERLYING DATA SOURCE (WILL CHANGE)
+        private readonly BindingSource paymentDataBindingSource;
+
+        // ======================== CONSTANT DATA FOR APPLICATION ========================
+
+        // RETAIL PRODUCT BUTTONS UNDERLYING DATA (CONTENTS DO NOT CHANGE)
+        private readonly IEnumerable<RetailProductDTO> retailProductsDataList;
+
+        // UPDATE QUANTITY BUTTONS UNDERLYING DATA (CONTENTS DO NOT CHANGE)
+        private readonly IEnumerable<int> retailProductQuantitiesList;
+
+        // ======================== STATE RELATED DATA FOR APPLICATION ========================
+
+        // USER CART DATA SOURCE (CONTENTS WILL CHANGE)
+        private readonly BindingList<ProductDTO> userCartProductsDataList; // data changes when user adds/removes items from the cart
+
+        // Payment related Data sources
+        // Stores variables to track the subtotal, the amount remaining and the amount tendered by the customer
+        private readonly PaymentDataWrapper paymentDataWrapper;
+
+        // Currently selected product quantity
+        private int currentSelectedProductQuantity;
 
         // Flag to manage the activation state of fuel pumps
-        private bool fuelPumpsActivated = false;
-
-        // Fuel prices for different fuel types
-        private decimal fuelRegularPriceCAD = 1.649m;
-        private decimal fuelPlusPriceCAD = 1.849m;
-        private decimal fuelSupremePriceCad = 2.049m;
+        private bool fuelPumpsActivated;
 
         // Variable to store the input for fuel amount and selected fuel price
-        private string fuelAmountInput = "";
-        private decimal fuelPrice = 0.00m;
-
-        // Path for the Mock Database
-        private readonly string dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MockDatabase", "data.json");
-        private Database database = new Database();
+        private string fuelAmountInput;
+        private decimal fuelPrice;
 
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
-        public MainForm()
+        public MainForm(IInventoryService       inventoryService, 
+                        ITransactionService     transactionService,
+                        IAuthenticationService  authenticationService) // dependency injection of services
         {
-            setupDatabase(); // Setup the user database
+            //setupDatabase(); // Setup the user database ================================================================================================================================================
             InitializeComponent();
+
+            // === Initilize required services ===
+            this.inventoryService   = inventoryService;
+            this.transactionService = transactionService;
+            this.authenticationService = authenticationService;
+
+            // === Initilize Main View UI Underlying Data ===
+
+            currentSelectedProductQuantity = QuantityConstants.DEFAULT_QUANTITY_VALUE; // Initial value of the current selected product quantity
+            fuelPumpsActivated = false;
+            fuelAmountInput = "";
+            fuelPrice = 0.00m;
+
+            // RETAIL PRODUCT BUTTON DATA
+            this.retailProductsDataList = inventoryService.GetAllRetailProductData(); // call inventory service which retreives the data from DB)
+
+            // PRODUCT QUANTITY BUTTON DATA
+            this.retailProductQuantitiesList = new List<int> { 1, 2, 3, 4, 5, 10, 25, 50, 100, 999 };
+
+            // LIST CART DATA (INITIALLY EMPTY) 
+            this.userCartProductsDataList = new BindingList<ProductDTO>();
+
+            // PAYMENT DATA
+            this.paymentDataWrapper = new PaymentDataWrapper(); // contains subtotal, amountRemaining, and amountTendered
+
+            // === Binding sources that view ui controls will bind to ===
+
+            this.userCartProductsBindingSource  = new BindingSource(); 
+            this.paymentDataBindingSource       = new BindingSource();
+
+            this.userCartProductsBindingSource.DataSource   = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in this presenter
+            this.paymentDataBindingSource.DataSource        = this.paymentDataWrapper;
+
+            // === Update button labels and tag attribute using data sources ===
+
+            this.SetRetailProductButtonDataFromSource(retailProductsDataList);
+            this.SetProductQuantityButtonDataFromSource(retailProductQuantitiesList);
+
+            // === Bind UI controls with the Binding sources ===
+
+            this.SetUserCartListBindingSource(userCartProductsBindingSource); // set ui for the user cart (the ListBox)
+            this.SetPaymentInfoLabelsBindingSource(paymentDataBindingSource); // set the UI labels for subtotal, amountTendered, and amountRemaining in the main form to the binding source data
+
+            // === ADD EVENT HANDLERS TO EVENTS IN MAIN FORM ===
+            AssociateMainFormEvents();
+
+            // === ADD EVENT HANDLERS TO EVENTS IN LOGIN FORM ===
+            AssociateLoginFormEvents();
         }
+
+        #region Button Label and Tag Setters
+
+        /// <summary>
+        /// Retail product UI Buttons: 
+        /// 
+        /// The label of each button is set to a value based on the corresponding retail product that it corresponds to
+        /// Retail Product data is IEnumerable<RetailProductDTO> (data converted from json file / database in the presenter)
+        /// 
+        /// Method is called in the presenter - not in this main form class.
+        /// </summary>
+        public void SetRetailProductButtonDataFromSource(IEnumerable<RetailProductDTO> retailProductsDataList)
+        {
+            foreach (RetailProductDTO retailProductDTO in retailProductsDataList)
+            {
+                // get the corresponding button name based on the retail product (ex. productId of 1 -> "btnRp1")
+                string retailBtnName = $"{ButtonNamePrefixes.RETAIL_BUTTON_PREFIX}{retailProductDTO.Id}";
+
+                // find the button with the retail button name (ex. find button with name btnRp1
+                Button retailProductButton = (Button)this.Controls.Find(retailBtnName, true).First();
+
+                // 1. Set the text of the button to the name attribute in the RetailProductDTO object
+                retailProductButton.Text = retailProductDTO.ProductNameDescription;
+
+                // 2. Attach the retailProductDTO object to the button using the Tag attribute (to know which retail product that the clicked button was associated with)
+                retailProductButton.Tag = retailProductDTO;
+
+                // ====== EVENT RELATED ======
+
+                // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
+
+                // 3. Associate MainFormDataUpdater.AddNewRetailProductToCart function to the click event of each retail product button
+                // - Pass in the tag value into the custom event argument for the presenter to be able to access the value
+                RetailProductDTO rpDtoReference = ((RetailProductDTO)retailProductButton.Tag);
+
+                retailProductButton.Click += delegate {
+                    MainFormDataUpdater.AddNewRetailProductToCart(
+                        this.userCartProductsDataList,
+                        rpDtoReference,
+                        this.paymentDataWrapper,
+                        ref currentSelectedProductQuantity
+                    );
+                };
+
+                // Add UI updating method to event handler (UpdatePayButtonVisibility will execute after the item was added)
+                retailProductButton.Click += delegate { UpdatePayButtonVisibility(); }; // Note: if the first event handler throws an exception, it will prevent subsequent handlers from executing, unless the exception is caught and handled.
+            }
+        }
+
+        /// <summary>
+        /// Update quantity UI Buttons:
+        /// 
+        /// The label of each button is set to a value based on the corresponding quantity that it corresponds to
+        /// Quantity data is IEnumerable<int> (data converted from json file / database in the presenter)
+        /// 
+        /// Method is called in the presenter - not in this main form class.
+        /// </summary>
+        public void SetProductQuantityButtonDataFromSource(IEnumerable<int> retailProductQuantityDataList)
+        {
+            foreach (int productQuantityNum in retailProductQuantityDataList)
+            {
+                string quantityButtonName = $"{ButtonNamePrefixes.QUANTITY_BUTTON_PREFIX}{productQuantityNum}";
+
+                Button updateQuantityButton = (Button)this.Controls.Find(quantityButtonName, true).First();
+
+                // 1. Set the text of the button to the quantity number
+                updateQuantityButton.Text = $"{productQuantityNum.ToString()}x";
+
+                // 2. Attack the index of the quantity number value to the button using the Tag attribute (to know which quantity that the clicked button was associated with)
+                updateQuantityButton.Tag = productQuantityNum; // save the value to change the quantity to
+
+                // ====== EVENT RELATED ======
+
+                // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
+
+                // 3. Associate MainFormDataUpdater.UpdateSelectedProductQuantity function to the click event of each product quantity update button
+                // - Pass in the tag value into the custom event argument for the presenter to be able to access the value
+                updateQuantityButton.Click += delegate { 
+                    MainFormDataUpdater.UpdateSelectedProductQuantity(
+                        ref currentSelectedProductQuantity, 
+                        (int)updateQuantityButton.Tag
+                    );
+                };
+            }
+        }
+
+        #endregion
+
+        #region Binding Source Setters
+
+        /// <summary>
+        /// Bind the data source (a collection of ProductDTOs) with the ListCart UI:
+        /// 
+        /// Gets and sets data from List<ProductDTO> stored in presenter
+        /// Bind the product ListBox list data with a list of ProductDTOs (selectedRetailProductsList) stored in the presenter
+        /// 
+        /// Two way data binding between the listCart and the userCartProductsBindingSource BindingSource data.
+        /// 
+        /// Method is called in the presenter - not in this main form class.
+        /// </summary>
+        public void SetUserCartListBindingSource(BindingSource userCartProductsBindingSource)
+        {
+            listCart.DataSource = userCartProductsBindingSource; // see if this works, otherwise use a DataGridView class
+        }
+
+        /// <summary>
+        /// Sets the binding sources of the Labels:
+        /// labelSubtotal   <-> paymentDataBindingSource - Subtotal (decimal)
+        /// labelTendered   <-> paymentDataBindingSource - AmountTendered (decimal)
+        /// labelRemaining  <-> paymentDataBindingSource - AmountRemaining (decimal)
+        /// </summary>
+        /// <param name="paymentDataBindingSource"></param>
+        public void SetPaymentInfoLabelsBindingSource(BindingSource paymentDataBindingSource)
+        {
+            bool formattingEnabled = true; // boolean to determine if the created Binding object will automatically format the payment decimal value
+            decimal defaultValueWhenDataSourceNull = PaymentConstants.INITIAL_AMOUNT_DOLLARS; // default value in case the data source is null
+            string twoDecimalPlacesString = "C2"; // tells Binding object to format the data source to 2 decimal places (proper currency format)
+
+            // Need DataSourceUpdateMode.OnPropertyChanged so it knows to change the value in the the UI control when the datasource (ex. Subtotal) changes value
+            this.labelSubtotal.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "Subtotal", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString));
+            this.labelTendered.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "AmountTendered", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString));
+            this.labelRemaining.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "AmountRemaining", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString));
+        }
+
+        #endregion
+
+        #region Attach Eventhandlers to events of SINGLE Buttons
+
+        /// <summary>
+        /// Attaches EventHandler objects to buttons, that do not have data binding properties with data stored in the presenter (retail, fuel and quantity buttons do)
+        /// </summary>
+        private void AssociateMainFormEvents()
+        {
+            // === Clear 1 item from cart Button ===
+
+            btnRemoveItem.Click += btnRemoveItem_Click_v2;
+
+            // === Clear ALL products from cart Button ===
+
+            btnClear.Click += delegate { // using delegate operator allows for anonymous methods that return an EventHandler object ex: delegate {<can put any code to handle event in here>}
+                MainFormDataUpdater.RemoveAllProductsFromCart(userCartProductsDataList, paymentDataWrapper, ref currentSelectedProductQuantity);
+            };
+            btnClear.Click += delegate { UpdatePayButtonVisibility(); };
+
+
+            // === Payment Button ===
+
+            // Call transactionService.CreateTransaction function when either btnPayCard or btnPayCash buttons are clicked (passing in the respective payment method)
+            // (Need to assign the corresponding PaymentMethod enum member in paramater so transactionService can can handle the correct payment type
+            btnPayCard.Click += delegate { transactionService.CreateTransaction(PaymentMethod.CARD, this.userCartProductsDataList); };
+            btnPayCash.Click += delegate { transactionService.CreateTransaction(PaymentMethod.CASH, this.userCartProductsDataList); };
+        }
+
+        private void AssociateLoginFormEvents()
+        {
+            // === Login Button ===
+            buttonLogin.Click += buttonLogin_Click;
+        }
+
+        #endregion
+
+        // ========= Begin Region of Re-used Updated Event handlers =========
+
+        /// <summary>
+        /// Event handler for removing an item from the cart
+        /// </summary>
+        private void btnRemoveItem_Click_v2(object sender, EventArgs e)
+        {
+            if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
+            {
+                // Get the selected item from the list                                  
+                var selectedProduct = listCart.SelectedItem as ProductDTO;
+
+                if (selectedProduct != null)
+                {
+                    // Remove the product from the cart
+                    MainFormDataUpdater.RemoveProductFromCart(userCartProductsDataList, selectedProduct, paymentDataWrapper); // (remove from the userCartProductsDataList list - will update the listbox UI automatically)
+
+                    // Show pnlProducts, pnlBottomNavMain
+                    HidePanels();
+                    pnlProducts.Visible = true;
+                    pnlBottomNavMain.Visible = true;
+
+                    // if the cart is empty, hide payment buttons
+                    UpdatePayButtonVisibility();
+                }
+            }
+        }
+
+        // ========= End Region of Re-used Updated Event handlers =========
 
         /// <summary>
         /// Event triggered when the form is loaded
@@ -102,19 +348,6 @@ namespace GasStationPOS
             // Update the label with the current date and time
             lblDateTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
-
-        /// <summary>
-        /// Event handler for selecting the quantity of products
-        /// </summary>
-        private void QuantityButton_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn != null)
-            {
-                selectedQuantity = int.Parse(btn.Text.Replace("x", ""));
-            }
-        }
-
 
         /// <summary>
         /// Helper Method to toggle the visibility of pay buttons
@@ -145,60 +378,6 @@ namespace GasStationPOS
             pnlFuelTypeSelect.Visible = false;
             pnlSelectCartItem.Visible = false;
             pnlAddFuelAmount.Visible = false;
-        }
-
-        /// <summary>
-        /// Method to update the UI after adding items to the cart
-        /// </summary>
-        private void UpdateAfterAddingToCart()
-        {
-            labelSubtotal.Text = $"${subtotal:F2}";
-
-            // Update Remaining
-            labelRemaining.Text = $"${(tendered - subtotal):F2}";
-
-            // Reset selectedQuantity
-            selectedQuantity = 1;
-
-            // Show payment buttons
-            UpdatePayButtonVisibility();
-        }
-
-        /// <summary>
-        /// Event handler for adding products to the cart
-        /// </summary>
-        private void ProductButton_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn != null && productPrices.ContainsKey(btn.Text))
-            {
-                string productName = btn.Text;
-                decimal price = productPrices[productName];
-                decimal total = price * selectedQuantity;
-
-                CartItem cartItem = new CartItem(productName, selectedQuantity, price, total);
-
-                listCart.Items.Add(cartItem);
-
-                // Update subtotal
-                subtotal += total;
-                UpdateAfterAddingToCart();
-            }
-        }
-
-        /// <summary>
-        /// // Event handler for clearing the cart
-        /// </summary>
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            listCart.Items.Clear();
-            subtotal = 0;
-            selectedQuantity = 1;
-            labelSubtotal.Text = "";
-            labelRemaining.Text = "";
-
-            // Hide payment buttons
-            UpdatePayButtonVisibility();
         }
 
         /// <summary>
@@ -247,39 +426,6 @@ namespace GasStationPOS
         private void btnBack_Click(object sender, EventArgs e)
         {
             reset();
-        }
-
-        /// <summary>
-        /// Event handler for removing an item from the cart
-        /// </summary>
-        private void btnRemoveItem_Click(object sender, EventArgs e)
-        {
-            if (listCart.SelectedIndex != -1 && listCart.SelectedItem != null)
-            {
-                // Get the selected item from the list
-                var selectedItem = listCart.SelectedItem as CartItem;
-
-                if (selectedItem != null)
-                {
-                    // Remove the selected item from the list
-                    listCart.Items.Remove(selectedItem);
-
-                    // Show pnlProducts, pnlBottomNavMain
-                    HidePanels();
-                    pnlProducts.Visible = true;
-                    pnlBottomNavMain.Visible = true;
-
-                    // Update the subtotal after removing the item
-                    subtotal -= selectedItem.TotalPrice;
-                    labelSubtotal.Text = $"${subtotal:F2}"; // Update the label displaying the subtotal
-
-                    // Update Remaining
-                    labelRemaining.Text = $"${(tendered - subtotal):F2}";
-
-                    // if the cart is empty, hide payment buttons
-                    UpdatePayButtonVisibility();
-                }
-            }
         }
 
         /// <summary>
@@ -486,10 +632,10 @@ namespace GasStationPOS
                 CartItem newItem = new CartItem(labelFuelType.Text, quantity, fuelPrice, total);
                 listCart.Items.Add(newItem);
 
-                subtotal += total;
+                //subtotal += total;
 
                 reset();
-                UpdateAfterAddingToCart();
+                //UpdateAfterAddingToCart();
             }
             else
             {
@@ -497,42 +643,8 @@ namespace GasStationPOS
             }
         }
 
-        /// <summary>
-        /// Sets up the user database by reading the JSON file and deserializing it.
-        /// </summary>
-        private void setupDatabase()
-        {
-            try
-            {
-                // Ensure the database file exists
-                if (!File.Exists(dataPath))
-                {
-                    MessageBox.Show($"Database file not found at: {dataPath}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
 
-                // Read and deserialize JSON
-                string jsonString = File.ReadAllText(dataPath);
-                database = JsonSerializer.Deserialize<Database>(jsonString, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                }) ?? new Database(); // Ensure database is never null
-
-                // Ensure Accounts list is initialized
-                if (database.Accounts == null)
-                {
-                    database.Accounts = new List<Account>();
-                    MessageBox.Show("Warning: No accounts found in database.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading database: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        // === LOGIN FORM ===
 
         /// <summary>
         /// Handles all the login logic.
@@ -542,11 +654,13 @@ namespace GasStationPOS
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             // Retrieve user input
-            string enteredAccountID = textBoxAccountID.Text.Trim();
-            string enteredPassword = textBoxPassword.Text;
+            string enteredUsername  = textBoxAccountID.Text.Trim();
+            string enteredPassword  = textBoxPassword.Text;
 
-            // Check if inputs are empty
-            if (string.IsNullOrEmpty(enteredAccountID) || string.IsNullOrEmpty(enteredPassword))
+            // Validate user inputs (check if they are empty)
+            bool validationSuccessful = LoginFormValidator.ValidateFields(enteredUsername, enteredPassword);
+
+            if (!validationSuccessful)
             {
                 labelLoginError.Text = "Error: Please enter both username and password.";
                 labelLoginError.Visible = true;
@@ -554,7 +668,9 @@ namespace GasStationPOS
             }
 
             // Validate user credentials
-            if (!AuthenticationHelper.ValidateAccount(enteredAccountID, enteredPassword, database))
+            bool authenticationSuccessful = authenticationService.Authenticate(enteredUsername, enteredPassword);
+
+            if (!authenticationSuccessful)
             {
                 labelLoginError.Text = "Error: Username or password incorrect.";
                 labelLoginError.Visible = true;
