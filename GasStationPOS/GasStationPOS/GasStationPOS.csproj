@@ -109,6 +109,7 @@
     <Compile Include="Core\Services\Transaction_Payment\TransactionService.cs" />
     <Compile Include="Core\Services\Utils\PasswordEncryption.cs" />
     <Compile Include="MappingProfiles.cs" />
+    <Compile Include="ReceiptPrinter.cs" />
     <Compile Include="UI\Constants\ButtonNamePrefixes.cs" />
     <Compile Include="UI\Constants\PaymentConstants.cs" />
     <Compile Include="UI\Constants\QuantityConstants.cs" />

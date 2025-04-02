@@ -681,5 +681,12 @@ namespace GasStationPOS
             tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // Prints the reciept
+        private void btnPrintReceipt_Click(object sender, EventArgs e)
+        {
+            ReceiptPrinter rp = new ReceiptPrinter();
+            rp.printReceipt();
+        }
     }
 }
