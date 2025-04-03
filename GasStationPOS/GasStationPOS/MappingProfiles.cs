@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
 using GasStationPOS.Core.Data.Models.ProductModels;
+using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Data.Models.UserModels;
 using GasStationPOS.Core.Services;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
@@ -33,6 +36,8 @@ namespace GasStationPOS
             CreateRetailProductMappingProfile();
 
             CreateUserMappingProfile();
+
+            CreateTransactionMappingProfile();
         }
 
         /// <summary>
@@ -44,14 +49,17 @@ namespace GasStationPOS
             CreateMap<Product, ProductDTO>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductName))
-                .ForMember(dest => dest.PriceDollars, opt => opt.MapFrom(src => src.PriceDollars))
-                .Include<RetailProduct, RetailProductDTO>() // mapping inheritance for retail products
-                .Include<FuelProduct, FuelProductDTO>();    // mapping inheritance for fuel products
+                .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
+                .Include<RetailProduct, RetailProductDTO>() // mapping inheritance for RetailProduct -> RetailProductDTO
+                .Include<FuelProduct, FuelProductDTO>();    // mapping inheritance for FuelProduct -> FuelProductDTO
 
             // ProductDTO -> Product
             CreateMap<ProductDTO, Product>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductNameDescription))
-                .ForMember(dest => dest.PriceDollars, opt => opt.MapFrom(src => src.PriceDollars));
+                .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
+                .Include<RetailProductDTO, RetailProduct>() // mapping inheritance for RetailProductDTO -> RetailProduct
+                .Include<FuelProductDTO, FuelProduct>();    // mapping inheritance for FuelProductDTO -> FuelProduct
         }
 
         /// <summary>
@@ -83,11 +91,11 @@ namespace GasStationPOS
         {
             // RetailProduct -> RetailProductDTO
             CreateMap<RetailProduct, RetailProductDTO>();
-            //     //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
-            //     .ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
-            //     .ForMember(dest => dest.ProductSizeVariation, opt => opt.MapFrom(src => src.ProductSizeVariation)); // <need to manually divide the dto value by 100 to display in ¢>
+            ////     //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
+            ////     .ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
+            ////     .ForMember(dest => dest.ProductSizeVariation, opt => opt.MapFrom(src => src.ProductSizeVariation)); // <need to manually divide the dto value by 100 to display in ¢>
 
-            // RetailProductDTO -> RetailProduct
+            //// RetailProductDTO -> RetailProduct
             CreateMap<RetailProductDTO, RetailProduct>();
             //     //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
             //     .ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
@@ -101,7 +109,7 @@ namespace GasStationPOS
                  //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
                  .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                  .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductNameDescription))
-                 .ForMember(dest => dest.PriceDollars, opt => opt.MapFrom(src => src.PriceDollars))
+                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                  .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
                  .ForMember(dest => dest.TotalPriceDollars, opt => opt.MapFrom(src => src.TotalPriceDollars));
                  //.ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
@@ -111,14 +119,30 @@ namespace GasStationPOS
         private void CreateUserMappingProfile()
         {
             // ====== Database DTOs ======
-            CreateMap<User, UserDatabaseDTO>()
-                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role));
 
+            // User -> UserDatabaseDTO
+            CreateMap<User, UserDatabaseDTO>()
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()));
+
+            // UserDatabaseDTO -> User
             CreateMap<UserDatabaseDTO, User>()
-                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role));
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => Enum.Parse(typeof(UserRole), src.Role)));
+        }
+        
+        private void CreateTransactionMappingProfile()
+        {
+            // ====== Database DTOs ======
+
+            CreateMap<Transaction, TransactionDatabaseDTO>()
+                .ForMember(dest => dest.PaymentMethod, opt => opt.MapFrom(src => src.PaymentMethod.ToString()))
+                .ForMember(dest => dest.TransactionDateTime, opt => opt.MapFrom(src => src.TransactionDateTime.ToString(TransactionConstants.TransactionDatetimeFormat))); // DateTime -> formatted string
+
+            CreateMap<TransactionDatabaseDTO, Transaction>()
+                .ForMember(dest => dest.PaymentMethod, opt => opt.MapFrom(src => Enum.Parse(typeof(PaymentMethod), src.PaymentMethod)))
+                .ForMember(dest => dest.TransactionDateTime, opt => opt.MapFrom(src => DateTime.ParseExact(src.TransactionDateTime, TransactionConstants.TransactionDatetimeFormat, new CultureInfo("en-CA")))); // formatted string -> DateTime
         }
 
-        // more mappings here later (transaction, receipt etc.)
+        // more mappings here later (receipt etc.)
 
     }
 }

@@ -31,20 +31,12 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
         //[Required(ErrorMessage = "Retail Category is required")]
         //public RetailCategory RetailCategory { get; set; }
 
-
-        [Range(0.0, 10000.0, ErrorMessage = "Volume must be between 0.0 and 100000.0 L")]
-        public decimal? ProductVolumeLitres { get; set; } = null; // for liquids (ex. beverages)
-
-        public ProductSizeVariation? ProductSizeVariation { get; set; } = null; // for packaged (ex. snacks - S/M/L)
-
         // For testing
         public override string ToString()
         {
-            string strRet = $@"
-                {base.ToString()}
-                Volume Litres: {ProductVolumeLitres}
-                Size: {ProductSizeVariation}
-                ";//Retail Category: {RetailCategory}
+            string strRet =
+                $"{base.ToString()}";
+                //$"Retail Category: {RetailCategory}";
             return strRet;
         }
     }

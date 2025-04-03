@@ -39,7 +39,7 @@ namespace GasStationPOS.UI
 
             // Calculate the total price of the retail product based on current quantity selected
             // Update the product quantity to display in UI
-            rpDTOCopy.TotalPriceDollars = currentSelectedQuantityRef * rpDTOCopy.PriceDollars;
+            rpDTOCopy.TotalPriceDollars = currentSelectedQuantityRef * rpDTOCopy.UnitPriceDollars;
             rpDTOCopy.Quantity = currentSelectedQuantityRef;
 
             userCartProductsDataList.Add(rpDTOCopy); // UI is automatically updated bc of the BindingSource attached
@@ -50,9 +50,6 @@ namespace GasStationPOS.UI
 
             // Reset selectedQuantity to the default value
             currentSelectedQuantityRef = QuantityConstants.DEFAULT_QUANTITY_VALUE;
-
-            //test (remove after)
-            Console.WriteLine(userCartProductsDataList.Count);
         }
 
         //public static void AddNewFuelProductToCart(object sender, AddFuelProductToCartEventArgs e)
@@ -83,9 +80,6 @@ namespace GasStationPOS.UI
             // Removal reduces the price (-)
             priceChange = -(productToRemove.TotalPriceDollars);
             paymentDataWrapper.UpdatePaymentRelatedDataSources(priceChange);
-
-            //test (remove after)
-            Console.WriteLine(userCartProductsDataList.Count);
         }
 
         public static void RemoveAllProductsFromCart(
@@ -101,21 +95,6 @@ namespace GasStationPOS.UI
 
             // reset subtotal and amountRemaining
             paymentDataWrapper.ResetPaymentRelatedDataSourcesToInitValues(); // UI is automatically updated bc of the BindingSource attached
-
-            //test (remove after)
-            Console.WriteLine(userCartProductsDataList.Count);
-        }
-
-        public static void SubmitPayment(object sender, EventArgs e)
-        {
-            //TODO: once UI is done for CASH and CARD payments - subscribe SubmitPaymentEvent EventHandler delegate
-
-            //SubmitPaymentEvent() -> call the service
-
-            //  this.subtotal += PAID AMOUNT FROM USER;
-            //  this.amountTenderedFormatted = $"${amountTendered:F2}";
-
-            throw new NotImplementedException();
         }
         #endregion
     }

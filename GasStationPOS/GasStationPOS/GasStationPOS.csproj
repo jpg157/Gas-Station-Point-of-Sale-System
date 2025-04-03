@@ -81,6 +81,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionDatabaseDTO.cs" />
+    <Compile Include="Core\Data\Models\TransactionModels\TransactionFuelProductItem.cs" />
+    <Compile Include="Core\Data\Models\TransactionModels\TransactionRetailProductItem.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionsJSONStructure.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
@@ -91,7 +95,7 @@
     </Compile>
     <Compile Include="CartItem.cs" />
     <Compile Include="Core\Data\Database\Json\JsonDBConstants.cs" />
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\RetailProductListWrapper.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\RetailProductsJSONStructure.cs" />
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\UserDatabaseDTO.cs" />
     <Compile Include="Core\Data\Models\ProductModels\FuelProduct.cs" />
     <Compile Include="Core\Data\Models\ProductModels\Product.cs" />
@@ -146,13 +150,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Content Include="Core\Data\Database\Json\MockDatabase\fuel_products.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\receipts.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\retail_products.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\transactions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

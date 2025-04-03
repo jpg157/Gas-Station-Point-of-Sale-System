@@ -11,6 +11,6 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
 {
     public interface ITransactionService
     {
-        void CreateTransaction(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products);
+        Task<bool> CreateTransactionAsync(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products);
     }
 }

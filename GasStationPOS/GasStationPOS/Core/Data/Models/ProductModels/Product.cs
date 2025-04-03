@@ -23,16 +23,15 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
         //public string Description { get; set; }
 
         [Required(ErrorMessage = "Price (dollars) is required")]
-        [Range(0.0, 10000.0, ErrorMessage = "Price (dollars) must be between 0.0 and 10000.0")]
-        public decimal PriceDollars { get; set; }
+        [Range(0.0, 10000.0, ErrorMessage = "Unit Price (dollars) must be between 0.0 and 10000.0")]
+        public decimal UnitPriceDollars { get; set; }
 
         public override string ToString()
         {
-            string strRet = $@"
-                Product Id: {Id}
-                Product Name: {ProductName}
-                Product PriceDollars: {PriceDollars}
-                ";//Product Description: {Description}
+            string strRet = 
+                $"Product Id: {Id}\n" +
+                $"Product Name: {ProductName}\n" +
+                $"Product PriceDollars: {UnitPriceDollars}";
             return strRet;
         }
     }

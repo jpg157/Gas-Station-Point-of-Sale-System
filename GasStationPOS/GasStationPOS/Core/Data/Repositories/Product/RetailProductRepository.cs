@@ -20,7 +20,7 @@ namespace GasStationPOS.Core.Data.Repositories.Product
 
             using (FileStream openStream = File.OpenRead(JsonDBConstants.RETAIL_PRODUCTS_JSON_FILE_PATH))
             {
-                RetailProductListWrapper wrapper    = JsonSerializer.Deserialize<RetailProductListWrapper>(openStream);
+                RetailProductsJSONStructure wrapper    = JsonSerializer.Deserialize<RetailProductsJSONStructure>(openStream);
                 retailProductDataList               = wrapper?.RetailProducts ?? new List<RetailProduct>(); // set retailProductDataList to RetailProductDataList in wrapper if not null, otherwise create new List
             }
 

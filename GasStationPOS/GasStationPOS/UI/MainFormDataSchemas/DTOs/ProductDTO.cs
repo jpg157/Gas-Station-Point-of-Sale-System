@@ -20,8 +20,8 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DTOs
         //public string Description { get; set; }
 
         [Required(ErrorMessage = "Price (dollars) is required")]
-        [Range(0.0, 10000.0, ErrorMessage = "Price (dollars) must be between 0.0 and 10000.0")]
-        public decimal PriceDollars { get; set; }
+        [Range(0.0, 10000.0, ErrorMessage = "Unit Price (dollars) must be between 0.0 and 10000.0")]
+        public decimal UnitPriceDollars { get; set; }
 
 
 
@@ -30,6 +30,7 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DTOs
 
         public decimal Quantity { get; set; }
         public decimal TotalPriceDollars { get; set; }
+
 
         // Override ToString() to display the item in the list
         public override string ToString()
@@ -42,7 +43,7 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DTOs
                 else
                     spacing = "\t\t";     // Spacing for longer names
 
-                return $"{ProductNameDescription,-20}{spacing}{Quantity,-5}\t{PriceDollars,-8:F2}\t{TotalPriceDollars,-8:F2}";
+                return $"{ProductNameDescription,-20}{spacing}{Quantity,-5}\t{UnitPriceDollars,-8:F2}\t{TotalPriceDollars,-8:F2}";
             }
         }
 }

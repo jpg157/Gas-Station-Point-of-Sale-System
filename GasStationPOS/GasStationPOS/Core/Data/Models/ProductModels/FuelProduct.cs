@@ -28,10 +28,10 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
 
         public override string ToString()
         {
-            string strRet = $@"
-                {base.ToString()}
-                Fuel Grade: {FuelGrade}
-                ";//Fuel Volume Litres: {FuelVolumeLitres}
+            string strRet =
+                $"{base.ToString()}\n" +
+                $"Fuel Grade: {FuelGrade}";
+                //$"Fuel Volume Litres: {FuelVolumeLitres}";
             return strRet;
         }
     }

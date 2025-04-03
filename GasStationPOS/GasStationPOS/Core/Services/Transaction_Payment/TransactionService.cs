@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
+//using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs.Transaction;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Data.Models.UserModels;
@@ -20,15 +23,11 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
             this.transactionRepository = transactionRepository;
         }
 
-        public void CreateTransaction(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products)
+        public async Task<bool> CreateTransactionAsync(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products)
         {
-            Console.WriteLine("In TransactionService.CreateTransaction()");
-
-            // validation of parameters
+            // validate parameters
             if (!ValidateTransactionPaymentFields(totalAmountDollars, amountTenderedDollars, products)) {
-
-                Console.WriteLine("ERROR: COULD NOT COMPLETE TRANSACTION");
-                return;
+                return false; // unsuccessful transaction
             }
 
             Random random = new Random(); // ====== TransactionNumber for now is random but will eventually replace with autoincrementing id ======
@@ -36,8 +35,8 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
             Transaction transaction = new Transaction
             {
                 TransactionNumber               = random.Next(10000, 99999), // ====== TransactionNumber for now is random but will eventually replace with autoincrementing id ======
-                TransactionFuelProductItems     = new List<Tuple<FuelProduct, decimal>>(),
-                TransactionRetailProductItems   = new List<Tuple<RetailProduct, decimal>>(),
+                TransactionFuelProductItems     = new List<TransactionFuelProductItem>(),
+                TransactionRetailProductItems   = new List<TransactionRetailProductItem>(),
                 PaymentMethod                   = paymentMethod,
                 TotalAmountDollars              = totalAmountDollars,
                 ChangeDollars                   = amountTenderedDollars - totalAmountDollars,
@@ -54,10 +53,16 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
                     // Convert dto -> model via automapper
                     RetailProduct retailProduct = Program.GlobalMapper.Map<RetailProduct>(rpDTO);
 
-                    Tuple<RetailProduct, decimal> rpTransactionTupleEntry = Tuple.Create(retailProduct, productDTO.Quantity);
-
+                    // Create transaction retail product item list entry
+                    TransactionRetailProductItem rpTransactionEntry = new TransactionRetailProductItem
+                    {
+                        RetailProduct           = retailProduct,
+                        Quantity                = rpDTO.Quantity,
+                        TotalItemPriceDollars   = rpDTO.TotalPriceDollars
+                    };
+                        
                     // Add to TransactionRetailProductItems
-                    transaction.TransactionRetailProductItems.Add(rpTransactionTupleEntry);
+                    transaction.TransactionRetailProductItems.Add(rpTransactionEntry);
                 }
                 else if (productDTO is FuelProductDTO)
                 {
@@ -66,19 +71,26 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
                     // Convert to the dto -> model via automapper
                     FuelProduct fuelProduct = Program.GlobalMapper.Map<FuelProduct>(fpDTO);
 
-                    Tuple<FuelProduct, decimal> fpTransactionTupleEntry = Tuple.Create(fuelProduct, productDTO.Quantity);
+                    // Create transaction fuel product item list entry
+                    TransactionFuelProductItem fpTransactionEntry = new TransactionFuelProductItem
+                    {
+                        FuelProduct             = fuelProduct,
+                        Quantity                = fpDTO.Quantity,
+                        TotalItemPriceDollars   = fpDTO.TotalPriceDollars
+                    };
 
                     // Add to TransactionRetailProductItems
-                    transaction.TransactionFuelProductItems.Add(fpTransactionTupleEntry);
+                    transaction.TransactionFuelProductItems.Add(fpTransactionEntry);
                 }
             }
 
             // validate the created transaction - calling validate using datavalidation class
             //================================ Jason TODO ================================
 
-            // create transaction
-            this.transactionRepository.Create(transaction);
+            // create transaction asyncronously
+            await this.transactionRepository.Create(transaction);
 
+            return true; // successful transaction
         }
 
         private static bool ValidateTransactionPaymentFields(decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products)

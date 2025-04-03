@@ -17,6 +17,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GasStationPOS
@@ -292,7 +293,7 @@ namespace GasStationPOS
             // Call transactionService.CreateTransaction function when either btnPayCard or btnPayCash buttons are clicked (passing in the respective payment method)
             // (Need to assign the corresponding PaymentMethod enum member in paramater so transactionService can can handle the correct payment type
             btnPayCard.Click += PayCardButton_Click;
-            this.cardPaymentUserControl.KeyEnterButtonClicked += CardPaymentConfirmed_Click;
+            this.cardPaymentUserControl.KeyEnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD);  };
 
             //btnPayCash.Click += PayCashButton_Click;                                      // ============================================ CASH PAYMENT UI - TODO ============================================
             //this.cashPaymentUserControl.EnterButtonClicked += CashPaymentConfirmed_Click; // ============================================ CASH PAYMENT UI - TODO ============================================
@@ -652,21 +653,46 @@ namespace GasStationPOS
             this.cardPaymentUserControl.Visible = true;
         }
 
-        private void CardPaymentConfirmed_Click(object sender, EventArgs e)
+        private async Task ConfirmPaymentButton_Click(PaymentMethod paymentMethod)
         {
-            // card pays exact amount (set tendered amount equal to the subtotal)
-            paymentDataWrapper.AmountTendered = paymentDataWrapper.Subtotal;
+            decimal amountTendered = 0.0m;
 
-            // create transaction using transaction service (paying with card)
-            transactionService.CreateTransaction(PaymentMethod.CARD, 
-                                                paymentDataWrapper.Subtotal, 
-                                                paymentDataWrapper.AmountTendered, 
-                                                this.userCartProductsDataList);
+            // CHANGE this if statement LATER ====================================================================================================================================================
+            if (paymentMethod == PaymentMethod.CARD)
+            {
+                // card pays exact amount (set tendered amount equal to the subtotal)
+                amountTendered = paymentDataWrapper.Subtotal;
+            }
+            else if (paymentMethod == PaymentMethod.CASH)
+            {
+                // CHANGE
+                amountTendered = paymentDataWrapper.Subtotal;
+            }
+
+            // create transaction asyncronously using transaction service, passing in the payment method parameter
+            bool transactionSuccessful = await transactionService.CreateTransactionAsync(paymentMethod,
+                                                            paymentDataWrapper.Subtotal,
+                                                            amountTendered,
+                                                            this.userCartProductsDataList);
+
+            if (!transactionSuccessful)
+            {
+                MessageBox.Show("ERROR: Could not complete transaction", "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             // hide/close the card payment user control
             this.cardPaymentUserControl.Visible = false;
 
-            // reset UI state
+            // Update the data source fo the amount tendered UI label
+            paymentDataWrapper.AmountTendered = amountTendered;
+
+            MessageBox.Show("Payment successful!", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // clear the ui cart and reset payment amounts (by resetting ui data sources to defaults)
+            MainFormDataUpdater.RemoveAllProductsFromCart(this.userCartProductsDataList, this.paymentDataWrapper, ref this.currentSelectedProductQuantity);
+
+            // reset other UI state
             reset();
         }
 

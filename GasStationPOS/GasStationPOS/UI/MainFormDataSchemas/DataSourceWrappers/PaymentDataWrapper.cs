@@ -73,7 +73,8 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
         /// </summary>
         public void ResetPaymentRelatedDataSourcesToInitValues()
         {
-            Subtotal = PaymentConstants.INITIAL_AMOUNT_DOLLARS;
+            Subtotal        = PaymentConstants.INITIAL_AMOUNT_DOLLARS;
+            AmountTendered  = PaymentConstants.INITIAL_AMOUNT_DOLLARS;
             AmountRemaining = PaymentConstants.INITIAL_AMOUNT_DOLLARS;
         }
 
@@ -81,8 +82,6 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
         protected void OnPropertyChanged(string propertyName)
         {
             // Invoke the PropertyChanged event handler, passing in the NAME OF THE PROPERTY
-            // - the PropertyChanged event handler is subscribed to by a method in the Binding class when we create a data binding using this PaymentDataWrapper class
-            // - (Binding class handles that for us we don't need to subscribe event handler functions)
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
