@@ -81,10 +81,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Products\BarcodeRetailProductsJSONStructure.cs" />
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionDatabaseDTO.cs" />
+    <Compile Include="Core\Data\Models\ProductModels\BarcodeRetailProduct.cs" />
     <Compile Include="Core\Data\Models\TransactionModels\TransactionFuelProductItem.cs" />
     <Compile Include="Core\Data\Models\TransactionModels\TransactionRetailProductItem.cs" />
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionsJSONStructure.cs" />
+    <Compile Include="Core\Data\Repositories\Product\BarcodeRetailProductRepository.cs" />
+    <Compile Include="Core\Data\Repositories\Product\IBarcodeRetailProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
     <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\FuelInputDataWrapper.cs" />
@@ -172,6 +176,9 @@
     <EmbeddedResource Include="UI\UserControls\Payment\CashPaymentUserControl.resx">
       <DependentUpon>CashPaymentUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Core\Data\Database\Json\MockDatabase\barcode_retail_products.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\DataValidation\" />
-    <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\Products\" />
     <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\User\" />
     <Folder Include="Core\Data\Database\SQL\" />
     <Folder Include="Resources\" />

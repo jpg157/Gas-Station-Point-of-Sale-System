@@ -375,6 +375,9 @@ namespace GasStationPOS
 
             btnPayCash.Click += PayCashButton_Click;
             this.cashPaymentUserControl.CashEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH); }; // subscribe ConfirmPaymentButton_Click function to the CashEnterButtonClick EventHandler
+
+            // === BARCODE SCANNER EVENTS ===
+            this.textboxBarcode.Enter += delegate { textboxBarcode_Enter(); };
         }
 
         private void AssociateLoginFormEvents()
@@ -1080,6 +1083,38 @@ namespace GasStationPOS
             // Successful login
             tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+        /// <summary>
+        /// Ensures that the barcode textbox is always focused. For scanning barcodes anytime.
+        /// </summary>
+        private void textboxBarcode_LostFocus(object sender, EventArgs e)
+        {
+            textboxBarcode.Focus();
+        }
+
+        private void textboxBarcode_Enter()
+        {
+            // Get the text that the scanner wrote to the label
+            string scannedBarcode = textboxBarcode.Text;
+
+            bool barcodeRetailProductExists = this.inventoryService.CheckIfBarcodeRetailProductExits(scannedBarcode);
+
+            // if the scanned product doesn't exist
+            if (!barcodeRetailProductExists)
+            {
+                MessageBox.Show("Product not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            MessageBox.Show("Product found!", "Scanned", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //MainFormDataUpdater.AddNewRetailProductToCart()
+
+            // Clear textboxBarcode
+            textboxBarcode.Text = "";
+
         }
     }
 }

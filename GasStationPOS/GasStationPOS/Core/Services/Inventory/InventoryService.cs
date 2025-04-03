@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using GasStationPOS.Core.Data.Repositories.Product;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
+using GasStationPOS.Core.Data.Models.UserModels;
 
 namespace GasStationPOS.Core.Services.Inventory
 {
     public class InventoryService : IInventoryService
     {
-        private IRetailProductRepository retailProductRepository;
+        private IRetailProductRepository        retailProductRepository;
+        private IBarcodeRetailProductRepository barcodeRetailProductRepository;
 
         /// <summary>
         /// Constructor for InventoryService.
         /// Dependency injection of RetailProductRepository which accesses the database for retail product data.
         /// </summary>
         /// <param name="retailProductRepository"></param>
-        public InventoryService(IRetailProductRepository retailProductRepository)
+        public InventoryService(IRetailProductRepository retailProductRepository, IBarcodeRetailProductRepository barcodeRetailProductRepository)
         {
-            this.retailProductRepository = retailProductRepository;
+            this.retailProductRepository        = retailProductRepository;
+            this.barcodeRetailProductRepository = barcodeRetailProductRepository;
         }
 
         /// <summary>
@@ -46,6 +49,22 @@ namespace GasStationPOS.Core.Services.Inventory
             }
 
             return retailProductDTODataList;
+        }
+
+        public bool CheckIfBarcodeRetailProductExits(string barcode)
+        {
+            bool barcodeRetailProductExistsInDb = false;
+
+            BarcodeRetailProduct bcRetailProduct;
+
+            bcRetailProduct = barcodeRetailProductRepository.Get(barcode);
+
+            if (bcRetailProduct != null)
+            {
+                barcodeRetailProductExistsInDb = true;
+            }
+
+            return barcodeRetailProductExistsInDb;
         }
     }
 }

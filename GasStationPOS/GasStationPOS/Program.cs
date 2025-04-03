@@ -56,11 +56,12 @@ namespace GasStationPOS
 
             // Data access layer
             IRetailProductRepository    retailProductRepository = new RetailProductRepository();
-            IUserRepository             userRepository          = new UserRepository();
+            IBarcodeRetailProductRepository barcodeRetailProductRepository = new BarcodeRetailProductRepository();
+            IUserRepository userRepository          = new UserRepository();
             ITransactionRepository      transactionRepository   = new TransactionRepository();
 
             // Services layer
-            IInventoryService           inventoryService        = new InventoryService(retailProductRepository);
+            IInventoryService           inventoryService        = new InventoryService(retailProductRepository, barcodeRetailProductRepository);
             ITransactionService         transactionService      = new TransactionService(transactionRepository);
             IAuthenticationService      authenticationService   = new AuthenticationService(userRepository);
 
