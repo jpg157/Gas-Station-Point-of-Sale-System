@@ -175,6 +175,13 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelLoginDescription = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.pnlHaltConfirmation = new System.Windows.Forms.Panel();
+            this.labelHaltConfirmation = new System.Windows.Forms.Label();
+            this.pnlHaltAllConfirmation = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHaltAllYes = new System.Windows.Forms.Button();
+            this.btnHaltAllNo = new System.Windows.Forms.Button();
+            this.labelHaltAll = new System.Windows.Forms.Label();
             this.cardPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CardPaymentUserControl();
             this.cashPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CashPaymentUserControl();
             this.pnlBottomNavMain.SuspendLayout();
@@ -202,6 +209,9 @@
             this.tableLayoutPanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginMenu)).BeginInit();
             this.panelLoginMenu.SuspendLayout();
+            this.pnlHaltConfirmation.SuspendLayout();
+            this.pnlHaltAllConfirmation.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBottomNavMain
@@ -422,6 +432,7 @@
             this.btnHaltAllPumps.TabIndex = 5;
             this.btnHaltAllPumps.Text = "ALL HALT";
             this.btnHaltAllPumps.UseVisualStyleBackColor = false;
+            this.btnHaltAllPumps.Click += new System.EventHandler(this.btnHaltAllPumps_Click);
             // 
             // btnHaltPump
             // 
@@ -436,6 +447,7 @@
             this.btnHaltPump.TabIndex = 4;
             this.btnHaltPump.Text = "HALT A PUMP";
             this.btnHaltPump.UseVisualStyleBackColor = true;
+            this.btnHaltPump.Click += new System.EventHandler(this.btnHaltPump_Click);
             // 
             // btnCashTill
             // 
@@ -2385,7 +2397,7 @@
             this.textBoxAccountID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAccountID.Location = new System.Drawing.Point(165, 196);
+            this.textBoxAccountID.Location = new System.Drawing.Point(169, 195);
             this.textBoxAccountID.Name = "textBoxAccountID";
             this.textBoxAccountID.Size = new System.Drawing.Size(276, 44);
             this.textBoxAccountID.TabIndex = 4;
@@ -2426,6 +2438,100 @@
             this.labelLogin.Text = "Log In";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlHaltConfirmation
+            // 
+            this.pnlHaltConfirmation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlHaltConfirmation.BackColor = System.Drawing.Color.Black;
+            this.pnlHaltConfirmation.Controls.Add(this.labelHaltConfirmation);
+            this.pnlHaltConfirmation.Location = new System.Drawing.Point(624, 202);
+            this.pnlHaltConfirmation.Name = "pnlHaltConfirmation";
+            this.pnlHaltConfirmation.Size = new System.Drawing.Size(352, 285);
+            this.pnlHaltConfirmation.TabIndex = 13;
+            this.pnlHaltConfirmation.Visible = false;
+            // 
+            // labelHaltConfirmation
+            // 
+            this.labelHaltConfirmation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHaltConfirmation.BackColor = System.Drawing.Color.DarkOrange;
+            this.labelHaltConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHaltConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHaltConfirmation.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelHaltConfirmation.Location = new System.Drawing.Point(8, 9);
+            this.labelHaltConfirmation.Name = "labelHaltConfirmation";
+            this.labelHaltConfirmation.Size = new System.Drawing.Size(337, 268);
+            this.labelHaltConfirmation.TabIndex = 0;
+            this.labelHaltConfirmation.Text = "Select a pump to halt\r\n\r\nor unhalt\r\n";
+            this.labelHaltConfirmation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlHaltAllConfirmation
+            // 
+            this.pnlHaltAllConfirmation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlHaltAllConfirmation.BackColor = System.Drawing.Color.Black;
+            this.pnlHaltAllConfirmation.Controls.Add(this.tableLayoutPanel3);
+            this.pnlHaltAllConfirmation.Controls.Add(this.labelHaltAll);
+            this.pnlHaltAllConfirmation.Location = new System.Drawing.Point(623, 280);
+            this.pnlHaltAllConfirmation.Name = "pnlHaltAllConfirmation";
+            this.pnlHaltAllConfirmation.Size = new System.Drawing.Size(352, 148);
+            this.pnlHaltAllConfirmation.TabIndex = 14;
+            this.pnlHaltAllConfirmation.Visible = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.btnHaltAllYes, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnHaltAllNo, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 85);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(336, 57);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // btnHaltAllYes
+            // 
+            this.btnHaltAllYes.BackColor = System.Drawing.Color.Silver;
+            this.btnHaltAllYes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHaltAllYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHaltAllYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHaltAllYes.Location = new System.Drawing.Point(171, 3);
+            this.btnHaltAllYes.Name = "btnHaltAllYes";
+            this.btnHaltAllYes.Size = new System.Drawing.Size(162, 51);
+            this.btnHaltAllYes.TabIndex = 1;
+            this.btnHaltAllYes.Text = "YES";
+            this.btnHaltAllYes.UseVisualStyleBackColor = false;
+            this.btnHaltAllYes.Click += new System.EventHandler(this.btnHaltAllPumpsYes_Click);
+            // 
+            // btnHaltAllNo
+            // 
+            this.btnHaltAllNo.BackColor = System.Drawing.Color.DimGray;
+            this.btnHaltAllNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHaltAllNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHaltAllNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHaltAllNo.Location = new System.Drawing.Point(3, 3);
+            this.btnHaltAllNo.Name = "btnHaltAllNo";
+            this.btnHaltAllNo.Size = new System.Drawing.Size(162, 51);
+            this.btnHaltAllNo.TabIndex = 0;
+            this.btnHaltAllNo.Text = "NO";
+            this.btnHaltAllNo.UseVisualStyleBackColor = false;
+            this.btnHaltAllNo.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // labelHaltAll
+            // 
+            this.labelHaltAll.BackColor = System.Drawing.Color.Firebrick;
+            this.labelHaltAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHaltAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHaltAll.ForeColor = System.Drawing.Color.Snow;
+            this.labelHaltAll.Location = new System.Drawing.Point(8, 9);
+            this.labelHaltAll.Name = "labelHaltAll";
+            this.labelHaltAll.Size = new System.Drawing.Size(337, 69);
+            this.labelHaltAll.TabIndex = 0;
+            this.labelHaltAll.Text = "Are you sure?";
+            this.labelHaltAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cardPaymentUserControl
             // 
             this.cardPaymentUserControl.BackColor = System.Drawing.Color.Firebrick;
@@ -2438,6 +2544,11 @@
             // cashPaymentUserControl
             // 
             this.cashPaymentUserControl.BackColor = System.Drawing.Color.Black;
+            this.cashPaymentUserControl.CashInputAmountDollars = new decimal(new int[] {
+            0,
+            0,
+            0,
+            65536});
             this.cashPaymentUserControl.Location = new System.Drawing.Point(526, 145);
             this.cashPaymentUserControl.Name = "cashPaymentUserControl";
             this.cashPaymentUserControl.Size = new System.Drawing.Size(428, 434);
@@ -2456,10 +2567,12 @@
             this.Controls.Add(this.pnlTopNavMain);
             this.Controls.Add(this.pnlBottomNavMain);
             this.Controls.Add(this.pnlBottomNavBack);
-            this.Controls.Add(this.pnlFuelConfirmation);
             this.Controls.Add(this.pnlSelectCartItem);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
+            this.Controls.Add(this.pnlFuelConfirmation);
+            this.Controls.Add(this.pnlHaltAllConfirmation);
+            this.Controls.Add(this.pnlHaltConfirmation);
             this.Controls.Add(this.cardPaymentUserControl);
             this.Controls.Add(this.cashPaymentUserControl);
             this.Name = "MainForm";
@@ -2492,6 +2605,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginMenu)).EndInit();
             this.panelLoginMenu.ResumeLayout(false);
             this.panelLoginMenu.PerformLayout();
+            this.pnlHaltConfirmation.ResumeLayout(false);
+            this.pnlHaltAllConfirmation.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2644,6 +2760,14 @@
         private System.Windows.Forms.Label labelLoginError;
         private UI.UserControls.Payment.CashPaymentUserControl cashPaymentUserControl;
         private UI.UserControls.Payment.CardPaymentUserControl cardPaymentUserControl;
+        
+        private System.Windows.Forms.Panel pnlHaltConfirmation;
+        private System.Windows.Forms.Label labelHaltConfirmation;
+        private System.Windows.Forms.Panel pnlHaltAllConfirmation;
+        private System.Windows.Forms.Label labelHaltAll;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button btnHaltAllYes;
+        private System.Windows.Forms.Button btnHaltAllNo;
     }
 }
 

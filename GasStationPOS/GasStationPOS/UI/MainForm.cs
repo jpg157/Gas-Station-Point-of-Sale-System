@@ -87,6 +87,10 @@ namespace GasStationPOS
         // Variable to store the input for fuel amount and selected fuel price
         private string fuelAmountInput;
 
+        private List<Button> haltedPumps = new List<Button>();
+        private bool isHaltMode = false;
+        private bool allPumpsHalted = false;  // Flag to track the halted state of all pumps
+
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
@@ -423,10 +427,12 @@ namespace GasStationPOS
             pnlProducts.Visible = false;
             pnlBottomNavMain.Visible = false;
             pnlBottomNavBack.Visible = false;
+            pnlAddFuelAmount.Visible = false;
             pnlFuelConfirmation.Visible = false;
             pnlFuelTypeSelect.Visible = false;
             pnlSelectCartItem.Visible = false;
-            pnlAddFuelAmount.Visible = false;
+            pnlHaltConfirmation.Visible = false;
+            pnlHaltAllConfirmation.Visible = false;
             this.cashPaymentUserControl.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
@@ -469,6 +475,10 @@ namespace GasStationPOS
             // Reset the fuel pump number, selected fuel grade, price amount, and quantity
             this.fuelInputDataWrapper.ResetPaymentRelatedDataSourcesToInitValues();
             fuelAmountInput = "";
+
+            // Enable Halt Buttons
+            btnHaltPump.Enabled = true;
+            btnHaltAllPumps.Enabled = true;
         }
 
         /// <summary>
@@ -524,6 +534,30 @@ namespace GasStationPOS
         }
 
         /// <summary>
+        /// Handles the "Halt Pump" button click
+        /// </summary>
+        private void btnHaltPump_Click(object sender, EventArgs e)
+        {
+            // Prevent halt actions when haltAll is in progress
+            if (allPumpsHalted)
+            {
+                // Ensure that individual pump halt cannot happen when haltAll is active
+                return;
+            }
+
+            else
+            {
+                // Show pnlHaltConfirmation, pnlBottomNavBack
+                HidePanels();
+                pnlHaltConfirmation.Visible = true;
+                pnlBottomNavBack.Visible = true;
+
+                isHaltMode = true;
+                fuelPumpsActivated = true;
+            }
+        }
+
+        /// <summary>
         /// Updates the appearance of all fuel pump buttons to the entered borderColor and borderSize.
         /// If borderColor < 1, borderColor will be set to 1.
         /// </summary>
@@ -538,6 +572,13 @@ namespace GasStationPOS
             for (int i = 1; i <= numFuelPumps; i++)
             {
                 Button btn = Controls.Find($"{ButtonNamePrefixes.FUEL_PUMP_BUTTON_PREFIX}{i}", true).FirstOrDefault() as Button;
+
+                // Skip updating the appearance for halted pumps
+                if (haltedPumps.Contains(btn))
+                {
+                    continue;
+                }
+
                 if (btn != null)
                 {
                     btn.FlatAppearance.BorderColor = borderColor;
@@ -560,6 +601,10 @@ namespace GasStationPOS
             // Highlight fuel pump buttons (set border color to yellow and border size to 3)
             HighlightFuelPumps();
             fuelPumpsActivated = true;
+
+            // Disable Halt functionality
+            btnHaltAllPumps.Enabled = false;
+            btnHaltPump.Enabled = false;
         }
 
         /// <summary>
@@ -569,33 +614,202 @@ namespace GasStationPOS
         /// </summary>
         private void btnFuelPump_Click(object sender, EventArgs e)
         {
-            if (fuelPumpsActivated == false)
-            {
-                return;
-            }
+            if (!fuelPumpsActivated) return;
 
-            // Get the clicked button
             Button fuelPumpButton = sender as Button;
+            if (fuelPumpButton == null) return;
 
-            // Check if the button is valid
-            if (fuelPumpButton != null)
+            if (isHaltMode)
             {
-                // Update currently selected pump number (this value is stored in this.fuelInputDataWrapper)
-                // (Which automatically updates the labels with the corresponding pump number)
-                MainFormDataUpdater.UpdateSelectedPumpNumber(this.fuelInputDataWrapper, (int)fuelPumpButton.Tag);
-
-                // Show the pnlFuelTypeSelection panel
-                HidePanels();
-                pnlFuelTypeSelect.Visible = true;
-                pnlBottomNavBack.Visible = true;
-
-                UnhighlightFuelPumps();
-
-                // Highlight the selected fuel pump
-                fuelPumpButton.FlatAppearance.BorderColor = Color.Gold;
-                fuelPumpButton.FlatAppearance.BorderSize = 3;
+                HandleHaltMode(fuelPumpButton);
+            }
+            else
+            {
+                HandlePumpSelection(fuelPumpButton);
             }
         }
+
+        /// <summary>
+        /// Handles the logic when a fuel pump is in halt mode.
+        /// </summary>
+        private void HandleHaltMode(Button fuelPumpButton)
+        {
+            // Prevent handling halt mode when haltAll is active
+            if (allPumpsHalted) return;
+
+            if (haltedPumps.Contains(fuelPumpButton))
+            {
+                UnhaltPump(fuelPumpButton);
+            }
+            else
+            {
+                HaltPump(fuelPumpButton);
+            }
+
+            isHaltMode = false;
+            reset();
+        }
+
+        /// <summary>
+        /// Halts the selected fuel pump by changing its label, font, background color, and text color.
+        /// The button's original state (label, font, background color, and text color) is saved 
+        /// so that it can be restored when unhalting the pump.
+        /// </summary>
+        /// <param name="fuelPumpButton">The button representing the fuel pump that is being halted.</param>
+        private void HaltPump(Button fuelPumpButton)
+        {
+            // Store the original label, properties, and pump number
+            fuelPumpButton.Tag = new ButtonState(fuelPumpButton.Text, fuelPumpButton.Font, fuelPumpButton.BackColor, fuelPumpButton.ForeColor, (int)fuelPumpButton.Tag);
+
+            // Change the button's label, alignment, font, and colors
+            fuelPumpButton.Text = "H";
+            fuelPumpButton.Font = new Font(fuelPumpButton.Font.FontFamily, 44, FontStyle.Bold);
+            fuelPumpButton.BackColor = Color.FromArgb(232, 32, 32);
+            fuelPumpButton.ForeColor = Color.White;
+
+            haltedPumps.Add(fuelPumpButton);
+        }
+
+        /// <summary>
+        /// Restores the original appearance of a previously halted fuel pump.
+        /// The button's label, font, background color, and text color are restored to their original state.
+        /// </summary>
+        /// <param name="fuelPumpButton">The button representing the fuel pump that is being unhalted.</param>
+        private void UnhaltPump(Button fuelPumpButton)
+        {
+            // Retrieve the original button state from the Tag
+            var originalState = (ButtonState)fuelPumpButton.Tag;
+
+            // Restore the original label, alignment, font, colors, and pump number
+            fuelPumpButton.Text = originalState.Label;
+            fuelPumpButton.Font = originalState.Font;
+            fuelPumpButton.BackColor = originalState.BackColor;
+            fuelPumpButton.ForeColor = originalState.ForeColor;
+            fuelPumpButton.Tag = originalState.PumpNumber;  // Restore the pump number
+
+            haltedPumps.Remove(fuelPumpButton);
+        }
+
+
+        /// <summary>
+        /// A helper class to store the original state of a button (label, font, alignment, colors).
+        /// </summary>
+        private class ButtonState
+        {
+            public string Label { get; }
+            public Font Font { get; }
+            public Color BackColor { get; }
+            public Color ForeColor { get; }
+            public int PumpNumber { get; }
+
+            public ButtonState(string label, Font font, Color backColor, Color foreColor, int pumpNumber)
+            {
+                Label = label;
+                Font = font;
+                BackColor = backColor;
+                ForeColor = foreColor;
+                PumpNumber = pumpNumber;
+            }
+        }
+
+        /// <summary>
+        /// Shows the confirmation panel for halting all pumps.
+        /// </summary>
+        private void btnHaltAllPumps_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlHaltAllConfirmation.Visible = true;
+            pnlBottomNavBack.Visible = true;
+            isHaltMode = false;
+        }
+
+        /// <summary>
+        /// Halts or unhalts all fuel pumps depending on their current state.
+        /// </summary>
+        private void haltAll()
+        {
+            int numFuelPumps = this.fuelProductPumpNumberList.Count();
+
+            // If all pumps are currently halted, unhalt them
+            if (allPumpsHalted)
+            {
+                for (int i = 1; i <= numFuelPumps; i++)
+                {
+                    Button btn = Controls.Find($"{ButtonNamePrefixes.FUEL_PUMP_BUTTON_PREFIX}{i}", true).FirstOrDefault() as Button;
+
+                    if (btn != null && haltedPumps.Contains(btn))
+                    {
+                        UnhaltPump(btn);  // Unhalt each pump
+                        haltedPumps.Remove(btn);
+                    }
+                }
+            }
+            else
+            {
+                // If not all pumps are halted, halt them
+                for (int i = 1; i <= numFuelPumps; i++)
+                {
+                    Button btn = Controls.Find($"{ButtonNamePrefixes.FUEL_PUMP_BUTTON_PREFIX}{i}", true).FirstOrDefault() as Button;
+
+                    if (btn != null && !haltedPumps.Contains(btn))
+                    {
+                        haltedPumps.Add(btn);  // Mark the pump as halted
+                        HaltPump(btn);  // Halt the pump
+                    }
+                }
+            }
+
+            // Toggle the halted state flag
+            allPumpsHalted = !allPumpsHalted;
+            reset();
+        }
+
+        /// <summary>
+        /// Clicking the button once halts all pumps, and clicking it again restores them.
+        /// </summary>
+        private void btnHaltAllPumpsYes_Click(object sender, EventArgs e)
+        {
+            haltAll();
+        }
+
+
+        /// <summary>
+        /// Handles the logic when a fuel pump is selected in normal mode.
+        /// </summary>
+        private void HandlePumpSelection(Button fuelPumpButton)
+        {
+            if (haltedPumps.Contains(fuelPumpButton)) return;
+
+            // Update selected pump number
+            MainFormDataUpdater.UpdateSelectedPumpNumber(this.fuelInputDataWrapper, (int)fuelPumpButton.Tag);
+
+            // Show fuel type selection panel
+            ShowFuelTypeSelectionPanel();
+
+            // Highlight the selected fuel pump
+            HighlightSelectedPump(fuelPumpButton);
+        }
+
+        /// <summary>
+        /// Displays the fuel type selection panel.
+        /// </summary>
+        private void ShowFuelTypeSelectionPanel()
+        {
+            HidePanels();
+            pnlFuelTypeSelect.Visible = true;
+            pnlBottomNavBack.Visible = true;
+        }
+
+        /// <summary>
+        /// Highlights the selected fuel pump.
+        /// </summary>
+        private void HighlightSelectedPump(Button fuelPumpButton)
+        {
+            UnhighlightFuelPumps();
+            fuelPumpButton.FlatAppearance.BorderColor = Color.Gold;
+            fuelPumpButton.FlatAppearance.BorderSize = 3;
+        }
+
 
         /// <summary>
         /// Handles the fuel type selection by updating the label with the selected fuel type 
@@ -812,7 +1026,8 @@ namespace GasStationPOS
             // hide/close the card payment user control
             this.cardPaymentUserControl.Visible = false;
 
-            // hide/close the card payment user control
+            // reset all entered values in cash payment user control, and hide/close the card payment user control
+            this.cashPaymentUserControl.Reset();
             this.cashPaymentUserControl.Visible = false;
 
             // Update the data source and the amount tendered UI label
@@ -822,6 +1037,8 @@ namespace GasStationPOS
 
             // clear the ui cart and reset payment amounts (by resetting ui data sources to defaults)
             MainFormDataUpdater.RemoveAllProductsFromCart(this.userCartProductsDataList, this.paymentDataWrapper, ref this.currentSelectedProductQuantity);
+
+            UpdatePayButtonVisibility();
 
             // reset other UI state
             reset();
