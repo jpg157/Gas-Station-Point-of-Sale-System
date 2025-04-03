@@ -13,11 +13,21 @@ using GasStationPOS.Core.Services.Transaction_Payment;
 
 namespace GasStationPOS
 {
-    internal static class Program
+    /// <summary>
+    /// Entry point of the program. 
+    /// Creates an automapper that maps objects of different types to each other (simplifies copying of data)
+    /// Uses dependency injection to initialize all required data base access repositories, 
+    /// and services that the main form uses.
+    /// 
+    /// Author: Mansib Talukder
+    /// Author: Jason Lau
+    /// Author: Vincent Fung
+    /// Date: 19 March 2025
+    /// </summary>
+    public static class Program
     {
 
         // Public global mapper object reference for DTO Model field mappings
-        // Presenter classes that uses this should use dependency injection to inject this instance into the class
         public static IMapper GlobalMapper { get; private set; }
 
         /// <summary>

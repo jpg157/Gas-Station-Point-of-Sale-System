@@ -56,7 +56,7 @@ namespace GasStationPOS
         // SUBTOTAL, AMOUNT TENDERED, AMOUNT REMAINING data binding source (WILL CHANGE)
         private readonly BindingSource paymentDataBindingSource;
 
-        // ======================== CONSTANT DATA FOR APPLICATION ========================
+        // ======================== CONSTANT DATA USED BY APPLICATION - USED TO SET BUTTON DATA AND LABELS ========================
 
         // RETAIL PRODUCT BUTTONS UNDERLYING DATA (CONTENTS DO NOT CHANGE)
         private readonly IEnumerable<RetailProductDTO> retailProductsDataList;

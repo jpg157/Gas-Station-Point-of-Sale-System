@@ -108,13 +108,11 @@ namespace GasStationPOS
         {
             // RetailProduct -> RetailProductDTO
             CreateMap<RetailProduct, RetailProductDTO>();
-            ////     //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
-            ////     .ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
-            ////     .ForMember(dest => dest.ProductSizeVariation, opt => opt.MapFrom(src => src.ProductSizeVariation)); // <need to manually divide the dto value by 100 to display in ¢>
+                //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
 
-            //// RetailProductDTO -> RetailProduct
+            // RetailProductDTO -> RetailProduct
             CreateMap<RetailProductDTO, RetailProduct>();
-            //     //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
+                 //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
 
 
             // For creating clones of retail products when adding new items to user cart ===

@@ -11,6 +11,16 @@ using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 
 namespace GasStationPOS.UI
 {
+    /// <summary>
+    /// Main form data updater class is a utility class used by the 
+    /// main form to update all of its UI related data. 
+    /// Data binded UI is automatically updated when the data changes.
+    /// 
+    /// Author: Mansib Talukder
+    /// Author: Jason Lau
+    /// Author: Vincent Fung
+    /// Date: 19 March 2025
+    /// </summary>
     public static class MainFormDataUpdater
     {
         #region Event handlers that are attached to the view
