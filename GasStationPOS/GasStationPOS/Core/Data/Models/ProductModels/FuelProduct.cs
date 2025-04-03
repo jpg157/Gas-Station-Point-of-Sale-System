@@ -22,26 +22,34 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
         [Required(ErrorMessage = "Fuel Grade is required")]
         public FuelGrade FuelGrade { get; set; }
 
-        //[Required(ErrorMessage = "Fuel Volume is required")]
-        //[Range(0.0, 10000.0, ErrorMessage = "Fuel volume must be between 0.0 and 10000.0 L")]
-        //public decimal FuelVolumeLitres { get; set; }
+        [Required(ErrorMessage = "PumpNumber is required")]
+        public int PumpNumber { get; set; }
 
         public override string ToString()
         {
-            string strRet = $@"
-                {base.ToString()}
-                Fuel Grade: {FuelGrade}
-                ";//Fuel Volume Litres: {FuelVolumeLitres}
+            // create product name / description
+            string fuelProductNameDescription = $"{ProductName}";
+            string strRet =
+                $"{base.ToString()}\n" +
+                $"{fuelProductNameDescription}\n" +
+                $"{FuelGrade}" +
+                $"{PumpNumber}";
             return strRet;
         }
     }
 
     /// <summary>
-    /// Util class (not part of the data model
+    /// Util class (not part of the data model)
     /// - used for calculations for displaying in UI and storing in DB)
     /// </summary>
     static class FuelGradeUtils
     {
+        /// <summary>
+        /// Returns the fuel price (in dollars / litre) for the entered FuelGrade
+        /// </summary>
+        /// <param name="fuelGrade"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public static decimal GetFuelPrice(FuelGrade fuelGrade)
         {
             switch (fuelGrade)
@@ -51,18 +59,6 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
                 case FuelGrade.SUPREME: return 2.049m;
                 default: throw new InvalidOperationException("Invalid fuel grade.");
             };
-        }
-
-        public static FuelGrade GetFuelGradeFromLabel(string fuelGradeLabel)
-        {
-            switch (fuelGradeLabel)
-            {
-                case "Regular": return FuelGrade.REGULAR;
-                case "Plus":    return FuelGrade.PLUS;
-                case "Supreme": return FuelGrade.SUPREME;
-                default: throw new InvalidOperationException("Invalid fuel grade label.");
-            }
-            ;
         }
     }
 }

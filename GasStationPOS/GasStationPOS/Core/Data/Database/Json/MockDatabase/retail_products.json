@@ -3,182 +3,182 @@
     {
       "Id": 1,
       "ProductName": "HOT BEVERAGE 12OZ",
-      "PriceDollars": 2.00,
+      "UnitPriceDollars": 2.00,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 2,
       "ProductName": "HOT BEVERAGE 24OZ",
-      "PriceDollars": 2.89,
+      "UnitPriceDollars": 2.89,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 3,
       "ProductName": "ICE CUBE 2.3KG",
-      "PriceDollars": 3.99,
+      "UnitPriceDollars": 3.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 4,
       "ProductName": "PROPANE EXCHANGE",
-      "PriceDollars": 29.99,
+      "UnitPriceDollars": 29.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 5,
       "ProductName": "20LB PROPANE",
-      "PriceDollars": 49.99,
+      "UnitPriceDollars": 49.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 6,
       "ProductName": "WINDSHIELD WASHER",
-      "PriceDollars": 12.99,
+      "UnitPriceDollars": 12.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 7,
       "ProductName": "LOTTO TICKET $1",
-      "PriceDollars": 1.00,
+      "UnitPriceDollars": 1.00,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 8,
       "ProductName": "LOTTO TICKET $10",
-      "PriceDollars": 10.00,
+      "UnitPriceDollars": 10.00,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 9,
       "ProductName": "1L ENGINE OIL 5W30",
-      "PriceDollars": 7.99,
+      "UnitPriceDollars": 7.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 10,
       "ProductName": "1L ENGINE OIL 10W30",
-      "PriceDollars": 11.99,
+      "UnitPriceDollars": 11.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 11,
       "ProductName": "1L ENGINE OIL 5W20",
-      "PriceDollars": 6.99,
+      "UnitPriceDollars": 6.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 12,
       "ProductName": "1L ENGINE OIL 10W20",
-      "PriceDollars": 10.99,
+      "UnitPriceDollars": 10.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 13,
       "ProductName": "FIREWOOD",
-      "PriceDollars": 13.99,
+      "UnitPriceDollars": 13.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 14,
       "ProductName": "PC COOLANT 1.85L",
-      "PriceDollars": 19.99,
+      "UnitPriceDollars": 19.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 15,
       "ProductName": "PC COOLANT 3.78L",
-      "PriceDollars": 33.99,
+      "UnitPriceDollars": 33.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 16,
       "ProductName": "10L GAS CAN",
-      "PriceDollars": 3.99,
+      "UnitPriceDollars": 3.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 17,
       "ProductName": "PIZZA SLICE SMALL",
-      "PriceDollars": 1.29,
+      "UnitPriceDollars": 1.29,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 18,
       "ProductName": "PIZZA SLICE LARGE",
-      "PriceDollars": 2.09,
+      "UnitPriceDollars": 2.09,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 19,
       "ProductName": "HOTDOG",
-      "PriceDollars": 1.49,
+      "UnitPriceDollars": 1.49,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 20,
       "ProductName": "POTATO WEDGES",
-      "PriceDollars": 2.29,
+      "UnitPriceDollars": 2.29,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 21,
       "ProductName": "CHICKEN SANDWICH",
-      "PriceDollars": 3.99,
+      "UnitPriceDollars": 3.99,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 22,
       "ProductName": "VEG SANDWICH",
-      "PriceDollars": 2.49,
+      "UnitPriceDollars": 2.49,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 23,
       "ProductName": "DASANI WATER BOTTLE 591ML",
-      "PriceDollars": 2.69,
+      "UnitPriceDollars": 2.69,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 24,
       "ProductName": "PURELIFE WATER BOTTLE 500ML",
-      "PriceDollars": 2.59,
+      "UnitPriceDollars": 2.59,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 25,
       "ProductName": "FIJI WATER BOTTLE 500ML",
-      "PriceDollars": 3.49,
+      "UnitPriceDollars": 3.49,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     },
     {
       "Id": 26,
       "ProductName": "SMART WATER BOTTLE 350ML",
-      "PriceDollars": 3.59,
+      "UnitPriceDollars": 3.59,
       "ProductVolumeLitres": null,
       "ProductSizeVariation": null
     }

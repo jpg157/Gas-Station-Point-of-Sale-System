@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.UI.Constants;
 using GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
@@ -19,9 +20,39 @@ namespace GasStationPOS.UI
         // All data that will be updated should be passed
         // from the MainForm as REFERENCES, not values
 
-        public static void UpdateSelectedProductQuantity(ref int currrentSelectedQuantityRef, int newQuantity)
+        /// <summary>
+        /// Updates the currently selected retail product quantity to the value of newQuantity.
+        /// </summary>
+        /// <param name="currentSelectedQuantityRef"></param>
+        /// <param name="newQuantity"></param>
+        public static void UpdateSelectedProductQuantity(ref int currentSelectedQuantityRef, int newQuantity)
         {
-            currrentSelectedQuantityRef = newQuantity; // update the currently selected quantity to the value passed int argument
+            currentSelectedQuantityRef = newQuantity; // update the currently selected quantity to the value passed int argument
+        }
+
+        /// <summary>
+        /// Updates the FuelPumpNumber in the fuelInputDataWrapper object.
+        /// </summary>
+        /// <param name="fuelInputDataWrapper"></param>
+        /// <param name="selectedFuelPumpNumber"></param>
+        public static void UpdateSelectedPumpNumber(FuelInputDataWrapper fuelInputDataWrapper, int selectedFuelPumpNumber)
+        {
+            fuelInputDataWrapper.FuelPumpNumber = selectedFuelPumpNumber;
+        }
+
+        /// <summary>
+        /// Updates the EnteredFuelGrade in the fuelInputDataWrapper object.
+        /// </summary>
+        /// <param name="fuelInputDataWrapper"></param>
+        /// <param name="selectedFuelGrade"></param>
+        public static void UpdateSelectedFuelGrade(FuelInputDataWrapper fuelInputDataWrapper, FuelGrade selectedFuelGrade)
+        {
+            fuelInputDataWrapper.EnteredFuelGrade = selectedFuelGrade;
+        }
+
+        public static void UpdateEnteredFuelPrice(FuelInputDataWrapper fuelInputDataWrapper, decimal newEnteredFuelPrice)
+        {
+            fuelInputDataWrapper.EnteredFuelPrice = newEnteredFuelPrice;
         }
 
         public static void AddNewRetailProductToCart(
@@ -39,7 +70,7 @@ namespace GasStationPOS.UI
 
             // Calculate the total price of the retail product based on current quantity selected
             // Update the product quantity to display in UI
-            rpDTOCopy.TotalPriceDollars = currentSelectedQuantityRef * rpDTOCopy.PriceDollars;
+            rpDTOCopy.TotalPriceDollars = currentSelectedQuantityRef * rpDTOCopy.UnitPriceDollars;
             rpDTOCopy.Quantity = currentSelectedQuantityRef;
 
             userCartProductsDataList.Add(rpDTOCopy); // UI is automatically updated bc of the BindingSource attached
@@ -49,24 +80,32 @@ namespace GasStationPOS.UI
             paymentDataWrapper.UpdatePaymentRelatedDataSources(priceChange);
 
             // Reset selectedQuantity to the default value
-            currentSelectedQuantityRef = QuantityConstants.DEFAULT_QUANTITY_VALUE;
-
-            //test (remove after)
-            Console.WriteLine(userCartProductsDataList.Count);
+            currentSelectedQuantityRef = QuantityConstants.DEFAULT_RETAIL_PRODUCT_QUANTITY_VALUE;
         }
 
-        //public static void AddNewFuelProductToCart(object sender, AddFuelProductToCartEventArgs e)
-        //{
-        //    //TODO
+        public static void AddNewFuelProductToCart(
+            BindingList<ProductDTO> userCartProductsDataList,
+            FuelProductDTO fpDTO,
+            PaymentDataWrapper paymentDataWrapper,
+            FuelInputDataWrapper fuelInputDataWrapper
+        )
+        {
+            decimal priceChange;
 
-        //    //decimal priceChange;
+            if (fpDTO == null) return;
 
-        //    // FuelGradeUtils // use this for getting fuel prices and FuelGrade enum from label
-        //    throw new NotImplementedException();
+            // create deep copy of the FuelProductDTO
+            FuelProductDTO fpDTOCopy = Program.GlobalMapper.Map<FuelProductDTO>(fpDTO); // (fpDTO is the source of the UI FuelProductDTO data for each add - from userCartProductsDataList)
 
-        //    //priceChange = fpDTOCopy.TotalPriceDollars;
-        //    //UpdatePaymentRelatedDataSources(priceChange);
-        //}
+            userCartProductsDataList.Add(fpDTOCopy); // UI is automatically updated bc of the BindingSource attached
+
+            // Addition increases the price (+)
+            priceChange = fpDTOCopy.TotalPriceDollars;
+            paymentDataWrapper.UpdatePaymentRelatedDataSources(priceChange);
+
+            // reset fuel input vals
+            fuelInputDataWrapper.ResetPaymentRelatedDataSourcesToInitValues();
+        }
 
         public static void RemoveProductFromCart(
             BindingList<ProductDTO> userCartProductsDataList,
@@ -83,9 +122,6 @@ namespace GasStationPOS.UI
             // Removal reduces the price (-)
             priceChange = -(productToRemove.TotalPriceDollars);
             paymentDataWrapper.UpdatePaymentRelatedDataSources(priceChange);
-
-            //test (remove after)
-            Console.WriteLine(userCartProductsDataList.Count);
         }
 
         public static void RemoveAllProductsFromCart(
@@ -97,25 +133,10 @@ namespace GasStationPOS.UI
             userCartProductsDataList.Clear(); // UI is automatically updated bc of the BindingSource attached
 
             // reset currentSelectedProductQuantity value to the default
-            currentSelectedProductQuantity = QuantityConstants.DEFAULT_QUANTITY_VALUE;
+            currentSelectedProductQuantity = QuantityConstants.DEFAULT_RETAIL_PRODUCT_QUANTITY_VALUE;
 
             // reset subtotal and amountRemaining
             paymentDataWrapper.ResetPaymentRelatedDataSourcesToInitValues(); // UI is automatically updated bc of the BindingSource attached
-
-            //test (remove after)
-            Console.WriteLine(userCartProductsDataList.Count);
-        }
-
-        public static void SubmitPayment(object sender, EventArgs e)
-        {
-            //TODO: once UI is done for CASH and CARD payments - subscribe SubmitPaymentEvent EventHandler delegate
-
-            //SubmitPaymentEvent() -> call the service
-
-            //  this.subtotal += PAID AMOUNT FROM USER;
-            //  this.amountTenderedFormatted = $"${amountTendered:F2}";
-
-            throw new NotImplementedException();
         }
         #endregion
     }

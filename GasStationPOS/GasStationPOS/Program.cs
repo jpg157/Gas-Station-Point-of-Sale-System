@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoMapper;
 using GasStationPOS.Core.Data.Repositories.Product;
+using GasStationPOS.Core.Data.Repositories.TransactionRepository;
 using GasStationPOS.Core.Data.Repositories.UserRepository;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
@@ -46,10 +47,11 @@ namespace GasStationPOS
             // Data access layer
             IRetailProductRepository    retailProductRepository = new RetailProductRepository();
             IUserRepository             userRepository          = new UserRepository();
+            ITransactionRepository      transactionRepository   = new TransactionRepository();
 
             // Services layer
             IInventoryService           inventoryService        = new InventoryService(retailProductRepository);
-            ITransactionService         transactionService      = new TransactionService();
+            ITransactionService         transactionService      = new TransactionService(transactionRepository);
             IAuthenticationService      authenticationService   = new AuthenticationService(userRepository);
 
             // UI layer

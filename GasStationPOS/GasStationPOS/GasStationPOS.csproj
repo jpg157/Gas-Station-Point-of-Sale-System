@@ -81,9 +81,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionDatabaseDTO.cs" />
+    <Compile Include="Core\Data\Models\TransactionModels\TransactionFuelProductItem.cs" />
+    <Compile Include="Core\Data\Models\TransactionModels\TransactionRetailProductItem.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionsJSONStructure.cs" />
+    <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
+    <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
+    <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\FuelInputDataWrapper.cs" />
+    <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.Designer.cs">
+      <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CartItem.cs" />
     <Compile Include="Core\Data\Database\Json\JsonDBConstants.cs" />
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\RetailProductListWrapper.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\RetailProductsJSONStructure.cs" />
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\UserDatabaseDTO.cs" />
     <Compile Include="Core\Data\Models\ProductModels\FuelProduct.cs" />
     <Compile Include="Core\Data\Models\ProductModels\Product.cs" />
@@ -94,15 +107,12 @@
     <Compile Include="Core\Data\Models\UserModels\User.cs" />
     <Compile Include="Core\Data\Repositories\UserRepository\IUserRepository.cs" />
     <Compile Include="Core\Data\Repositories\UserRepository\UserRepository.cs" />
-    <Compile Include="Core\Data\Repositories\Product\FuelProductRepository.cs" />
-    <Compile Include="Core\Data\Repositories\Product\IFuelProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\Product\IRetailProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\Product\RetailProductRepository.cs" />
     <Compile Include="Core\Services\Auth\AuthenticationService.cs" />
     <Compile Include="Core\Services\Auth\IAuthenticationService.cs" />
     <Compile Include="Core\Services\Inventory\IInventoryService.cs" />
     <Compile Include="Core\Services\Inventory\InventoryService.cs" />
-    <Compile Include="Core\Services\LoginService.cs" />
     <Compile Include="Core\Services\RegistrationService.cs" />
     <Compile Include="Core\Services\ReportService.cs" />
     <Compile Include="Core\Services\Transaction_Payment\ITransactionService.cs" />
@@ -138,14 +148,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="Core\Data\Database\Json\MockDatabase\fuel_products.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\receipts.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\retail_products.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\transactions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -153,6 +160,9 @@
     <Content Include="Core\Data\Database\Json\MockDatabase\users.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="UI\UserControls\Payment\CardPaymentUserControl.resx">
+      <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,6 +179,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\DataValidation\" />
+    <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\Products\" />
+    <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\User\" />
     <Folder Include="Core\Data\Database\SQL\" />
     <Folder Include="Resources\" />
   </ItemGroup>
