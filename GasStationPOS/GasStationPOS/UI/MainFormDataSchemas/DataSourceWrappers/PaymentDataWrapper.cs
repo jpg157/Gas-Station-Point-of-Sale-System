@@ -13,7 +13,7 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
     /// </summary>
     public class PaymentDataWrapper : INotifyPropertyChanged
     {
-        // UI is automatically updated if these properties in this class is the DataSource in a BindingSource, and that BindingSource is attached to a UI control
+        // UI is automatically updated if these properties in this class is the DataSource in a Binding object, and that Binding object is attached to a UI control
         // PropertyChangedEventHandler is required for automatic UI updating when the properties change
         public event PropertyChangedEventHandler PropertyChanged;
 

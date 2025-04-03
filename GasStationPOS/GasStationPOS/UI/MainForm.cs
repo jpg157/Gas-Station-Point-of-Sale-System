@@ -37,12 +37,6 @@ namespace GasStationPOS
     ///
     public partial class MainForm : Form
     {
-        // ======================== CONSTANTS (move to a different file) ========================
-        // Fuel prices for different fuel types
-        private static readonly decimal fuelRegularPriceCAD = 1.649m;
-        private static readonly decimal fuelPlusPriceCAD = 1.849m;
-        private static readonly decimal fuelSupremePriceCad = 2.049m;
-
         // ======================== SERVICES ========================
         private readonly IInventoryService      inventoryService; // for retrieving all retail and fuel product data to display to the UI
         private readonly ITransactionService    transactionService;
@@ -53,10 +47,13 @@ namespace GasStationPOS
         // binding sources allow for UI control data (Text, Label, ListBox contents, etc.) to be AUTOMATICALLY updated when connected to a data source
         // - updates to the data source will be syncronized UI
 
-        // USER CART UNDERLYING DATA (CONTENTS WILL CHANGE)
+        // USER CART data binding source (CONTENTS WILL CHANGE)
         private readonly BindingSource userCartProductsBindingSource;
 
-        // SUBTOTAL, AMOUNT TENDERED, AMOUNT REMAINING UNDERLYING DATA SOURCE (WILL CHANGE)
+        // FUEL INPUT data binding source (CONTENTS WILL CHANGE)
+        private readonly BindingSource fuelInputDataBindingSource;
+
+        // SUBTOTAL, AMOUNT TENDERED, AMOUNT REMAINING data binding source (WILL CHANGE)
         private readonly BindingSource paymentDataBindingSource;
 
         // ======================== CONSTANT DATA FOR APPLICATION ========================
@@ -64,15 +61,20 @@ namespace GasStationPOS
         // RETAIL PRODUCT BUTTONS UNDERLYING DATA (CONTENTS DO NOT CHANGE)
         private readonly IEnumerable<RetailProductDTO> retailProductsDataList;
 
+        private readonly IEnumerable<int> fuelProductPumpNumberList;
+
         // UPDATE QUANTITY BUTTONS UNDERLYING DATA (CONTENTS DO NOT CHANGE)
         private readonly IEnumerable<int> retailProductQuantitiesList;
 
         // ======================== STATE RELATED DATA FOR APPLICATION ========================
 
-        // USER CART DATA SOURCE (CONTENTS WILL CHANGE)
+        // USER CART DATA SOURCE - contents will change
         private readonly BindingList<ProductDTO> userCartProductsDataList; // data changes when user adds/removes items from the cart
 
-        // Payment related Data sources
+        // Stores user input fuel product and pump related information - contents will change
+        private readonly FuelInputDataWrapper fuelInputDataWrapper;
+
+        // Payment related Data sources - contents will change
         // Stores variables to track the subtotal, the amount remaining and the amount tendered by the customer
         private readonly PaymentDataWrapper paymentDataWrapper;
 
@@ -84,7 +86,6 @@ namespace GasStationPOS
 
         // Variable to store the input for fuel amount and selected fuel price
         private string fuelAmountInput;
-        private decimal fuelPrice;
 
         // Variable to store the input for cash amount tendered
         private string cashAmountInput;
@@ -106,40 +107,51 @@ namespace GasStationPOS
 
             // === Initilize Main View UI Underlying Data ===
 
-            currentSelectedProductQuantity = QuantityConstants.DEFAULT_QUANTITY_VALUE; // Initial value of the current selected product quantity
+            currentSelectedProductQuantity = QuantityConstants.DEFAULT_RETAIL_PRODUCT_QUANTITY_VALUE; // Initial value of the current selected product quantity
+
             fuelPumpsActivated = false;
-            fuelAmountInput = "";
-            fuelPrice = 0.00m;
 
             // RETAIL PRODUCT BUTTON DATA
             this.retailProductsDataList = inventoryService.GetAllRetailProductData(); // call inventory service which retreives the data from DB)
 
+            // FUEL PUMP NUMBER BUTTON DATA
+            this.fuelProductPumpNumberList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+
             // PRODUCT QUANTITY BUTTON DATA
             this.retailProductQuantitiesList = new List<int> { 1, 2, 3, 4, 5, 10, 25, 50, 100, 999 };
 
-            // LIST CART DATA (INITIALLY EMPTY) 
+            // LIST CART DATA (Initially Empty - set by user input) 
             this.userCartProductsDataList = new BindingList<ProductDTO>();
+
+            // FUEL PRODUCT INPUT DATA (Set by user input)
+            this.fuelInputDataWrapper = new FuelInputDataWrapper(); // contains selected pump number, entered fuel price amount
 
             // PAYMENT DATA
             this.paymentDataWrapper = new PaymentDataWrapper(); // contains subtotal, amountRemaining, and amountTendered
 
             // === Binding sources that view ui controls will bind to ===
 
-            this.userCartProductsBindingSource  = new BindingSource(); 
+            this.userCartProductsBindingSource  = new BindingSource();
+            this.fuelInputDataBindingSource     = new BindingSource();
             this.paymentDataBindingSource       = new BindingSource();
 
-            this.userCartProductsBindingSource.DataSource   = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in this presenter
+            this.userCartProductsBindingSource.DataSource   = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in the object
+            this.fuelInputDataBindingSource.DataSource      = this.fuelInputDataWrapper;
             this.paymentDataBindingSource.DataSource        = this.paymentDataWrapper;
 
-            // === Update button labels and tag attribute using data sources ===
+            // === Update button labels and tag attributes using data sources ===
 
             this.SetRetailProductButtonDataFromSource(retailProductsDataList);
+            this.SetFuelPumpButtonDataFromSource(fuelProductPumpNumberList);
             this.SetProductQuantityButtonDataFromSource(retailProductQuantitiesList);
+
+            this.SetFuelGradeButtonData();
 
             // === Bind UI controls with the Binding sources ===
 
             this.SetUserCartListBindingSource(userCartProductsBindingSource); // set ui for the user cart (the ListBox)
-            this.SetPaymentInfoLabelsBindingSource(paymentDataBindingSource); // set the UI labels for subtotal, amountTendered, and amountRemaining in the main form to the binding source data
+            this.SetFuelProductInfoLabelsBindingSource(fuelInputDataBindingSource); // set the UI labels for selected pump number, fuel grade, and fuel price in the main form to the binding source data attribute
+            this.SetPaymentInfoLabelsBindingSource(paymentDataBindingSource); // set the UI labels for subtotal, amountTendered, and amountRemaining in the main form to the binding source data attribute
 
             // === ADD EVENT HANDLERS TO EVENTS IN MAIN FORM ===
             AssociateMainFormEvents();
@@ -158,7 +170,7 @@ namespace GasStationPOS
         /// 
         /// Method is called in the presenter - not in this main form class.
         /// </summary>
-        public void SetRetailProductButtonDataFromSource(IEnumerable<RetailProductDTO> retailProductsDataList)
+        private void SetRetailProductButtonDataFromSource(IEnumerable<RetailProductDTO> retailProductsDataList)
         {
             foreach (RetailProductDTO retailProductDTO in retailProductsDataList)
             {
@@ -179,7 +191,6 @@ namespace GasStationPOS
                 // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
 
                 // 3. Associate MainFormDataUpdater.AddNewRetailProductToCart function to the click event of each retail product button
-                // - Pass in the tag value into the custom event argument for the presenter to be able to access the value
                 RetailProductDTO rpDtoReference = ((RetailProductDTO)retailProductButton.Tag);
 
                 retailProductButton.Click += delegate {
@@ -196,6 +207,47 @@ namespace GasStationPOS
             }
         }
 
+        private void SetFuelPumpButtonDataFromSource(IEnumerable<int> fuelPumpNumberList)
+        {
+            foreach (int fuelPumpNumber in fuelPumpNumberList)
+            {
+                string fuelPumpButtonName = $"{ButtonNamePrefixes.FUEL_PUMP_BUTTON_PREFIX}{fuelPumpNumber}";
+
+                Button fuelPumpButton = (Button)this.Controls.Find(fuelPumpButtonName, true).First();
+
+                // 1. Set the text of the button to the fuel pump number
+                fuelPumpButton.Text = $"{fuelPumpNumber}";
+
+                // 2. Attack the index of the fuel pump number value to the button using the Tag attribute (to know which fuel pump number that the clicked button was associated with)
+                fuelPumpButton.Tag = fuelPumpNumber; // save the value to change the quantity to
+
+                // ====== EVENT RELATED ======
+
+                // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
+
+                // 3. Associate MainFormDataUpdater.UpdateSelectedPumpNumber function to the click event of each pump number update button
+                fuelPumpButton.Click += btnFuelPump_Click;
+            }
+        }
+
+        /// <summary>
+        /// Set the fuel grade buttons text, underlying data, and event handler for a click event.
+        /// </summary>
+        private void SetFuelGradeButtonData()
+        {
+            btnFuelRegular.Text = FuelGrade.REGULAR.ToString();
+            btnFuelRegular.Tag  = FuelGrade.REGULAR;
+            btnFuelRegular.Click += delegate { HandleFuelGradeBtnClick(FuelGrade.REGULAR); };
+
+            btnFuelPlus.Text    = FuelGrade.PLUS.ToString();
+            btnFuelPlus.Tag     = FuelGrade.PLUS;
+            btnFuelPlus.Click += delegate { HandleFuelGradeBtnClick(FuelGrade.PLUS); };
+
+            btnFuelSupreme.Text = FuelGrade.SUPREME.ToString();
+            btnFuelSupreme.Tag  = FuelGrade.SUPREME;
+            btnFuelSupreme.Click += delegate { HandleFuelGradeBtnClick(FuelGrade.SUPREME); };
+        }
+
         /// <summary>
         /// Update quantity UI Buttons:
         /// 
@@ -204,7 +256,7 @@ namespace GasStationPOS
         /// 
         /// Method is called in the presenter - not in this main form class.
         /// </summary>
-        public void SetProductQuantityButtonDataFromSource(IEnumerable<int> retailProductQuantityDataList)
+        private void SetProductQuantityButtonDataFromSource(IEnumerable<int> retailProductQuantityDataList)
         {
             foreach (int productQuantityNum in retailProductQuantityDataList)
             {
@@ -213,7 +265,7 @@ namespace GasStationPOS
                 Button updateQuantityButton = (Button)this.Controls.Find(quantityButtonName, true).First();
 
                 // 1. Set the text of the button to the quantity number
-                updateQuantityButton.Text = $"{productQuantityNum.ToString()}x";
+                updateQuantityButton.Text = $"{productQuantityNum}x";
 
                 // 2. Attack the index of the quantity number value to the button using the Tag attribute (to know which quantity that the clicked button was associated with)
                 updateQuantityButton.Tag = productQuantityNum; // save the value to change the quantity to
@@ -223,7 +275,6 @@ namespace GasStationPOS
                 // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
 
                 // 3. Associate MainFormDataUpdater.UpdateSelectedProductQuantity function to the click event of each product quantity update button
-                // - Pass in the tag value into the custom event argument for the presenter to be able to access the value
                 updateQuantityButton.Click += delegate { 
                     MainFormDataUpdater.UpdateSelectedProductQuantity(
                         ref currentSelectedProductQuantity, 
@@ -247,9 +298,30 @@ namespace GasStationPOS
         /// 
         /// Method is called in the presenter - not in this main form class.
         /// </summary>
-        public void SetUserCartListBindingSource(BindingSource userCartProductsBindingSource)
+        private void SetUserCartListBindingSource(BindingSource userCartProductsBindingSource)
         {
             listCart.DataSource = userCartProductsBindingSource; // see if this works, otherwise use a DataGridView class
+        }
+
+        /// <summary>
+        /// Sets the binding sources of the Labels:
+        /// labelPumpNum   <-> fuelProductInputDataBindingSource - FuelPumpNumber (decimal) 
+        /// labelFuelType   <-> fuelProductInputDataBindingSource - EnteredFuelGrade (decimal)
+        /// labelFuelPrice  <-> fuelProductInputDataBindingSource - EnteredFuelPrice (decimal)
+        /// </summary>
+        /// <param name="fuelProductInputDataBindingSource"></param>
+        private void SetFuelProductInfoLabelsBindingSource(BindingSource fuelProductInputDataBindingSource)
+        {
+            bool formattingEnabled = true; // boolean to determine if the created Binding object will automatically format the payment decimal value
+            decimal defaultValueWhenDataSourceNull = PaymentConstants.INITIAL_AMOUNT_DOLLARS; // default value in case the data source "EnteredFuelGrade" is null
+            string twoDecimalPlacesString = "C2"; // tells Binding object to format the data source to 2 decimal places (proper currency format)
+
+            CultureInfo currencyCulture = new CultureInfo("en-CA"); // en-CA for Canadian Dollars
+
+            // Need DataSourceUpdateMode.OnPropertyChanged so it knows to change the value in the the UI control when the datasource (ex. EnteredFuelPrice) changes value
+            this.labelPumpNum.DataBindings.Add(new Binding("Text", fuelProductInputDataBindingSource, "FuelPumpNumberStr", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged));
+            this.labelFuelType.DataBindings.Add(new Binding("Text", fuelProductInputDataBindingSource, "EnteredFuelGrade", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged));
+            this.labelFuelPrice.DataBindings.Add(new Binding("Text", fuelProductInputDataBindingSource, "EnteredFuelPrice", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString, currencyCulture));
         }
 
         /// <summary>
@@ -259,7 +331,7 @@ namespace GasStationPOS
         /// labelRemaining  <-> paymentDataBindingSource - AmountRemaining (decimal)
         /// </summary>
         /// <param name="paymentDataBindingSource"></param>
-        public void SetPaymentInfoLabelsBindingSource(BindingSource paymentDataBindingSource)
+        private void SetPaymentInfoLabelsBindingSource(BindingSource paymentDataBindingSource)
         {
             bool formattingEnabled = true; // boolean to determine if the created Binding object will automatically format the payment decimal value
             decimal defaultValueWhenDataSourceNull = PaymentConstants.INITIAL_AMOUNT_DOLLARS; // default value in case the data source is null
@@ -275,7 +347,7 @@ namespace GasStationPOS
 
         #endregion
 
-        #region Attach Eventhandlers to events of SINGLE Buttons
+        #region Attach Eventhandlers to events of single standalone Buttons in the main form UI
 
         /// <summary>
         /// Attaches EventHandler objects to buttons, that do not have data binding properties with data stored in the presenter (retail, fuel and quantity buttons do)
@@ -292,7 +364,6 @@ namespace GasStationPOS
                 MainFormDataUpdater.RemoveAllProductsFromCart(userCartProductsDataList, paymentDataWrapper, ref currentSelectedProductQuantity);
             };
             btnClear.Click += delegate { UpdatePayButtonVisibility(); };
-
 
             // === Payment Button ===
 
@@ -447,15 +518,7 @@ namespace GasStationPOS
         /// </summary>
         private void HighlightFuelPumps()
         {
-            for (int i = 1; i <= 8; i++)
-            {
-                Button btn = Controls.Find($"btnFuelPump{i}", true).FirstOrDefault() as Button;
-                if (btn != null)
-                {
-                    btn.FlatAppearance.BorderColor = Color.Gold;
-                    btn.FlatAppearance.BorderSize = 3;
-                }
-            }
+            UpdateFuelPumpsAppearance(Color.Gold, 3);
         }
 
         /// <summary>
@@ -464,13 +527,28 @@ namespace GasStationPOS
         /// </summary>
         private void UnhighlightFuelPumps()
         {
-            for (int i = 1; i <= 8; i++)
+            UpdateFuelPumpsAppearance(Color.Black, 1);
+        }
+
+        /// <summary>
+        /// Updates the appearance of all fuel pump buttons to the entered borderColor and borderSize.
+        /// If borderColor < 1, borderColor will be set to 1.
+        /// </summary>
+        /// <param name="borderColor"></param>
+        /// <param name="borderSize"></param>
+        private void UpdateFuelPumpsAppearance(Color borderColor, int borderSize)
+        {
+            int numFuelPumps = this.fuelProductPumpNumberList.Count();
+
+            if (borderSize < 1) borderSize = 1;
+
+            for (int i = 1; i <= numFuelPumps; i++)
             {
-                Button btn = Controls.Find($"btnFuelPump{i}", true).FirstOrDefault() as Button;
+                Button btn = Controls.Find($"{ButtonNamePrefixes.FUEL_PUMP_BUTTON_PREFIX}{i}", true).FirstOrDefault() as Button;
                 if (btn != null)
                 {
-                    btn.FlatAppearance.BorderColor = Color.Black;
-                    btn.FlatAppearance.BorderSize = 1;
+                    btn.FlatAppearance.BorderColor  = borderColor;
+                    btn.FlatAppearance.BorderSize   = borderSize;
                 }
             }
         }
@@ -504,14 +582,14 @@ namespace GasStationPOS
             }
 
             // Get the clicked button
-            Button btn = sender as Button;
+            Button fuelPumpButton = sender as Button;
 
             // Check if the button is valid
-            if (btn != null)
+            if (fuelPumpButton != null)
             {
-                // Update the label with the corresponding pump number
-                int pumpNumber = int.Parse(btn.Name.Replace("btnFuelPump", ""));
-                labelPumpNum.Text = $"PUMP {pumpNumber}"; // Update label with the correct pump number
+                // Update currently selected pump number (this value is stored in this.fuelInputDataWrapper)
+                // (Which automatically updates the labels with the corresponding pump number)
+                MainFormDataUpdater.UpdateSelectedPumpNumber(this.fuelInputDataWrapper, (int)fuelPumpButton.Tag);
 
                 // Show the pnlFuelTypeSelection panel
                 HidePanels();
@@ -521,9 +599,8 @@ namespace GasStationPOS
                 UnhighlightFuelPumps();
 
                 // Highlight the selected fuel pump
-                btn.FlatAppearance.BorderColor = Color.Gold;
-                btn.FlatAppearance.BorderSize = 3;
-
+                fuelPumpButton.FlatAppearance.BorderColor = Color.Gold;
+                fuelPumpButton.FlatAppearance.BorderSize = 3;
             }
         }
 
@@ -531,22 +608,144 @@ namespace GasStationPOS
         /// Handles the fuel type selection by updating the label with the selected fuel type 
         /// and showing the fuel amount input panel.
         /// </summary>
-        private void btnFuelType_Click(object sender, EventArgs e)
+        private void HandleFuelGradeBtnClick(FuelGrade fuelGrade)
+        {
+            //// Update label with pump number and fuel type
+            //labelFuelType.Text = $"{labelPumpNum.Text} {fuelType}";
+
+            // Update FuelInputDataWrapper Fuel Type attribute (MainFormDataUpdater handles data updating logic)
+            MainFormDataUpdater.UpdateSelectedFuelGrade(this.fuelInputDataWrapper, fuelGrade);
+
+            // Show the add fuel amount panel
+            HidePanels();
+            pnlAddFuelAmount.Visible = true;
+            pnlBottomNavBack.Visible = true;
+        }
+
+        /// <summary>
+        /// Handles the numeric input for the fuel price calculator by appending or replacing input values.
+        /// Updates the fuel price label accordingly.
+        /// </summary>
+        private void btnFuelCalculator_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             if (btn != null)
             {
-                // Extract fuel type from the button's text
-                string fuelType = btn.Text.ToUpper();
+                string value = btn.Text;
 
-                // Update label with pump number and fuel type
-                labelFuelType.Text = $"{labelPumpNum.Text} {fuelType}";
+                // If input is "0", "00", "000", append normally
+                if (value == "0" || value == "00" || value == "000")
+                {
+                    fuelAmountInput += value;
+                }
 
-                // Show the add fuel amount panel
-                HidePanels();
-                pnlAddFuelAmount.Visible = true;
-                pnlBottomNavBack.Visible = true;
+                // If input is a preset amount (e.g., "10.00"), replace entire input
+                else if (value.Contains("."))
+                {
+                    fuelAmountInput = value.Replace(".", ""); // Store without decimal
+                }
+
+                // Otherwise, append to the input
+                else
+                {
+                    fuelAmountInput += value;
+                }
+
+                UpdateFuelPriceLabel();
             }
+        }
+
+        /// <summary>
+        /// Updates the fuel price label and underlying fuel price data source after converting the input fuel amount to a decimal format.
+        /// </summary>
+        private void UpdateFuelPriceLabel()
+        {
+            decimal enteredFuelPrice;
+
+            if (string.IsNullOrEmpty(fuelAmountInput))
+            {
+                enteredFuelPrice = 0.00m; // Default if empty
+            }
+            else
+            {
+                // Convert input to decimal format (X.YY)
+                enteredFuelPrice = decimal.Parse(fuelAmountInput) / 100.0m;
+            }
+
+            //labelFuelPrice.Text = amount.ToString("0.00");
+            MainFormDataUpdater.UpdateEnteredFuelPrice(this.fuelInputDataWrapper, enteredFuelPrice);
+        }
+
+        /// <summary>
+        /// Handles the backspace input for the fuel price calculator, removing the last character from the fuel input.
+        /// Updates the fuel price label accordingly.
+        /// </summary>
+        private void btnFuelCalculatorBackspace_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(fuelAmountInput))
+            {
+                fuelAmountInput = fuelAmountInput.Substring(0, fuelAmountInput.Length - 1);
+                UpdateFuelPriceLabel();
+            }
+        }
+
+        /// <summary>
+        /// Validates the entered fuel amount, calculates the total price, and adds the fuel to the cart if valid.
+        /// If invalid, shows an error message.
+        /// </summary>
+        private void btnFuelCalculatorEnter_Click(object sender, EventArgs e)
+        {
+            if (this.fuelInputDataWrapper.EnteredFuelPrice <= 0.0m)
+            {
+                MessageBox.Show("Please enter a valid fuel amount.");
+                return;
+            }
+
+            // Get the data attributes from the fuelInputDataWrapper data source class
+            int         fuelPumpNumber              = this.fuelInputDataWrapper.FuelPumpNumber;
+            FuelGrade   fuelGrade                   = this.fuelInputDataWrapper.EnteredFuelGrade;
+            decimal     totalEnteredfuelPrice       = this.fuelInputDataWrapper.EnteredFuelPrice;
+            decimal     resultingFuelQuantity       = this.fuelInputDataWrapper.FuelQuantityLitres; // quantity gets automatically updated in the class when fuel price and grade change
+
+            // generate a random id (temporary solution)
+            Random random = new Random();
+            int fuelProductId = random.Next(10000);
+
+            // create product name / description
+            string fuelProductNameDescription = $"{this.fuelInputDataWrapper.FuelPumpNumberStr} {fuelGrade}";
+
+            // Create a FuelProductDTO and add it to the product dto data list
+
+            FuelProductDTO fuelProductDTO = new FuelProductDTO{
+                Id                      = fuelProductId,
+                ProductNameDescription  = fuelProductNameDescription,
+                UnitPriceDollars        = FuelGradeUtils.GetFuelPrice(fuelGrade),
+                Quantity                = resultingFuelQuantity, // the total volume of the fuel product
+                TotalPriceDollars       = totalEnteredfuelPrice,
+                FuelGrade               = fuelGrade,
+                PumpNumber              = fuelPumpNumber,
+            };
+
+            // add to list of ProductDTOs
+            MainFormDataUpdater.AddNewFuelProductToCart(this.userCartProductsDataList, fuelProductDTO, this.paymentDataWrapper, this.fuelInputDataWrapper);
+
+            reset();
+
+            UpdatePayButtonVisibility();
+        }
+
+
+
+        // === PAYMENT Button Event Handlers ===
+
+
+
+        /// <summary>
+        /// Click event handler for cash payment buttons.
+        /// </summary>
+        private void btnCashPayment_Click(object sender, EventArgs e)
+        {
+            HandleNumericInput(ref cashAmountInput, labelCashAmount, sender);
         }
 
         /// <summary>
@@ -597,36 +796,6 @@ namespace GasStationPOS
         }
 
         /// <summary>
-        /// Click event handler for fuel calculator buttons.
-        /// </summary>
-        private void btnFuelCalculator_Click(object sender, EventArgs e)
-        {
-            HandleNumericInput(ref fuelAmountInput, labelFuelPrice, sender);
-        }
-
-        /// <summary>
-        /// Click event handler for cash payment buttons.
-        /// </summary>
-        private void btnCashPayment_Click(object sender, EventArgs e)
-        {
-            HandleNumericInput(ref cashAmountInput, labelCashAmount, sender);
-        }
-
-        /// <summary>
-        /// Handles the backspace input for the fuel price calculator, removing the last character from the fuel input.
-        /// Updates the fuel price label accordingly.
-        /// </summary>
-        private void btnFuelCalculatorBackspace_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(fuelAmountInput))
-            {
-                fuelAmountInput = fuelAmountInput.Substring(0, fuelAmountInput.Length - 1);
-                UpdateAmountLabel(fuelAmountInput, labelFuelPrice);
-            }
-        }
-
-
-        /// <summary>
         /// Handles the backspace input for the cash payment, removing the last character from the cash input label.
         /// Updates the cash payment label accordingly.
         /// </summary>
@@ -638,54 +807,6 @@ namespace GasStationPOS
                 UpdateAmountLabel(cashAmountInput, labelCashAmount);
             }
         }
-
-
-        /// <summary>
-        /// Validates the entered fuel amount, calculates the total price, and adds the fuel to the cart if valid.
-        /// If invalid, shows an error message.
-        /// </summary>
-        private void btnFuelCalculatorEnter_Click(object sender, EventArgs e)
-        {
-            if (decimal.TryParse(labelFuelPrice.Text, out decimal total) && total > 0)
-            {
-                // Extract pump number and fuel type
-                string[] fuelInfo = labelFuelType.Text.Split(' ');
-                int pumpNumber = int.Parse(fuelInfo[1]); // Get pump number
-                string fuelType = fuelInfo[2]; // Get fuel type
-
-                // Determine the price per liter based on the fuel type
-                switch (fuelType.ToUpper())
-                {
-                    case "REGULAR":
-                        fuelPrice = fuelRegularPriceCAD;
-                        break;
-                    case "PLUS":
-                        fuelPrice = fuelPlusPriceCAD;
-                        break;
-                    case "SUPREME":
-                        fuelPrice = fuelSupremePriceCad;
-                        break;
-                }
-
-                // Calculate quantity up to three decimal places
-                decimal quantity = Math.Round(total / fuelPrice, 3);
-
-                // Create a CartItem and add it to the cart
-                CartItem newItem = new CartItem(labelFuelType.Text, quantity, fuelPrice, total);
-                listCart.Items.Add(newItem);
-
-                //subtotal += total;
-
-                reset();
-                //UpdateAfterAddingToCart();
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid fuel amount.");
-            }
-        }
-
-        // === PAYMENT Button Event Handlers ===
 
         /// <summary>
         /// Card payment button event handler

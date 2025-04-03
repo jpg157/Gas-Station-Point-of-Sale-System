@@ -87,6 +87,7 @@
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionsJSONStructure.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
+    <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\FuelInputDataWrapper.cs" />
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,8 +107,6 @@
     <Compile Include="Core\Data\Models\UserModels\User.cs" />
     <Compile Include="Core\Data\Repositories\UserRepository\IUserRepository.cs" />
     <Compile Include="Core\Data\Repositories\UserRepository\UserRepository.cs" />
-    <Compile Include="Core\Data\Repositories\Product\FuelProductRepository.cs" />
-    <Compile Include="Core\Data\Repositories\Product\IFuelProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\Product\IRetailProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\Product\RetailProductRepository.cs" />
     <Compile Include="Core\Services\Auth\AuthenticationService.cs" />
@@ -149,9 +148,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="Core\Data\Database\Json\MockDatabase\fuel_products.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Core\Data\Database\Json\MockDatabase\receipts.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -183,6 +179,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\DataValidation\" />
+    <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\Products\" />
+    <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\User\" />
     <Folder Include="Core\Data\Database\SQL\" />
     <Folder Include="Resources\" />
   </ItemGroup>

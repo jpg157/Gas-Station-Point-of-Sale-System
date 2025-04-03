@@ -60,6 +60,17 @@ namespace GasStationPOS
                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                 .Include<RetailProductDTO, RetailProduct>() // mapping inheritance for RetailProductDTO -> RetailProduct
                 .Include<FuelProductDTO, FuelProduct>();    // mapping inheritance for FuelProductDTO -> FuelProduct
+
+            // ProductDTO -> Product (For deep copy)
+            CreateMap<ProductDTO, ProductDTO>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductNameDescription))
+                .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
+                .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
+                .ForMember(dest => dest.TotalPriceDollars, opt => opt.MapFrom(src => src.TotalPriceDollars))
+                .Include<RetailProductDTO, RetailProductDTO>() // mapping inheritance for RetailProductDTO -> RetailProductDTO
+                .Include<FuelProductDTO, FuelProductDTO>();    // mapping inheritance for FuelProductDTO -> FuelProductDTO
+
         }
 
         /// <summary>
@@ -73,15 +84,21 @@ namespace GasStationPOS
 
             // FuelProduct -> FuelProductDTO
             CreateMap<FuelProduct, FuelProductDTO>()
-                 .ForMember(dest => dest.FuelGrade, opt => opt.MapFrom(src => src.FuelGrade));
-            //.ForMember(dest => dest.FuelVolumeLitres, opt => opt.MapFrom(src => src.FuelVolumeLitres))
-            //.ForMember(dest => dest.PriceDollars, opt => opt.MapFrom(src => src.PriceDollars)); // <need to manually divide the dto value by 100 to display in ¢>
+                .ForMember(dest => dest.FuelGrade, opt => opt.MapFrom(src => src.FuelGrade))
+                .ForMember(dest => dest.PumpNumber, opt => opt.MapFrom(src => src.PumpNumber));
 
             // FuelProductDTO -> FuelProduct
             CreateMap<FuelProductDTO, FuelProduct>()
-                 .ForMember(dest => dest.FuelGrade, opt => opt.MapFrom(src => src.FuelGrade));
-            //.ForMember(dest => dest.FuelVolumeLitres, opt => opt.MapFrom(src => src.FuelVolumeLitres))
-            //.ForMember(dest => dest.PriceDollars, opt => opt.MapFrom(src => src.PriceDollars));
+                .ForMember(dest => dest.FuelGrade, opt => opt.MapFrom(src => src.FuelGrade))
+                .ForMember(dest => dest.PumpNumber, opt => opt.MapFrom(src => src.PumpNumber));
+            
+
+            // For creating clones of fuel products when adding new items to user cart ===
+
+            // FuelProductDTO -> FuelProductDTO
+            CreateMap<FuelProductDTO, FuelProductDTO>()
+                .ForMember(dest => dest.FuelGrade, opt => opt.MapFrom(src => src.FuelGrade))
+                .ForMember(dest => dest.PumpNumber, opt => opt.MapFrom(src => src.PumpNumber));
         }
 
         /// <summary>
@@ -98,22 +115,13 @@ namespace GasStationPOS
             //// RetailProductDTO -> RetailProduct
             CreateMap<RetailProductDTO, RetailProduct>();
             //     //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
-            //     .ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
-            //     .ForMember(dest => dest.ProductSizeVariation, opt => opt.MapFrom(src => src.ProductSizeVariation));
 
 
             // For creating clones of retail products when adding new items to user cart ===
 
             // RetailProductDTO -> RetailProductDTO
-            CreateMap<RetailProductDTO, RetailProductDTO>()
+            CreateMap<RetailProductDTO, RetailProductDTO>();
                  //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
-                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                 .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductNameDescription))
-                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
-                 .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
-                 .ForMember(dest => dest.TotalPriceDollars, opt => opt.MapFrom(src => src.TotalPriceDollars));
-                 //.ForMember(dest => dest.ProductVolumeLitres, opt => opt.MapFrom(src => src.ProductVolumeLitres))
-                 //.ForMember(dest => dest.ProductSizeVariation, opt => opt.MapFrom(src => src.ProductSizeVariation));
         }
 
         private void CreateUserMappingProfile()

@@ -12,20 +12,15 @@ namespace GasStationPOS.Core.Services.Inventory
     public class InventoryService : IInventoryService
     {
         private IRetailProductRepository retailProductRepository;
-        //private IFuelProductRepository      fuelProductRepository; //TODO
 
         /// <summary>
         /// Constructor for InventoryService.
-        /// Dependency injection of RetailProductRepository and FuelProductRepository which access the database for retail and fuel product data.
+        /// Dependency injection of RetailProductRepository which accesses the database for retail product data.
         /// </summary>
         /// <param name="retailProductRepository"></param>
-        /// <param name="fuelProductRepository"></param>
-        public InventoryService(IRetailProductRepository retailProductRepository//, 
-            //IFuelProductRepository fuelProductRepository
-            )
+        public InventoryService(IRetailProductRepository retailProductRepository)
         {
             this.retailProductRepository = retailProductRepository;
-            //this.fuelProductRepository      = fuelProductRepository;
         }
 
         /// <summary>
@@ -51,12 +46,6 @@ namespace GasStationPOS.Core.Services.Inventory
             }
 
             return retailProductDTODataList;
-        }
-
-        public IEnumerable<FuelProductDTO> GetAllFuelProductData()
-        {
-            //TODO - should be the same as GetAllRetailProductData but data is FuelProductDTO instead
-            throw new NotImplementedException();
         }
     }
 }
