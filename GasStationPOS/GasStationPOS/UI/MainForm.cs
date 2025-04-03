@@ -1,6 +1,4 @@
-﻿using GasStationPOS.Core.Data.Models.ProductModels;
-using GasStationPOS.Core.Data.Models.TransactionModels;
-using GasStationPOS.Core.Services;
+﻿using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
 using GasStationPOS.Core.Services.Transaction_Payment;
@@ -9,15 +7,12 @@ using GasStationPOS.UI.Constants;
 using GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 using GasStationPOS.UI.UIFormValidation;
-using GasStationPOS.UI.UserControls.Payment;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,8 +39,8 @@ namespace GasStationPOS
         private static readonly decimal fuelSupremePriceCad = 2.049m;
 
         // ======================== SERVICES ========================
-        private readonly IInventoryService      inventoryService; // for retrieving all retail and fuel product data to display to the UI
-        private readonly ITransactionService    transactionService;
+        private readonly IInventoryService inventoryService; // for retrieving all retail and fuel product data to display to the UI
+        private readonly ITransactionService transactionService;
         private readonly IAuthenticationService authenticationService;
 
         // ======================== BINDING SOURCES ========================
@@ -92,15 +87,15 @@ namespace GasStationPOS
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
-        public MainForm(IInventoryService       inventoryService, 
-                        ITransactionService     transactionService,
-                        IAuthenticationService  authenticationService) // dependency injection of services
+        public MainForm(IInventoryService inventoryService,
+                        ITransactionService transactionService,
+                        IAuthenticationService authenticationService) // dependency injection of services
         {
             //setupDatabase(); // Setup the user database ================================================================================================================================================
             InitializeComponent();
 
             // === Initilize required services ===
-            this.inventoryService   = inventoryService;
+            this.inventoryService = inventoryService;
             this.transactionService = transactionService;
             this.authenticationService = authenticationService;
 
@@ -125,11 +120,11 @@ namespace GasStationPOS
 
             // === Binding sources that view ui controls will bind to ===
 
-            this.userCartProductsBindingSource  = new BindingSource(); 
-            this.paymentDataBindingSource       = new BindingSource();
+            this.userCartProductsBindingSource = new BindingSource();
+            this.paymentDataBindingSource = new BindingSource();
 
-            this.userCartProductsBindingSource.DataSource   = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in this presenter
-            this.paymentDataBindingSource.DataSource        = this.paymentDataWrapper;
+            this.userCartProductsBindingSource.DataSource = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in this presenter
+            this.paymentDataBindingSource.DataSource = this.paymentDataWrapper;
 
             // === Update button labels and tag attribute using data sources ===
 
@@ -182,7 +177,8 @@ namespace GasStationPOS
                 // - Pass in the tag value into the custom event argument for the presenter to be able to access the value
                 RetailProductDTO rpDtoReference = ((RetailProductDTO)retailProductButton.Tag);
 
-                retailProductButton.Click += delegate {
+                retailProductButton.Click += delegate
+                {
                     MainFormDataUpdater.AddNewRetailProductToCart(
                         this.userCartProductsDataList,
                         rpDtoReference,
@@ -224,9 +220,10 @@ namespace GasStationPOS
 
                 // 3. Associate MainFormDataUpdater.UpdateSelectedProductQuantity function to the click event of each product quantity update button
                 // - Pass in the tag value into the custom event argument for the presenter to be able to access the value
-                updateQuantityButton.Click += delegate { 
+                updateQuantityButton.Click += delegate
+                {
                     MainFormDataUpdater.UpdateSelectedProductQuantity(
-                        ref currentSelectedProductQuantity, 
+                        ref currentSelectedProductQuantity,
                         (int)updateQuantityButton.Tag
                     );
                 };
@@ -288,7 +285,8 @@ namespace GasStationPOS
 
             // === Clear ALL products from cart Button ===
 
-            btnClear.Click += delegate { // using delegate operator allows for anonymous methods that return an EventHandler object ex: delegate {<can put any code to handle event in here>}
+            btnClear.Click += delegate
+            { // using delegate operator allows for anonymous methods that return an EventHandler object ex: delegate {<can put any code to handle event in here>}
                 MainFormDataUpdater.RemoveAllProductsFromCart(userCartProductsDataList, paymentDataWrapper, ref currentSelectedProductQuantity);
             };
             btnClear.Click += delegate { UpdatePayButtonVisibility(); };
@@ -299,7 +297,7 @@ namespace GasStationPOS
             // Call transactionService.CreateTransaction function when either btnPayCard or btnPayCash buttons are clicked (passing in the respective payment method)
             // (Need to assign the corresponding PaymentMethod enum member in paramater so transactionService can can handle the correct payment type
             btnPayCard.Click += PayCardButton_Click;
-            this.cardPaymentUserControl.KeyEnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD);  };
+            this.cardPaymentUserControl.KeyEnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD); };
 
             btnPayCash.Click += PayCashButton_Click;                                      // ============================================ CASH PAYMENT UI - TODO ============================================
             //this.cashPaymentUserControl.EnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH);  }; // ============================================ CASH PAYMENT UI - TODO ============================================
@@ -359,7 +357,7 @@ namespace GasStationPOS
             pnlFuelTypeSelect.Visible = false;
             pnlSelectCartItem.Visible = false;
             pnlAddFuelAmount.Visible = false;
-            pnlCashPayment.Visible = false; 
+            pnlCashPayment.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
 
@@ -798,8 +796,8 @@ namespace GasStationPOS
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             // Retrieve user input
-            string enteredUsername  = textBoxAccountID.Text.Trim();
-            string enteredPassword  = textBoxPassword.Text;
+            string enteredUsername = textBoxAccountID.Text.Trim();
+            string enteredPassword = textBoxPassword.Text;
 
             // Validate user inputs (check if they are empty)
             bool validationSuccessful = LoginFormValidator.ValidateFields(enteredUsername, enteredPassword);
@@ -825,5 +823,13 @@ namespace GasStationPOS
             tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // Prints the reciept
+        private void btnPrintReceipt_Click(object sender, EventArgs e)
+        {
+            ReceiptPrinter rp = new ReceiptPrinter();
+            rp.printReceipt();
+        }
+
     }
 }

@@ -130,15 +130,13 @@
             this.pnlFuelConfirmation = new System.Windows.Forms.Panel();
             this.labelFuelConfirmation = new System.Windows.Forms.Label();
             this.pnlFuelTypeSelect = new System.Windows.Forms.Panel();
-            this.labelEnterGrade = new System.Windows.Forms.Label();
-            this.labelPumpNum = new System.Windows.Forms.Label();
             this.tableLayoutPanelFuelGrade = new System.Windows.Forms.TableLayoutPanel();
             this.btnFuelSupreme = new System.Windows.Forms.Button();
             this.btnFuelPlus = new System.Windows.Forms.Button();
             this.btnFuelRegular = new System.Windows.Forms.Button();
+            this.labelEnterGrade = new System.Windows.Forms.Label();
+            this.labelPumpNum = new System.Windows.Forms.Label();
             this.pnlAddFuelAmount = new System.Windows.Forms.Panel();
-            this.btnFuelCalculatorEnter = new System.Windows.Forms.Button();
-            this.btnFuelCalculatorBackspace = new System.Windows.Forms.Button();
             this.tableLayoutPanelPresetAmount = new System.Windows.Forms.TableLayoutPanel();
             this.btnFuelCalculator25 = new System.Windows.Forms.Button();
             this.btnFuelCalculator20 = new System.Windows.Forms.Button();
@@ -148,6 +146,8 @@
             this.btnFuelCalculator100 = new System.Windows.Forms.Button();
             this.btnFuelCalculator75 = new System.Windows.Forms.Button();
             this.btnFuelCalculator50 = new System.Windows.Forms.Button();
+            this.btnFuelCalculatorEnter = new System.Windows.Forms.Button();
+            this.btnFuelCalculatorBackspace = new System.Windows.Forms.Button();
             this.tableLayoutPanelFuelCalculator = new System.Windows.Forms.TableLayoutPanel();
             this.btnFuelCalculator000 = new System.Windows.Forms.Button();
             this.btnFuelCalculator00 = new System.Windows.Forms.Button();
@@ -177,13 +177,14 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.pnlCashPayment = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCashValue25 = new System.Windows.Forms.Button();
-            this.btnCashValue20 = new System.Windows.Forms.Button();
-            this.btnCashValue10 = new System.Windows.Forms.Button();
+            this.btnCashValue5 = new System.Windows.Forms.Button();
             this.btnCashValue150 = new System.Windows.Forms.Button();
             this.btnCashValue100 = new System.Windows.Forms.Button();
             this.btnCashValue75 = new System.Windows.Forms.Button();
             this.btnCashValue50 = new System.Windows.Forms.Button();
+            this.btnCashValue25 = new System.Windows.Forms.Button();
+            this.btnCashValue20 = new System.Windows.Forms.Button();
+            this.btnCashValue10 = new System.Windows.Forms.Button();
             this.btnCashEnter = new System.Windows.Forms.Button();
             this.btnCashBackspace = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -201,7 +202,6 @@
             this.btnCash7 = new System.Windows.Forms.Button();
             this.labelCashAmount = new System.Windows.Forms.Label();
             this.labelEnterCash = new System.Windows.Forms.Label();
-            this.btnCashValue5 = new System.Windows.Forms.Button();
             this.cardPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CardPaymentUserControl();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
@@ -493,6 +493,7 @@
             this.btnPrintReceipt.TabIndex = 2;
             this.btnPrintReceipt.Text = "Receipt";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
+            this.btnPrintReceipt.Click += new System.EventHandler(this.btnPrintReceipt_Click);
             // 
             // btnMenu
             // 
@@ -1755,32 +1756,6 @@
             this.pnlFuelTypeSelect.TabIndex = 7;
             this.pnlFuelTypeSelect.Visible = false;
             // 
-            // labelEnterGrade
-            // 
-            this.labelEnterGrade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelEnterGrade.BackColor = System.Drawing.Color.Firebrick;
-            this.labelEnterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnterGrade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelEnterGrade.Location = new System.Drawing.Point(3, 54);
-            this.labelEnterGrade.Name = "labelEnterGrade";
-            this.labelEnterGrade.Size = new System.Drawing.Size(263, 31);
-            this.labelEnterGrade.TabIndex = 2;
-            this.labelEnterGrade.Text = "Enter Grade";
-            this.labelEnterGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelPumpNum
-            // 
-            this.labelPumpNum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelPumpNum.BackColor = System.Drawing.Color.Firebrick;
-            this.labelPumpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPumpNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelPumpNum.Location = new System.Drawing.Point(3, 4);
-            this.labelPumpNum.Name = "labelPumpNum";
-            this.labelPumpNum.Size = new System.Drawing.Size(263, 50);
-            this.labelPumpNum.TabIndex = 1;
-            this.labelPumpNum.Text = "label1";
-            this.labelPumpNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanelFuelGrade
             // 
             this.tableLayoutPanelFuelGrade.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1849,6 +1824,32 @@
             this.btnFuelRegular.UseVisualStyleBackColor = false;
             this.btnFuelRegular.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
+            // labelEnterGrade
+            // 
+            this.labelEnterGrade.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelEnterGrade.BackColor = System.Drawing.Color.Firebrick;
+            this.labelEnterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnterGrade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelEnterGrade.Location = new System.Drawing.Point(3, 54);
+            this.labelEnterGrade.Name = "labelEnterGrade";
+            this.labelEnterGrade.Size = new System.Drawing.Size(263, 31);
+            this.labelEnterGrade.TabIndex = 2;
+            this.labelEnterGrade.Text = "Enter Grade";
+            this.labelEnterGrade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPumpNum
+            // 
+            this.labelPumpNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPumpNum.BackColor = System.Drawing.Color.Firebrick;
+            this.labelPumpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPumpNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelPumpNum.Location = new System.Drawing.Point(3, 4);
+            this.labelPumpNum.Name = "labelPumpNum";
+            this.labelPumpNum.Size = new System.Drawing.Size(263, 50);
+            this.labelPumpNum.TabIndex = 1;
+            this.labelPumpNum.Text = "label1";
+            this.labelPumpNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlAddFuelAmount
             // 
             this.pnlAddFuelAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1864,36 +1865,6 @@
             this.pnlAddFuelAmount.Size = new System.Drawing.Size(428, 434);
             this.pnlAddFuelAmount.TabIndex = 8;
             this.pnlAddFuelAmount.Visible = false;
-            // 
-            // btnFuelCalculatorEnter
-            // 
-            this.btnFuelCalculatorEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFuelCalculatorEnter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculatorEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculatorEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculatorEnter.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculatorEnter.Location = new System.Drawing.Point(166, 371);
-            this.btnFuelCalculatorEnter.Name = "btnFuelCalculatorEnter";
-            this.btnFuelCalculatorEnter.Size = new System.Drawing.Size(150, 53);
-            this.btnFuelCalculatorEnter.TabIndex = 11;
-            this.btnFuelCalculatorEnter.Text = "Enter";
-            this.btnFuelCalculatorEnter.UseVisualStyleBackColor = false;
-            this.btnFuelCalculatorEnter.Click += new System.EventHandler(this.btnFuelCalculatorEnter_Click);
-            // 
-            // btnFuelCalculatorBackspace
-            // 
-            this.btnFuelCalculatorBackspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFuelCalculatorBackspace.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFuelCalculatorBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelCalculatorBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelCalculatorBackspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnFuelCalculatorBackspace.Location = new System.Drawing.Point(6, 371);
-            this.btnFuelCalculatorBackspace.Name = "btnFuelCalculatorBackspace";
-            this.btnFuelCalculatorBackspace.Size = new System.Drawing.Size(154, 53);
-            this.btnFuelCalculatorBackspace.TabIndex = 10;
-            this.btnFuelCalculatorBackspace.Text = "Backspace";
-            this.btnFuelCalculatorBackspace.UseVisualStyleBackColor = false;
-            this.btnFuelCalculatorBackspace.Click += new System.EventHandler(this.btnFuelCalculatorBackspace_Click);
             // 
             // tableLayoutPanelPresetAmount
             // 
@@ -2048,6 +2019,36 @@
             this.btnFuelCalculator50.Text = "50.00";
             this.btnFuelCalculator50.UseVisualStyleBackColor = false;
             this.btnFuelCalculator50.Click += new System.EventHandler(this.btnFuelCalculator_Click);
+            // 
+            // btnFuelCalculatorEnter
+            // 
+            this.btnFuelCalculatorEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFuelCalculatorEnter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculatorEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculatorEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculatorEnter.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculatorEnter.Location = new System.Drawing.Point(166, 371);
+            this.btnFuelCalculatorEnter.Name = "btnFuelCalculatorEnter";
+            this.btnFuelCalculatorEnter.Size = new System.Drawing.Size(150, 53);
+            this.btnFuelCalculatorEnter.TabIndex = 11;
+            this.btnFuelCalculatorEnter.Text = "Enter";
+            this.btnFuelCalculatorEnter.UseVisualStyleBackColor = false;
+            this.btnFuelCalculatorEnter.Click += new System.EventHandler(this.btnFuelCalculatorEnter_Click);
+            // 
+            // btnFuelCalculatorBackspace
+            // 
+            this.btnFuelCalculatorBackspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFuelCalculatorBackspace.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFuelCalculatorBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuelCalculatorBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuelCalculatorBackspace.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFuelCalculatorBackspace.Location = new System.Drawing.Point(6, 371);
+            this.btnFuelCalculatorBackspace.Name = "btnFuelCalculatorBackspace";
+            this.btnFuelCalculatorBackspace.Size = new System.Drawing.Size(154, 53);
+            this.btnFuelCalculatorBackspace.TabIndex = 10;
+            this.btnFuelCalculatorBackspace.Text = "Backspace";
+            this.btnFuelCalculatorBackspace.UseVisualStyleBackColor = false;
+            this.btnFuelCalculatorBackspace.Click += new System.EventHandler(this.btnFuelCalculatorBackspace_Click);
             // 
             // tableLayoutPanelFuelCalculator
             // 
@@ -2499,53 +2500,21 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(101, 411);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // btnCashValue25
+            // btnCashValue5
             // 
-            this.btnCashValue25.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnCashValue25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCashValue25.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCashValue25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCashValue25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCashValue25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCashValue25.Location = new System.Drawing.Point(3, 156);
-            this.btnCashValue25.Name = "btnCashValue25";
-            this.btnCashValue25.Size = new System.Drawing.Size(95, 45);
-            this.btnCashValue25.TabIndex = 8;
-            this.btnCashValue25.Text = "25.00";
-            this.btnCashValue25.UseVisualStyleBackColor = false;
-            this.btnCashValue25.Click += new System.EventHandler(this.btnCashPayment_Click);
-            // 
-            // btnCashValue20
-            // 
-            this.btnCashValue20.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCashValue20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCashValue20.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCashValue20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCashValue20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCashValue20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCashValue20.Location = new System.Drawing.Point(3, 105);
-            this.btnCashValue20.Name = "btnCashValue20";
-            this.btnCashValue20.Size = new System.Drawing.Size(95, 45);
-            this.btnCashValue20.TabIndex = 2;
-            this.btnCashValue20.Text = "20.00";
-            this.btnCashValue20.UseVisualStyleBackColor = false;
-            this.btnCashValue20.Click += new System.EventHandler(this.btnCashPayment_Click);
-            // 
-            // btnCashValue10
-            // 
-            this.btnCashValue10.BackColor = System.Drawing.Color.BlueViolet;
-            this.btnCashValue10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCashValue10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCashValue10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCashValue10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCashValue10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCashValue10.Location = new System.Drawing.Point(3, 54);
-            this.btnCashValue10.Name = "btnCashValue10";
-            this.btnCashValue10.Size = new System.Drawing.Size(95, 45);
-            this.btnCashValue10.TabIndex = 1;
-            this.btnCashValue10.Text = "10.00";
-            this.btnCashValue10.UseVisualStyleBackColor = false;
-            this.btnCashValue10.Click += new System.EventHandler(this.btnCashPayment_Click);
+            this.btnCashValue5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCashValue5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCashValue5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCashValue5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCashValue5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashValue5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCashValue5.Location = new System.Drawing.Point(3, 3);
+            this.btnCashValue5.Name = "btnCashValue5";
+            this.btnCashValue5.Size = new System.Drawing.Size(95, 45);
+            this.btnCashValue5.TabIndex = 9;
+            this.btnCashValue5.Text = "5.00";
+            this.btnCashValue5.UseVisualStyleBackColor = false;
+            this.btnCashValue5.Click += new System.EventHandler(this.btnCashPayment_Click);
             // 
             // btnCashValue150
             // 
@@ -2610,6 +2579,54 @@
             this.btnCashValue50.Text = "50.00";
             this.btnCashValue50.UseVisualStyleBackColor = false;
             this.btnCashValue50.Click += new System.EventHandler(this.btnCashPayment_Click);
+            // 
+            // btnCashValue25
+            // 
+            this.btnCashValue25.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCashValue25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCashValue25.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCashValue25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCashValue25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashValue25.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCashValue25.Location = new System.Drawing.Point(3, 156);
+            this.btnCashValue25.Name = "btnCashValue25";
+            this.btnCashValue25.Size = new System.Drawing.Size(95, 45);
+            this.btnCashValue25.TabIndex = 8;
+            this.btnCashValue25.Text = "25.00";
+            this.btnCashValue25.UseVisualStyleBackColor = false;
+            this.btnCashValue25.Click += new System.EventHandler(this.btnCashPayment_Click);
+            // 
+            // btnCashValue20
+            // 
+            this.btnCashValue20.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCashValue20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCashValue20.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCashValue20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCashValue20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashValue20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCashValue20.Location = new System.Drawing.Point(3, 105);
+            this.btnCashValue20.Name = "btnCashValue20";
+            this.btnCashValue20.Size = new System.Drawing.Size(95, 45);
+            this.btnCashValue20.TabIndex = 2;
+            this.btnCashValue20.Text = "20.00";
+            this.btnCashValue20.UseVisualStyleBackColor = false;
+            this.btnCashValue20.Click += new System.EventHandler(this.btnCashPayment_Click);
+            // 
+            // btnCashValue10
+            // 
+            this.btnCashValue10.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnCashValue10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCashValue10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCashValue10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCashValue10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashValue10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCashValue10.Location = new System.Drawing.Point(3, 54);
+            this.btnCashValue10.Name = "btnCashValue10";
+            this.btnCashValue10.Size = new System.Drawing.Size(95, 45);
+            this.btnCashValue10.TabIndex = 1;
+            this.btnCashValue10.Text = "10.00";
+            this.btnCashValue10.UseVisualStyleBackColor = false;
+            this.btnCashValue10.Click += new System.EventHandler(this.btnCashPayment_Click);
             // 
             // btnCashEnter
             // 
@@ -2884,22 +2901,6 @@
             this.labelEnterCash.TabIndex = 0;
             this.labelEnterCash.Text = "Enter Cash Amount:";
             this.labelEnterCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCashValue5
-            // 
-            this.btnCashValue5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCashValue5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCashValue5.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCashValue5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCashValue5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCashValue5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCashValue5.Location = new System.Drawing.Point(3, 3);
-            this.btnCashValue5.Name = "btnCashValue5";
-            this.btnCashValue5.Size = new System.Drawing.Size(95, 45);
-            this.btnCashValue5.TabIndex = 9;
-            this.btnCashValue5.Text = "5.00";
-            this.btnCashValue5.UseVisualStyleBackColor = false;
-            this.btnCashValue5.Click += new System.EventHandler(this.btnCashPayment_Click);
             // 
             // cardPaymentUserControl
             // 

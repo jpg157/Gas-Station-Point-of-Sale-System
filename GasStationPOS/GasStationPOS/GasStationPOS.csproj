@@ -87,6 +87,8 @@
     <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionsJSONStructure.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
+    <Compile Include="ReceiptPrinter.cs" />
+    <Compile Include="TransactionWrapper.cs" />
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
