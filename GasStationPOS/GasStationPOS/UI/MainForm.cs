@@ -771,16 +771,14 @@ namespace GasStationPOS
         /// <returns></returns>
         private async Task ConfirmPaymentButton_Click(PaymentMethod paymentMethod)
         {
-            decimal amountEntered = 0.0m;
-
             if (paymentMethod == PaymentMethod.CARD)
             {
-                // card pays exact amount (set tendered amount equal to the subtotal)
-                amountEntered = paymentDataWrapper.Subtotal;
+                // card pays exact amount - set amount remaining back to the default initial amount
+                paymentDataWrapper.AmountRemaining = PaymentConstants.INITIAL_AMOUNT_DOLLARS;
             }
             else if (paymentMethod == PaymentMethod.CASH)
             {
-                amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
+                decimal amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
 
                 paymentDataWrapper.AmountRemaining -= amountEntered;
 
@@ -791,13 +789,14 @@ namespace GasStationPOS
                     this.cashPaymentUserControl.Reset();
                     this.cashPaymentUserControl.Visible = false; 
                     reset(); // reset other UI state
-                    return; 
+                    return;
                 }
             }
 
             decimal amountTendered;
 
-            amountTendered = paymentDataWrapper.Subtotal - paymentDataWrapper.AmountRemaining; // if AmountRemaining is (-), then subtracting adds the extra amount paid to the subtotal
+            // amountTendered should be equal to SUBTOTAL + CHANGE (dollars)
+            amountTendered = paymentDataWrapper.Subtotal - paymentDataWrapper.AmountRemaining; // if AmountRemaining is (-), then subtracting adds the extra amount paid
 
             // create transaction asyncronously using transaction service, passing in the payment method parameter
             bool transactionSuccessful = await transactionService.CreateTransactionAsync(paymentMethod,
@@ -805,6 +804,7 @@ namespace GasStationPOS
                                                             amountTendered,
                                                             this.userCartProductsDataList);
 
+            // if transaction was not successful
             if (!transactionSuccessful)
             {
                 MessageBox.Show("ERROR: Could not complete transaction", "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
