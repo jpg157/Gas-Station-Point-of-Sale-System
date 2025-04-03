@@ -38,8 +38,8 @@ namespace GasStationPOS
     public partial class MainForm : Form
     {
         // ======================== SERVICES ========================
-        private readonly IInventoryService      inventoryService; // for retrieving all retail and fuel product data to display to the UI
-        private readonly ITransactionService    transactionService;
+        private readonly IInventoryService inventoryService; // for retrieving all retail and fuel product data to display to the UI
+        private readonly ITransactionService transactionService;
         private readonly IAuthenticationService authenticationService;
 
         // ======================== BINDING SOURCES ========================
@@ -90,15 +90,15 @@ namespace GasStationPOS
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
-        public MainForm(IInventoryService       inventoryService, 
-                        ITransactionService     transactionService,
-                        IAuthenticationService  authenticationService) // dependency injection of services
+        public MainForm(IInventoryService inventoryService,
+                        ITransactionService transactionService,
+                        IAuthenticationService authenticationService) // dependency injection of services
         {
             //setupDatabase(); // Setup the user database ================================================================================================================================================
             InitializeComponent();
 
             // === Initilize required services ===
-            this.inventoryService   = inventoryService;
+            this.inventoryService = inventoryService;
             this.transactionService = transactionService;
             this.authenticationService = authenticationService;
 
@@ -128,13 +128,13 @@ namespace GasStationPOS
 
             // === Binding sources that view ui controls will bind to ===
 
-            this.userCartProductsBindingSource  = new BindingSource();
-            this.fuelInputDataBindingSource     = new BindingSource();
-            this.paymentDataBindingSource       = new BindingSource();
+            this.userCartProductsBindingSource = new BindingSource();
+            this.fuelInputDataBindingSource = new BindingSource();
+            this.paymentDataBindingSource = new BindingSource();
 
-            this.userCartProductsBindingSource.DataSource   = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in the object
-            this.fuelInputDataBindingSource.DataSource      = this.fuelInputDataWrapper;
-            this.paymentDataBindingSource.DataSource        = this.paymentDataWrapper;
+            this.userCartProductsBindingSource.DataSource = this.userCartProductsDataList; // set UI data binding source to the corresponding data stored in the object
+            this.fuelInputDataBindingSource.DataSource = this.fuelInputDataWrapper;
+            this.paymentDataBindingSource.DataSource = this.paymentDataWrapper;
 
             // === Update button labels and tag attributes using data sources ===
 
@@ -233,15 +233,15 @@ namespace GasStationPOS
         private void SetFuelGradeButtonData()
         {
             btnFuelRegular.Text = FuelGrade.REGULAR.ToString();
-            btnFuelRegular.Tag  = FuelGrade.REGULAR;
+            btnFuelRegular.Tag = FuelGrade.REGULAR;
             btnFuelRegular.Click += delegate { HandleFuelGradeBtnClick(FuelGrade.REGULAR); };
 
-            btnFuelPlus.Text    = FuelGrade.PLUS.ToString();
-            btnFuelPlus.Tag     = FuelGrade.PLUS;
+            btnFuelPlus.Text = FuelGrade.PLUS.ToString();
+            btnFuelPlus.Tag = FuelGrade.PLUS;
             btnFuelPlus.Click += delegate { HandleFuelGradeBtnClick(FuelGrade.PLUS); };
 
             btnFuelSupreme.Text = FuelGrade.SUPREME.ToString();
-            btnFuelSupreme.Tag  = FuelGrade.SUPREME;
+            btnFuelSupreme.Tag = FuelGrade.SUPREME;
             btnFuelSupreme.Click += delegate { HandleFuelGradeBtnClick(FuelGrade.SUPREME); };
         }
 
@@ -272,9 +272,9 @@ namespace GasStationPOS
                 // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
 
                 // 3. Associate MainFormDataUpdater.UpdateSelectedProductQuantity function to the click event of each product quantity update button
-                updateQuantityButton.Click += delegate { 
+                updateQuantityButton.Click += delegate {
                     MainFormDataUpdater.UpdateSelectedProductQuantity(
-                        ref currentSelectedProductQuantity, 
+                        ref currentSelectedProductQuantity,
                         (int)updateQuantityButton.Tag
                     );
                 };
@@ -367,10 +367,10 @@ namespace GasStationPOS
             // Call transactionService.CreateTransaction function when either btnPayCard or btnPayCash buttons are clicked (passing in the respective payment method)
             // (Need to assign the corresponding PaymentMethod enum member in paramater so transactionService can can handle the correct payment type
             btnPayCard.Click += PayCardButton_Click;
-            this.cardPaymentUserControl.CardEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD);  }; // subscribe ConfirmPaymentButton_Click function to the CardEnterButtonClick EventHandler
+            this.cardPaymentUserControl.CardEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD); }; // subscribe ConfirmPaymentButton_Click function to the CardEnterButtonClick EventHandler
 
             btnPayCash.Click += PayCashButton_Click;
-            this.cashPaymentUserControl.CashEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH);  }; // subscribe ConfirmPaymentButton_Click function to the CashEnterButtonClick EventHandler
+            this.cashPaymentUserControl.CashEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH); }; // subscribe ConfirmPaymentButton_Click function to the CashEnterButtonClick EventHandler
         }
 
         private void AssociateLoginFormEvents()
@@ -540,8 +540,8 @@ namespace GasStationPOS
                 Button btn = Controls.Find($"{ButtonNamePrefixes.FUEL_PUMP_BUTTON_PREFIX}{i}", true).FirstOrDefault() as Button;
                 if (btn != null)
                 {
-                    btn.FlatAppearance.BorderColor  = borderColor;
-                    btn.FlatAppearance.BorderSize   = borderSize;
+                    btn.FlatAppearance.BorderColor = borderColor;
+                    btn.FlatAppearance.BorderSize = borderSize;
                 }
             }
         }
@@ -603,9 +603,6 @@ namespace GasStationPOS
         /// </summary>
         private void HandleFuelGradeBtnClick(FuelGrade fuelGrade)
         {
-            //// Update label with pump number and fuel type
-            //labelFuelType.Text = $"{labelPumpNum.Text} {fuelType}";
-
             // Update FuelInputDataWrapper Fuel Type attribute (MainFormDataUpdater handles data updating logic)
             MainFormDataUpdater.UpdateSelectedFuelGrade(this.fuelInputDataWrapper, fuelGrade);
 
@@ -694,10 +691,10 @@ namespace GasStationPOS
             }
 
             // Get the data attributes from the fuelInputDataWrapper data source class
-            int         fuelPumpNumber              = this.fuelInputDataWrapper.FuelPumpNumber;
-            FuelGrade   fuelGrade                   = this.fuelInputDataWrapper.EnteredFuelGrade;
-            decimal     totalEnteredfuelPrice       = this.fuelInputDataWrapper.EnteredFuelPrice;
-            decimal     resultingFuelQuantity       = this.fuelInputDataWrapper.FuelQuantityLitres; // quantity gets automatically updated in the class when fuel price and grade change
+            int fuelPumpNumber = this.fuelInputDataWrapper.FuelPumpNumber;
+            FuelGrade fuelGrade = this.fuelInputDataWrapper.EnteredFuelGrade;
+            decimal totalEnteredfuelPrice = this.fuelInputDataWrapper.EnteredFuelPrice;
+            decimal resultingFuelQuantity = this.fuelInputDataWrapper.FuelQuantityLitres; // quantity gets automatically updated in the class when fuel price and grade change
 
             // generate a random id (temporary solution)
             Random random = new Random();
@@ -708,14 +705,15 @@ namespace GasStationPOS
 
             // Create a FuelProductDTO and add it to the product dto data list
 
-            FuelProductDTO fuelProductDTO = new FuelProductDTO{
-                Id                      = fuelProductId,
-                ProductNameDescription  = fuelProductNameDescription,
-                UnitPriceDollars        = FuelGradeUtils.GetFuelPrice(fuelGrade),
-                Quantity                = resultingFuelQuantity, // the total volume of the fuel product
-                TotalPriceDollars       = totalEnteredfuelPrice,
-                FuelGrade               = fuelGrade,
-                PumpNumber              = fuelPumpNumber,
+            FuelProductDTO fuelProductDTO = new FuelProductDTO
+            {
+                Id = fuelProductId,
+                ProductNameDescription = fuelProductNameDescription,
+                UnitPriceDollars = FuelGradeUtils.GetFuelPrice(fuelGrade),
+                Quantity = resultingFuelQuantity, // the total volume of the fuel product
+                TotalPriceDollars = totalEnteredfuelPrice,
+                FuelGrade = fuelGrade,
+                PumpNumber = fuelPumpNumber,
             };
 
             // add to list of ProductDTOs
@@ -771,16 +769,14 @@ namespace GasStationPOS
         /// <returns></returns>
         private async Task ConfirmPaymentButton_Click(PaymentMethod paymentMethod)
         {
-            decimal amountEntered = 0.0m;
-
             if (paymentMethod == PaymentMethod.CARD)
             {
-                // card pays exact amount (set tendered amount equal to the subtotal)
-                amountEntered = paymentDataWrapper.Subtotal;
+                // card pays exact amount - set amount remaining back to the default initial amount
+                paymentDataWrapper.AmountRemaining = PaymentConstants.INITIAL_AMOUNT_DOLLARS;
             }
             else if (paymentMethod == PaymentMethod.CASH)
             {
-                amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
+                decimal amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
 
                 paymentDataWrapper.AmountRemaining -= amountEntered;
 
@@ -789,15 +785,16 @@ namespace GasStationPOS
                 {
                     //Reset the cash payment user control input and display data
                     this.cashPaymentUserControl.Reset();
-                    this.cashPaymentUserControl.Visible = false; 
+                    this.cashPaymentUserControl.Visible = false;
                     reset(); // reset other UI state
-                    return; 
+                    return;
                 }
             }
 
             decimal amountTendered;
 
-            amountTendered = paymentDataWrapper.Subtotal - paymentDataWrapper.AmountRemaining; // if AmountRemaining is (-), then subtracting adds the extra amount paid to the subtotal
+            // amountTendered should be equal to SUBTOTAL + CHANGE (dollars)
+            amountTendered = paymentDataWrapper.Subtotal - paymentDataWrapper.AmountRemaining; // if AmountRemaining is (-), then subtracting adds the extra amount paid
 
             // create transaction asyncronously using transaction service, passing in the payment method parameter
             bool transactionSuccessful = await transactionService.CreateTransactionAsync(paymentMethod,
@@ -805,6 +802,7 @@ namespace GasStationPOS
                                                             amountTendered,
                                                             this.userCartProductsDataList);
 
+            // if transaction was not successful
             if (!transactionSuccessful)
             {
                 MessageBox.Show("ERROR: Could not complete transaction", "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -839,8 +837,8 @@ namespace GasStationPOS
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             // Retrieve user input
-            string enteredUsername  = textBoxAccountID.Text.Trim();
-            string enteredPassword  = textBoxPassword.Text;
+            string enteredUsername = textBoxAccountID.Text.Trim();
+            string enteredPassword = textBoxPassword.Text;
 
             // Validate user inputs (check if they are empty)
             bool validationSuccessful = LoginFormValidator.ValidateFields(enteredUsername, enteredPassword);
