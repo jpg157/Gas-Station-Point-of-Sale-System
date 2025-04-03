@@ -1,7 +1,7 @@
 ﻿
 Services folder contains business logic of application.
 
--	Does data manipulation and interacts directly with database to get or retrieve data
+-	Does data manipulation and interacts with database through REPOSITORIES to get or retrieve data
 
 Example:
 
@@ -13,7 +13,7 @@ Example:
 
 ----
 
--	Card is selected and "key enter" is confirmed/pressed - the function in the form calls a function in PaymentController
+-	Card is selected and "key enter" is confirmed/pressed - the function in the form calls a function in TransactionService
 
 -	It handles any exceptions thrown (thrown if an error occured and payment was not successful) by updating winforms ui to show error message(s)
 
