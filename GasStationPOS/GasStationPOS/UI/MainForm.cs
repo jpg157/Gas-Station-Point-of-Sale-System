@@ -87,9 +87,6 @@ namespace GasStationPOS
         // Variable to store the input for fuel amount and selected fuel price
         private string fuelAmountInput;
 
-        // Variable to store the input for cash amount tendered
-        private string cashAmountInput;
-
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
@@ -370,10 +367,10 @@ namespace GasStationPOS
             // Call transactionService.CreateTransaction function when either btnPayCard or btnPayCash buttons are clicked (passing in the respective payment method)
             // (Need to assign the corresponding PaymentMethod enum member in paramater so transactionService can can handle the correct payment type
             btnPayCard.Click += PayCardButton_Click;
-            this.cardPaymentUserControl.KeyEnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD);  };
+            this.cardPaymentUserControl.CardEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD);  }; // subscribe ConfirmPaymentButton_Click function to the CardEnterButtonClick EventHandler
 
-            btnPayCash.Click += PayCashButton_Click;                                      // ============================================ CASH PAYMENT UI - TODO ============================================
-            //this.cashPaymentUserControl.EnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH);  }; // ============================================ CASH PAYMENT UI - TODO ============================================
+            btnPayCash.Click += PayCashButton_Click;
+            this.cashPaymentUserControl.CashEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH);  }; // subscribe ConfirmPaymentButton_Click function to the CashEnterButtonClick EventHandler
         }
 
         private void AssociateLoginFormEvents()
@@ -430,7 +427,7 @@ namespace GasStationPOS
             pnlFuelTypeSelect.Visible = false;
             pnlSelectCartItem.Visible = false;
             pnlAddFuelAmount.Visible = false;
-            pnlCashPayment.Visible = false; 
+            this.cashPaymentUserControl.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
 
@@ -469,13 +466,9 @@ namespace GasStationPOS
             pnlProducts.Visible = true;
             pnlBottomNavMain.Visible = true;
 
-            // Reset the fuel price amount
-            labelFuelPrice.Text = "0.00";
+            // Reset the fuel pump number, selected fuel grade, price amount, and quantity
+            this.fuelInputDataWrapper.ResetPaymentRelatedDataSourcesToInitValues();
             fuelAmountInput = "";
-
-            //Reset the cash amount input
-            labelCashAmount.Text = "0.00";
-            cashAmountInput = "";
         }
 
         /// <summary>
@@ -672,7 +665,6 @@ namespace GasStationPOS
                 enteredFuelPrice = decimal.Parse(fuelAmountInput) / 100.0m;
             }
 
-            //labelFuelPrice.Text = amount.ToString("0.00");
             MainFormDataUpdater.UpdateEnteredFuelPrice(this.fuelInputDataWrapper, enteredFuelPrice);
         }
 
@@ -738,76 +730,6 @@ namespace GasStationPOS
 
         // === PAYMENT Button Event Handlers ===
 
-
-
-        /// <summary>
-        /// Click event handler for cash payment buttons.
-        /// </summary>
-        private void btnCashPayment_Click(object sender, EventArgs e)
-        {
-            HandleNumericInput(ref cashAmountInput, labelCashAmount, sender);
-        }
-
-        /// <summary>
-        /// Handles numeric input for fuel or cash payment calculators.
-        /// Updates the corresponding input value and label.
-        /// </summary>
-        private void HandleNumericInput(ref string inputField, Label label, object sender)
-        {
-            Button btn = sender as Button;
-            if (btn != null)
-            {
-                string value = btn.Text;
-
-                // If input is "0", "00", or "000", append normally
-                if (value == "0" || value == "00" || value == "000")
-                {
-                    inputField += value;
-                }
-                // If input is a preset amount (e.g., "10.00"), replace the entire input
-                else if (value.Contains("."))
-                {
-                    inputField = value.Replace(".", ""); // Store without decimal
-                }
-                // Otherwise, append to the input
-                else
-                {
-                    inputField += value;
-                }
-
-                UpdateAmountLabel(inputField, label);
-            }
-        }
-
-        /// <summary>
-        /// Updates the label by converting the input amount to a decimal format.
-        /// </summary>
-        private void UpdateAmountLabel(string inputField, Label label)
-        {
-            if (string.IsNullOrEmpty(inputField))
-            {
-                label.Text = "0.00"; // Default if empty
-                return;
-            }
-
-            // Convert input to decimal format (X.YY)
-            decimal amount = decimal.Parse(inputField) / 100;
-            label.Text = amount.ToString("0.00");
-        }
-
-        /// <summary>
-        /// Handles the backspace input for the cash payment, removing the last character from the cash input label.
-        /// Updates the cash payment label accordingly.
-        /// </summary>
-        private void btnCashBackspace_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cashAmountInput))
-            {
-                cashAmountInput = cashAmountInput.Substring(0, cashAmountInput.Length - 1);
-                UpdateAmountLabel(cashAmountInput, labelCashAmount);
-            }
-        }
-
         /// <summary>
         /// Card payment button event handler
         /// </summary>
@@ -837,7 +759,8 @@ namespace GasStationPOS
             pnlBottomNavBack.Visible = true;
 
             // Show cash payment user control
-            pnlCashPayment.Visible = true;
+            this.cashPaymentUserControl.Visible = true;
+
         }
 
         /// <summary>
@@ -848,19 +771,33 @@ namespace GasStationPOS
         /// <returns></returns>
         private async Task ConfirmPaymentButton_Click(PaymentMethod paymentMethod)
         {
-            decimal amountTendered = 0.0m;
+            decimal amountEntered = 0.0m;
 
-            // CHANGE this if statement LATER ====================================================================================================================================================
             if (paymentMethod == PaymentMethod.CARD)
             {
                 // card pays exact amount (set tendered amount equal to the subtotal)
-                amountTendered = paymentDataWrapper.Subtotal;
+                amountEntered = paymentDataWrapper.Subtotal;
             }
             else if (paymentMethod == PaymentMethod.CASH)
             {
-                // TODO - ONCE CASH IS IMPLEMENTED CHANGE
-                amountTendered = paymentDataWrapper.Subtotal;
+                amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
+
+                paymentDataWrapper.AmountRemaining -= amountEntered;
+
+                // if there there is still an remaining amount to be paid
+                if (paymentDataWrapper.AmountRemaining > PaymentConstants.INITIAL_AMOUNT_DOLLARS)
+                {
+                    //Reset the cash payment user control input and display data
+                    this.cashPaymentUserControl.Reset();
+                    this.cashPaymentUserControl.Visible = false; 
+                    reset(); // reset other UI state
+                    return; 
+                }
             }
+
+            decimal amountTendered;
+
+            amountTendered = paymentDataWrapper.Subtotal - paymentDataWrapper.AmountRemaining; // if AmountRemaining is (-), then subtracting adds the extra amount paid to the subtotal
 
             // create transaction asyncronously using transaction service, passing in the payment method parameter
             bool transactionSuccessful = await transactionService.CreateTransactionAsync(paymentMethod,
@@ -877,7 +814,10 @@ namespace GasStationPOS
             // hide/close the card payment user control
             this.cardPaymentUserControl.Visible = false;
 
-            // Update the data source fo the amount tendered UI label
+            // hide/close the card payment user control
+            this.cashPaymentUserControl.Visible = false;
+
+            // Update the data source and the amount tendered UI label
             paymentDataWrapper.AmountTendered = amountTendered;
 
             MessageBox.Show("Payment successful!", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -888,26 +828,6 @@ namespace GasStationPOS
             // reset other UI state
             reset();
         }
-
-        // ============================================ CASH PAYMENT UI - TODO ============================================
-        //private void PayCashButton_Click(object sender, EventArgs e)
-        //{
-        //    //HidePanels();
-
-        //    //// Show cardPaymentUserControl1 user control
-        //    //this.cashPaymentUserControl.Visible = true;
-        //}
-
-        //private void CashPaymentConfirmed_Click(object sender, EventArgs e)
-        //{
-        //    //// create card payment
-        //    //transactionService.CreateTransaction(PaymentMethod.CASH, this.userCartProductsDataList)
-
-        //    //this.cardPaymentUserControl.Visible = false;
-
-        //    //reset();
-        //}
-
 
         // === LOGIN FORM ===
 

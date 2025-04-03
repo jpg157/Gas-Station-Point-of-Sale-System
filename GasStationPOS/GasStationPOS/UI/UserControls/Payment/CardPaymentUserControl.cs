@@ -12,7 +12,7 @@ namespace GasStationPOS.UI.UserControls.Payment
 {
     public partial class CardPaymentUserControl: UserControl
     {
-        public event EventHandler KeyEnterButtonClicked;
+        public event EventHandler CardEnterButtonClick;
 
         public CardPaymentUserControl()
         {
@@ -21,7 +21,7 @@ namespace GasStationPOS.UI.UserControls.Payment
 
         private void keyEnterBtn_Click(object sender, EventArgs e)
         {
-            KeyEnterButtonClicked?.Invoke(this, EventArgs.Empty);
+            CardEnterButtonClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

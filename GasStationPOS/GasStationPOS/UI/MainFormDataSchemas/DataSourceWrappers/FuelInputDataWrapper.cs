@@ -42,7 +42,7 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
                 OnPropertyChanged(nameof(FuelPumpNumber)); // nameof returns a string of the property's name
 
                 // update string representation as well
-                FuelPumpNumberStr = $"Pump {fuelPumpNumber}"; // update FuelPumpNumberStr property
+                FuelPumpNumberStr = $"PUMP {fuelPumpNumber}"; // update FuelPumpNumberStr property
             }
         }
         public string FuelPumpNumberStr
