@@ -64,8 +64,8 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
         /// <param name="priceChange"></param>
         public void UpdatePaymentRelatedDataSources(decimal priceChange)
         {
-            Subtotal += priceChange;
-            AmountRemaining -= priceChange;
+            Subtotal        += priceChange;
+            AmountRemaining += priceChange;
         }
 
         /// <summary>

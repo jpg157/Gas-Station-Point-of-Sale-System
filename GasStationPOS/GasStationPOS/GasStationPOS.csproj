@@ -136,6 +136,12 @@
     <Compile Include="UI\MainFormDataSchemas\DTOs\RetailProductDTO.cs" />
     <Compile Include="UI\MainFormDataUpdater.cs" />
     <Compile Include="UI\UIFormValidation\LoginFormValidator.cs" />
+    <Compile Include="UI\UserControls\Payment\CashPaymentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\Payment\CashPaymentUserControl.Designer.cs">
+      <DependentUpon>CashPaymentUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +168,9 @@
     </Content>
     <EmbeddedResource Include="UI\UserControls\Payment\CardPaymentUserControl.resx">
       <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\Payment\CashPaymentUserControl.resx">
+      <DependentUpon>CashPaymentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
