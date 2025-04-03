@@ -85,6 +85,9 @@ namespace GasStationPOS
         private string fuelAmountInput;
         private decimal fuelPrice;
 
+        // Variable to store the input for cash amount tendered
+        private string cashAmountInput;
+
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
@@ -353,6 +356,8 @@ namespace GasStationPOS
             pnlFuelTypeSelect.Visible = false;
             pnlSelectCartItem.Visible = false;
             pnlAddFuelAmount.Visible = false;
+            pnlCashPayment.Visible = false; 
+            this.cardPaymentUserControl.Visible = false;
         }
 
         /// <summary>
@@ -393,6 +398,10 @@ namespace GasStationPOS
             // Reset the fuel price amount
             labelFuelPrice.Text = "0.00";
             fuelAmountInput = "";
+
+            //Reset the cash amount input
+            labelCashAmount.Text = "0.00";
+            cashAmountInput = "";
         }
 
         /// <summary>
@@ -538,52 +547,66 @@ namespace GasStationPOS
         }
 
         /// <summary>
-        /// Handles the numeric input for the fuel price calculator by appending or replacing input values.
-        /// Updates the fuel price label accordingly.
+        /// Handles numeric input for fuel or cash payment calculators.
+        /// Updates the corresponding input value and label.
         /// </summary>
-        private void btnFuelCalculator_Click(object sender, EventArgs e)
+        private void HandleNumericInput(ref string inputField, Label label, object sender)
         {
             Button btn = sender as Button;
             if (btn != null)
             {
                 string value = btn.Text;
 
-                // If input is "0", "00", "000", append normally
+                // If input is "0", "00", or "000", append normally
                 if (value == "0" || value == "00" || value == "000")
                 {
-                    fuelAmountInput += value;
+                    inputField += value;
                 }
-
-                // If input is a preset amount (e.g., "10.00"), replace entire input
+                // If input is a preset amount (e.g., "10.00"), replace the entire input
                 else if (value.Contains("."))
                 {
-                    fuelAmountInput = value.Replace(".", ""); // Store without decimal
+                    inputField = value.Replace(".", ""); // Store without decimal
                 }
-
                 // Otherwise, append to the input
                 else
                 {
-                    fuelAmountInput += value;
+                    inputField += value;
                 }
 
-                UpdateFuelPriceLabel();
+                UpdateAmountLabel(inputField, label);
             }
         }
 
         /// <summary>
-        /// Updates the fuel price label by converting the input fuel amount to a decimal format and displaying it.
+        /// Updates the label by converting the input amount to a decimal format.
         /// </summary>
-        private void UpdateFuelPriceLabel()
+        private void UpdateAmountLabel(string inputField, Label label)
         {
-            if (string.IsNullOrEmpty(fuelAmountInput))
+            if (string.IsNullOrEmpty(inputField))
             {
-                labelFuelPrice.Text = "0.00"; // Default if empty
+                label.Text = "0.00"; // Default if empty
                 return;
             }
 
             // Convert input to decimal format (X.YY)
-            decimal amount = decimal.Parse(fuelAmountInput) / 100;
-            labelFuelPrice.Text = amount.ToString("0.00");
+            decimal amount = decimal.Parse(inputField) / 100;
+            label.Text = amount.ToString("0.00");
+        }
+
+        /// <summary>
+        /// Click event handler for fuel calculator buttons.
+        /// </summary>
+        private void btnFuelCalculator_Click(object sender, EventArgs e)
+        {
+            HandleNumericInput(ref fuelAmountInput, labelFuelPrice, sender);
+        }
+
+        /// <summary>
+        /// Click event handler for cash payment buttons.
+        /// </summary>
+        private void btnCashPayment_Click(object sender, EventArgs e)
+        {
+            HandleNumericInput(ref cashAmountInput, labelCashAmount, sender);
         }
 
         /// <summary>
@@ -595,9 +618,24 @@ namespace GasStationPOS
             if (!string.IsNullOrEmpty(fuelAmountInput))
             {
                 fuelAmountInput = fuelAmountInput.Substring(0, fuelAmountInput.Length - 1);
-                UpdateFuelPriceLabel();
+                UpdateAmountLabel(fuelAmountInput, labelFuelPrice);
             }
         }
+
+
+        /// <summary>
+        /// Handles the backspace input for the cash payment, removing the last character from the cash input label.
+        /// Updates the cash payment label accordingly.
+        /// </summary>
+        private void btnCashBackspace_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cashAmountInput))
+            {
+                cashAmountInput = cashAmountInput.Substring(0, cashAmountInput.Length - 1);
+                UpdateAmountLabel(cashAmountInput, labelCashAmount);
+            }
+        }
+
 
         /// <summary>
         /// Validates the entered fuel amount, calculates the total price, and adds the fuel to the cart if valid.
@@ -675,7 +713,7 @@ namespace GasStationPOS
             pnlBottomNavBack.Visible = true;
 
             // Show cash payment user control
-            //TODO ================================================================================================================================================================================================================
+            pnlCashPayment.Visible = true;
         }
 
         /// <summary>
