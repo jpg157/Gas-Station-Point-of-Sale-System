@@ -51,14 +51,14 @@
             this.lblDateTime = new System.Windows.Forms.Label();
             this.pnlFuelPumps = new System.Windows.Forms.Panel();
             this.tableLayoutPanelFuelPumps = new System.Windows.Forms.TableLayoutPanel();
-            this.btnFuelPump8 = new System.Windows.Forms.Button();
-            this.btnFuelPump7 = new System.Windows.Forms.Button();
-            this.btnFuelPump6 = new System.Windows.Forms.Button();
-            this.btnFuelPump5 = new System.Windows.Forms.Button();
-            this.btnFuelPump4 = new System.Windows.Forms.Button();
-            this.btnFuelPump3 = new System.Windows.Forms.Button();
-            this.btnFuelPump2 = new System.Windows.Forms.Button();
-            this.btnFuelPump1 = new System.Windows.Forms.Button();
+            this.btnFP8 = new System.Windows.Forms.Button();
+            this.btnFP7 = new System.Windows.Forms.Button();
+            this.btnFP6 = new System.Windows.Forms.Button();
+            this.btnFP5 = new System.Windows.Forms.Button();
+            this.btnFP4 = new System.Windows.Forms.Button();
+            this.btnFP3 = new System.Windows.Forms.Button();
+            this.btnFP2 = new System.Windows.Forms.Button();
+            this.btnFP1 = new System.Windows.Forms.Button();
             this.pnlCart = new System.Windows.Forms.Panel();
             this.pnlSubtotal = new System.Windows.Forms.Panel();
             this.labelRemaining = new System.Windows.Forms.Label();
@@ -505,14 +505,14 @@
             // 
             this.tableLayoutPanelFuelPumps.ColumnCount = 1;
             this.tableLayoutPanelFuelPumps.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump8, 0, 7);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump7, 0, 6);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump6, 0, 5);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump5, 0, 4);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump4, 0, 3);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump3, 0, 2);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump2, 0, 1);
-            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFuelPump1, 0, 0);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP8, 0, 7);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP7, 0, 6);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP6, 0, 5);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP5, 0, 4);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP4, 0, 3);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP3, 0, 2);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP2, 0, 1);
+            this.tableLayoutPanelFuelPumps.Controls.Add(this.btnFP1, 0, 0);
             this.tableLayoutPanelFuelPumps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelFuelPumps.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelFuelPumps.Name = "tableLayoutPanelFuelPumps";
@@ -528,141 +528,141 @@
             this.tableLayoutPanelFuelPumps.Size = new System.Drawing.Size(327, 589);
             this.tableLayoutPanelFuelPumps.TabIndex = 0;
             // 
-            // btnFuelPump8
+            // btnFP8
             // 
-            this.btnFuelPump8.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump8.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump8.Location = new System.Drawing.Point(3, 514);
-            this.btnFuelPump8.Name = "btnFuelPump8";
-            this.btnFuelPump8.Size = new System.Drawing.Size(321, 72);
-            this.btnFuelPump8.TabIndex = 13;
-            this.btnFuelPump8.Text = "8";
-            this.btnFuelPump8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump8.UseVisualStyleBackColor = false;
-            this.btnFuelPump8.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP8.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP8.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP8.Location = new System.Drawing.Point(3, 514);
+            this.btnFP8.Name = "btnFP8";
+            this.btnFP8.Size = new System.Drawing.Size(321, 72);
+            this.btnFP8.TabIndex = 13;
+            this.btnFP8.Text = "8";
+            this.btnFP8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP8.UseVisualStyleBackColor = false;
+            this.btnFP8.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump7
+            // btnFP7
             // 
-            this.btnFuelPump7.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump7.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump7.Location = new System.Drawing.Point(3, 441);
-            this.btnFuelPump7.Name = "btnFuelPump7";
-            this.btnFuelPump7.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump7.TabIndex = 12;
-            this.btnFuelPump7.Text = "7";
-            this.btnFuelPump7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump7.UseVisualStyleBackColor = false;
-            this.btnFuelPump7.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP7.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP7.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP7.Location = new System.Drawing.Point(3, 441);
+            this.btnFP7.Name = "btnFP7";
+            this.btnFP7.Size = new System.Drawing.Size(321, 67);
+            this.btnFP7.TabIndex = 12;
+            this.btnFP7.Text = "7";
+            this.btnFP7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP7.UseVisualStyleBackColor = false;
+            this.btnFP7.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump6
+            // btnFP6
             // 
-            this.btnFuelPump6.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump6.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump6.Location = new System.Drawing.Point(3, 368);
-            this.btnFuelPump6.Name = "btnFuelPump6";
-            this.btnFuelPump6.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump6.TabIndex = 11;
-            this.btnFuelPump6.Text = "6";
-            this.btnFuelPump6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump6.UseVisualStyleBackColor = false;
-            this.btnFuelPump6.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP6.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP6.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP6.Location = new System.Drawing.Point(3, 368);
+            this.btnFP6.Name = "btnFP6";
+            this.btnFP6.Size = new System.Drawing.Size(321, 67);
+            this.btnFP6.TabIndex = 11;
+            this.btnFP6.Text = "6";
+            this.btnFP6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP6.UseVisualStyleBackColor = false;
+            this.btnFP6.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump5
+            // btnFP5
             // 
-            this.btnFuelPump5.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump5.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump5.Location = new System.Drawing.Point(3, 295);
-            this.btnFuelPump5.Name = "btnFuelPump5";
-            this.btnFuelPump5.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump5.TabIndex = 10;
-            this.btnFuelPump5.Text = "5";
-            this.btnFuelPump5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump5.UseVisualStyleBackColor = false;
-            this.btnFuelPump5.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP5.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP5.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP5.Location = new System.Drawing.Point(3, 295);
+            this.btnFP5.Name = "btnFP5";
+            this.btnFP5.Size = new System.Drawing.Size(321, 67);
+            this.btnFP5.TabIndex = 10;
+            this.btnFP5.Text = "5";
+            this.btnFP5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP5.UseVisualStyleBackColor = false;
+            this.btnFP5.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump4
+            // btnFP4
             // 
-            this.btnFuelPump4.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump4.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump4.Location = new System.Drawing.Point(3, 222);
-            this.btnFuelPump4.Name = "btnFuelPump4";
-            this.btnFuelPump4.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump4.TabIndex = 9;
-            this.btnFuelPump4.Text = "4";
-            this.btnFuelPump4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump4.UseVisualStyleBackColor = false;
-            this.btnFuelPump4.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP4.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP4.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP4.Location = new System.Drawing.Point(3, 222);
+            this.btnFP4.Name = "btnFP4";
+            this.btnFP4.Size = new System.Drawing.Size(321, 67);
+            this.btnFP4.TabIndex = 9;
+            this.btnFP4.Text = "4";
+            this.btnFP4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP4.UseVisualStyleBackColor = false;
+            this.btnFP4.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump3
+            // btnFP3
             // 
-            this.btnFuelPump3.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump3.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump3.Location = new System.Drawing.Point(3, 149);
-            this.btnFuelPump3.Name = "btnFuelPump3";
-            this.btnFuelPump3.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump3.TabIndex = 8;
-            this.btnFuelPump3.Text = "3";
-            this.btnFuelPump3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump3.UseVisualStyleBackColor = false;
-            this.btnFuelPump3.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP3.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP3.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP3.Location = new System.Drawing.Point(3, 149);
+            this.btnFP3.Name = "btnFP3";
+            this.btnFP3.Size = new System.Drawing.Size(321, 67);
+            this.btnFP3.TabIndex = 8;
+            this.btnFP3.Text = "3";
+            this.btnFP3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP3.UseVisualStyleBackColor = false;
+            this.btnFP3.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump2
+            // btnFP2
             // 
-            this.btnFuelPump2.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump2.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump2.Location = new System.Drawing.Point(3, 76);
-            this.btnFuelPump2.Name = "btnFuelPump2";
-            this.btnFuelPump2.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump2.TabIndex = 7;
-            this.btnFuelPump2.Text = "2";
-            this.btnFuelPump2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump2.UseVisualStyleBackColor = false;
-            this.btnFuelPump2.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP2.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP2.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP2.Location = new System.Drawing.Point(3, 76);
+            this.btnFP2.Name = "btnFP2";
+            this.btnFP2.Size = new System.Drawing.Size(321, 67);
+            this.btnFP2.TabIndex = 7;
+            this.btnFP2.Text = "2";
+            this.btnFP2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP2.UseVisualStyleBackColor = false;
+            this.btnFP2.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
-            // btnFuelPump1
+            // btnFP1
             // 
-            this.btnFuelPump1.BackColor = System.Drawing.Color.DarkRed;
-            this.btnFuelPump1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFuelPump1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFuelPump1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuelPump1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuelPump1.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFuelPump1.Location = new System.Drawing.Point(3, 3);
-            this.btnFuelPump1.Name = "btnFuelPump1";
-            this.btnFuelPump1.Size = new System.Drawing.Size(321, 67);
-            this.btnFuelPump1.TabIndex = 6;
-            this.btnFuelPump1.Text = "1";
-            this.btnFuelPump1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuelPump1.UseVisualStyleBackColor = false;
-            this.btnFuelPump1.Click += new System.EventHandler(this.btnFuelPump_Click);
+            this.btnFP1.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFP1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFP1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnFP1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFP1.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnFP1.Location = new System.Drawing.Point(3, 3);
+            this.btnFP1.Name = "btnFP1";
+            this.btnFP1.Size = new System.Drawing.Size(321, 67);
+            this.btnFP1.TabIndex = 6;
+            this.btnFP1.Text = "1";
+            this.btnFP1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFP1.UseVisualStyleBackColor = false;
+            this.btnFP1.Click += new System.EventHandler(this.btnFuelPump_Click);
             // 
             // pnlCart
             // 
@@ -1783,7 +1783,6 @@
             this.btnFuelSupreme.Text = "Supreme";
             this.btnFuelSupreme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelSupreme.UseVisualStyleBackColor = false;
-            this.btnFuelSupreme.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
             // btnFuelPlus
             // 
@@ -1800,7 +1799,6 @@
             this.btnFuelPlus.Text = "Plus";
             this.btnFuelPlus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelPlus.UseVisualStyleBackColor = false;
-            this.btnFuelPlus.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
             // btnFuelRegular
             // 
@@ -1817,7 +1815,6 @@
             this.btnFuelRegular.Text = "Regular";
             this.btnFuelRegular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuelRegular.UseVisualStyleBackColor = false;
-            this.btnFuelRegular.Click += new System.EventHandler(this.btnFuelType_Click);
             // 
             // pnlAddFuelAmount
             // 
@@ -2435,9 +2432,9 @@
             this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.pnlFuelConfirmation);
             this.Controls.Add(this.pnlSelectCartItem);
+            this.Controls.Add(this.cardPaymentUserControl);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
-            this.Controls.Add(this.cardPaymentUserControl);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -2487,14 +2484,14 @@
         private System.Windows.Forms.Button btnHaltAllPumps;
         private System.Windows.Forms.Panel pnlFuelPumps;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFuelPumps;
-        private System.Windows.Forms.Button btnFuelPump8;
-        private System.Windows.Forms.Button btnFuelPump7;
-        private System.Windows.Forms.Button btnFuelPump6;
-        private System.Windows.Forms.Button btnFuelPump5;
-        private System.Windows.Forms.Button btnFuelPump4;
-        private System.Windows.Forms.Button btnFuelPump3;
-        private System.Windows.Forms.Button btnFuelPump2;
-        private System.Windows.Forms.Button btnFuelPump1;
+        private System.Windows.Forms.Button btnFP8;
+        private System.Windows.Forms.Button btnFP7;
+        private System.Windows.Forms.Button btnFP6;
+        private System.Windows.Forms.Button btnFP5;
+        private System.Windows.Forms.Button btnFP4;
+        private System.Windows.Forms.Button btnFP3;
+        private System.Windows.Forms.Button btnFP2;
+        private System.Windows.Forms.Button btnFP1;
         private System.Windows.Forms.Panel pnlCart;
         private System.Windows.Forms.Label labalCartHeader;
         private System.Windows.Forms.ListBox listCart;

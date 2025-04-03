@@ -11,7 +11,5 @@ namespace GasStationPOS.Core.Services.Inventory
     public interface IInventoryService
     {
         IEnumerable<RetailProductDTO> GetAllRetailProductData();
-
-        IEnumerable<FuelProductDTO> GetAllFuelProductData();
     }
 }

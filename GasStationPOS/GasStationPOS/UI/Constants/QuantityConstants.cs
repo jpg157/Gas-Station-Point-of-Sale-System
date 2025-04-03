@@ -8,6 +8,7 @@ namespace GasStationPOS.UI.Constants
 {
     class QuantityConstants
     {
-        public static readonly int DEFAULT_QUANTITY_VALUE = 1;
+        public static readonly int      DEFAULT_RETAIL_PRODUCT_QUANTITY_VALUE   = 1;
+        public static readonly decimal  DEFAULT_FUEL_PRODUCT_QUANTITY_VALUE     = 0.0m;
     }
 }
