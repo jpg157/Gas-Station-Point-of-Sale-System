@@ -295,8 +295,8 @@ namespace GasStationPOS
             btnPayCard.Click += PayCardButton_Click;
             this.cardPaymentUserControl.KeyEnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CARD);  };
 
-            //btnPayCash.Click += PayCashButton_Click;                                      // ============================================ CASH PAYMENT UI - TODO ============================================
-            //this.cashPaymentUserControl.EnterButtonClicked += CashPaymentConfirmed_Click; // ============================================ CASH PAYMENT UI - TODO ============================================
+            btnPayCash.Click += PayCashButton_Click;                                      // ============================================ CASH PAYMENT UI - TODO ============================================
+            //this.cashPaymentUserControl.EnterButtonClicked += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH);  }; // ============================================ CASH PAYMENT UI - TODO ============================================
         }
 
         private void AssociateLoginFormEvents()
@@ -645,14 +645,45 @@ namespace GasStationPOS
         }
 
         // === PAYMENT Button Event Handlers ===
+
+        /// <summary>
+        /// Card payment button event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PayCardButton_Click(object sender, EventArgs e)
         {
             HidePanels();
+
+            // Make back button visible
+            pnlBottomNavBack.Visible = true;
 
             // Show cardPaymentUserControl1 user control
             this.cardPaymentUserControl.Visible = true;
         }
 
+        /// <summary>
+        /// Cash payment button event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PayCashButton_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+
+            // Make back button visible
+            pnlBottomNavBack.Visible = true;
+
+            // Show cash payment user control
+            //TODO ================================================================================================================================================================================================================
+        }
+
+        /// <summary>
+        /// Event Handler that is attached to both the confirm payment 
+        /// buttons of the card payment user control, and the cash payment user control.
+        /// </summary>
+        /// <param name="paymentMethod"></param>
+        /// <returns></returns>
         private async Task ConfirmPaymentButton_Click(PaymentMethod paymentMethod)
         {
             decimal amountTendered = 0.0m;
@@ -665,7 +696,7 @@ namespace GasStationPOS
             }
             else if (paymentMethod == PaymentMethod.CASH)
             {
-                // CHANGE
+                // TODO - ONCE CASH IS IMPLEMENTED CHANGE
                 amountTendered = paymentDataWrapper.Subtotal;
             }
 
