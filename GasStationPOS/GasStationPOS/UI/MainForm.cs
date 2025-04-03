@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -264,10 +265,12 @@ namespace GasStationPOS
             decimal defaultValueWhenDataSourceNull = PaymentConstants.INITIAL_AMOUNT_DOLLARS; // default value in case the data source is null
             string twoDecimalPlacesString = "C2"; // tells Binding object to format the data source to 2 decimal places (proper currency format)
 
+            CultureInfo currencyCulture = new CultureInfo("en-CA"); // en-CA for Canadian Dollars
+
             // Need DataSourceUpdateMode.OnPropertyChanged so it knows to change the value in the the UI control when the datasource (ex. Subtotal) changes value
-            this.labelSubtotal.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "Subtotal", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString));
-            this.labelTendered.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "AmountTendered", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString));
-            this.labelRemaining.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "AmountRemaining", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString));
+            this.labelSubtotal.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "Subtotal", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString, currencyCulture));
+            this.labelTendered.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "AmountTendered", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString, currencyCulture));
+            this.labelRemaining.DataBindings.Add(new Binding("Text", paymentDataBindingSource, "AmountRemaining", formattingEnabled, DataSourceUpdateMode.OnPropertyChanged, defaultValueWhenDataSourceNull, twoDecimalPlacesString, currencyCulture));
         }
 
         #endregion
