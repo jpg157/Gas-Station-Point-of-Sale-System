@@ -1,0 +1,16 @@
+{
+    "BarcodeRetailProducts": [
+        {
+            "Id": 27,
+            "BarcodeId": "06746500",
+            "ProductName": "SPRITE 500ML",
+            "UnitPriceDollars": 2.00
+        },
+        {
+            "Id": 28,
+            "BarcodeId": "055742350357",
+            "ProductName": "HONEY-ROASTED PEANUTS 700G",
+            "UnitPriceDollars": 2.00
+        }
+    ]
+}

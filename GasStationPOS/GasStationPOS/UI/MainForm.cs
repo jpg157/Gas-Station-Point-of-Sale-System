@@ -1044,13 +1044,11 @@ namespace GasStationPOS
             reset();
         }
 
-        // === LOGIN FORM ===
+        // ======================================= LOGIN FORM ============================================
 
         /// <summary>
         /// Handles all the login logic.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             // Retrieve user input
@@ -1079,7 +1077,69 @@ namespace GasStationPOS
 
             // Successful login
             tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
+            textboxBarcode.Focus(); // Focus on the barcode textbox for instant scanning
+
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // ======================================== BARCODE SCANNER ============================================
+
+        /// <summary>
+        /// Handles the logic for when a key is pressed in the barcode textbox, specifically when the Enter key is pressed.
+        /// It checks if the scanned barcode exists in the inventory and adds the corresponding product to the cart if found.
+        /// </summary>
+        private void textboxBarcode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Get the text that the scanner wrote to the label
+                string scannedBarcode = textboxBarcode.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(scannedBarcode))
+                    return;
+
+                BarcodeRetailProductDTO barcodeRetailProductExists = this.inventoryService.CheckAndReturnIfBarcodeRetailProductExits(scannedBarcode);
+
+                //RetailProductDTO rpDto = this.inventoryService.CheckAndReturnIfBarcodeRetailProductExits(scannedBarcode);
+
+                // if the scanned product doesn't exist (null)
+                if (barcodeRetailProductExists == null)
+                {
+                    MessageBox.Show("Product not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                // if it exists
+                else
+                {
+                    MainFormDataUpdater.AddNewRetailProductToCart(
+                        this.userCartProductsDataList,
+                        barcodeRetailProductExists,
+                        this.paymentDataWrapper,
+                        ref currentSelectedProductQuantity
+                    );
+
+                    UpdatePayButtonVisibility();
+                }
+
+                // Clear textboxBarcode
+                textboxBarcode.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Handles the logic for when the barcode textbox loses focus.
+        /// Sets the focus back to the textbox after a short delay to allow other interactions.
+        /// </summary>
+        private void textboxBarcode_Leave(object sender, EventArgs e)
+        {
+            // Set the focus back after a small delay
+            Timer timer = new Timer();
+            timer.Interval = 100;
+            timer.Tick += (s, args) =>
+            {
+                textboxBarcode.Focus();
+                timer.Stop();
+            };
+            timer.Start();
         }
 
         // Prints the reciept

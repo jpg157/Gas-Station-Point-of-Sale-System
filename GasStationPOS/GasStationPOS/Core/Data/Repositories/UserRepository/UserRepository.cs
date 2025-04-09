@@ -14,7 +14,7 @@ namespace GasStationPOS.Core.Data.Repositories.UserRepository
     public class UserRepository : IUserRepository
     {
         /// <summary>
-        /// Gets the user with the entered username and password from the json database.
+        /// Gets the user with the entered username and hashed password from the json database.
         /// Returns the User object if found, otherwise returns null.
         /// </summary>
         /// <param name="username"></param>
