@@ -476,6 +476,7 @@
             this.btnPrintReceipt.TabIndex = 2;
             this.btnPrintReceipt.Text = "Receipt";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
+            this.btnPrintReceipt.Click += new System.EventHandler(this.btnPrintReceipt_Click);
             // 
             // btnMenu
             // 
@@ -2560,7 +2561,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1480, 725);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.pnlFuelPumps);
@@ -2575,6 +2575,7 @@
             this.Controls.Add(this.pnlHaltConfirmation);
             this.Controls.Add(this.cardPaymentUserControl);
             this.Controls.Add(this.cashPaymentUserControl);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
