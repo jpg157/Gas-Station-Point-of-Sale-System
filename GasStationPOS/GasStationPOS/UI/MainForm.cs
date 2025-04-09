@@ -1098,12 +1098,12 @@ namespace GasStationPOS
                 if (string.IsNullOrWhiteSpace(scannedBarcode))
                     return;
 
-                bool barcodeRetailProductExists = this.inventoryService.CheckIfBarcodeRetailProductExits(scannedBarcode);
+                BarcodeRetailProductDTO barcodeRetailProductExists = this.inventoryService.CheckAndReturnIfBarcodeRetailProductExits(scannedBarcode);
 
-                RetailProductDTO rpDto = this.inventoryService.GetRetailProductByBarcode(scannedBarcode);
+                //RetailProductDTO rpDto = this.inventoryService.CheckAndReturnIfBarcodeRetailProductExits(scannedBarcode);
 
-                // if the scanned product doesn't exist
-                if (!barcodeRetailProductExists)
+                // if the scanned product doesn't exist (null)
+                if (barcodeRetailProductExists == null)
                 {
                     MessageBox.Show("Product not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -1112,10 +1112,12 @@ namespace GasStationPOS
                 {
                     MainFormDataUpdater.AddNewRetailProductToCart(
                         this.userCartProductsDataList,
-                        rpDto,
+                        barcodeRetailProductExists,
                         this.paymentDataWrapper,
                         ref currentSelectedProductQuantity
                     );
+
+                    UpdatePayButtonVisibility();
                 }
 
                 // Clear textboxBarcode

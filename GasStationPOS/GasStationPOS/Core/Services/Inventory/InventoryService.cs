@@ -51,34 +51,34 @@ namespace GasStationPOS.Core.Services.Inventory
             return retailProductDTODataList;
         }
 
-        public bool CheckIfBarcodeRetailProductExits(string barcode)
+        public BarcodeRetailProductDTO CheckAndReturnIfBarcodeRetailProductExits(string barcode)
         {
-            bool barcodeRetailProductExistsInDb = false;
+            //bool barcodeRetailProductExistsInDb = false;
 
             BarcodeRetailProduct bcRetailProduct;
 
             bcRetailProduct = barcodeRetailProductRepository.Get(barcode);
 
-            if (bcRetailProduct != null)
-            {
-                barcodeRetailProductExistsInDb = true;
-            }
-
-            return barcodeRetailProductExistsInDb;
-        }
-
-        public RetailProductDTO GetRetailProductByBarcode(string barcode)
-        {
-            // Step 1: Get the full barcode product (from JSON DB)
-            BarcodeRetailProduct bcRetailProduct = barcodeRetailProductRepository.Get(barcode);
-
-            if (bcRetailProduct == null)
-                return null;
+            if (bcRetailProduct == null) return null;
 
             // Step 2: Map the BarcodeRetailProduct model to a DTO
-            RetailProductDTO barcodeRetailProductDTO = Program.GlobalMapper.Map<RetailProductDTO>(bcRetailProduct);
+            BarcodeRetailProductDTO barcodeRetailProductDTO = Program.GlobalMapper.Map<BarcodeRetailProductDTO>(bcRetailProduct);
 
             return barcodeRetailProductDTO;
         }
+
+        //public RetailProductDTO GetRetailProductByBarcode(string barcode)
+        //{
+        //    // Step 1: Get the full barcode product (from JSON DB)
+        //    BarcodeRetailProduct bcRetailProduct = barcodeRetailProductRepository.Get(barcode);
+
+        //    if (bcRetailProduct == null)
+        //        return null;
+
+        //    // Step 2: Map the BarcodeRetailProduct model to a DTO
+        //    RetailProductDTO barcodeRetailProductDTO = Program.GlobalMapper.Map<RetailProductDTO>(bcRetailProduct);
+
+        //    return barcodeRetailProductDTO;
+        //}
     }
 }

@@ -92,6 +92,7 @@
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
     <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\FuelInputDataWrapper.cs" />
+    <Compile Include="UI\MainFormDataSchemas\DTOs\BarcodeRetailProductDTO.cs" />
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

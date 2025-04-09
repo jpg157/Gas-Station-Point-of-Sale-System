@@ -35,6 +35,9 @@ namespace GasStationPOS
             // Map the relevant fields between RetailProduct and RetailProductDTO
             CreateRetailProductMappingProfile();
 
+            // Map the relevant fields between BarcodeRetailProduct and BarcodeRetailProductDTO
+            CreateBarcodeRetailProductMappingProfile();
+
             CreateUserMappingProfile();
 
             CreateTransactionMappingProfile();
@@ -51,7 +54,8 @@ namespace GasStationPOS
                 .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductName))
                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                 .Include<RetailProduct, RetailProductDTO>() // mapping inheritance for RetailProduct -> RetailProductDTO
-                .Include<FuelProduct, FuelProductDTO>();    // mapping inheritance for FuelProduct -> FuelProductDTO
+                .Include<FuelProduct, FuelProductDTO>()     // mapping inheritance for FuelProduct -> FuelProductDTO
+                .Include<BarcodeRetailProduct, BarcodeRetailProductDTO>();    // mapping inheritance for BarcodeRetailProduct -> BarcodeRetailProductDTO
 
             // ProductDTO -> Product
             CreateMap<ProductDTO, Product>()
@@ -59,7 +63,8 @@ namespace GasStationPOS
                 .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductNameDescription))
                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                 .Include<RetailProductDTO, RetailProduct>() // mapping inheritance for RetailProductDTO -> RetailProduct
-                .Include<FuelProductDTO, FuelProduct>();    // mapping inheritance for FuelProductDTO -> FuelProduct
+                .Include<FuelProductDTO, FuelProduct>()     // mapping inheritance for FuelProductDTO -> FuelProduct
+                .Include<BarcodeRetailProductDTO, BarcodeRetailProduct>();    // mapping inheritance for BarcodeRetailProductDTO -> BarcodeRetailProduct
 
             // ProductDTO -> Product (For deep copy)
             CreateMap<ProductDTO, ProductDTO>()
@@ -69,8 +74,8 @@ namespace GasStationPOS
                 .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
                 .ForMember(dest => dest.TotalPriceDollars, opt => opt.MapFrom(src => src.TotalPriceDollars))
                 .Include<RetailProductDTO, RetailProductDTO>() // mapping inheritance for RetailProductDTO -> RetailProductDTO
-                .Include<FuelProductDTO, FuelProductDTO>();    // mapping inheritance for FuelProductDTO -> FuelProductDTO
-
+                .Include<FuelProductDTO, FuelProductDTO>()    // mapping inheritance for FuelProductDTO -> FuelProductDTO
+                .Include<BarcodeRetailProductDTO, BarcodeRetailProductDTO>();    // mapping inheritance for BarcodeRetailProductDTO -> BarcodeRetailProductDTO
         }
 
         /// <summary>
@@ -120,6 +125,23 @@ namespace GasStationPOS
             // RetailProductDTO -> RetailProductDTO
             CreateMap<RetailProductDTO, RetailProductDTO>();
                  //.ForMember(dest => dest.RetailCategory, opt => opt.MapFrom(src => src.RetailCategory))
+        }
+
+        private void CreateBarcodeRetailProductMappingProfile()
+        {
+            // BarcodeRetailProduct -> BarcodeRetailProductDTO
+            CreateMap<BarcodeRetailProduct, BarcodeRetailProductDTO>()
+                .ForMember(dest => dest.BarcodeId, opt => opt.MapFrom(src => src.BarcodeId));
+
+            // BarcodeRetailProductDTO -> BarcodeRetailProduct
+            CreateMap<BarcodeRetailProductDTO, BarcodeRetailProduct>()
+                    .ForMember(dest => dest.BarcodeId, opt => opt.MapFrom(src => src.BarcodeId));
+
+            // For creating clones of barcode retail products when adding new items to user cart ===
+
+            // BarcodeRetailProductDTO -> BarcodeRetailProductDTO
+            CreateMap<BarcodeRetailProductDTO, BarcodeRetailProductDTO>()
+                    .ForMember(dest => dest.BarcodeId, opt => opt.MapFrom(src => src.BarcodeId));
         }
 
         private void CreateUserMappingProfile()
