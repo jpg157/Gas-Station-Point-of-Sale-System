@@ -26,7 +26,7 @@ namespace GasStationPOS
         public override string ToString()
         {
             string spacing;
-            if (Description.Length < 12)
+            if (Description.Length <= 12)
                 spacing = "\t\t\t\t"; // Extra tab for very short names
             else if (Description.Length < 24)
                 spacing = "\t\t\t";   // Three tabs for regular names

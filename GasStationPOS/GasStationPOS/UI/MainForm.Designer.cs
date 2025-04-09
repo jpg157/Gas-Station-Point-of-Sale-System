@@ -219,9 +219,9 @@
             // 
             this.pnlBottomNavMain.Controls.Add(this.tableLayoutPanelBottomNavMain);
             this.pnlBottomNavMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottomNavMain.Location = new System.Drawing.Point(0, 644);
+            this.pnlBottomNavMain.Location = new System.Drawing.Point(0, 662);
             this.pnlBottomNavMain.Name = "pnlBottomNavMain";
-            this.pnlBottomNavMain.Size = new System.Drawing.Size(1443, 81);
+            this.pnlBottomNavMain.Size = new System.Drawing.Size(1419, 81);
             this.pnlBottomNavMain.TabIndex = 0;
             // 
             // tableLayoutPanelBottomNavMain
@@ -254,7 +254,7 @@
             this.tableLayoutPanelBottomNavMain.Name = "tableLayoutPanelBottomNavMain";
             this.tableLayoutPanelBottomNavMain.RowCount = 1;
             this.tableLayoutPanelBottomNavMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBottomNavMain.Size = new System.Drawing.Size(1443, 81);
+            this.tableLayoutPanelBottomNavMain.Size = new System.Drawing.Size(1419, 81);
             this.tableLayoutPanelBottomNavMain.TabIndex = 0;
             // 
             // btnPayCash
@@ -264,9 +264,9 @@
             this.btnPayCash.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPayCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayCash.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayCash.Location = new System.Drawing.Point(867, 3);
+            this.btnPayCash.Location = new System.Drawing.Point(849, 3);
             this.btnPayCash.Name = "btnPayCash";
-            this.btnPayCash.Size = new System.Drawing.Size(138, 75);
+            this.btnPayCash.Size = new System.Drawing.Size(135, 75);
             this.btnPayCash.TabIndex = 12;
             this.btnPayCash.Text = "Cash";
             this.btnPayCash.UseVisualStyleBackColor = false;
@@ -279,9 +279,9 @@
             this.btnPayCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPayCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayCard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayCard.Location = new System.Drawing.Point(723, 3);
+            this.btnPayCard.Location = new System.Drawing.Point(708, 3);
             this.btnPayCard.Name = "btnPayCard";
-            this.btnPayCard.Size = new System.Drawing.Size(138, 75);
+            this.btnPayCard.Size = new System.Drawing.Size(135, 75);
             this.btnPayCard.TabIndex = 11;
             this.btnPayCard.Text = "Card Payment";
             this.btnPayCard.UseVisualStyleBackColor = false;
@@ -294,9 +294,9 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnClear.Location = new System.Drawing.Point(1299, 3);
+            this.btnClear.Location = new System.Drawing.Point(1272, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(141, 75);
+            this.btnClear.Size = new System.Drawing.Size(144, 75);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -308,9 +308,9 @@
             this.btnReview.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReview.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnReview.Location = new System.Drawing.Point(1155, 3);
+            this.btnReview.Location = new System.Drawing.Point(1131, 3);
             this.btnReview.Name = "btnReview";
-            this.btnReview.Size = new System.Drawing.Size(138, 75);
+            this.btnReview.Size = new System.Drawing.Size(135, 75);
             this.btnReview.TabIndex = 8;
             this.btnReview.Text = "Review";
             this.btnReview.UseVisualStyleBackColor = false;
@@ -322,9 +322,9 @@
             this.btnPayFuel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPayFuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayFuel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayFuel.Location = new System.Drawing.Point(1011, 3);
+            this.btnPayFuel.Location = new System.Drawing.Point(990, 3);
             this.btnPayFuel.Name = "btnPayFuel";
-            this.btnPayFuel.Size = new System.Drawing.Size(138, 75);
+            this.btnPayFuel.Size = new System.Drawing.Size(135, 75);
             this.btnPayFuel.TabIndex = 7;
             this.btnPayFuel.Text = "Pay Fuel";
             this.btnPayFuel.UseVisualStyleBackColor = false;
@@ -337,9 +337,9 @@
             this.btnPayout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayout.Location = new System.Drawing.Point(435, 3);
+            this.btnPayout.Location = new System.Drawing.Point(426, 3);
             this.btnPayout.Name = "btnPayout";
-            this.btnPayout.Size = new System.Drawing.Size(138, 75);
+            this.btnPayout.Size = new System.Drawing.Size(135, 75);
             this.btnPayout.TabIndex = 3;
             this.btnPayout.Text = "Payout";
             this.btnPayout.UseVisualStyleBackColor = false;
@@ -351,9 +351,9 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnReport.Location = new System.Drawing.Point(291, 3);
+            this.btnReport.Location = new System.Drawing.Point(285, 3);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(138, 75);
+            this.btnReport.Size = new System.Drawing.Size(135, 75);
             this.btnReport.TabIndex = 2;
             this.btnReport.Text = "Report";
             this.btnReport.UseVisualStyleBackColor = false;
@@ -365,9 +365,9 @@
             this.btnLoyalty.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoyalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoyalty.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLoyalty.Location = new System.Drawing.Point(147, 3);
+            this.btnLoyalty.Location = new System.Drawing.Point(144, 3);
             this.btnLoyalty.Name = "btnLoyalty";
-            this.btnLoyalty.Size = new System.Drawing.Size(138, 75);
+            this.btnLoyalty.Size = new System.Drawing.Size(135, 75);
             this.btnLoyalty.TabIndex = 1;
             this.btnLoyalty.Text = "Add Loyalty";
             this.btnLoyalty.UseVisualStyleBackColor = false;
@@ -381,7 +381,7 @@
             this.btnLogo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLogo.Location = new System.Drawing.Point(3, 3);
             this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(138, 75);
+            this.btnLogo.Size = new System.Drawing.Size(135, 75);
             this.btnLogo.TabIndex = 0;
             this.btnLogo.Text = "ShakeShack";
             this.btnLogo.UseVisualStyleBackColor = false;
@@ -393,7 +393,7 @@
             this.pnlTopNavMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopNavMain.Location = new System.Drawing.Point(0, 0);
             this.pnlTopNavMain.Name = "pnlTopNavMain";
-            this.pnlTopNavMain.Size = new System.Drawing.Size(1443, 55);
+            this.pnlTopNavMain.Size = new System.Drawing.Size(1419, 55);
             this.pnlTopNavMain.TabIndex = 1;
             // 
             // tableLayoutPanelNavTop
@@ -417,7 +417,7 @@
             this.tableLayoutPanelNavTop.Name = "tableLayoutPanelNavTop";
             this.tableLayoutPanelNavTop.RowCount = 1;
             this.tableLayoutPanelNavTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelNavTop.Size = new System.Drawing.Size(1443, 55);
+            this.tableLayoutPanelNavTop.Size = new System.Drawing.Size(1419, 55);
             this.tableLayoutPanelNavTop.TabIndex = 0;
             // 
             // lblDateTime
@@ -428,7 +428,7 @@
             this.lblDateTime.ForeColor = System.Drawing.Color.White;
             this.lblDateTime.Location = new System.Drawing.Point(3, 0);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(114, 55);
+            this.lblDateTime.Size = new System.Drawing.Size(112, 55);
             this.lblDateTime.TabIndex = 6;
             this.lblDateTime.Text = "Timer";
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,9 +440,9 @@
             this.btnHaltAllPumps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHaltAllPumps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHaltAllPumps.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnHaltAllPumps.Location = new System.Drawing.Point(123, 3);
+            this.btnHaltAllPumps.Location = new System.Drawing.Point(121, 3);
             this.btnHaltAllPumps.Name = "btnHaltAllPumps";
-            this.btnHaltAllPumps.Size = new System.Drawing.Size(114, 49);
+            this.btnHaltAllPumps.Size = new System.Drawing.Size(112, 49);
             this.btnHaltAllPumps.TabIndex = 5;
             this.btnHaltAllPumps.Text = "ALL HALT";
             this.btnHaltAllPumps.UseVisualStyleBackColor = false;
@@ -455,9 +455,9 @@
             this.btnHaltPump.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHaltPump.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHaltPump.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnHaltPump.Location = new System.Drawing.Point(243, 3);
+            this.btnHaltPump.Location = new System.Drawing.Point(239, 3);
             this.btnHaltPump.Name = "btnHaltPump";
-            this.btnHaltPump.Size = new System.Drawing.Size(114, 49);
+            this.btnHaltPump.Size = new System.Drawing.Size(112, 49);
             this.btnHaltPump.TabIndex = 4;
             this.btnHaltPump.Text = "HALT A PUMP";
             this.btnHaltPump.UseVisualStyleBackColor = true;
@@ -470,9 +470,9 @@
             this.btnCashTill.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCashTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCashTill.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCashTill.Location = new System.Drawing.Point(1228, 3);
+            this.btnCashTill.Location = new System.Drawing.Point(1208, 3);
             this.btnCashTill.Name = "btnCashTill";
-            this.btnCashTill.Size = new System.Drawing.Size(66, 49);
+            this.btnCashTill.Size = new System.Drawing.Size(64, 49);
             this.btnCashTill.TabIndex = 3;
             this.btnCashTill.Text = "Open Till";
             this.btnCashTill.UseVisualStyleBackColor = false;
@@ -484,9 +484,9 @@
             this.btnPrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPrintReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintReceipt.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPrintReceipt.Location = new System.Drawing.Point(1300, 3);
+            this.btnPrintReceipt.Location = new System.Drawing.Point(1278, 3);
             this.btnPrintReceipt.Name = "btnPrintReceipt";
-            this.btnPrintReceipt.Size = new System.Drawing.Size(66, 49);
+            this.btnPrintReceipt.Size = new System.Drawing.Size(64, 49);
             this.btnPrintReceipt.TabIndex = 2;
             this.btnPrintReceipt.Text = "Receipt";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
@@ -498,7 +498,7 @@
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMenu.Location = new System.Drawing.Point(1372, 3);
+            this.btnMenu.Location = new System.Drawing.Point(1348, 3);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(68, 49);
             this.btnMenu.TabIndex = 2;
@@ -510,9 +510,9 @@
             this.pnlFuelPumps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlFuelPumps.Controls.Add(this.tableLayoutPanelFuelPumps);
-            this.pnlFuelPumps.Location = new System.Drawing.Point(1153, 55);
+            this.pnlFuelPumps.Location = new System.Drawing.Point(1129, 55);
             this.pnlFuelPumps.Name = "pnlFuelPumps";
-            this.pnlFuelPumps.Size = new System.Drawing.Size(327, 589);
+            this.pnlFuelPumps.Size = new System.Drawing.Size(290, 607);
             this.pnlFuelPumps.TabIndex = 2;
             // 
             // tableLayoutPanelFuelPumps
@@ -539,7 +539,7 @@
             this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanelFuelPumps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanelFuelPumps.Size = new System.Drawing.Size(327, 589);
+            this.tableLayoutPanelFuelPumps.Size = new System.Drawing.Size(290, 607);
             this.tableLayoutPanelFuelPumps.TabIndex = 0;
             // 
             // btnFP8
@@ -550,9 +550,9 @@
             this.btnFP8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP8.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP8.Location = new System.Drawing.Point(3, 514);
+            this.btnFP8.Location = new System.Drawing.Point(3, 528);
             this.btnFP8.Name = "btnFP8";
-            this.btnFP8.Size = new System.Drawing.Size(321, 72);
+            this.btnFP8.Size = new System.Drawing.Size(284, 76);
             this.btnFP8.TabIndex = 13;
             this.btnFP8.Text = "8";
             this.btnFP8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -567,9 +567,9 @@
             this.btnFP7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP7.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP7.Location = new System.Drawing.Point(3, 441);
+            this.btnFP7.Location = new System.Drawing.Point(3, 453);
             this.btnFP7.Name = "btnFP7";
-            this.btnFP7.Size = new System.Drawing.Size(321, 67);
+            this.btnFP7.Size = new System.Drawing.Size(284, 69);
             this.btnFP7.TabIndex = 12;
             this.btnFP7.Text = "7";
             this.btnFP7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -584,9 +584,9 @@
             this.btnFP6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP6.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP6.Location = new System.Drawing.Point(3, 368);
+            this.btnFP6.Location = new System.Drawing.Point(3, 378);
             this.btnFP6.Name = "btnFP6";
-            this.btnFP6.Size = new System.Drawing.Size(321, 67);
+            this.btnFP6.Size = new System.Drawing.Size(284, 69);
             this.btnFP6.TabIndex = 11;
             this.btnFP6.Text = "6";
             this.btnFP6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -601,9 +601,9 @@
             this.btnFP5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP5.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP5.Location = new System.Drawing.Point(3, 295);
+            this.btnFP5.Location = new System.Drawing.Point(3, 303);
             this.btnFP5.Name = "btnFP5";
-            this.btnFP5.Size = new System.Drawing.Size(321, 67);
+            this.btnFP5.Size = new System.Drawing.Size(284, 69);
             this.btnFP5.TabIndex = 10;
             this.btnFP5.Text = "5";
             this.btnFP5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -618,9 +618,9 @@
             this.btnFP4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP4.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP4.Location = new System.Drawing.Point(3, 222);
+            this.btnFP4.Location = new System.Drawing.Point(3, 228);
             this.btnFP4.Name = "btnFP4";
-            this.btnFP4.Size = new System.Drawing.Size(321, 67);
+            this.btnFP4.Size = new System.Drawing.Size(284, 69);
             this.btnFP4.TabIndex = 9;
             this.btnFP4.Text = "4";
             this.btnFP4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -635,9 +635,9 @@
             this.btnFP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP3.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP3.Location = new System.Drawing.Point(3, 149);
+            this.btnFP3.Location = new System.Drawing.Point(3, 153);
             this.btnFP3.Name = "btnFP3";
-            this.btnFP3.Size = new System.Drawing.Size(321, 67);
+            this.btnFP3.Size = new System.Drawing.Size(284, 69);
             this.btnFP3.TabIndex = 8;
             this.btnFP3.Text = "3";
             this.btnFP3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -652,9 +652,9 @@
             this.btnFP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFP2.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnFP2.Location = new System.Drawing.Point(3, 76);
+            this.btnFP2.Location = new System.Drawing.Point(3, 78);
             this.btnFP2.Name = "btnFP2";
-            this.btnFP2.Size = new System.Drawing.Size(321, 67);
+            this.btnFP2.Size = new System.Drawing.Size(284, 69);
             this.btnFP2.TabIndex = 7;
             this.btnFP2.Text = "2";
             this.btnFP2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -671,7 +671,7 @@
             this.btnFP1.ForeColor = System.Drawing.Color.LightCoral;
             this.btnFP1.Location = new System.Drawing.Point(3, 3);
             this.btnFP1.Name = "btnFP1";
-            this.btnFP1.Size = new System.Drawing.Size(321, 67);
+            this.btnFP1.Size = new System.Drawing.Size(284, 69);
             this.btnFP1.TabIndex = 6;
             this.btnFP1.Text = "1";
             this.btnFP1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -687,7 +687,7 @@
             this.pnlCart.Controls.Add(this.labalCartHeader);
             this.pnlCart.Location = new System.Drawing.Point(0, 55);
             this.pnlCart.Name = "pnlCart";
-            this.pnlCart.Size = new System.Drawing.Size(441, 583);
+            this.pnlCart.Size = new System.Drawing.Size(441, 601);
             this.pnlCart.TabIndex = 3;
             // 
             // pnlSubtotal
@@ -701,7 +701,7 @@
             this.pnlSubtotal.Controls.Add(this.remainingText);
             this.pnlSubtotal.Controls.Add(this.TenderedText);
             this.pnlSubtotal.Controls.Add(this.SubtotalText);
-            this.pnlSubtotal.Location = new System.Drawing.Point(0, 486);
+            this.pnlSubtotal.Location = new System.Drawing.Point(0, 503);
             this.pnlSubtotal.Name = "pnlSubtotal";
             this.pnlSubtotal.Size = new System.Drawing.Size(441, 97);
             this.pnlSubtotal.TabIndex = 2;
@@ -765,14 +765,15 @@
             // 
             // listCart
             // 
-            this.listCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listCart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listCart.FormattingEnabled = true;
             this.listCart.ItemHeight = 15;
-            this.listCart.Location = new System.Drawing.Point(0, 32);
+            this.listCart.Location = new System.Drawing.Point(0, 33);
             this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(441, 454);
+            this.listCart.Size = new System.Drawing.Size(441, 484);
             this.listCart.TabIndex = 1;
             this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
@@ -783,7 +784,7 @@
             this.labalCartHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labalCartHeader.Location = new System.Drawing.Point(0, 0);
             this.labalCartHeader.Name = "labalCartHeader";
-            this.labalCartHeader.Size = new System.Drawing.Size(441, 32);
+            this.labalCartHeader.Size = new System.Drawing.Size(441, 34);
             this.labalCartHeader.TabIndex = 0;
             this.labalCartHeader.Text = "Description                                                                    Qt" +
     "y              Price       Total";
@@ -799,7 +800,7 @@
             this.pnlProducts.Controls.Add(this.tableLayoutPanelQuantity);
             this.pnlProducts.Location = new System.Drawing.Point(458, 62);
             this.pnlProducts.Name = "pnlProducts";
-            this.pnlProducts.Size = new System.Drawing.Size(684, 566);
+            this.pnlProducts.Size = new System.Drawing.Size(660, 584);
             this.pnlProducts.TabIndex = 4;
             // 
             // tableLayoutPanelProducts
@@ -859,7 +860,7 @@
             this.tableLayoutPanelProducts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelProducts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelProducts.Size = new System.Drawing.Size(678, 512);
+            this.tableLayoutPanelProducts.Size = new System.Drawing.Size(654, 530);
             this.tableLayoutPanelProducts.TabIndex = 1;
             // 
             // btnRp17
@@ -869,9 +870,9 @@
             this.btnRp17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp17.Location = new System.Drawing.Point(227, 88);
+            this.btnRp17.Location = new System.Drawing.Point(219, 91);
             this.btnRp17.Name = "btnRp17";
-            this.btnRp17.Size = new System.Drawing.Size(106, 79);
+            this.btnRp17.Size = new System.Drawing.Size(102, 82);
             this.btnRp17.TabIndex = 41;
             this.btnRp17.Text = "PIZZA SLICE SMALL";
             this.btnRp17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -884,9 +885,9 @@
             this.btnRp16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp16.Location = new System.Drawing.Point(563, 428);
+            this.btnRp16.Location = new System.Drawing.Point(543, 443);
             this.btnRp16.Name = "btnRp16";
-            this.btnRp16.Size = new System.Drawing.Size(112, 81);
+            this.btnRp16.Size = new System.Drawing.Size(108, 84);
             this.btnRp16.TabIndex = 40;
             this.btnRp16.Text = "10L GAS CAN";
             this.btnRp16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -899,9 +900,9 @@
             this.btnRp15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp15.Location = new System.Drawing.Point(451, 428);
+            this.btnRp15.Location = new System.Drawing.Point(435, 443);
             this.btnRp15.Name = "btnRp15";
-            this.btnRp15.Size = new System.Drawing.Size(106, 81);
+            this.btnRp15.Size = new System.Drawing.Size(102, 84);
             this.btnRp15.TabIndex = 39;
             this.btnRp15.Text = "PC COOLANT 3.78L";
             this.btnRp15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -914,9 +915,9 @@
             this.btnRp14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp14.Location = new System.Drawing.Point(339, 428);
+            this.btnRp14.Location = new System.Drawing.Point(327, 443);
             this.btnRp14.Name = "btnRp14";
-            this.btnRp14.Size = new System.Drawing.Size(106, 81);
+            this.btnRp14.Size = new System.Drawing.Size(102, 84);
             this.btnRp14.TabIndex = 38;
             this.btnRp14.Text = "PC COOLANT 1.85L";
             this.btnRp14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -929,9 +930,9 @@
             this.btnRp13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp13.Location = new System.Drawing.Point(227, 428);
+            this.btnRp13.Location = new System.Drawing.Point(219, 443);
             this.btnRp13.Name = "btnRp13";
-            this.btnRp13.Size = new System.Drawing.Size(106, 81);
+            this.btnRp13.Size = new System.Drawing.Size(102, 84);
             this.btnRp13.TabIndex = 37;
             this.btnRp13.Text = "FIREWOOD";
             this.btnRp13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -944,9 +945,9 @@
             this.btnRp12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp12.Location = new System.Drawing.Point(115, 428);
+            this.btnRp12.Location = new System.Drawing.Point(111, 443);
             this.btnRp12.Name = "btnRp12";
-            this.btnRp12.Size = new System.Drawing.Size(106, 81);
+            this.btnRp12.Size = new System.Drawing.Size(102, 84);
             this.btnRp12.TabIndex = 36;
             this.btnRp12.Text = "1L ENGINE OIL 10W20";
             this.btnRp12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -959,9 +960,9 @@
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button25.Location = new System.Drawing.Point(563, 343);
+            this.button25.Location = new System.Drawing.Point(543, 355);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(112, 79);
+            this.button25.Size = new System.Drawing.Size(108, 82);
             this.button25.TabIndex = 35;
             this.button25.Text = "-";
             this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -974,9 +975,9 @@
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button24.Location = new System.Drawing.Point(451, 343);
+            this.button24.Location = new System.Drawing.Point(435, 355);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(106, 79);
+            this.button24.Size = new System.Drawing.Size(102, 82);
             this.button24.TabIndex = 34;
             this.button24.Text = "-";
             this.button24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -989,9 +990,9 @@
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button23.Location = new System.Drawing.Point(339, 343);
+            this.button23.Location = new System.Drawing.Point(327, 355);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(106, 79);
+            this.button23.Size = new System.Drawing.Size(102, 82);
             this.button23.TabIndex = 33;
             this.button23.Text = "-";
             this.button23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1004,9 +1005,9 @@
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button22.Location = new System.Drawing.Point(227, 343);
+            this.button22.Location = new System.Drawing.Point(219, 355);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(106, 79);
+            this.button22.Size = new System.Drawing.Size(102, 82);
             this.button22.TabIndex = 32;
             this.button22.Text = "-";
             this.button22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1019,9 +1020,9 @@
             this.btnRp11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp11.Location = new System.Drawing.Point(115, 343);
+            this.btnRp11.Location = new System.Drawing.Point(111, 355);
             this.btnRp11.Name = "btnRp11";
-            this.btnRp11.Size = new System.Drawing.Size(106, 79);
+            this.btnRp11.Size = new System.Drawing.Size(102, 82);
             this.btnRp11.TabIndex = 31;
             this.btnRp11.Text = "1L ENGINE OIL 5W20";
             this.btnRp11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1034,9 +1035,9 @@
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button20.Location = new System.Drawing.Point(563, 258);
+            this.button20.Location = new System.Drawing.Point(543, 267);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(112, 79);
+            this.button20.Size = new System.Drawing.Size(108, 82);
             this.button20.TabIndex = 30;
             this.button20.Text = "-";
             this.button20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1049,9 +1050,9 @@
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button19.Location = new System.Drawing.Point(451, 258);
+            this.button19.Location = new System.Drawing.Point(435, 267);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(106, 79);
+            this.button19.Size = new System.Drawing.Size(102, 82);
             this.button19.TabIndex = 29;
             this.button19.Text = "-";
             this.button19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1064,9 +1065,9 @@
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button18.Location = new System.Drawing.Point(339, 258);
+            this.button18.Location = new System.Drawing.Point(327, 267);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(106, 79);
+            this.button18.Size = new System.Drawing.Size(102, 82);
             this.button18.TabIndex = 28;
             this.button18.Text = "-";
             this.button18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1079,9 +1080,9 @@
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button17.Location = new System.Drawing.Point(227, 258);
+            this.button17.Location = new System.Drawing.Point(219, 267);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(106, 79);
+            this.button17.Size = new System.Drawing.Size(102, 82);
             this.button17.TabIndex = 27;
             this.button17.Text = "-";
             this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1094,9 +1095,9 @@
             this.btnRp10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp10.Location = new System.Drawing.Point(115, 258);
+            this.btnRp10.Location = new System.Drawing.Point(111, 267);
             this.btnRp10.Name = "btnRp10";
-            this.btnRp10.Size = new System.Drawing.Size(106, 79);
+            this.btnRp10.Size = new System.Drawing.Size(102, 82);
             this.btnRp10.TabIndex = 26;
             this.btnRp10.Text = "1L ENGINE OIL 10W30";
             this.btnRp10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1109,9 +1110,9 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button15.Location = new System.Drawing.Point(563, 173);
+            this.button15.Location = new System.Drawing.Point(543, 179);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(112, 79);
+            this.button15.Size = new System.Drawing.Size(108, 82);
             this.button15.TabIndex = 25;
             this.button15.Text = "-";
             this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1124,9 +1125,9 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button14.Location = new System.Drawing.Point(451, 173);
+            this.button14.Location = new System.Drawing.Point(435, 179);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(106, 79);
+            this.button14.Size = new System.Drawing.Size(102, 82);
             this.button14.TabIndex = 24;
             this.button14.Text = "-";
             this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1139,9 +1140,9 @@
             this.btnRp22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp22.Location = new System.Drawing.Point(339, 173);
+            this.btnRp22.Location = new System.Drawing.Point(327, 179);
             this.btnRp22.Name = "btnRp22";
-            this.btnRp22.Size = new System.Drawing.Size(106, 79);
+            this.btnRp22.Size = new System.Drawing.Size(102, 82);
             this.btnRp22.TabIndex = 23;
             this.btnRp22.Text = "VEG SANDWICH";
             this.btnRp22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1154,9 +1155,9 @@
             this.btnRp21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp21.Location = new System.Drawing.Point(227, 173);
+            this.btnRp21.Location = new System.Drawing.Point(219, 179);
             this.btnRp21.Name = "btnRp21";
-            this.btnRp21.Size = new System.Drawing.Size(106, 79);
+            this.btnRp21.Size = new System.Drawing.Size(102, 82);
             this.btnRp21.TabIndex = 22;
             this.btnRp21.Text = "CHICKEN SANDWICH";
             this.btnRp21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1169,9 +1170,9 @@
             this.btnRp9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp9.Location = new System.Drawing.Point(115, 173);
+            this.btnRp9.Location = new System.Drawing.Point(111, 179);
             this.btnRp9.Name = "btnRp9";
-            this.btnRp9.Size = new System.Drawing.Size(106, 79);
+            this.btnRp9.Size = new System.Drawing.Size(102, 82);
             this.btnRp9.TabIndex = 21;
             this.btnRp9.Text = "1L ENGINE OIL 5W30";
             this.btnRp9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1184,9 +1185,9 @@
             this.btnRp20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp20.Location = new System.Drawing.Point(563, 88);
+            this.btnRp20.Location = new System.Drawing.Point(543, 91);
             this.btnRp20.Name = "btnRp20";
-            this.btnRp20.Size = new System.Drawing.Size(112, 79);
+            this.btnRp20.Size = new System.Drawing.Size(108, 82);
             this.btnRp20.TabIndex = 20;
             this.btnRp20.Text = "POTATO WEDGES";
             this.btnRp20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1199,9 +1200,9 @@
             this.btnRp19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp19.Location = new System.Drawing.Point(451, 88);
+            this.btnRp19.Location = new System.Drawing.Point(435, 91);
             this.btnRp19.Name = "btnRp19";
-            this.btnRp19.Size = new System.Drawing.Size(106, 79);
+            this.btnRp19.Size = new System.Drawing.Size(102, 82);
             this.btnRp19.TabIndex = 19;
             this.btnRp19.Text = "HOTDOG";
             this.btnRp19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1214,9 +1215,9 @@
             this.btnRp18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp18.Location = new System.Drawing.Point(339, 88);
+            this.btnRp18.Location = new System.Drawing.Point(327, 91);
             this.btnRp18.Name = "btnRp18";
-            this.btnRp18.Size = new System.Drawing.Size(106, 79);
+            this.btnRp18.Size = new System.Drawing.Size(102, 82);
             this.btnRp18.TabIndex = 18;
             this.btnRp18.Text = "PIZZA SLICE LARGE";
             this.btnRp18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1229,9 +1230,9 @@
             this.btnRp8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp8.Location = new System.Drawing.Point(115, 88);
+            this.btnRp8.Location = new System.Drawing.Point(111, 91);
             this.btnRp8.Name = "btnRp8";
-            this.btnRp8.Size = new System.Drawing.Size(106, 79);
+            this.btnRp8.Size = new System.Drawing.Size(102, 82);
             this.btnRp8.TabIndex = 16;
             this.btnRp8.Text = "LOTTO TICKET $10";
             this.btnRp8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1244,9 +1245,9 @@
             this.btnRp26.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp26.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp26.Location = new System.Drawing.Point(563, 3);
+            this.btnRp26.Location = new System.Drawing.Point(543, 3);
             this.btnRp26.Name = "btnRp26";
-            this.btnRp26.Size = new System.Drawing.Size(112, 79);
+            this.btnRp26.Size = new System.Drawing.Size(108, 82);
             this.btnRp26.TabIndex = 15;
             this.btnRp26.Text = "SMART WATER BOTTLE 350ML";
             this.btnRp26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1259,9 +1260,9 @@
             this.btnRp25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp25.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp25.Location = new System.Drawing.Point(451, 3);
+            this.btnRp25.Location = new System.Drawing.Point(435, 3);
             this.btnRp25.Name = "btnRp25";
-            this.btnRp25.Size = new System.Drawing.Size(106, 79);
+            this.btnRp25.Size = new System.Drawing.Size(102, 82);
             this.btnRp25.TabIndex = 14;
             this.btnRp25.Text = "FIJI WATER BOTTLE 500ML";
             this.btnRp25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1274,9 +1275,9 @@
             this.btnRp23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp23.Location = new System.Drawing.Point(227, 3);
+            this.btnRp23.Location = new System.Drawing.Point(219, 3);
             this.btnRp23.Name = "btnRp23";
-            this.btnRp23.Size = new System.Drawing.Size(106, 79);
+            this.btnRp23.Size = new System.Drawing.Size(102, 82);
             this.btnRp23.TabIndex = 12;
             this.btnRp23.Text = "DASANI WATER BOTTLE 591ML";
             this.btnRp23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1289,9 +1290,9 @@
             this.btnRp7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp7.Location = new System.Drawing.Point(115, 3);
+            this.btnRp7.Location = new System.Drawing.Point(111, 3);
             this.btnRp7.Name = "btnRp7";
-            this.btnRp7.Size = new System.Drawing.Size(106, 79);
+            this.btnRp7.Size = new System.Drawing.Size(102, 82);
             this.btnRp7.TabIndex = 11;
             this.btnRp7.Text = "LOTTO TICKET $1";
             this.btnRp7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1306,7 +1307,7 @@
             this.btnRp1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRp1.Location = new System.Drawing.Point(3, 3);
             this.btnRp1.Name = "btnRp1";
-            this.btnRp1.Size = new System.Drawing.Size(106, 79);
+            this.btnRp1.Size = new System.Drawing.Size(102, 82);
             this.btnRp1.TabIndex = 4;
             this.btnRp1.Text = "\nHOT BEVERAGE 12OZ";
             this.btnRp1.UseVisualStyleBackColor = false;
@@ -1318,9 +1319,9 @@
             this.btnRp2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp2.Location = new System.Drawing.Point(3, 88);
+            this.btnRp2.Location = new System.Drawing.Point(3, 91);
             this.btnRp2.Name = "btnRp2";
-            this.btnRp2.Size = new System.Drawing.Size(106, 79);
+            this.btnRp2.Size = new System.Drawing.Size(102, 82);
             this.btnRp2.TabIndex = 5;
             this.btnRp2.Text = "HOT BEVERAGE 24OZ";
             this.btnRp2.UseVisualStyleBackColor = false;
@@ -1332,9 +1333,9 @@
             this.btnRp3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp3.Location = new System.Drawing.Point(3, 173);
+            this.btnRp3.Location = new System.Drawing.Point(3, 179);
             this.btnRp3.Name = "btnRp3";
-            this.btnRp3.Size = new System.Drawing.Size(106, 79);
+            this.btnRp3.Size = new System.Drawing.Size(102, 82);
             this.btnRp3.TabIndex = 6;
             this.btnRp3.Text = "ICE CUBE 2.3KG";
             this.btnRp3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1347,9 +1348,9 @@
             this.btnRp4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp4.Location = new System.Drawing.Point(3, 258);
+            this.btnRp4.Location = new System.Drawing.Point(3, 267);
             this.btnRp4.Name = "btnRp4";
-            this.btnRp4.Size = new System.Drawing.Size(106, 79);
+            this.btnRp4.Size = new System.Drawing.Size(102, 82);
             this.btnRp4.TabIndex = 7;
             this.btnRp4.Text = "PROPANE EXCHANGE";
             this.btnRp4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1362,9 +1363,9 @@
             this.btnRp6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp6.Location = new System.Drawing.Point(3, 428);
+            this.btnRp6.Location = new System.Drawing.Point(3, 443);
             this.btnRp6.Name = "btnRp6";
-            this.btnRp6.Size = new System.Drawing.Size(106, 81);
+            this.btnRp6.Size = new System.Drawing.Size(102, 84);
             this.btnRp6.TabIndex = 9;
             this.btnRp6.Text = "WINDSHIELD WASHER";
             this.btnRp6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1377,9 +1378,9 @@
             this.btnRp5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp5.Location = new System.Drawing.Point(3, 343);
+            this.btnRp5.Location = new System.Drawing.Point(3, 355);
             this.btnRp5.Name = "btnRp5";
-            this.btnRp5.Size = new System.Drawing.Size(106, 79);
+            this.btnRp5.Size = new System.Drawing.Size(102, 82);
             this.btnRp5.TabIndex = 10;
             this.btnRp5.Text = "20LB PROPANE";
             this.btnRp5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1392,9 +1393,9 @@
             this.btnRp24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRp24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRp24.Location = new System.Drawing.Point(339, 3);
+            this.btnRp24.Location = new System.Drawing.Point(327, 3);
             this.btnRp24.Name = "btnRp24";
-            this.btnRp24.Size = new System.Drawing.Size(106, 79);
+            this.btnRp24.Size = new System.Drawing.Size(102, 82);
             this.btnRp24.TabIndex = 17;
             this.btnRp24.Text = "PURELIFE WATER BOTTLE 500ML";
             this.btnRp24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1430,7 +1431,7 @@
             this.tableLayoutPanelQuantity.RowCount = 1;
             this.tableLayoutPanelQuantity.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelQuantity.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanelQuantity.Size = new System.Drawing.Size(678, 45);
+            this.tableLayoutPanelQuantity.Size = new System.Drawing.Size(654, 45);
             this.tableLayoutPanelQuantity.TabIndex = 0;
             // 
             // btnQty999
@@ -1440,9 +1441,9 @@
             this.btnQty999.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty999.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty999.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty999.Location = new System.Drawing.Point(606, 3);
+            this.btnQty999.Location = new System.Drawing.Point(588, 3);
             this.btnQty999.Name = "btnQty999";
-            this.btnQty999.Size = new System.Drawing.Size(69, 39);
+            this.btnQty999.Size = new System.Drawing.Size(63, 39);
             this.btnQty999.TabIndex = 13;
             this.btnQty999.Text = "999x";
             this.btnQty999.UseVisualStyleBackColor = false;
@@ -1454,9 +1455,9 @@
             this.btnQty100.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty100.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty100.Location = new System.Drawing.Point(539, 3);
+            this.btnQty100.Location = new System.Drawing.Point(523, 3);
             this.btnQty100.Name = "btnQty100";
-            this.btnQty100.Size = new System.Drawing.Size(61, 39);
+            this.btnQty100.Size = new System.Drawing.Size(59, 39);
             this.btnQty100.TabIndex = 12;
             this.btnQty100.Text = "100x";
             this.btnQty100.UseVisualStyleBackColor = false;
@@ -1468,9 +1469,9 @@
             this.btnQty50.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty50.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty50.Location = new System.Drawing.Point(472, 3);
+            this.btnQty50.Location = new System.Drawing.Point(458, 3);
             this.btnQty50.Name = "btnQty50";
-            this.btnQty50.Size = new System.Drawing.Size(61, 39);
+            this.btnQty50.Size = new System.Drawing.Size(59, 39);
             this.btnQty50.TabIndex = 11;
             this.btnQty50.Text = "50x";
             this.btnQty50.UseVisualStyleBackColor = false;
@@ -1482,9 +1483,9 @@
             this.btnQty25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty25.Location = new System.Drawing.Point(405, 3);
+            this.btnQty25.Location = new System.Drawing.Point(393, 3);
             this.btnQty25.Name = "btnQty25";
-            this.btnQty25.Size = new System.Drawing.Size(61, 39);
+            this.btnQty25.Size = new System.Drawing.Size(59, 39);
             this.btnQty25.TabIndex = 10;
             this.btnQty25.Text = "25x";
             this.btnQty25.UseVisualStyleBackColor = false;
@@ -1496,9 +1497,9 @@
             this.btnQty10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty10.Location = new System.Drawing.Point(338, 3);
+            this.btnQty10.Location = new System.Drawing.Point(328, 3);
             this.btnQty10.Name = "btnQty10";
-            this.btnQty10.Size = new System.Drawing.Size(61, 39);
+            this.btnQty10.Size = new System.Drawing.Size(59, 39);
             this.btnQty10.TabIndex = 9;
             this.btnQty10.Text = "10x";
             this.btnQty10.UseVisualStyleBackColor = false;
@@ -1510,9 +1511,9 @@
             this.btnQty5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty5.Location = new System.Drawing.Point(271, 3);
+            this.btnQty5.Location = new System.Drawing.Point(263, 3);
             this.btnQty5.Name = "btnQty5";
-            this.btnQty5.Size = new System.Drawing.Size(61, 39);
+            this.btnQty5.Size = new System.Drawing.Size(59, 39);
             this.btnQty5.TabIndex = 8;
             this.btnQty5.Text = "5x";
             this.btnQty5.UseVisualStyleBackColor = false;
@@ -1524,9 +1525,9 @@
             this.btnQty4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty4.Location = new System.Drawing.Point(204, 3);
+            this.btnQty4.Location = new System.Drawing.Point(198, 3);
             this.btnQty4.Name = "btnQty4";
-            this.btnQty4.Size = new System.Drawing.Size(61, 39);
+            this.btnQty4.Size = new System.Drawing.Size(59, 39);
             this.btnQty4.TabIndex = 7;
             this.btnQty4.Text = "4x";
             this.btnQty4.UseVisualStyleBackColor = false;
@@ -1538,9 +1539,9 @@
             this.btnQty3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty3.Location = new System.Drawing.Point(137, 3);
+            this.btnQty3.Location = new System.Drawing.Point(133, 3);
             this.btnQty3.Name = "btnQty3";
-            this.btnQty3.Size = new System.Drawing.Size(61, 39);
+            this.btnQty3.Size = new System.Drawing.Size(59, 39);
             this.btnQty3.TabIndex = 6;
             this.btnQty3.Text = "3x";
             this.btnQty3.UseVisualStyleBackColor = false;
@@ -1552,9 +1553,9 @@
             this.btnQty2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQty2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQty2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQty2.Location = new System.Drawing.Point(70, 3);
+            this.btnQty2.Location = new System.Drawing.Point(68, 3);
             this.btnQty2.Name = "btnQty2";
-            this.btnQty2.Size = new System.Drawing.Size(61, 39);
+            this.btnQty2.Size = new System.Drawing.Size(59, 39);
             this.btnQty2.TabIndex = 5;
             this.btnQty2.Text = "2x";
             this.btnQty2.UseVisualStyleBackColor = false;
@@ -1568,7 +1569,7 @@
             this.btnQty1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnQty1.Location = new System.Drawing.Point(3, 3);
             this.btnQty1.Name = "btnQty1";
-            this.btnQty1.Size = new System.Drawing.Size(61, 39);
+            this.btnQty1.Size = new System.Drawing.Size(59, 39);
             this.btnQty1.TabIndex = 4;
             this.btnQty1.Text = "1x\n";
             this.btnQty1.UseVisualStyleBackColor = false;
@@ -1583,9 +1584,9 @@
             this.pnlBottomNavBack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBottomNavBack.Controls.Add(this.tableLayoutPanelBottomNavBack);
-            this.pnlBottomNavBack.Location = new System.Drawing.Point(0, 643);
+            this.pnlBottomNavBack.Location = new System.Drawing.Point(0, 661);
             this.pnlBottomNavBack.Name = "pnlBottomNavBack";
-            this.pnlBottomNavBack.Size = new System.Drawing.Size(1480, 82);
+            this.pnlBottomNavBack.Size = new System.Drawing.Size(1416, 82);
             this.pnlBottomNavBack.TabIndex = 5;
             // 
             // tableLayoutPanelBottomNavBack
@@ -1610,7 +1611,7 @@
             this.tableLayoutPanelBottomNavBack.Name = "tableLayoutPanelBottomNavBack";
             this.tableLayoutPanelBottomNavBack.RowCount = 1;
             this.tableLayoutPanelBottomNavBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBottomNavBack.Size = new System.Drawing.Size(1480, 82);
+            this.tableLayoutPanelBottomNavBack.Size = new System.Drawing.Size(1416, 82);
             this.tableLayoutPanelBottomNavBack.TabIndex = 1;
             // 
             // btnBack
@@ -1620,9 +1621,9 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBack.Location = new System.Drawing.Point(1335, 3);
+            this.btnBack.Location = new System.Drawing.Point(1272, 3);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(142, 76);
+            this.btnBack.Size = new System.Drawing.Size(141, 76);
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -1635,7 +1636,7 @@
             this.pnlSelectCartItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSelectCartItem.Controls.Add(this.labelSelectedItem);
             this.pnlSelectCartItem.Controls.Add(this.tableLayoutPanelSelectCartItem);
-            this.pnlSelectCartItem.Location = new System.Drawing.Point(661, 236);
+            this.pnlSelectCartItem.Location = new System.Drawing.Point(649, 245);
             this.pnlSelectCartItem.Name = "pnlSelectCartItem";
             this.pnlSelectCartItem.Size = new System.Drawing.Size(272, 197);
             this.pnlSelectCartItem.TabIndex = 3;
@@ -1704,7 +1705,7 @@
             this.pnlFuelConfirmation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlFuelConfirmation.BackColor = System.Drawing.Color.Black;
             this.pnlFuelConfirmation.Controls.Add(this.labelFuelConfirmation);
-            this.pnlFuelConfirmation.Location = new System.Drawing.Point(624, 201);
+            this.pnlFuelConfirmation.Location = new System.Drawing.Point(612, 210);
             this.pnlFuelConfirmation.Name = "pnlFuelConfirmation";
             this.pnlFuelConfirmation.Size = new System.Drawing.Size(352, 285);
             this.pnlFuelConfirmation.TabIndex = 6;
@@ -1734,7 +1735,7 @@
             this.pnlFuelTypeSelect.Controls.Add(this.tableLayoutPanelFuelGrade);
             this.pnlFuelTypeSelect.Controls.Add(this.labelEnterGrade);
             this.pnlFuelTypeSelect.Controls.Add(this.labelPumpNum);
-            this.pnlFuelTypeSelect.Location = new System.Drawing.Point(668, 210);
+            this.pnlFuelTypeSelect.Location = new System.Drawing.Point(656, 219);
             this.pnlFuelTypeSelect.Name = "pnlFuelTypeSelect";
             this.pnlFuelTypeSelect.Size = new System.Drawing.Size(272, 271);
             this.pnlFuelTypeSelect.TabIndex = 7;
@@ -1841,7 +1842,7 @@
             this.pnlAddFuelAmount.Controls.Add(this.tableLayoutPanelFuelCalculator);
             this.pnlAddFuelAmount.Controls.Add(this.labelFuelPrice);
             this.pnlAddFuelAmount.Controls.Add(this.labelFuelType);
-            this.pnlAddFuelAmount.Location = new System.Drawing.Point(590, 144);
+            this.pnlAddFuelAmount.Location = new System.Drawing.Point(578, 153);
             this.pnlAddFuelAmount.Name = "pnlAddFuelAmount";
             this.pnlAddFuelAmount.Size = new System.Drawing.Size(428, 434);
             this.pnlAddFuelAmount.TabIndex = 8;
@@ -2293,7 +2294,7 @@
             this.tabelLayoutPanelLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tabelLayoutPanelLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tabelLayoutPanelLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tabelLayoutPanelLogin.Size = new System.Drawing.Size(1480, 725);
+            this.tabelLayoutPanelLogin.Size = new System.Drawing.Size(1456, 743);
             this.tabelLayoutPanelLogin.TabIndex = 9;
             // 
             // tableLayoutPanelMenu
@@ -2305,11 +2306,11 @@
             this.tableLayoutPanelMenu.Controls.Add(this.panelLoginMenu, 1, 0);
             this.tableLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMenu.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(225, 111);
+            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(221, 114);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
             this.tableLayoutPanelMenu.RowCount = 1;
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(1030, 501);
+            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(1013, 514);
             this.tableLayoutPanelMenu.TabIndex = 0;
             // 
             // pictureBoxLoginMenu
@@ -2319,7 +2320,7 @@
             this.pictureBoxLoginMenu.InitialImage = null;
             this.pictureBoxLoginMenu.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxLoginMenu.Name = "pictureBoxLoginMenu";
-            this.pictureBoxLoginMenu.Size = new System.Drawing.Size(406, 495);
+            this.pictureBoxLoginMenu.Size = new System.Drawing.Size(399, 508);
             this.pictureBoxLoginMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLoginMenu.TabIndex = 0;
             this.pictureBoxLoginMenu.TabStop = false;
@@ -2336,9 +2337,9 @@
             this.panelLoginMenu.Controls.Add(this.labelLoginDescription);
             this.panelLoginMenu.Controls.Add(this.labelLogin);
             this.panelLoginMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLoginMenu.Location = new System.Drawing.Point(415, 3);
+            this.panelLoginMenu.Location = new System.Drawing.Point(408, 3);
             this.panelLoginMenu.Name = "panelLoginMenu";
-            this.panelLoginMenu.Size = new System.Drawing.Size(612, 495);
+            this.panelLoginMenu.Size = new System.Drawing.Size(602, 508);
             this.panelLoginMenu.TabIndex = 1;
             // 
             // labelLoginError
@@ -2349,7 +2350,7 @@
             this.labelLoginError.ForeColor = System.Drawing.Color.Red;
             this.labelLoginError.Location = new System.Drawing.Point(0, 435);
             this.labelLoginError.Name = "labelLoginError";
-            this.labelLoginError.Size = new System.Drawing.Size(612, 29);
+            this.labelLoginError.Size = new System.Drawing.Size(602, 29);
             this.labelLoginError.TabIndex = 8;
             this.labelLoginError.Text = "Error: username or password incorrect";
             this.labelLoginError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2376,7 +2377,7 @@
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLogin.Location = new System.Drawing.Point(97, 352);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(409, 67);
+            this.buttonLogin.Size = new System.Drawing.Size(399, 67);
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -2390,7 +2391,7 @@
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⛽';
-            this.textBoxPassword.Size = new System.Drawing.Size(272, 41);
+            this.textBoxPassword.Size = new System.Drawing.Size(262, 41);
             this.textBoxPassword.TabIndex = 5;
             // 
             // textBoxAccountID
@@ -2400,7 +2401,7 @@
             this.textBoxAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAccountID.Location = new System.Drawing.Point(169, 195);
             this.textBoxAccountID.Name = "textBoxAccountID";
-            this.textBoxAccountID.Size = new System.Drawing.Size(276, 44);
+            this.textBoxAccountID.Size = new System.Drawing.Size(266, 44);
             this.textBoxAccountID.TabIndex = 4;
             // 
             // labelPassword
@@ -2422,7 +2423,7 @@
             this.labelLoginDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoginDescription.Location = new System.Drawing.Point(-1, 108);
             this.labelLoginDescription.Name = "labelLoginDescription";
-            this.labelLoginDescription.Size = new System.Drawing.Size(612, 29);
+            this.labelLoginDescription.Size = new System.Drawing.Size(602, 29);
             this.labelLoginDescription.TabIndex = 1;
             this.labelLoginDescription.Text = "Login to start your session";
             this.labelLoginDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2434,7 +2435,7 @@
             this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.Location = new System.Drawing.Point(-1, 39);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(615, 55);
+            this.labelLogin.Size = new System.Drawing.Size(605, 55);
             this.labelLogin.TabIndex = 0;
             this.labelLogin.Text = "Log In";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2442,20 +2443,20 @@
             // textboxBarcode
             // 
             this.textboxBarcode.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textboxBarcode.Location = new System.Drawing.Point(0, 0);
-            this.textboxBarcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textboxBarcode.Location = new System.Drawing.Point(0, -54);
+            this.textboxBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.textboxBarcode.Name = "textboxBarcode";
             this.textboxBarcode.Size = new System.Drawing.Size(128, 20);
             this.textboxBarcode.TabIndex = 15;
             this.textboxBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxBarcode_KeyDown);
-            this.textboxBarcode.LostFocus += new System.EventHandler(this.textboxBarcode_LostFocus);
+            this.textboxBarcode.Leave += new System.EventHandler(this.textboxBarcode_Leave);
             // 
             // pnlHaltConfirmation
             // 
             this.pnlHaltConfirmation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlHaltConfirmation.BackColor = System.Drawing.Color.Black;
             this.pnlHaltConfirmation.Controls.Add(this.labelHaltConfirmation);
-            this.pnlHaltConfirmation.Location = new System.Drawing.Point(624, 202);
+            this.pnlHaltConfirmation.Location = new System.Drawing.Point(612, 211);
             this.pnlHaltConfirmation.Name = "pnlHaltConfirmation";
             this.pnlHaltConfirmation.Size = new System.Drawing.Size(352, 285);
             this.pnlHaltConfirmation.TabIndex = 13;
@@ -2483,7 +2484,7 @@
             this.pnlHaltAllConfirmation.BackColor = System.Drawing.Color.Black;
             this.pnlHaltAllConfirmation.Controls.Add(this.tableLayoutPanel3);
             this.pnlHaltAllConfirmation.Controls.Add(this.labelHaltAll);
-            this.pnlHaltAllConfirmation.Location = new System.Drawing.Point(623, 280);
+            this.pnlHaltAllConfirmation.Location = new System.Drawing.Point(611, 289);
             this.pnlHaltAllConfirmation.Name = "pnlHaltAllConfirmation";
             this.pnlHaltAllConfirmation.Size = new System.Drawing.Size(352, 148);
             this.pnlHaltAllConfirmation.TabIndex = 14;
@@ -2548,7 +2549,7 @@
             // 
             this.cardPaymentUserControl.BackColor = System.Drawing.Color.Firebrick;
             this.cardPaymentUserControl.Location = new System.Drawing.Point(555, 260);
-            this.cardPaymentUserControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cardPaymentUserControl.Margin = new System.Windows.Forms.Padding(4);
             this.cardPaymentUserControl.Name = "cardPaymentUserControl";
             this.cardPaymentUserControl.Size = new System.Drawing.Size(370, 204);
             this.cardPaymentUserControl.TabIndex = 14;
@@ -2563,7 +2564,7 @@
             0,
             65536});
             this.cashPaymentUserControl.Location = new System.Drawing.Point(526, 145);
-            this.cashPaymentUserControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cashPaymentUserControl.Margin = new System.Windows.Forms.Padding(4);
             this.cashPaymentUserControl.Name = "cashPaymentUserControl";
             this.cashPaymentUserControl.Size = new System.Drawing.Size(428, 434);
             this.cashPaymentUserControl.TabIndex = 13;
@@ -2573,15 +2574,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1443, 725);
+            this.ClientSize = new System.Drawing.Size(1419, 743);
             this.Controls.Add(this.tabelLayoutPanelLogin);
+            this.Controls.Add(this.pnlBottomNavMain);
+            this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.textboxBarcode);
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.pnlFuelPumps);
             this.Controls.Add(this.pnlTopNavMain);
-            this.Controls.Add(this.pnlBottomNavMain);
-            this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.pnlSelectCartItem);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);

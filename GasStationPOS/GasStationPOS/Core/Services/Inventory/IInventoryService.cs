@@ -12,5 +12,7 @@ namespace GasStationPOS.Core.Services.Inventory
     {
         IEnumerable<RetailProductDTO> GetAllRetailProductData();
         bool CheckIfBarcodeRetailProductExits(string barcode);
+
+        RetailProductDTO GetRetailProductByBarcode(string barcode);
     }
 }

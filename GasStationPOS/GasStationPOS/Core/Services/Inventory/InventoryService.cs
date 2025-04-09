@@ -66,5 +66,19 @@ namespace GasStationPOS.Core.Services.Inventory
 
             return barcodeRetailProductExistsInDb;
         }
+
+        public RetailProductDTO GetRetailProductByBarcode(string barcode)
+        {
+            // Step 1: Get the full barcode product (from JSON DB)
+            BarcodeRetailProduct bcRetailProduct = barcodeRetailProductRepository.Get(barcode);
+
+            if (bcRetailProduct == null)
+                return null;
+
+            // Step 2: Map the BarcodeRetailProduct model to a DTO
+            RetailProductDTO barcodeRetailProductDTO = Program.GlobalMapper.Map<RetailProductDTO>(bcRetailProduct);
+
+            return barcodeRetailProductDTO;
+        }
     }
 }
