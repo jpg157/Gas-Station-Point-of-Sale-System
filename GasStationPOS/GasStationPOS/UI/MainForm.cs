@@ -1064,13 +1064,13 @@ namespace GasStationPOS
 
                 if (amountEntered <= 0.0m)
                 {
-                    MessageBox.Show("Please enter a valid fuel amount.");
+                    MessageBox.Show("Please enter a valid cash amount.");
                     return;
                 }
 
                 if (amountEntered > 1000.0m)
                 {
-                    MessageBox.Show("Please enter a valid fuel amount. Max $1000 Accepted");
+                    MessageBox.Show("Please enter a valid cash amount. Max $1000 Accepted");
                     return;
                 }
 
