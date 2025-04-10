@@ -94,9 +94,7 @@ namespace GasStationPOS
             sb.AppendLine($"{TransactionRetailProductItems.GetArrayLength()} Items\t\t" +
                 $"SUBTOTAL:\t\t\t\t\t" +
                 $"${TotalAmountDollars}");
-            sb.AppendLine($"\t\t\t\t\t\tTAX:\t\t\t${(TotalAmountDollars * 0.12).ToString("#.##")}");
-            sb.AppendLine($"\t\t\t\t\t\tTOTAL:\t\t\t${(TotalAmountDollars * 1.12).ToString("#.##")}");
-            sb.AppendLine($"\t\t\t\t\t\tCHARGE:\t\t\t${(TotalAmountDollars * 1.12).ToString("#.##")}\n");
+            sb.AppendLine($"\t\t\t\t\t\tTOTAL:\t\t\t${(TotalAmountDollars).ToString("#.##")}");
 
             if (PaymentMethod == "CARD")
             {
@@ -150,10 +148,13 @@ namespace GasStationPOS
         /// <param name="content"></param>
         private void outputReceiptToFile(string content)
         {
-            using (StreamWriter sw = new StreamWriter($"output{ReceiptNumber}.txt"))
+            String pathToWriteTo = $"output{ReceiptNumber}.txt";
+            using (StreamWriter sw = new StreamWriter(pathToWriteTo))
             {
                 sw.WriteLine(content);
             }
+            String finalPath = Path.Combine(AppContext.BaseDirectory, pathToWriteTo);
+            Console.WriteLine($"Printed to: {finalPath}");
             ReceiptNumber++;
         }
 
