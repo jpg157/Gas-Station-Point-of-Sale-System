@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
     {
         readonly ITransactionRepository transactionRepository;
 
+        private int transactionId = 1;
+
         public TransactionService(ITransactionRepository transactionRepository)
         {
             this.transactionRepository = transactionRepository;
@@ -25,6 +28,8 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
 
         public async Task<bool> CreateTransactionAsync(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products)
         {
+            
+
             // validate parameters
             if (!ValidateTransactionPaymentFields(totalAmountDollars, amountTenderedDollars, products)) {
                 return false; // unsuccessful transaction
@@ -34,7 +39,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
 
             Transaction transaction = new Transaction
             {
-                TransactionNumber               = random.Next(10000, 99999), // ====== TransactionNumber for now is random but will eventually replace with autoincrementing id ======
+                TransactionNumber               = transactionId,
                 TransactionFuelProductItems     = new List<TransactionFuelProductItem>(),
                 TransactionRetailProductItems   = new List<TransactionRetailProductItem>(),
                 PaymentMethod                   = paymentMethod,
@@ -90,6 +95,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
             // create transaction asyncronously
             await this.transactionRepository.Create(transaction);
 
+            transactionId++;
             return true; // successful transaction
         }
 

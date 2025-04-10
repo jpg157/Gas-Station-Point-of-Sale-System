@@ -1,5 +1,6 @@
 ﻿using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.Core.Data.Models.TransactionModels;
+using GasStationPOS.Core.Database.Json;
 using GasStationPOS.Core.Services;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
@@ -159,6 +160,8 @@ namespace GasStationPOS
 
             // === ADD EVENT HANDLERS TO EVENTS IN LOGIN FORM ===
             AssociateLoginFormEvents();
+
+            Application.ApplicationExit += Application_ApplicationExit;
         }
 
         #region Button Label and Tag Setters
@@ -1148,5 +1151,29 @@ namespace GasStationPOS
             ReceiptPrinter rp = new ReceiptPrinter();
             rp.printReceipt();
         }
+
+
+        private void ClearJsonFile()
+        {
+            JsonDBConstants jsonFile = new JsonDBConstants();
+            try
+            {
+                // Clear the file by writing an empty string to it
+                File.WriteAllText(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH, string.Empty);
+
+                Console.WriteLine("JSON file has been cleared.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error clearing JSON file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            ClearJsonFile();
+        }
+
+
     }
 }
