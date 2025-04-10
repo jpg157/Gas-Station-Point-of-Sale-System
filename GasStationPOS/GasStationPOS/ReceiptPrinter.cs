@@ -26,7 +26,7 @@ namespace GasStationPOS
             { "province", "British Columbia" },
             { "postal code", "V6K2G7" },
         };
-        private string PhoneNumber = "(604)-XXX-YYYY";
+        private string PhoneNumber = "(604)-XXX-XXXX";
         private int ReceiptNumber = 0;
         private string TransactionsPath = Path.Combine(AppContext.BaseDirectory, "Core", "Data", "Database", "Json", "MockDatabase", "transactions.json");
 
@@ -129,7 +129,7 @@ namespace GasStationPOS
                 sb.AppendLine("CASH\n");
             }
 
-            sb.AppendLine($"\t\t\t\t\t\tTENDERED:\t\t$0.00");
+            sb.AppendLine($"\t\t\t\t\t\tTENDERED:\t\t${ChangeDollars + TotalAmountDollars}");
 
             if (ChangeDollars == 0)
             {
