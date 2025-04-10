@@ -84,5 +84,6 @@ namespace GasStationPOS.Core.Data.Models.TransactionModels
     public class TransactionConstants
     {
         public static readonly string TransactionDatetimeFormat = "dddd, MMMM dd, yyyy HH:mm:ss";
+        public static readonly int    INITIAL_TRANSACTION_NUM = 1;
     }
 }
