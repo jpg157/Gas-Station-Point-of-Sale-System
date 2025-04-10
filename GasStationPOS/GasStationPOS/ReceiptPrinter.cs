@@ -28,26 +28,34 @@ namespace GasStationPOS
         {
             string data = File.ReadAllText(TransactionsPath);
 
-            using (JsonDocument temp = JsonDocument.Parse(data))
+            try
             {
-                JsonElement result = temp.RootElement.GetProperty("Transactions");
-                string contentToPrint = "";
-
-                foreach (JsonElement transaction in result.EnumerateArray())
+                using (JsonDocument temp = JsonDocument.Parse(data))
                 {
-                    contentToPrint += parseDataToTransaction(
-                        transaction.GetProperty("TransactionNumber").GetInt32(),
-                        transaction.GetProperty("TransactionRetailProductItems"),
-                        transaction.GetProperty("TotalAmountDollars").GetDouble(),
-                        transaction.GetProperty("PaymentMethod").ToString(),
-                        transaction.GetProperty("ChangeDollars").GetDouble()
-                        );
+                    JsonElement result = temp.RootElement.GetProperty("Transactions");
+                    string contentToPrint = "";
+
+                    foreach (JsonElement transaction in result.EnumerateArray())
+                    {
+                        contentToPrint += parseDataToTransaction(
+                            transaction.GetProperty("TransactionNumber").GetInt32(),
+                            transaction.GetProperty("TransactionRetailProductItems"),
+                            transaction.GetProperty("TotalAmountDollars").GetDouble(),
+                            transaction.GetProperty("PaymentMethod").ToString(),
+                            transaction.GetProperty("ChangeDollars").GetDouble()
+                            );
+                    }
+
+                    Console.WriteLine(contentToPrint);
+
+                    // Print the Reciept to file.
+                    outputReceiptToFile(contentToPrint);
                 }
-
-                Console.WriteLine(contentToPrint);
-
-                // Print the Reciept to file.
-                outputReceiptToFile(contentToPrint);
+            }
+            catch (Exception e)
+            {
+                Console.Write("Please purchase something first, then get your reciept. Cart is empty.");
+                throw;
             }
         }
 
