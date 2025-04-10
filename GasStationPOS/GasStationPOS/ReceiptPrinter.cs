@@ -3,9 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Forms;
 
 namespace GasStationPOS
 {
+    /// <summary>
+    /// A class responsible for printing receipts for transactions to the console and saving them to a file.
+    /// The receipt includes transaction details such as the transaction number, retail product items, fuel product items,
+    /// total amount, payment method, and change.
+    /// 
+    /// Author: Vincent Fung
+    /// Date: 3 April 2025
+    /// 
+    /// </summary>
     internal class ReceiptPrinter
     {
         private string Name = "Shake-Stack Petrol";
@@ -55,8 +65,7 @@ namespace GasStationPOS
             }
             catch (Exception e)
             {
-                Console.Write($"Please purchase something first, then get your reciept. Cart is empty: {e}");
-                throw;
+                MessageBox.Show($"Transaction list is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

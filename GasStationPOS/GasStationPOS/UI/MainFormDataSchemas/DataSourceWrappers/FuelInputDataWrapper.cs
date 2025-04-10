@@ -18,6 +18,10 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
     /// - FUEL QUANTITY (Litres)
     /// 
     /// When fuel price or fuel grade is changed, Fuel Quantity is automatically recalculated to account for the value change.
+    /// 
+    /// Author: Jason Lau
+    /// Date: 27 March 2025
+    /// 
     /// </summary>
     public class FuelInputDataWrapper : INotifyPropertyChanged
     {

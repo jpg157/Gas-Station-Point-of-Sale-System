@@ -21,6 +21,10 @@ namespace GasStationPOS
     /// Can be used for UI - Model, and Database - Model
     /// Source:
     /// https://docs.automapper.org/en/stable/Configuration.html#profile-instances
+    /// 
+    /// Author: Jason Lau
+    /// Date: 27 March 2025
+    /// 
     /// </summary>
     class MappingProfiles : Profile
     {
@@ -51,7 +55,7 @@ namespace GasStationPOS
             // Product -> ProductDTO
             CreateMap<Product, ProductDTO>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductName))
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName))
                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                 .Include<RetailProduct, RetailProductDTO>() // mapping inheritance for RetailProduct -> RetailProductDTO
                 .Include<FuelProduct, FuelProductDTO>()     // mapping inheritance for FuelProduct -> FuelProductDTO
@@ -60,7 +64,7 @@ namespace GasStationPOS
             // ProductDTO -> Product
             CreateMap<ProductDTO, Product>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductNameDescription))
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName))
                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                 .Include<RetailProductDTO, RetailProduct>() // mapping inheritance for RetailProductDTO -> RetailProduct
                 .Include<FuelProductDTO, FuelProduct>()     // mapping inheritance for FuelProductDTO -> FuelProduct
@@ -69,7 +73,7 @@ namespace GasStationPOS
             // ProductDTO -> Product (For deep copy)
             CreateMap<ProductDTO, ProductDTO>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.ProductNameDescription, opt => opt.MapFrom(src => src.ProductNameDescription))
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName))
                 .ForMember(dest => dest.UnitPriceDollars, opt => opt.MapFrom(src => src.UnitPriceDollars))
                 .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
                 .ForMember(dest => dest.TotalPriceDollars, opt => opt.MapFrom(src => src.TotalPriceDollars))
