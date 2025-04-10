@@ -2867,6 +2867,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1419, 743);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.pnlBottomNavMain);
             this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.textboxBarcode);
@@ -2886,7 +2887,6 @@
             this.Controls.Add(this.pnlLogoutConfirmation);
             this.Controls.Add(this.pnlFuelConfirmation);
             this.Controls.Add(this.pnlAddFuelAmount);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
