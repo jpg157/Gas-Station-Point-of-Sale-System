@@ -40,6 +40,7 @@ namespace GasStationPOS
                         contentToPrint += parseDataToTransaction(
                             transaction.GetProperty("TransactionNumber").GetInt32(),
                             transaction.GetProperty("TransactionRetailProductItems"),
+                            transaction.GetProperty("TransactionFuelProductItems"),
                             transaction.GetProperty("TotalAmountDollars").GetDouble(),
                             transaction.GetProperty("PaymentMethod").ToString(),
                             transaction.GetProperty("ChangeDollars").GetDouble()
@@ -54,7 +55,7 @@ namespace GasStationPOS
             }
             catch (Exception e)
             {
-                Console.Write("Please purchase something first, then get your reciept. Cart is empty.");
+                Console.Write($"Please purchase something first, then get your reciept. Cart is empty: {e}");
                 throw;
             }
         }
@@ -67,6 +68,7 @@ namespace GasStationPOS
         (
             int TransactionNumber,
             JsonElement TransactionRetailProductItems,
+            JsonElement TransactionFuelProductItems,
             double TotalAmountDollars,
             string PaymentMethod,
             double ChangeDollars
@@ -99,6 +101,10 @@ namespace GasStationPOS
             sb.AppendLine("RETAIL PRODUCT");
             sb.AppendLine(parseRetailProductItems(TransactionRetailProductItems));
 
+            // Gasoline
+            sb.AppendLine("GASOLINE");
+            sb.AppendLine(parseGasolineProductItems(TransactionFuelProductItems));
+
             sb.AppendLine($"{TransactionRetailProductItems.GetArrayLength()} Items\t\t" +
                 $"SUBTOTAL:\t\t\t\t\t" +
                 $"${TotalAmountDollars}");
@@ -128,6 +134,25 @@ namespace GasStationPOS
             sb.AppendLine("THANK YOU FOR SHOPPING AT SHAKE STACK GAS STATION");
 
             // Final Return
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Parses all the retail products.
+        /// </summary>
+        /// <param name="TransactionFuelProductItems"></param>
+        /// <returns></returns>
+        private string parseGasolineProductItems(JsonElement TransactionFuelProductItems)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (JsonElement gasProduct in TransactionFuelProductItems.EnumerateArray())
+            {
+                sb.AppendLine($"{gasProduct.GetProperty("Quantity").GetInt32()}\t\t" +
+                    $"{gasProduct.GetProperty("FuelProduct").GetProperty("ProductName").ToString()}\t\t\t\t" +
+                    $"${gasProduct.GetProperty("TotalItemPriceDollars").ToString()}");
+            }
+
             return sb.ToString();
         }
 
