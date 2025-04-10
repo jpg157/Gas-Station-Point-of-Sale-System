@@ -1039,6 +1039,9 @@ namespace GasStationPOS
             {
                 decimal amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
 
+                // Update the data source and the amount tendered UI label
+                paymentDataWrapper.AmountTendered += amountEntered;
+
                 paymentDataWrapper.AmountRemaining -= amountEntered;
 
                 // if there there is still an remaining amount to be paid
@@ -1274,60 +1277,6 @@ namespace GasStationPOS
                 }
             }
         }
-
-        //private async void btnReview_Click(object sender, EventArgs e)
-        //{
-        //    // don't allow review if the user is in a current transaction
-        //    if ((posMode == POSMode.TRANSACTION) && (userCartProductsDataList.Count > 0))
-        //    {
-        //        MessageBox.Show("Unable to open transaction review. Current transaction is in progress.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-
-            //    HidePanels();
-
-            //    pnlReview.Visible = true;
-            //    pnlBottomNavBack.Visible = true;
-
-            //    // Set current point of service system mode to "review of previous transactions"
-            //    posMode = POSMode.PREVIOUS_TRANSACTION_REVIEW;
-
-            //    // Disable item selection from ui listbox
-            //    listCart.SelectionMode = SelectionMode.None;
-
-            //    // get a list of product dtos from one of the previous transactions, and update user list cart (READ ONLY) - CLEAR THE USER CART AFTER
-            //    IEnumerable<ProductDTO> previousTransactionProducts = await transactionService.GetTransactionProductListAsync(currentlyChosenTransactionNum);
-
-            //    // clear all if there were any products in the cart data source
-            //    MainFormDataUpdater.RemoveAllProductsFromCart(
-            //        userCartProductsDataList,
-            //        paymentDataWrapper,
-            //        ref currentSelectedProductQuantity
-            //    );
-
-            //    // add all items to userCartProductsDataList
-            //    foreach (ProductDTO productDTO in previousTransactionProducts)
-            //    {
-            //        if (productDTO is RetailProductDTO)
-            //        {
-            //            MainFormDataUpdater.AddNewRetailProductToCart(
-            //                this.userCartProductsDataList,
-            //                (RetailProductDTO)productDTO,
-            //                this.paymentDataWrapper,
-            //                ref this.currentSelectedProductQuantity
-            //            );
-            //        }
-            //        else if (productDTO is FuelProductDTO)
-            //        {
-            //            MainFormDataUpdater.AddNewFuelProductToCart(
-            //                this.userCartProductsDataList,
-            //                (FuelProductDTO)productDTO,
-            //                this.paymentDataWrapper,
-            //                this.fuelInputDataWrapper
-            //            );
-            //        }
-            //    }
-            //}
 
             // === App Exit ===
         private void Application_ApplicationExit(object sender, EventArgs e)
