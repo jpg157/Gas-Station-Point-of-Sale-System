@@ -10,6 +10,10 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
 {
     /// <summary>
     /// PaymentDataWrapper class contains subtotal, amounttendered, and amountremaining
+    /// 
+    /// Author: Jason Lau
+    /// Date: 27 March 2025
+    /// 
     /// </summary>
     public class PaymentDataWrapper : INotifyPropertyChanged
     {

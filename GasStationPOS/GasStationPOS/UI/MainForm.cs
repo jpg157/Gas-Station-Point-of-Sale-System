@@ -4,6 +4,7 @@ using GasStationPOS.Core.Database.Json;
 using GasStationPOS.Core.Services;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
+using GasStationPOS.Core.Services.Processor;
 using GasStationPOS.Core.Services.Transaction_Payment;
 using GasStationPOS.UI;
 using GasStationPOS.UI.Constants;
@@ -44,7 +45,7 @@ namespace GasStationPOS
     /// Author: Mansib Talukder
     /// Author: Jason Lau
     /// Author: Vincent Fung
-    /// Date: 19 March 2025
+    /// Date: 10 April 2025
     ///
     public partial class MainForm : Form
     {
@@ -107,6 +108,9 @@ namespace GasStationPOS
 
         // Currently selected transaction for previous transaction review
         private int currentlyChosenTransactionNum;
+
+        // Adding Product mode
+        private bool isAddingNewProduct = false;
 
         /// <summary>
         /// Constructor to initialize the MainForm
@@ -204,7 +208,7 @@ namespace GasStationPOS
                 Button retailProductButton = (Button)this.Controls.Find(retailBtnName, true).First();
 
                 // 1. Set the text of the button to the name attribute in the RetailProductDTO object
-                retailProductButton.Text = retailProductDTO.ProductNameDescription;
+                retailProductButton.Text = retailProductDTO.ProductName;
 
                 // 2. Attach the retailProductDTO object to the button using the Tag attribute (to know which retail product that the clicked button was associated with)
                 retailProductButton.Tag = retailProductDTO;
@@ -464,6 +468,7 @@ namespace GasStationPOS
             pnlHaltConfirmation.Visible = false;
             pnlHaltAllConfirmation.Visible = false;
             pnlReview.Visible = false;
+            pnlAddProduct.Visible = false;
             this.cashPaymentUserControl.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
@@ -513,6 +518,9 @@ namespace GasStationPOS
 
             // Enable item selection
             listCart.SelectionMode = SelectionMode.One;
+
+            isAddingNewProduct = false;
+            textboxBarcode.Focus();
         }
 
         /// <summary>
@@ -969,7 +977,7 @@ namespace GasStationPOS
             FuelProductDTO fuelProductDTO = new FuelProductDTO
             {
                 Id = fuelProductId,
-                ProductNameDescription = fuelProductNameDescription,
+                ProductName = fuelProductNameDescription,
                 UnitPriceDollars = FuelGradeUtils.GetFuelPrice(fuelGrade),
                 Quantity = resultingFuelQuantity, // the total volume of the fuel product
                 TotalPriceDollars = totalEnteredfuelPrice,
@@ -1134,6 +1142,16 @@ namespace GasStationPOS
 
         // ======================================== BARCODE SCANNER ============================================
 
+
+        private void textBoxProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the character is a letter and convert it to uppercase
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.KeyChar = char.ToUpper(e.KeyChar);
+            }
+        }
+
         /// <summary>
         /// Handles the logic for when a key is pressed in the barcode textbox, specifically when the Enter key is pressed.
         /// It checks if the scanned barcode exists in the inventory and adds the corresponding product to the cart if found.
@@ -1155,8 +1173,24 @@ namespace GasStationPOS
                 // if the scanned product doesn't exist (null)
                 if (barcodeRetailProductExists == null)
                 {
-                    MessageBox.Show("Product not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    isAddingNewProduct = true;
+
+                    // Prefill the barcode ID
+                    txtBoxProductBarcodeID.Text = scannedBarcode;
+
+                    // Clear other fields just in case
+                    textBoxProductName.Text = "";
+                    textBoxProductPrice.Text = "";
+
+                    // Show the add-product panel
+                    pnlAddProduct.Visible = true;
+
+                    // Optionally hide other panels or buttons
+                    HidePanels(); // if needed
+                    pnlAddProduct.Visible = true;
+                    pnlBottomNavBack.Visible = true;   
                 }
+
                 // if it exists
                 else
                 {
@@ -1176,11 +1210,57 @@ namespace GasStationPOS
         }
 
         /// <summary>
+        /// Event handler for the "Add Product" button click event.
+        /// This method validates the input fields for barcode ID, product name, and price, 
+        /// creates a new <see cref="BarcodeRetailProduct"/> object, and adds it to the JSON file.
+        /// If the fields are incomplete or the price format is invalid, an error message is displayed.
+        /// </summary>
+        private void btnAddProductConfirm_Click(object sender, EventArgs e)
+        {
+            string barcodeId = txtBoxProductBarcodeID.Text.Trim();
+            string productName = textBoxProductName.Text.Trim();
+            string priceText = textBoxProductPrice.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(barcodeId) || string.IsNullOrWhiteSpace(productName) || string.IsNullOrWhiteSpace(priceText))
+            {
+                MessageBox.Show("Please fill all fields.");
+                return;
+            }
+
+            if (!decimal.TryParse(priceText, out decimal unitPrice))
+            {
+                MessageBox.Show("Invalid price format.");
+                return;
+            }
+
+            // Create new product object
+            var newProduct = new BarcodeRetailProduct
+            {
+                Id = 0,
+                BarcodeId = barcodeId,
+                ProductName = productName,
+                UnitPriceDollars = unitPrice
+            };
+
+            // Add to JSON file
+            BarcodeRetailProductFileProcessor.AddNewProductToFile(newProduct);
+
+            MessageBox.Show("Product Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            reset();
+            isAddingNewProduct = false;
+            textboxBarcode.Focus(); // Ready for next scan
+        }
+
+        /// <summary>
         /// Handles the logic for when the barcode textbox loses focus.
         /// Sets the focus back to the textbox after a short delay to allow other interactions.
         /// </summary>
         private void textboxBarcode_Leave(object sender, EventArgs e)
         {
+            if (isAddingNewProduct)
+                return;
+
             // Set the focus back after a small delay
             Timer timer = new Timer();
             timer.Interval = 100;
@@ -1192,16 +1272,24 @@ namespace GasStationPOS
             timer.Start();
         }
 
-        // Prints the reciept
+        /// <summary>
+        /// Prints the reciept
+        /// </summary>
         private void btnPrintReceipt_Click(object sender, EventArgs e)
         {
             ReceiptPrinter rp = new ReceiptPrinter();
             rp.printReceipt();
+            textboxBarcode.Focus();
         }
 
 
         // ======================================== REVIEW ============================================
 
+        /// <summary>
+        /// Event handler for showing the previous transaction.
+        /// This method decreases the currently selected transaction number and ensures it stays within valid bounds.
+        /// Afterward, it displays the transaction details.
+        /// </summary>
         private void ShowPreviousTransaction(object sender, EventArgs e)
         {
             currentlyChosenTransactionNum--;
@@ -1209,6 +1297,11 @@ namespace GasStationPOS
             ShowTransaction();
         }
 
+        /// <summary>
+        /// Event handler for showing the next transaction.
+        /// This method increases the currently selected transaction number and ensures it stays within valid bounds.
+        /// Afterward, it displays the transaction details.
+        /// </summary>
         private void ShowNextTransaction(object sender, EventArgs e)
         {
             currentlyChosenTransactionNum++;
@@ -1216,12 +1309,19 @@ namespace GasStationPOS
             ShowTransaction();
         }
 
+        /// <summary>
+        /// Event handler for reviewing the currently selected transaction.
+        /// This method checks whether a transaction is in progress, prevents review during an active transaction,
+        /// and switches the system to "review previous transactions" mode.
+        /// It then displays the review panel and updates the UI accordingly.
+        /// </summary>
         private void ShowReviewAndCurrentlySelectedTransaction(object sender, EventArgs e)
         {
             // don't allow review if the user is in a current transaction
             if ((posMode == POSMode.TRANSACTION) && (userCartProductsDataList.Count > 0))
             {
                 MessageBox.Show("Unable to open transaction review. Current transaction is in progress.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textboxBarcode.Focus();
                 return;
             }
 
@@ -1240,6 +1340,11 @@ namespace GasStationPOS
             ShowTransaction();
         }
 
+        /// <summary>
+        /// Displays the details of a selected transaction, including the products and amounts involved.
+        /// The method clears the user cart and loads the previous transaction data, updating the cart 
+        /// with the products from the selected transaction. It also updates the payment information.
+        /// </summary>
         private async void ShowTransaction()
         {
             labelReview.Text = $"Transaction Review {currentlyChosenTransactionNum} of {transactionService.LatestTransactionNumber}";
@@ -1292,7 +1397,13 @@ namespace GasStationPOS
             }
         }
 
-        // === App Exit ===
+        // ============================== App Exit =================================
+
+        /// <summary>
+        /// Event handler for the application exit event.
+        /// This method attempts to delete all transactions from the transaction service before the application closes.
+        /// If the deletion fails, an error message is displayed to the user.
+        /// </summary>
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
             bool transactionsDeletionSuccessful = transactionService.DeleteAllTransactions();
@@ -1302,6 +1413,5 @@ namespace GasStationPOS
                 MessageBox.Show($"Error clearing data source data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
