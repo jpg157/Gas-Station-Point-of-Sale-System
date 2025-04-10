@@ -2592,7 +2592,6 @@
             this.Controls.Add(this.pnlHaltConfirmation);
             this.Controls.Add(this.cardPaymentUserControl);
             this.Controls.Add(this.cashPaymentUserControl);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
