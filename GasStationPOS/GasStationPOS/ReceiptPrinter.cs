@@ -65,7 +65,7 @@ namespace GasStationPOS
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Transaction list is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Transaction list is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -638,6 +638,8 @@ namespace GasStationPOS
                 {
                     btn.FlatAppearance.BorderColor = borderColor;
                     btn.FlatAppearance.BorderSize = borderSize;
+                    btn.BackColor = Color.DarkRed;
+                    btn.ForeColor = Color.LightCoral;
                 }
             }
         }
@@ -816,6 +818,10 @@ namespace GasStationPOS
 
             // Toggle the halted state flag
             allPumpsHalted = !allPumpsHalted;
+
+            // Toggle button text
+            btnHaltAllPumps.Text = allPumpsHalted ? "RESET ALL" : "ALL HALT";
+
             reset();
         }
 
@@ -861,8 +867,9 @@ namespace GasStationPOS
         private void HighlightSelectedPump(Button fuelPumpButton)
         {
             UnhighlightFuelPumps();
+            fuelPumpButton.BackColor = Color.Orange;
             fuelPumpButton.FlatAppearance.BorderColor = Color.Gold;
-            fuelPumpButton.FlatAppearance.BorderSize = 3;
+            fuelPumpButton.ForeColor = Color.Black;
         }
 
 
@@ -1412,6 +1419,14 @@ namespace GasStationPOS
             {
                 MessageBox.Show($"Error clearing data source data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Shows a message box saying the till is open.
+        /// </summary>
+        private void btnCashTill_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Cash Register Opened!", "Opened", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }
