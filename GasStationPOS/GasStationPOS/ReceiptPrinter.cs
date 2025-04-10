@@ -148,7 +148,8 @@ namespace GasStationPOS
 
             foreach (JsonElement gasProduct in TransactionFuelProductItems.EnumerateArray())
             {
-                sb.AppendLine($"{gasProduct.GetProperty("Quantity").GetInt32()}\t\t" +
+                string QuantityClean = gasProduct.GetProperty("Quantity").GetDouble().ToString("#");
+                sb.AppendLine($"{QuantityClean}\t\t" +
                     $"{gasProduct.GetProperty("FuelProduct").GetProperty("ProductName").ToString()}\t\t\t\t" +
                     $"${gasProduct.GetProperty("TotalItemPriceDollars").ToString()}");
             }
