@@ -13,6 +13,11 @@ namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
 {
     public class TransactionRepository : ITransactionRepository
     {
+        /// <summary>
+        /// Creates a new transaction in the json file transactions list.
+        /// </summary>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public async Task Create(Transaction transaction)
         {
             // create a TransactionDTO object from a Transaction object
@@ -49,6 +54,45 @@ namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
             {
                 await JsonSerializer.SerializeAsync(writeStream, transactionsJSONObjectWrapper, new JsonSerializerOptions{WriteIndented = true});
             }
+        }
+
+        /// <summary>
+        /// Gets all transactions from the json file.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<TransactionDatabaseDTO>> GetAll()
+        {
+            TransactionsJSONStructure transactionsJSONObjectWrapper;
+            using (FileStream readStream = File.OpenRead(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH)) // open transactions.json file in read mode
+            {
+                try
+                {
+                    transactionsJSONObjectWrapper = await JsonSerializer.DeserializeAsync<TransactionsJSONStructure>(readStream);
+
+                    if (transactionsJSONObjectWrapper?.Transactions == null) // if the json file "Transactions" property contained no transactions
+                    {
+                        transactionsJSONObjectWrapper.Transactions = new List<TransactionDatabaseDTO>();
+                    }
+                }
+                catch (JsonException) // if the json file was empty
+                {
+                    transactionsJSONObjectWrapper = new TransactionsJSONStructure();
+                    transactionsJSONObjectWrapper.Transactions = new List<TransactionDatabaseDTO>();
+                }
+            }
+            // returned the list of transactions stored in the json structure
+            return transactionsJSONObjectWrapper.Transactions;
+        }
+
+        /// <summary>
+        /// Deletes all transactions stored in the json file.
+        /// Throws an error if unsuccessful.
+        /// </summary>
+        public void DeleteAll()
+        {
+            // Clear the file by writing an empty string to it
+            File.WriteAllText(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH, string.Empty);
         }
     }
 }

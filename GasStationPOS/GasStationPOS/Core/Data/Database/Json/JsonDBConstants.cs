@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.Core.Database.Json
 {
-    public class JsonDBConstants
+    public static class JsonDBConstants
     {
         // (Will change and add other db constants if we migrate to SQL database)
         private static readonly string BASE_DIRECTORY_PATH = AppDomain.CurrentDomain.BaseDirectory; // Base directory of the application

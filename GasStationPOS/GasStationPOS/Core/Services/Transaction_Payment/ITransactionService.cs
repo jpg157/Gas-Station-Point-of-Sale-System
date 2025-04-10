@@ -12,5 +12,15 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
     public interface ITransactionService
     {
         Task<bool> CreateTransactionAsync(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products);
+        bool DeleteAllTransactions();
+
+        // Used in transaction review
+        int LatestTransactionNumber { get; }
+        Task<IEnumerable<ProductDTO>> GetTransactionProductListAsync(int currentlyChosenTransactionNum);
+
+        /// <summary>
+        /// Returns a valid chosen transaction number used when indexing through previous transactions (within
+        /// </summary>
+        int GetChosenTransactionNumberWithinBounds(int chosenTransactionNum);
     }
 }
