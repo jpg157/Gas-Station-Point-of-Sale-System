@@ -47,7 +47,7 @@ namespace GasStationPOS
     /// Author: Jason Lau
     /// Author: Vincent Fung
     /// Date: 10 April 2025
-    ///
+    /// 
     public partial class MainForm : Form
     {
         // ======================== SERVICES ========================
