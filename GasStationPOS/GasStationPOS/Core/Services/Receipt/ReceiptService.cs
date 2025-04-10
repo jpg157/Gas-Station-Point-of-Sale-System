@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
+using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
+using GasStationPOS.Core.Data.Models.TransactionModels;
+using GasStationPOS.Core.Data.Models.UserModels;
+using GasStationPOS.Core.Database.Json;
+using GasStationPOS.Core.Services.Transaction_Payment;
 
-namespace GasStationPOS
+namespace GasStationPOS.Core.Services.Receipt
 {
     /// <summary>
     /// A class responsible for printing receipts for transactions to the console and saving them to a file.
@@ -16,7 +22,7 @@ namespace GasStationPOS
     /// Date: 3 April 2025
     /// 
     /// </summary>
-    internal class ReceiptPrinter
+    public class ReceiptService: IReceiptService
     {
         private string Name = "Shake-Stack Petrol";
         private Dictionary<string, string> Location = new Dictionary<string, string>
@@ -28,44 +34,66 @@ namespace GasStationPOS
         };
         private string PhoneNumber = "(604)-XXX-XXXX";
         private int ReceiptNumber = 0;
-        private string TransactionsPath = Path.Combine(AppContext.BaseDirectory, "Core", "Data", "Database", "Json", "MockDatabase", "transactions.json");
+        private string TransactionsPath = JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH;
+
+        ITransactionService transactionService;
+
+        public ReceiptService(ITransactionService transactionService)
+        {
+            this.transactionService = transactionService;
+        }
 
         /// <summary>
         /// Prints the reciept to console.
         /// </summary>
         /// <returns></returns>
-        public void printReceipt()
+        public bool PrintReceipt(int transactionNumber)
         {
+            int validTransactionNumber = transactionService.GetChosenTransactionNumberWithinBounds(transactionNumber);
+
+            string contentToPrint = "";
+
             string data = File.ReadAllText(TransactionsPath);
 
             try
             {
                 using (JsonDocument temp = JsonDocument.Parse(data))
                 {
-                    JsonElement result = temp.RootElement.GetProperty("Transactions");
-                    string contentToPrint = "";
+                    JsonElement transactions = temp.RootElement.GetProperty("Transactions");
 
-                    foreach (JsonElement transaction in result.EnumerateArray())
+                    JsonElement matchingTransactionElement = transactions.EnumerateArray().FirstOrDefault(transactionElement =>
+                        Int32.Parse(transactionElement.GetProperty("TransactionNumber").ToString()) == validTransactionNumber);
+
+                    // If transaction was found:
+
+                    // JsonElement ValueKind property is set to Undefined
+                    // when the JsonElement does not contain any valid data
+                    // (an empty JsonElement is returned when no match is found in the FirstOrDefault query)
+                    if (matchingTransactionElement.ValueKind != JsonValueKind.Undefined) // if the json element returned is NOT empty and contains data
                     {
                         contentToPrint += parseDataToTransaction(
-                            transaction.GetProperty("TransactionNumber").GetInt32(),
-                            transaction.GetProperty("TransactionRetailProductItems"),
-                            transaction.GetProperty("TransactionFuelProductItems"),
-                            transaction.GetProperty("TotalAmountDollars").GetDouble(),
-                            transaction.GetProperty("PaymentMethod").ToString(),
-                            transaction.GetProperty("ChangeDollars").GetDouble()
-                            );
+                            matchingTransactionElement.GetProperty("TransactionNumber").GetInt32(),
+                            matchingTransactionElement.GetProperty("TransactionRetailProductItems"),
+                            matchingTransactionElement.GetProperty("TransactionFuelProductItems"),
+                            matchingTransactionElement.GetProperty("TotalAmountDollars").GetDouble(),
+                            matchingTransactionElement.GetProperty("PaymentMethod").ToString(),
+                            matchingTransactionElement.GetProperty("ChangeDollars").GetDouble()
+                        );
+                    
+                        // Print the Reciept to file.
+                        outputReceiptToFile(contentToPrint);
+
+                        return true;
                     }
-
-                    Console.WriteLine(contentToPrint);
-
-                    // Print the Reciept to file.
-                    outputReceiptToFile(contentToPrint);
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Transaction list is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 
@@ -73,7 +101,7 @@ namespace GasStationPOS
         /// Parses a singular transation to a string.
         /// </summary>
         /// <returns></returns>
-        public string parseDataToTransaction
+        private string parseDataToTransaction
         (
             int TransactionNumber,
             JsonElement TransactionRetailProductItems,

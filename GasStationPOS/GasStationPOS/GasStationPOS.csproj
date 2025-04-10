@@ -92,7 +92,8 @@
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
     <Compile Include="Core\Services\Processor\BarcodeRetailProductFileProcessor.cs" />
-    <Compile Include="ReceiptPrinter.cs" />
+    <Compile Include="Core\Services\Receipt\IReceiptService.cs" />
+    <Compile Include="Core\Services\Receipt\ReceiptService.cs" />
     <Compile Include="TransactionWrapper.cs" />
     <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\BarcodeRetailProductListWrapper.cs" />
     <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\FuelInputDataWrapper.cs" />

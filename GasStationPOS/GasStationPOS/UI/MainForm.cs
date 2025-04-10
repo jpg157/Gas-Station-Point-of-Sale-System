@@ -5,6 +5,7 @@ using GasStationPOS.Core.Services;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
 using GasStationPOS.Core.Services.Processor;
+using GasStationPOS.Core.Services.Receipt;
 using GasStationPOS.Core.Services.Transaction_Payment;
 using GasStationPOS.UI;
 using GasStationPOS.UI.Constants;
@@ -53,6 +54,7 @@ namespace GasStationPOS
         private readonly IInventoryService inventoryService; // for retrieving all retail and fuel product data to display to the UI
         private readonly ITransactionService transactionService;
         private readonly IAuthenticationService authenticationService;
+        private readonly IReceiptService receiptService;
 
         // ======================== BINDING SOURCES ========================
 
@@ -116,7 +118,8 @@ namespace GasStationPOS
         /// </summary>
         public MainForm(IInventoryService inventoryService,
                         ITransactionService transactionService,
-                        IAuthenticationService authenticationService) // dependency injection of services
+                        IAuthenticationService authenticationService,
+                        IReceiptService receiptService) // dependency injection of services
         {
             InitializeComponent();
 
@@ -124,6 +127,7 @@ namespace GasStationPOS
             this.inventoryService = inventoryService;
             this.transactionService = transactionService;
             this.authenticationService = authenticationService;
+            this.receiptService = receiptService;
 
             // === Initialize Main View STATE Data ===
             this.posMode = POSMode.TRANSACTION;
@@ -1305,9 +1309,27 @@ namespace GasStationPOS
         /// </summary>
         private void btnPrintReceipt_Click(object sender, EventArgs e)
         {
-            ReceiptPrinter rp = new ReceiptPrinter();
-            rp.printReceipt();
+            int chosenTransactionNum = TransactionConstants.INITIAL_TRANSACTION_NUM;
+
+            if (posMode == POSMode.PREVIOUS_TRANSACTION_REVIEW)
+            {
+                // currently chosen transaction number
+                chosenTransactionNum = currentlyChosenTransactionNum;
+            }
+            else if (posMode == POSMode.TRANSACTION)
+            {
+                // prevous transaction number
+                chosenTransactionNum = transactionService.LatestTransactionNumber;
+            }
+
+            // print the receipt
+            bool receiptPrintSuccessful = receiptService.PrintReceipt(chosenTransactionNum);
             textboxBarcode.Focus();
+
+            if (!receiptPrintSuccessful)
+            {
+                MessageBox.Show($"Transaction list is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

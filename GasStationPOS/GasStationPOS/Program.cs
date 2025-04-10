@@ -9,6 +9,7 @@ using GasStationPOS.Core.Data.Repositories.TransactionRepository;
 using GasStationPOS.Core.Data.Repositories.UserRepository;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
+using GasStationPOS.Core.Services.Receipt;
 using GasStationPOS.Core.Services.Transaction_Payment;
 
 namespace GasStationPOS
@@ -55,18 +56,19 @@ namespace GasStationPOS
             // ====== Dependency Injection ======
 
             // Data access layer
-            IRetailProductRepository    retailProductRepository = new RetailProductRepository();
-            IBarcodeRetailProductRepository barcodeRetailProductRepository = new BarcodeRetailProductRepository();
-            IUserRepository userRepository          = new UserRepository();
-            ITransactionRepository      transactionRepository   = new TransactionRepository();
+            IRetailProductRepository    retailProductRepository             = new RetailProductRepository();
+            IBarcodeRetailProductRepository barcodeRetailProductRepository  = new BarcodeRetailProductRepository();
+            IUserRepository userRepository                                  = new UserRepository();
+            ITransactionRepository transactionRepository                    = new TransactionRepository();
 
             // Services layer
             IInventoryService           inventoryService        = new InventoryService(retailProductRepository, barcodeRetailProductRepository);
             ITransactionService         transactionService      = new TransactionService(transactionRepository);
             IAuthenticationService      authenticationService   = new AuthenticationService(userRepository);
+            IReceiptService             receiptService          = new ReceiptService(transactionService);
 
             // UI layer
-            MainForm mainForm = new MainForm(inventoryService, transactionService, authenticationService);
+            MainForm mainForm = new MainForm(inventoryService, transactionService, authenticationService, receiptService);
 
             Application.Run(mainForm);
         }
