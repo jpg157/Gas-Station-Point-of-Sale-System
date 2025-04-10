@@ -1,5 +1,6 @@
 ﻿using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.Core.Data.Models.TransactionModels;
+using GasStationPOS.Core.Database.Json;
 using GasStationPOS.Core.Services;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
@@ -23,6 +24,16 @@ using System.Windows.Forms;
 
 namespace GasStationPOS
 {
+    /// <summary>
+    /// POSMode enum is used to track the current mode/state of the system.
+    /// Examples: Review of previous transactions mode, transaction mode.
+    /// </summary>
+    public enum POSMode
+    {
+        PREVIOUS_TRANSACTION_REVIEW,
+        TRANSACTION
+    }
+
     /// <summary>
     /// MainForm class for managing the Gas Station Point of Sale (POS) system. 
     /// It handles user interactions with the interface, such as adding products to the cart, 
@@ -91,6 +102,12 @@ namespace GasStationPOS
         private bool isHaltMode = false;
         private bool allPumpsHalted = false;  // Flag to track the halted state of all pumps
 
+        // Mode of the point of service system (previous transaction review, transaction)
+        private POSMode posMode;
+
+        // Currently selected transaction for previous transaction review
+        private int currentlyChosenTransactionNum;
+
         /// <summary>
         /// Constructor to initialize the MainForm
         /// </summary>
@@ -98,13 +115,16 @@ namespace GasStationPOS
                         ITransactionService transactionService,
                         IAuthenticationService authenticationService) // dependency injection of services
         {
-            //setupDatabase(); // Setup the user database ================================================================================================================================================
             InitializeComponent();
 
             // === Initilize required services ===
             this.inventoryService = inventoryService;
             this.transactionService = transactionService;
             this.authenticationService = authenticationService;
+
+            // === Initialize Main View STATE Data ===
+            this.posMode = POSMode.TRANSACTION;
+            this.currentlyChosenTransactionNum = TransactionConstants.INITIAL_TRANSACTION_NUM;
 
             // === Initilize Main View UI Underlying Data ===
 
@@ -159,6 +179,8 @@ namespace GasStationPOS
 
             // === ADD EVENT HANDLERS TO EVENTS IN LOGIN FORM ===
             AssociateLoginFormEvents();
+
+            Application.ApplicationExit += Application_ApplicationExit;
         }
 
         #region Button Label and Tag Setters
@@ -375,6 +397,12 @@ namespace GasStationPOS
 
             btnPayCash.Click += PayCashButton_Click;
             this.cashPaymentUserControl.CashEnterButtonClick += async delegate { await ConfirmPaymentButton_Click(PaymentMethod.CASH); }; // subscribe ConfirmPaymentButton_Click function to the CashEnterButtonClick EventHandler
+
+            // === Review Buttons ===
+
+            btnReview.Click         += ShowReviewAndCurrentlySelectedTransaction;
+            btnReviewForward.Click  += ShowNextTransaction;
+            btnReviewBackward.Click += ShowPreviousTransaction;
         }
 
         private void AssociateLoginFormEvents()
@@ -411,11 +439,13 @@ namespace GasStationPOS
             {
                 btnPayCard.Visible = false;
                 btnPayCash.Visible = false;
+                btnPayFuel.Visible = true;
             }
             else
             {
                 btnPayCard.Visible = true;
                 btnPayCash.Visible = true;
+                btnPayFuel.Visible = false;
             }
         }
 
@@ -433,6 +463,7 @@ namespace GasStationPOS
             pnlSelectCartItem.Visible = false;
             pnlHaltConfirmation.Visible = false;
             pnlHaltAllConfirmation.Visible = false;
+            pnlReview.Visible = false;
             this.cashPaymentUserControl.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
@@ -479,6 +510,9 @@ namespace GasStationPOS
             // Enable Halt Buttons
             btnHaltPump.Enabled = true;
             btnHaltAllPumps.Enabled = true;
+
+            // Enable item selection
+            listCart.SelectionMode = SelectionMode.One;
         }
 
         /// <summary>
@@ -513,6 +547,19 @@ namespace GasStationPOS
         private void btnBack_Click(object sender, EventArgs e)
         {
             reset();
+
+            if (posMode == POSMode.PREVIOUS_TRANSACTION_REVIEW)
+            {
+                // clear the user list cart data source of previous transaction items
+                MainFormDataUpdater.RemoveAllProductsFromCart(
+                    userCartProductsDataList,
+                    paymentDataWrapper,
+                    ref currentSelectedProductQuantity
+                );
+
+                // set system back to transaction mode
+                posMode = POSMode.TRANSACTION;
+            }
         }
 
         /// <summary>
@@ -992,6 +1039,9 @@ namespace GasStationPOS
             {
                 decimal amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
 
+                // Update the data source and the amount tendered UI label
+                paymentDataWrapper.AmountTendered += amountEntered;
+
                 paymentDataWrapper.AmountRemaining -= amountEntered;
 
                 // if there there is still an remaining amount to be paid
@@ -1148,5 +1198,110 @@ namespace GasStationPOS
             ReceiptPrinter rp = new ReceiptPrinter();
             rp.printReceipt();
         }
+
+
+        // ======================================== REVIEW ============================================
+
+        private void ShowPreviousTransaction(object sender, EventArgs e)
+        {
+            currentlyChosenTransactionNum--;
+            currentlyChosenTransactionNum = transactionService.GetChosenTransactionNumberWithinBounds(currentlyChosenTransactionNum);
+            ShowTransaction();
+        }
+
+        private void ShowNextTransaction(object sender, EventArgs e)
+        {
+            currentlyChosenTransactionNum++;
+            currentlyChosenTransactionNum = transactionService.GetChosenTransactionNumberWithinBounds(currentlyChosenTransactionNum);
+            ShowTransaction();
+        }
+
+        private void ShowReviewAndCurrentlySelectedTransaction(object sender, EventArgs e)
+        {
+            // don't allow review if the user is in a current transaction
+            if ((posMode == POSMode.TRANSACTION) && (userCartProductsDataList.Count > 0))
+            {
+                MessageBox.Show("Unable to open transaction review. Current transaction is in progress.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Set current point of service system mode to "review of previous transactions"
+            posMode = POSMode.PREVIOUS_TRANSACTION_REVIEW;
+
+            HidePanels();
+
+            pnlReview.Visible = true;
+            pnlBottomNavBack.Visible = true;
+
+            // Disable item selection from ui listbox
+            listCart.SelectionMode = SelectionMode.None;
+
+            // show transaction of the currently selected number
+            ShowTransaction();
+        }
+
+        private async void ShowTransaction()
+        {
+            labelReview.Text = $"Transaction Review {currentlyChosenTransactionNum} of {transactionService.LatestTransactionNumber}";
+
+
+            Tuple<IEnumerable<ProductDTO>, decimal> prevTransactionProductsAndAmountTendered = await transactionService.GetTransactionProductListAsync(currentlyChosenTransactionNum);
+            
+            // get a list of product dtos from one of the previous transactions, and update user list cart (READ ONLY) - CLEAR THE USER CART AFTER
+            IEnumerable<ProductDTO> previousTransactionProducts = prevTransactionProductsAndAmountTendered.Item1;
+
+            decimal prevTransactionAmountTendered = prevTransactionProductsAndAmountTendered.Item2;
+            decimal prevTransactionSubtotal = 0.0m;
+
+            // clear all if there were any products in the cart data source
+           MainFormDataUpdater.RemoveAllProductsFromCart(
+                userCartProductsDataList,
+                paymentDataWrapper,
+                ref currentSelectedProductQuantity
+            );
+
+            // add all items to userCartProductsDataList
+            foreach (ProductDTO productDTO in previousTransactionProducts)
+            {
+                if (productDTO is RetailProductDTO)
+                {
+                    // create deep copy of the RetailProduct
+                    RetailProductDTO rpDTOCopy = Program.GlobalMapper.Map<RetailProductDTO>((RetailProductDTO)productDTO); 
+
+                    rpDTOCopy.TotalPriceDollars = productDTO.TotalPriceDollars;
+                    rpDTOCopy.Quantity = productDTO.Quantity;
+
+                    this.userCartProductsDataList.Add(rpDTOCopy);
+
+                    prevTransactionSubtotal += rpDTOCopy.TotalPriceDollars;
+                }
+                else if (productDTO is FuelProductDTO)
+                {
+                    // create deep copy of the FuelProductDTO
+                    FuelProductDTO fpDTOCopy = Program.GlobalMapper.Map<FuelProductDTO>((FuelProductDTO)productDTO);
+
+                    userCartProductsDataList.Add(fpDTOCopy);
+
+                    prevTransactionSubtotal += fpDTOCopy.TotalPriceDollars;
+                }
+
+                // Show the price by updating data sources
+                paymentDataWrapper.Subtotal         = prevTransactionSubtotal;
+                paymentDataWrapper.AmountTendered   = prevTransactionAmountTendered;
+                paymentDataWrapper.AmountRemaining  = prevTransactionAmountTendered - prevTransactionSubtotal;
+            }
+        }
+
+        // === App Exit ===
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            bool transactionsDeletionSuccessful = transactionService.DeleteAllTransactions();
+
+            if (!transactionsDeletionSuccessful)
+            {
+                MessageBox.Show($"Error clearing data source data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
