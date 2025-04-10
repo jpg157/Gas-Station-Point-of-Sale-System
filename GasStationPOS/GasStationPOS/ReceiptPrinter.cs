@@ -26,7 +26,7 @@ namespace GasStationPOS
             { "province", "British Columbia" },
             { "postal code", "V6K2G7" },
         };
-        private string PhoneNumber = "(604)-731-5911";
+        private string PhoneNumber = "(604)-XXX-YYYY";
         private int ReceiptNumber = 0;
         private string TransactionsPath = Path.Combine(AppContext.BaseDirectory, "Core", "Data", "Database", "Json", "MockDatabase", "transactions.json");
 
@@ -198,6 +198,10 @@ namespace GasStationPOS
             }
             String finalPath = Path.Combine(AppContext.BaseDirectory, pathToWriteTo);
             Console.WriteLine($"Printed to: {finalPath}");
+
+            // Open the file with default text editor
+            System.Diagnostics.Process.Start("explorer", finalPath);
+
             ReceiptNumber++;
         }
 
