@@ -414,11 +414,13 @@ namespace GasStationPOS
             {
                 btnPayCard.Visible = false;
                 btnPayCash.Visible = false;
+                btnPayFuel.Visible = true;
             }
             else
             {
                 btnPayCard.Visible = true;
                 btnPayCash.Visible = true;
+                btnPayFuel.Visible = false;
             }
         }
 
@@ -436,6 +438,7 @@ namespace GasStationPOS
             pnlSelectCartItem.Visible = false;
             pnlHaltConfirmation.Visible = false;
             pnlHaltAllConfirmation.Visible = false;
+            pnlReview.Visible = false;
             this.cashPaymentUserControl.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
@@ -482,6 +485,9 @@ namespace GasStationPOS
             // Enable Halt Buttons
             btnHaltPump.Enabled = true;
             btnHaltAllPumps.Enabled = true;
+
+            // Enable item selection
+            listCart.SelectionMode = SelectionMode.One;
         }
 
         /// <summary>
@@ -1153,6 +1159,8 @@ namespace GasStationPOS
         }
 
 
+        // ======================================== REVIEW ============================================
+
         private void ClearJsonFile()
         {
             JsonDBConstants jsonFile = new JsonDBConstants();
@@ -1175,5 +1183,15 @@ namespace GasStationPOS
         }
 
 
+        private void btnReview_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+
+            pnlReview.Visible = true;
+            pnlBottomNavBack.Visible = true;
+
+            // Disable item selection
+            listCart.SelectionMode = SelectionMode.None;
+        }
     }
 }

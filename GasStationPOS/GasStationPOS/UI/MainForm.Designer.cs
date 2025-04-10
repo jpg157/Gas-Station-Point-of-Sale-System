@@ -183,6 +183,11 @@
             this.btnHaltAllYes = new System.Windows.Forms.Button();
             this.btnHaltAllNo = new System.Windows.Forms.Button();
             this.labelHaltAll = new System.Windows.Forms.Label();
+            this.pnlReview = new System.Windows.Forms.Panel();
+            this.labelReview = new System.Windows.Forms.Label();
+            this.btnReviewBackward = new System.Windows.Forms.Button();
+            this.btnReviewForward = new System.Windows.Forms.Button();
+            this.labalTransactionDate = new System.Windows.Forms.Label();
             this.cardPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CardPaymentUserControl();
             this.cashPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CashPaymentUserControl();
             this.pnlBottomNavMain.SuspendLayout();
@@ -213,6 +218,7 @@
             this.pnlHaltConfirmation.SuspendLayout();
             this.pnlHaltAllConfirmation.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.pnlReview.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBottomNavMain
@@ -314,6 +320,7 @@
             this.btnReview.TabIndex = 8;
             this.btnReview.Text = "Review";
             this.btnReview.UseVisualStyleBackColor = false;
+            this.btnReview.Click += new System.EventHandler(this.btnReview_Click);
             // 
             // btnPayFuel
             // 
@@ -696,6 +703,7 @@
             this.pnlSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSubtotal.BackColor = System.Drawing.Color.Tan;
             this.pnlSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSubtotal.Controls.Add(this.labalTransactionDate);
             this.pnlSubtotal.Controls.Add(this.labelRemaining);
             this.pnlSubtotal.Controls.Add(this.labelTendered);
             this.pnlSubtotal.Controls.Add(this.labelSubtotal);
@@ -2546,6 +2554,69 @@
             this.labelHaltAll.Text = "Are you sure?";
             this.labelHaltAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlReview
+            // 
+            this.pnlReview.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlReview.BackColor = System.Drawing.Color.Black;
+            this.pnlReview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlReview.Controls.Add(this.btnReviewForward);
+            this.pnlReview.Controls.Add(this.btnReviewBackward);
+            this.pnlReview.Controls.Add(this.labelReview);
+            this.pnlReview.Location = new System.Drawing.Point(619, 304);
+            this.pnlReview.Name = "pnlReview";
+            this.pnlReview.Size = new System.Drawing.Size(369, 151);
+            this.pnlReview.TabIndex = 8;
+            this.pnlReview.Visible = false;
+            // 
+            // labelReview
+            // 
+            this.labelReview.BackColor = System.Drawing.Color.Firebrick;
+            this.labelReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReview.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelReview.Location = new System.Drawing.Point(5, 6);
+            this.labelReview.Name = "labelReview";
+            this.labelReview.Size = new System.Drawing.Size(357, 85);
+            this.labelReview.TabIndex = 1;
+            this.labelReview.Text = "Transaction Review 0 of 0";
+            this.labelReview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnReviewBackward
+            // 
+            this.btnReviewBackward.BackColor = System.Drawing.Color.Gray;
+            this.btnReviewBackward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReviewBackward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReviewBackward.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReviewBackward.Location = new System.Drawing.Point(5, 96);
+            this.btnReviewBackward.Name = "btnReviewBackward";
+            this.btnReviewBackward.Size = new System.Drawing.Size(173, 48);
+            this.btnReviewBackward.TabIndex = 2;
+            this.btnReviewBackward.Text = "- Backward";
+            this.btnReviewBackward.UseVisualStyleBackColor = false;
+            // 
+            // btnReviewForward
+            // 
+            this.btnReviewForward.BackColor = System.Drawing.Color.Gray;
+            this.btnReviewForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReviewForward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReviewForward.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReviewForward.Location = new System.Drawing.Point(188, 96);
+            this.btnReviewForward.Name = "btnReviewForward";
+            this.btnReviewForward.Size = new System.Drawing.Size(174, 48);
+            this.btnReviewForward.TabIndex = 3;
+            this.btnReviewForward.Text = "+ Forward";
+            this.btnReviewForward.UseVisualStyleBackColor = false;
+            // 
+            // labalTransactionDate
+            // 
+            this.labalTransactionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labalTransactionDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labalTransactionDate.Location = new System.Drawing.Point(2, 3);
+            this.labalTransactionDate.Name = "labalTransactionDate";
+            this.labalTransactionDate.Size = new System.Drawing.Size(184, 92);
+            this.labalTransactionDate.TabIndex = 6;
+            this.labalTransactionDate.Text = "YYYY-MM-DD\r\nHH:MM:SS\r\n\r\nTransaction: 1";
+            this.labalTransactionDate.Visible = false;
+            // 
             // cardPaymentUserControl
             // 
             this.cardPaymentUserControl.BackColor = System.Drawing.Color.Firebrick;
@@ -2576,7 +2647,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1419, 743);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.pnlBottomNavMain);
             this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.textboxBarcode);
@@ -2585,13 +2655,15 @@
             this.Controls.Add(this.pnlFuelPumps);
             this.Controls.Add(this.pnlTopNavMain);
             this.Controls.Add(this.pnlSelectCartItem);
-            this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlAddFuelAmount);
             this.Controls.Add(this.pnlFuelConfirmation);
             this.Controls.Add(this.pnlHaltAllConfirmation);
             this.Controls.Add(this.pnlHaltConfirmation);
             this.Controls.Add(this.cardPaymentUserControl);
             this.Controls.Add(this.cashPaymentUserControl);
+            this.Controls.Add(this.pnlFuelTypeSelect);
+            this.Controls.Add(this.pnlReview);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -2625,6 +2697,7 @@
             this.pnlHaltConfirmation.ResumeLayout(false);
             this.pnlHaltAllConfirmation.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.pnlReview.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2787,6 +2860,11 @@
         private System.Windows.Forms.Button btnHaltAllYes;
         private System.Windows.Forms.Button btnHaltAllNo;
         private System.Windows.Forms.TextBox textboxBarcode;
+        private System.Windows.Forms.Panel pnlReview;
+        private System.Windows.Forms.Label labelReview;
+        private System.Windows.Forms.Button btnReviewForward;
+        private System.Windows.Forms.Button btnReviewBackward;
+        private System.Windows.Forms.Label labalTransactionDate;
     }
 }
 
