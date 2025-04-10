@@ -1288,6 +1288,7 @@ namespace GasStationPOS
                 // Show the price by updating data sources
                 paymentDataWrapper.Subtotal         = prevTransactionSubtotal;
                 paymentDataWrapper.AmountTendered   = prevTransactionAmountTendered;
+                paymentDataWrapper.AmountRemaining  = prevTransactionAmountTendered - prevTransactionSubtotal;
             }
         }
 
