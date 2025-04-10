@@ -1491,5 +1491,12 @@ namespace GasStationPOS
             Environment.Exit(0);          // Closes the current instance
         }
 
+        /// <summary>
+        /// Shows a message box saying it is not implemented.
+        /// </summary>
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Not Implemented!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
     }
 }

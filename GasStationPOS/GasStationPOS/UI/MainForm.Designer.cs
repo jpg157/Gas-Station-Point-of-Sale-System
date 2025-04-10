@@ -504,6 +504,7 @@
             this.btnMenu.TabIndex = 2;
             this.btnMenu.Text = "MENU";
             this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pnlFuelPumps
             // 
@@ -782,10 +783,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listCart.FormattingEnabled = true;
-            this.listCart.ItemHeight = 15;
+            this.listCart.ItemHeight = 18;
             this.listCart.Location = new System.Drawing.Point(0, 33);
             this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(441, 484);
+            this.listCart.Size = new System.Drawing.Size(441, 472);
             this.listCart.TabIndex = 1;
             this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
@@ -2378,7 +2379,7 @@
             this.labelAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAccountID.Location = new System.Drawing.Point(161, 165);
             this.labelAccountID.Name = "labelAccountID";
-            this.labelAccountID.Size = new System.Drawing.Size(107, 24);
+            this.labelAccountID.Size = new System.Drawing.Size(133, 29);
             this.labelAccountID.TabIndex = 7;
             this.labelAccountID.Text = "Account ID:";
             // 
@@ -2404,7 +2405,7 @@
             this.textBoxPassword.Location = new System.Drawing.Point(169, 279);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⛽';
-            this.textBoxPassword.Size = new System.Drawing.Size(261, 40);
+            this.textBoxPassword.Size = new System.Drawing.Size(261, 49);
             this.textBoxPassword.TabIndex = 5;
             // 
             // textBoxAccountID
@@ -2414,7 +2415,7 @@
             this.textBoxAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAccountID.Location = new System.Drawing.Point(169, 195);
             this.textBoxAccountID.Name = "textBoxAccountID";
-            this.textBoxAccountID.Size = new System.Drawing.Size(265, 40);
+            this.textBoxAccountID.Size = new System.Drawing.Size(265, 49);
             this.textBoxAccountID.TabIndex = 4;
             // 
             // labelPassword
@@ -2425,7 +2426,7 @@
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.Location = new System.Drawing.Point(165, 251);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(92, 24);
+            this.labelPassword.Size = new System.Drawing.Size(120, 29);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Password";
             // 
@@ -2680,7 +2681,7 @@
             this.textBoxProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductPrice.Location = new System.Drawing.Point(155, 234);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(261, 33);
+            this.textBoxProductPrice.Size = new System.Drawing.Size(261, 42);
             this.textBoxProductPrice.TabIndex = 3;
             this.textBoxProductPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -2690,7 +2691,7 @@
             this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductName.Location = new System.Drawing.Point(155, 179);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(261, 33);
+            this.textBoxProductName.Size = new System.Drawing.Size(261, 42);
             this.textBoxProductName.TabIndex = 2;
             this.textBoxProductName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxProductName_KeyPress);
@@ -2701,7 +2702,7 @@
             this.txtBoxProductBarcodeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProductBarcodeID.Location = new System.Drawing.Point(155, 124);
             this.txtBoxProductBarcodeID.Name = "txtBoxProductBarcodeID";
-            this.txtBoxProductBarcodeID.Size = new System.Drawing.Size(261, 33);
+            this.txtBoxProductBarcodeID.Size = new System.Drawing.Size(261, 42);
             this.txtBoxProductBarcodeID.TabIndex = 1;
             this.txtBoxProductBarcodeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -2866,7 +2867,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1419, 743);
-            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Controls.Add(this.pnlBottomNavMain);
             this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.textboxBarcode);
@@ -2886,6 +2886,7 @@
             this.Controls.Add(this.pnlLogoutConfirmation);
             this.Controls.Add(this.pnlFuelConfirmation);
             this.Controls.Add(this.pnlAddFuelAmount);
+            this.Controls.Add(this.tabelLayoutPanelLogin);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
