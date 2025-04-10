@@ -109,8 +109,7 @@ namespace GasStationPOS
         // Currently selected transaction for previous transaction review
         private int currentlyChosenTransactionNum;
 
-        // Adding Product mode
-        private bool isAddingNewProduct = false;
+        private bool isBarcodeTextFocused = true;
 
         /// <summary>
         /// Constructor to initialize the MainForm
@@ -469,6 +468,8 @@ namespace GasStationPOS
             pnlHaltAllConfirmation.Visible = false;
             pnlReview.Visible = false;
             pnlAddProduct.Visible = false;
+            pnlReport.Visible = false;
+            pnlLogoutConfirmation.Visible = false;
             this.cashPaymentUserControl.Visible = false;
             this.cardPaymentUserControl.Visible = false;
         }
@@ -519,7 +520,7 @@ namespace GasStationPOS
             // Enable item selection
             listCart.SelectionMode = SelectionMode.One;
 
-            isAddingNewProduct = false;
+            isBarcodeTextFocused = true;
             textboxBarcode.Focus();
         }
 
@@ -638,6 +639,8 @@ namespace GasStationPOS
                 {
                     btn.FlatAppearance.BorderColor = borderColor;
                     btn.FlatAppearance.BorderSize = borderSize;
+                    btn.BackColor = Color.DarkRed;
+                    btn.ForeColor = Color.LightCoral;
                 }
             }
         }
@@ -816,6 +819,10 @@ namespace GasStationPOS
 
             // Toggle the halted state flag
             allPumpsHalted = !allPumpsHalted;
+
+            // Toggle button text
+            btnHaltAllPumps.Text = allPumpsHalted ? "RESET ALL" : "ALL HALT";
+
             reset();
         }
 
@@ -861,8 +868,9 @@ namespace GasStationPOS
         private void HighlightSelectedPump(Button fuelPumpButton)
         {
             UnhighlightFuelPumps();
+            fuelPumpButton.BackColor = Color.Orange;
             fuelPumpButton.FlatAppearance.BorderColor = Color.Gold;
-            fuelPumpButton.FlatAppearance.BorderSize = 3;
+            fuelPumpButton.ForeColor = Color.Black;
         }
 
 
@@ -953,16 +961,23 @@ namespace GasStationPOS
         /// </summary>
         private void btnFuelCalculatorEnter_Click(object sender, EventArgs e)
         {
-            if (this.fuelInputDataWrapper.EnteredFuelPrice <= 0.0m)
+            decimal totalEnteredfuelPrice = this.fuelInputDataWrapper.EnteredFuelPrice;
+
+            if (totalEnteredfuelPrice <= 0.0m)
             {
                 MessageBox.Show("Please enter a valid fuel amount.");
+                return;
+            }
+
+            if (totalEnteredfuelPrice > 1000.0m)
+            {
+                MessageBox.Show("Please enter a valid fuel amount. Max $1000");
                 return;
             }
 
             // Get the data attributes from the fuelInputDataWrapper data source class
             int fuelPumpNumber = this.fuelInputDataWrapper.FuelPumpNumber;
             FuelGrade fuelGrade = this.fuelInputDataWrapper.EnteredFuelGrade;
-            decimal totalEnteredfuelPrice = this.fuelInputDataWrapper.EnteredFuelPrice;
             decimal resultingFuelQuantity = this.fuelInputDataWrapper.FuelQuantityLitres; // quantity gets automatically updated in the class when fuel price and grade change
 
             // generate a random id (temporary solution)
@@ -1046,6 +1061,18 @@ namespace GasStationPOS
             else if (paymentMethod == PaymentMethod.CASH)
             {
                 decimal amountEntered = this.cashPaymentUserControl.CashInputAmountDollars;
+
+                if (amountEntered <= 0.0m)
+                {
+                    MessageBox.Show("Please enter a valid fuel amount.");
+                    return;
+                }
+
+                if (amountEntered > 1000.0m)
+                {
+                    MessageBox.Show("Please enter a valid fuel amount. Max $1000 Accepted");
+                    return;
+                }
 
                 // Update the data source and the amount tendered UI label
                 paymentDataWrapper.AmountTendered += amountEntered;
@@ -1135,6 +1162,7 @@ namespace GasStationPOS
 
             // Successful login
             tabelLayoutPanelLogin.Visible = false;  // Hide the login panel
+            isBarcodeTextFocused = true;
             textboxBarcode.Focus(); // Focus on the barcode textbox for instant scanning
 
             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1173,7 +1201,7 @@ namespace GasStationPOS
                 // if the scanned product doesn't exist (null)
                 if (barcodeRetailProductExists == null)
                 {
-                    isAddingNewProduct = true;
+                    isBarcodeTextFocused = false;
 
                     // Prefill the barcode ID
                     txtBoxProductBarcodeID.Text = scannedBarcode;
@@ -1248,7 +1276,7 @@ namespace GasStationPOS
             MessageBox.Show("Product Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             reset();
-            isAddingNewProduct = false;
+            isBarcodeTextFocused = true;
             textboxBarcode.Focus(); // Ready for next scan
         }
 
@@ -1258,7 +1286,7 @@ namespace GasStationPOS
         /// </summary>
         private void textboxBarcode_Leave(object sender, EventArgs e)
         {
-            if (isAddingNewProduct)
+            if (!isBarcodeTextFocused)
                 return;
 
             // Set the focus back after a small delay
@@ -1397,14 +1425,21 @@ namespace GasStationPOS
             }
         }
 
-        // ============================== App Exit =================================
+        // ============================== APP EXIT =================================
 
         /// <summary>
-        /// Event handler for the application exit event.
+        /// Event handler for the application exit event
+        /// </summary>
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            DeleteTransactionJSONData();
+        }
+
+        /// <summary>
         /// This method attempts to delete all transactions from the transaction service before the application closes.
         /// If the deletion fails, an error message is displayed to the user.
         /// </summary>
-        private void Application_ApplicationExit(object sender, EventArgs e)
+        private void DeleteTransactionJSONData()
         {
             bool transactionsDeletionSuccessful = transactionService.DeleteAllTransactions();
 
@@ -1413,5 +1448,48 @@ namespace GasStationPOS
                 MessageBox.Show($"Error clearing data source data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Shows a message box saying the till is open.
+        /// </summary>
+        private void btnCashTill_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Cash Register Opened!", "Opened", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        // ============================== REPORT =================================
+
+        /// <summary>
+        /// Handles the click event for the Report button.
+        /// Hides all panels and shows the Report panel along with the bottom navigation back button.
+        /// </summary>
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlReport.Visible = true;
+            pnlBottomNavBack.Visible = true;
+        }
+
+        /// <summary>
+        /// Handles the click event for the Logout button.
+        /// Hides all panels and shows the Logout confirmation panel along with the bottom navigation back button.
+        /// </summary>
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlLogoutConfirmation.Visible = true;
+            pnlBottomNavBack.Visible = true;
+        }
+
+        /// <summary>
+        /// Handles the click event for confirming logout.
+        /// Restarts the application and cleanly exits the current instance.
+        /// </summary>
+        private void btnLogoutConfirm_Click(object sender, EventArgs e)
+        {
+            Application.Restart();        // Starts a new instance of the application
+            Environment.Exit(0);          // Closes the current instance
+        }
+
     }
 }

@@ -32,15 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlBottomNavMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanelBottomNavMain = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPayCash = new System.Windows.Forms.Button();
-            this.btnPayCard = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnReview = new System.Windows.Forms.Button();
             this.btnPayFuel = new System.Windows.Forms.Button();
-            this.btnPayout = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnLoyalty = new System.Windows.Forms.Button();
             this.btnLogo = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnPayCard = new System.Windows.Forms.Button();
+            this.btnPayCash = new System.Windows.Forms.Button();
             this.pnlTopNavMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanelNavTop = new System.Windows.Forms.TableLayoutPanel();
             this.lblDateTime = new System.Windows.Forms.Label();
@@ -78,18 +76,18 @@
             this.btnRp14 = new System.Windows.Forms.Button();
             this.btnRp13 = new System.Windows.Forms.Button();
             this.btnRp12 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnRp36 = new System.Windows.Forms.Button();
+            this.btnRp35 = new System.Windows.Forms.Button();
+            this.btnRp34 = new System.Windows.Forms.Button();
+            this.btnRp33 = new System.Windows.Forms.Button();
             this.btnRp11 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnRp32 = new System.Windows.Forms.Button();
+            this.btnRp31 = new System.Windows.Forms.Button();
+            this.btnRp30 = new System.Windows.Forms.Button();
+            this.btnRp29 = new System.Windows.Forms.Button();
             this.btnRp10 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnRp28 = new System.Windows.Forms.Button();
+            this.btnRp27 = new System.Windows.Forms.Button();
             this.btnRp22 = new System.Windows.Forms.Button();
             this.btnRp21 = new System.Windows.Forms.Button();
             this.btnRp9 = new System.Windows.Forms.Button();
@@ -188,17 +186,26 @@
             this.btnReviewForward = new System.Windows.Forms.Button();
             this.btnReviewBackward = new System.Windows.Forms.Button();
             this.labelReview = new System.Windows.Forms.Label();
+            this.pnlAddProduct = new System.Windows.Forms.Panel();
+            this.labelProductPrice = new System.Windows.Forms.Label();
+            this.labelProductName = new System.Windows.Forms.Label();
+            this.labelProductID = new System.Windows.Forms.Label();
+            this.btnAddProductConfirm = new System.Windows.Forms.Button();
+            this.textBoxProductPrice = new System.Windows.Forms.TextBox();
+            this.textBoxProductName = new System.Windows.Forms.TextBox();
+            this.txtBoxProductBarcodeID = new System.Windows.Forms.TextBox();
+            this.labelAddProduct = new System.Windows.Forms.Label();
+            this.pnlReport = new System.Windows.Forms.Panel();
+            this.labelReport = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pnlLogoutConfirmation = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogoutConfirm = new System.Windows.Forms.Button();
+            this.btnLogoutBack = new System.Windows.Forms.Button();
+            this.labelLogoutConfirmation = new System.Windows.Forms.Label();
             this.cardPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CardPaymentUserControl();
             this.cashPaymentUserControl = new GasStationPOS.UI.UserControls.Payment.CashPaymentUserControl();
-            this.pnlAddProduct = new System.Windows.Forms.Panel();
-            this.labelAddProduct = new System.Windows.Forms.Label();
-            this.txtBoxProductBarcodeID = new System.Windows.Forms.TextBox();
-            this.textBoxProductName = new System.Windows.Forms.TextBox();
-            this.textBoxProductPrice = new System.Windows.Forms.TextBox();
-            this.btnAddProductConfirm = new System.Windows.Forms.Button();
-            this.labelProductID = new System.Windows.Forms.Label();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.labelProductPrice = new System.Windows.Forms.Label();
             this.pnlBottomNavMain.SuspendLayout();
             this.tableLayoutPanelBottomNavMain.SuspendLayout();
             this.pnlTopNavMain.SuspendLayout();
@@ -229,6 +236,10 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.pnlReview.SuspendLayout();
             this.pnlAddProduct.SuspendLayout();
+            this.pnlReport.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlLogoutConfirmation.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBottomNavMain
@@ -255,15 +266,13 @@
             this.tableLayoutPanelBottomNavMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelBottomNavMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelBottomNavMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnPayCash, 6, 0);
-            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnPayCard, 5, 0);
             this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnClear, 9, 0);
             this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnReview, 8, 0);
             this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnPayFuel, 7, 0);
-            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnPayout, 3, 0);
-            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnReport, 2, 0);
-            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnLoyalty, 1, 0);
             this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnLogo, 0, 0);
+            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnReport, 1, 0);
+            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnPayCard, 2, 0);
+            this.tableLayoutPanelBottomNavMain.Controls.Add(this.btnPayCash, 3, 0);
             this.tableLayoutPanelBottomNavMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelBottomNavMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelBottomNavMain.Margin = new System.Windows.Forms.Padding(0);
@@ -272,36 +281,6 @@
             this.tableLayoutPanelBottomNavMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelBottomNavMain.Size = new System.Drawing.Size(1419, 81);
             this.tableLayoutPanelBottomNavMain.TabIndex = 0;
-            // 
-            // btnPayCash
-            // 
-            this.btnPayCash.BackColor = System.Drawing.Color.Green;
-            this.btnPayCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPayCash.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPayCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayCash.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayCash.Location = new System.Drawing.Point(849, 3);
-            this.btnPayCash.Name = "btnPayCash";
-            this.btnPayCash.Size = new System.Drawing.Size(135, 75);
-            this.btnPayCash.TabIndex = 12;
-            this.btnPayCash.Text = "Cash";
-            this.btnPayCash.UseVisualStyleBackColor = false;
-            this.btnPayCash.Visible = false;
-            // 
-            // btnPayCard
-            // 
-            this.btnPayCard.BackColor = System.Drawing.Color.Green;
-            this.btnPayCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPayCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPayCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayCard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayCard.Location = new System.Drawing.Point(708, 3);
-            this.btnPayCard.Name = "btnPayCard";
-            this.btnPayCard.Size = new System.Drawing.Size(135, 75);
-            this.btnPayCard.TabIndex = 11;
-            this.btnPayCard.Text = "Card Payment";
-            this.btnPayCard.UseVisualStyleBackColor = false;
-            this.btnPayCard.Visible = false;
             // 
             // btnClear
             // 
@@ -346,19 +325,19 @@
             this.btnPayFuel.UseVisualStyleBackColor = false;
             this.btnPayFuel.Click += new System.EventHandler(this.btnPayFuel_Click);
             // 
-            // btnPayout
+            // btnLogo
             // 
-            this.btnPayout.BackColor = System.Drawing.Color.DimGray;
-            this.btnPayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPayout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPayout.Location = new System.Drawing.Point(426, 3);
-            this.btnPayout.Name = "btnPayout";
-            this.btnPayout.Size = new System.Drawing.Size(135, 75);
-            this.btnPayout.TabIndex = 3;
-            this.btnPayout.Text = "Payout";
-            this.btnPayout.UseVisualStyleBackColor = false;
+            this.btnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLogo.Location = new System.Drawing.Point(3, 3);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(135, 75);
+            this.btnLogo.TabIndex = 0;
+            this.btnLogo.Text = "ShakeStack";
+            this.btnLogo.UseVisualStyleBackColor = false;
             // 
             // btnReport
             // 
@@ -367,40 +346,43 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnReport.Location = new System.Drawing.Point(285, 3);
+            this.btnReport.Location = new System.Drawing.Point(144, 3);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(135, 75);
             this.btnReport.TabIndex = 2;
             this.btnReport.Text = "Report";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // btnLoyalty
+            // btnPayCard
             // 
-            this.btnLoyalty.BackColor = System.Drawing.Color.DimGray;
-            this.btnLoyalty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoyalty.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLoyalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoyalty.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLoyalty.Location = new System.Drawing.Point(144, 3);
-            this.btnLoyalty.Name = "btnLoyalty";
-            this.btnLoyalty.Size = new System.Drawing.Size(135, 75);
-            this.btnLoyalty.TabIndex = 1;
-            this.btnLoyalty.Text = "Add Loyalty";
-            this.btnLoyalty.UseVisualStyleBackColor = false;
+            this.btnPayCard.BackColor = System.Drawing.Color.Green;
+            this.btnPayCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPayCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPayCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayCard.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPayCard.Location = new System.Drawing.Point(285, 3);
+            this.btnPayCard.Name = "btnPayCard";
+            this.btnPayCard.Size = new System.Drawing.Size(135, 75);
+            this.btnPayCard.TabIndex = 11;
+            this.btnPayCard.Text = "Card Payment";
+            this.btnPayCard.UseVisualStyleBackColor = false;
+            this.btnPayCard.Visible = false;
             // 
-            // btnLogo
+            // btnPayCash
             // 
-            this.btnLogo.BackColor = System.Drawing.Color.DimGray;
-            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLogo.Location = new System.Drawing.Point(3, 3);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Size = new System.Drawing.Size(135, 75);
-            this.btnLogo.TabIndex = 0;
-            this.btnLogo.Text = "ShakeShack";
-            this.btnLogo.UseVisualStyleBackColor = false;
+            this.btnPayCash.BackColor = System.Drawing.Color.Green;
+            this.btnPayCash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPayCash.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPayCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayCash.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPayCash.Location = new System.Drawing.Point(426, 3);
+            this.btnPayCash.Name = "btnPayCash";
+            this.btnPayCash.Size = new System.Drawing.Size(135, 75);
+            this.btnPayCash.TabIndex = 12;
+            this.btnPayCash.Text = "Cash";
+            this.btnPayCash.UseVisualStyleBackColor = false;
+            this.btnPayCash.Visible = false;
             // 
             // pnlTopNavMain
             // 
@@ -492,6 +474,7 @@
             this.btnCashTill.TabIndex = 3;
             this.btnCashTill.Text = "Open Till";
             this.btnCashTill.UseVisualStyleBackColor = false;
+            this.btnCashTill.Click += new System.EventHandler(this.btnCashTill_Click);
             // 
             // btnPrintReceipt
             // 
@@ -802,7 +785,7 @@
             this.listCart.ItemHeight = 15;
             this.listCart.Location = new System.Drawing.Point(0, 33);
             this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(441, 469);
+            this.listCart.Size = new System.Drawing.Size(441, 484);
             this.listCart.TabIndex = 1;
             this.listCart.SelectedIndexChanged += new System.EventHandler(this.listCart_SelectedIndexChanged);
             // 
@@ -850,18 +833,18 @@
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp14, 3, 5);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp13, 2, 5);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp12, 1, 5);
-            this.tableLayoutPanelProducts.Controls.Add(this.button25, 5, 4);
-            this.tableLayoutPanelProducts.Controls.Add(this.button24, 4, 4);
-            this.tableLayoutPanelProducts.Controls.Add(this.button23, 3, 4);
-            this.tableLayoutPanelProducts.Controls.Add(this.button22, 2, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp36, 5, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp35, 4, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp34, 3, 4);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp33, 2, 4);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp11, 1, 4);
-            this.tableLayoutPanelProducts.Controls.Add(this.button20, 5, 3);
-            this.tableLayoutPanelProducts.Controls.Add(this.button19, 4, 3);
-            this.tableLayoutPanelProducts.Controls.Add(this.button18, 3, 3);
-            this.tableLayoutPanelProducts.Controls.Add(this.button17, 2, 3);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp32, 5, 3);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp31, 4, 3);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp30, 3, 3);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp29, 2, 3);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp10, 1, 3);
-            this.tableLayoutPanelProducts.Controls.Add(this.button15, 5, 2);
-            this.tableLayoutPanelProducts.Controls.Add(this.button14, 4, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp28, 5, 2);
+            this.tableLayoutPanelProducts.Controls.Add(this.btnRp27, 4, 2);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp22, 3, 2);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp21, 2, 2);
             this.tableLayoutPanelProducts.Controls.Add(this.btnRp9, 1, 2);
@@ -982,65 +965,65 @@
             this.btnRp12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRp12.UseVisualStyleBackColor = false;
             // 
-            // button25
+            // btnRp36
             // 
-            this.button25.BackColor = System.Drawing.Color.Silver;
-            this.button25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button25.Location = new System.Drawing.Point(543, 355);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(108, 82);
-            this.button25.TabIndex = 35;
-            this.button25.Text = "-";
-            this.button25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button25.UseVisualStyleBackColor = false;
+            this.btnRp36.BackColor = System.Drawing.Color.Silver;
+            this.btnRp36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp36.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp36.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp36.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp36.Location = new System.Drawing.Point(543, 355);
+            this.btnRp36.Name = "btnRp36";
+            this.btnRp36.Size = new System.Drawing.Size(108, 82);
+            this.btnRp36.TabIndex = 35;
+            this.btnRp36.Text = "-";
+            this.btnRp36.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp36.UseVisualStyleBackColor = false;
             // 
-            // button24
+            // btnRp35
             // 
-            this.button24.BackColor = System.Drawing.Color.Silver;
-            this.button24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button24.Location = new System.Drawing.Point(435, 355);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(102, 82);
-            this.button24.TabIndex = 34;
-            this.button24.Text = "-";
-            this.button24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button24.UseVisualStyleBackColor = false;
+            this.btnRp35.BackColor = System.Drawing.Color.Silver;
+            this.btnRp35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp35.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp35.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp35.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp35.Location = new System.Drawing.Point(435, 355);
+            this.btnRp35.Name = "btnRp35";
+            this.btnRp35.Size = new System.Drawing.Size(102, 82);
+            this.btnRp35.TabIndex = 34;
+            this.btnRp35.Text = "-";
+            this.btnRp35.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp35.UseVisualStyleBackColor = false;
             // 
-            // button23
+            // btnRp34
             // 
-            this.button23.BackColor = System.Drawing.Color.Silver;
-            this.button23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button23.Location = new System.Drawing.Point(327, 355);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(102, 82);
-            this.button23.TabIndex = 33;
-            this.button23.Text = "-";
-            this.button23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button23.UseVisualStyleBackColor = false;
+            this.btnRp34.BackColor = System.Drawing.Color.Silver;
+            this.btnRp34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp34.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp34.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp34.Location = new System.Drawing.Point(327, 355);
+            this.btnRp34.Name = "btnRp34";
+            this.btnRp34.Size = new System.Drawing.Size(102, 82);
+            this.btnRp34.TabIndex = 33;
+            this.btnRp34.Text = "-";
+            this.btnRp34.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp34.UseVisualStyleBackColor = false;
             // 
-            // button22
+            // btnRp33
             // 
-            this.button22.BackColor = System.Drawing.Color.Silver;
-            this.button22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button22.Location = new System.Drawing.Point(219, 355);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(102, 82);
-            this.button22.TabIndex = 32;
-            this.button22.Text = "-";
-            this.button22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button22.UseVisualStyleBackColor = false;
+            this.btnRp33.BackColor = System.Drawing.Color.Silver;
+            this.btnRp33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp33.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp33.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp33.Location = new System.Drawing.Point(219, 355);
+            this.btnRp33.Name = "btnRp33";
+            this.btnRp33.Size = new System.Drawing.Size(102, 82);
+            this.btnRp33.TabIndex = 32;
+            this.btnRp33.Text = "-";
+            this.btnRp33.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp33.UseVisualStyleBackColor = false;
             // 
             // btnRp11
             // 
@@ -1057,65 +1040,65 @@
             this.btnRp11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRp11.UseVisualStyleBackColor = false;
             // 
-            // button20
+            // btnRp32
             // 
-            this.button20.BackColor = System.Drawing.Color.Silver;
-            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button20.Location = new System.Drawing.Point(543, 267);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(108, 82);
-            this.button20.TabIndex = 30;
-            this.button20.Text = "-";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button20.UseVisualStyleBackColor = false;
+            this.btnRp32.BackColor = System.Drawing.Color.Silver;
+            this.btnRp32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp32.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp32.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp32.Location = new System.Drawing.Point(543, 267);
+            this.btnRp32.Name = "btnRp32";
+            this.btnRp32.Size = new System.Drawing.Size(108, 82);
+            this.btnRp32.TabIndex = 30;
+            this.btnRp32.Text = "-";
+            this.btnRp32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp32.UseVisualStyleBackColor = false;
             // 
-            // button19
+            // btnRp31
             // 
-            this.button19.BackColor = System.Drawing.Color.Silver;
-            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button19.Location = new System.Drawing.Point(435, 267);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(102, 82);
-            this.button19.TabIndex = 29;
-            this.button19.Text = "-";
-            this.button19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button19.UseVisualStyleBackColor = false;
+            this.btnRp31.BackColor = System.Drawing.Color.Silver;
+            this.btnRp31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp31.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp31.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp31.Location = new System.Drawing.Point(435, 267);
+            this.btnRp31.Name = "btnRp31";
+            this.btnRp31.Size = new System.Drawing.Size(102, 82);
+            this.btnRp31.TabIndex = 29;
+            this.btnRp31.Text = "-";
+            this.btnRp31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp31.UseVisualStyleBackColor = false;
             // 
-            // button18
+            // btnRp30
             // 
-            this.button18.BackColor = System.Drawing.Color.Silver;
-            this.button18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button18.Location = new System.Drawing.Point(327, 267);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(102, 82);
-            this.button18.TabIndex = 28;
-            this.button18.Text = "-";
-            this.button18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button18.UseVisualStyleBackColor = false;
+            this.btnRp30.BackColor = System.Drawing.Color.Silver;
+            this.btnRp30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp30.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp30.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp30.Location = new System.Drawing.Point(327, 267);
+            this.btnRp30.Name = "btnRp30";
+            this.btnRp30.Size = new System.Drawing.Size(102, 82);
+            this.btnRp30.TabIndex = 28;
+            this.btnRp30.Text = "-";
+            this.btnRp30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp30.UseVisualStyleBackColor = false;
             // 
-            // button17
+            // btnRp29
             // 
-            this.button17.BackColor = System.Drawing.Color.Silver;
-            this.button17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button17.Location = new System.Drawing.Point(219, 267);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(102, 82);
-            this.button17.TabIndex = 27;
-            this.button17.Text = "-";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button17.UseVisualStyleBackColor = false;
+            this.btnRp29.BackColor = System.Drawing.Color.Silver;
+            this.btnRp29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp29.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp29.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp29.Location = new System.Drawing.Point(219, 267);
+            this.btnRp29.Name = "btnRp29";
+            this.btnRp29.Size = new System.Drawing.Size(102, 82);
+            this.btnRp29.TabIndex = 27;
+            this.btnRp29.Text = "-";
+            this.btnRp29.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp29.UseVisualStyleBackColor = false;
             // 
             // btnRp10
             // 
@@ -1132,35 +1115,35 @@
             this.btnRp10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRp10.UseVisualStyleBackColor = false;
             // 
-            // button15
+            // btnRp28
             // 
-            this.button15.BackColor = System.Drawing.Color.Silver;
-            this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button15.Location = new System.Drawing.Point(543, 179);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(108, 82);
-            this.button15.TabIndex = 25;
-            this.button15.Text = "-";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button15.UseVisualStyleBackColor = false;
+            this.btnRp28.BackColor = System.Drawing.Color.Silver;
+            this.btnRp28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp28.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp28.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp28.Location = new System.Drawing.Point(543, 179);
+            this.btnRp28.Name = "btnRp28";
+            this.btnRp28.Size = new System.Drawing.Size(108, 82);
+            this.btnRp28.TabIndex = 25;
+            this.btnRp28.Text = "-";
+            this.btnRp28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp28.UseVisualStyleBackColor = false;
             // 
-            // button14
+            // btnRp27
             // 
-            this.button14.BackColor = System.Drawing.Color.Silver;
-            this.button14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button14.Location = new System.Drawing.Point(435, 179);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(102, 82);
-            this.button14.TabIndex = 24;
-            this.button14.Text = "-";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnRp27.BackColor = System.Drawing.Color.Silver;
+            this.btnRp27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRp27.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRp27.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRp27.Location = new System.Drawing.Point(435, 179);
+            this.btnRp27.Name = "btnRp27";
+            this.btnRp27.Size = new System.Drawing.Size(102, 82);
+            this.btnRp27.TabIndex = 24;
+            this.btnRp27.Text = "-";
+            this.btnRp27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRp27.UseVisualStyleBackColor = false;
             // 
             // btnRp22
             // 
@@ -1329,30 +1312,32 @@
             // 
             // btnRp1
             // 
-            this.btnRp1.BackColor = System.Drawing.Color.Silver;
+            this.btnRp1.BackColor = System.Drawing.Color.Gray;
             this.btnRp1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRp1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRp1.Location = new System.Drawing.Point(3, 3);
             this.btnRp1.Name = "btnRp1";
             this.btnRp1.Size = new System.Drawing.Size(102, 82);
             this.btnRp1.TabIndex = 4;
             this.btnRp1.Text = "\nHOT BEVERAGE 12OZ";
+            this.btnRp1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRp1.UseVisualStyleBackColor = false;
             // 
             // btnRp2
             // 
-            this.btnRp2.BackColor = System.Drawing.Color.Silver;
+            this.btnRp2.BackColor = System.Drawing.Color.Gray;
             this.btnRp2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRp2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRp2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRp2.Location = new System.Drawing.Point(3, 91);
             this.btnRp2.Name = "btnRp2";
             this.btnRp2.Size = new System.Drawing.Size(102, 82);
             this.btnRp2.TabIndex = 5;
             this.btnRp2.Text = "HOT BEVERAGE 24OZ";
+            this.btnRp2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRp2.UseVisualStyleBackColor = false;
             // 
             // btnRp3
@@ -2472,7 +2457,7 @@
             // 
             this.textboxBarcode.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textboxBarcode.Location = new System.Drawing.Point(0, -54);
-            this.textboxBarcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textboxBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.textboxBarcode.Name = "textboxBarcode";
             this.textboxBarcode.Size = new System.Drawing.Size(128, 20);
             this.textboxBarcode.TabIndex = 15;
@@ -2625,30 +2610,6 @@
             this.labelReview.Text = "Transaction Review 0 of 0";
             this.labelReview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cardPaymentUserControl
-            // 
-            this.cardPaymentUserControl.BackColor = System.Drawing.Color.Firebrick;
-            this.cardPaymentUserControl.Location = new System.Drawing.Point(555, 260);
-            this.cardPaymentUserControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cardPaymentUserControl.Name = "cardPaymentUserControl";
-            this.cardPaymentUserControl.Size = new System.Drawing.Size(370, 204);
-            this.cardPaymentUserControl.TabIndex = 14;
-            this.cardPaymentUserControl.Visible = false;
-            // 
-            // cashPaymentUserControl
-            // 
-            this.cashPaymentUserControl.BackColor = System.Drawing.Color.Black;
-            this.cashPaymentUserControl.CashInputAmountDollars = new decimal(new int[] {
-            0,
-            0,
-            0,
-            65536});
-            this.cashPaymentUserControl.Location = new System.Drawing.Point(526, 145);
-            this.cashPaymentUserControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cashPaymentUserControl.Name = "cashPaymentUserControl";
-            this.cashPaymentUserControl.Size = new System.Drawing.Size(428, 434);
-            this.cashPaymentUserControl.TabIndex = 13;
-            // 
             // pnlAddProduct
             // 
             this.pnlAddProduct.BackColor = System.Drawing.Color.Black;
@@ -2666,48 +2627,38 @@
             this.pnlAddProduct.TabIndex = 16;
             this.pnlAddProduct.Visible = false;
             // 
-            // labelAddProduct
+            // labelProductPrice
             // 
-            this.labelAddProduct.BackColor = System.Drawing.Color.DarkRed;
-            this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddProduct.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelAddProduct.Location = new System.Drawing.Point(13, 15);
-            this.labelAddProduct.Name = "labelAddProduct";
-            this.labelAddProduct.Size = new System.Drawing.Size(412, 94);
-            this.labelAddProduct.TabIndex = 0;
-            this.labelAddProduct.Text = "Product Not Found\r\n\r\nAdd Product";
-            this.labelAddProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelProductPrice.Location = new System.Drawing.Point(18, 234);
+            this.labelProductPrice.Name = "labelProductPrice";
+            this.labelProductPrice.Size = new System.Drawing.Size(130, 33);
+            this.labelProductPrice.TabIndex = 7;
+            this.labelProductPrice.Text = "Price";
+            this.labelProductPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtBoxProductBarcodeID
+            // labelProductName
             // 
-            this.txtBoxProductBarcodeID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxProductBarcodeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxProductBarcodeID.Location = new System.Drawing.Point(155, 124);
-            this.txtBoxProductBarcodeID.Name = "txtBoxProductBarcodeID";
-            this.txtBoxProductBarcodeID.Size = new System.Drawing.Size(261, 33);
-            this.txtBoxProductBarcodeID.TabIndex = 1;
-            this.txtBoxProductBarcodeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelProductName.Location = new System.Drawing.Point(19, 179);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(130, 33);
+            this.labelProductName.TabIndex = 6;
+            this.labelProductName.Text = "Name";
+            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBoxProductName
+            // labelProductID
             // 
-            this.textBoxProductName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductName.Location = new System.Drawing.Point(155, 179);
-            this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(261, 33);
-            this.textBoxProductName.TabIndex = 2;
-            this.textBoxProductName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxProductName_KeyPress);
-            // 
-            // textBoxProductPrice
-            // 
-            this.textBoxProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProductPrice.Location = new System.Drawing.Point(155, 234);
-            this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(261, 33);
-            this.textBoxProductPrice.TabIndex = 3;
-            this.textBoxProductPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.labelProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductID.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelProductID.Location = new System.Drawing.Point(19, 124);
+            this.labelProductID.Name = "labelProductID";
+            this.labelProductID.Size = new System.Drawing.Size(130, 33);
+            this.labelProductID.TabIndex = 5;
+            this.labelProductID.Text = "Product ID";
+            this.labelProductID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAddProductConfirm
             // 
@@ -2723,38 +2674,191 @@
             this.btnAddProductConfirm.UseVisualStyleBackColor = false;
             this.btnAddProductConfirm.Click += new System.EventHandler(this.btnAddProductConfirm_Click);
             // 
-            // labelProductID
+            // textBoxProductPrice
             // 
-            this.labelProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductID.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelProductID.Location = new System.Drawing.Point(19, 124);
-            this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(130, 33);
-            this.labelProductID.TabIndex = 5;
-            this.labelProductID.Text = "Product ID";
-            this.labelProductID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textBoxProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProductPrice.Location = new System.Drawing.Point(155, 234);
+            this.textBoxProductPrice.Name = "textBoxProductPrice";
+            this.textBoxProductPrice.Size = new System.Drawing.Size(261, 33);
+            this.textBoxProductPrice.TabIndex = 3;
+            this.textBoxProductPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // labelProductName
+            // textBoxProductName
             // 
-            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelProductName.Location = new System.Drawing.Point(19, 179);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(130, 33);
-            this.labelProductName.TabIndex = 6;
-            this.labelProductName.Text = "Name";
-            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textBoxProductName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProductName.Location = new System.Drawing.Point(155, 179);
+            this.textBoxProductName.Name = "textBoxProductName";
+            this.textBoxProductName.Size = new System.Drawing.Size(261, 33);
+            this.textBoxProductName.TabIndex = 2;
+            this.textBoxProductName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxProductName_KeyPress);
             // 
-            // labelProductPrice
+            // txtBoxProductBarcodeID
             // 
-            this.labelProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelProductPrice.Location = new System.Drawing.Point(18, 234);
-            this.labelProductPrice.Name = "labelProductPrice";
-            this.labelProductPrice.Size = new System.Drawing.Size(130, 33);
-            this.labelProductPrice.TabIndex = 7;
-            this.labelProductPrice.Text = "Price";
-            this.labelProductPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtBoxProductBarcodeID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxProductBarcodeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxProductBarcodeID.Location = new System.Drawing.Point(155, 124);
+            this.txtBoxProductBarcodeID.Name = "txtBoxProductBarcodeID";
+            this.txtBoxProductBarcodeID.Size = new System.Drawing.Size(261, 33);
+            this.txtBoxProductBarcodeID.TabIndex = 1;
+            this.txtBoxProductBarcodeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelAddProduct
+            // 
+            this.labelAddProduct.BackColor = System.Drawing.Color.DarkRed;
+            this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddProduct.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelAddProduct.Location = new System.Drawing.Point(13, 15);
+            this.labelAddProduct.Name = "labelAddProduct";
+            this.labelAddProduct.Size = new System.Drawing.Size(412, 94);
+            this.labelAddProduct.TabIndex = 0;
+            this.labelAddProduct.Text = "Product Not Found\r\n\r\nAdd Product";
+            this.labelAddProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlReport
+            // 
+            this.pnlReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlReport.BackColor = System.Drawing.Color.Black;
+            this.pnlReport.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlReport.Controls.Add(this.labelReport);
+            this.pnlReport.Controls.Add(this.tableLayoutPanel1);
+            this.pnlReport.Location = new System.Drawing.Point(654, 257);
+            this.pnlReport.Name = "pnlReport";
+            this.pnlReport.Size = new System.Drawing.Size(272, 133);
+            this.pnlReport.TabIndex = 4;
+            this.pnlReport.Visible = false;
+            // 
+            // labelReport
+            // 
+            this.labelReport.BackColor = System.Drawing.Color.Firebrick;
+            this.labelReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelReport.Location = new System.Drawing.Point(3, 4);
+            this.labelReport.Name = "labelReport";
+            this.labelReport.Size = new System.Drawing.Size(261, 57);
+            this.labelReport.TabIndex = 1;
+            this.labelReport.Text = "Report";
+            this.labelReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btnLogout, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 64);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 63);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Gray;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(262, 57);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // pnlLogoutConfirmation
+            // 
+            this.pnlLogoutConfirmation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlLogoutConfirmation.BackColor = System.Drawing.Color.Black;
+            this.pnlLogoutConfirmation.Controls.Add(this.tableLayoutPanel2);
+            this.pnlLogoutConfirmation.Controls.Add(this.labelLogoutConfirmation);
+            this.pnlLogoutConfirmation.Location = new System.Drawing.Point(610, 272);
+            this.pnlLogoutConfirmation.Name = "pnlLogoutConfirmation";
+            this.pnlLogoutConfirmation.Size = new System.Drawing.Size(352, 178);
+            this.pnlLogoutConfirmation.TabIndex = 15;
+            this.pnlLogoutConfirmation.Visible = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLogoutConfirm, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnLogoutBack, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 113);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(336, 57);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // btnLogoutConfirm
+            // 
+            this.btnLogoutConfirm.BackColor = System.Drawing.Color.Silver;
+            this.btnLogoutConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogoutConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogoutConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogoutConfirm.Location = new System.Drawing.Point(171, 3);
+            this.btnLogoutConfirm.Name = "btnLogoutConfirm";
+            this.btnLogoutConfirm.Size = new System.Drawing.Size(162, 51);
+            this.btnLogoutConfirm.TabIndex = 1;
+            this.btnLogoutConfirm.Text = "YES";
+            this.btnLogoutConfirm.UseVisualStyleBackColor = false;
+            this.btnLogoutConfirm.Click += new System.EventHandler(this.btnLogoutConfirm_Click);
+            // 
+            // btnLogoutBack
+            // 
+            this.btnLogoutBack.BackColor = System.Drawing.Color.DimGray;
+            this.btnLogoutBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogoutBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogoutBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogoutBack.Location = new System.Drawing.Point(3, 3);
+            this.btnLogoutBack.Name = "btnLogoutBack";
+            this.btnLogoutBack.Size = new System.Drawing.Size(162, 51);
+            this.btnLogoutBack.TabIndex = 0;
+            this.btnLogoutBack.Text = "NO";
+            this.btnLogoutBack.UseVisualStyleBackColor = false;
+            this.btnLogoutBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // labelLogoutConfirmation
+            // 
+            this.labelLogoutConfirmation.BackColor = System.Drawing.Color.Firebrick;
+            this.labelLogoutConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelLogoutConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogoutConfirmation.ForeColor = System.Drawing.Color.Snow;
+            this.labelLogoutConfirmation.Location = new System.Drawing.Point(8, 9);
+            this.labelLogoutConfirmation.Name = "labelLogoutConfirmation";
+            this.labelLogoutConfirmation.Size = new System.Drawing.Size(337, 98);
+            this.labelLogoutConfirmation.TabIndex = 0;
+            this.labelLogoutConfirmation.Text = "Are you sure you want to logout and end the session?";
+            this.labelLogoutConfirmation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cardPaymentUserControl
+            // 
+            this.cardPaymentUserControl.BackColor = System.Drawing.Color.Firebrick;
+            this.cardPaymentUserControl.Location = new System.Drawing.Point(555, 260);
+            this.cardPaymentUserControl.Margin = new System.Windows.Forms.Padding(4);
+            this.cardPaymentUserControl.Name = "cardPaymentUserControl";
+            this.cardPaymentUserControl.Size = new System.Drawing.Size(370, 204);
+            this.cardPaymentUserControl.TabIndex = 14;
+            this.cardPaymentUserControl.Visible = false;
+            // 
+            // cashPaymentUserControl
+            // 
+            this.cashPaymentUserControl.BackColor = System.Drawing.Color.Black;
+            this.cashPaymentUserControl.CashInputAmountDollars = new decimal(new int[] {
+            0,
+            0,
+            0,
+            65536});
+            this.cashPaymentUserControl.Location = new System.Drawing.Point(526, 145);
+            this.cashPaymentUserControl.Margin = new System.Windows.Forms.Padding(4);
+            this.cashPaymentUserControl.Name = "cashPaymentUserControl";
+            this.cashPaymentUserControl.Size = new System.Drawing.Size(428, 434);
+            this.cashPaymentUserControl.TabIndex = 13;
             // 
             // MainForm
             // 
@@ -2763,7 +2867,6 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1419, 743);
             this.Controls.Add(this.tabelLayoutPanelLogin);
-            this.Controls.Add(this.pnlAddProduct);
             this.Controls.Add(this.pnlBottomNavMain);
             this.Controls.Add(this.pnlBottomNavBack);
             this.Controls.Add(this.textboxBarcode);
@@ -2771,15 +2874,18 @@
             this.Controls.Add(this.pnlCart);
             this.Controls.Add(this.pnlFuelPumps);
             this.Controls.Add(this.pnlTopNavMain);
-            this.Controls.Add(this.pnlSelectCartItem);
-            this.Controls.Add(this.pnlAddFuelAmount);
-            this.Controls.Add(this.pnlFuelConfirmation);
-            this.Controls.Add(this.pnlHaltAllConfirmation);
             this.Controls.Add(this.pnlHaltConfirmation);
             this.Controls.Add(this.cardPaymentUserControl);
             this.Controls.Add(this.cashPaymentUserControl);
             this.Controls.Add(this.pnlFuelTypeSelect);
             this.Controls.Add(this.pnlReview);
+            this.Controls.Add(this.pnlAddProduct);
+            this.Controls.Add(this.pnlSelectCartItem);
+            this.Controls.Add(this.pnlReport);
+            this.Controls.Add(this.pnlHaltAllConfirmation);
+            this.Controls.Add(this.pnlLogoutConfirmation);
+            this.Controls.Add(this.pnlFuelConfirmation);
+            this.Controls.Add(this.pnlAddFuelAmount);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -2816,6 +2922,10 @@
             this.pnlReview.ResumeLayout(false);
             this.pnlAddProduct.ResumeLayout(false);
             this.pnlAddProduct.PerformLayout();
+            this.pnlReport.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlLogoutConfirmation.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2878,18 +2988,18 @@
         private System.Windows.Forms.Button btnRp14;
         private System.Windows.Forms.Button btnRp13;
         private System.Windows.Forms.Button btnRp12;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnRp36;
+        private System.Windows.Forms.Button btnRp35;
+        private System.Windows.Forms.Button btnRp34;
+        private System.Windows.Forms.Button btnRp33;
         private System.Windows.Forms.Button btnRp11;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnRp32;
+        private System.Windows.Forms.Button btnRp31;
+        private System.Windows.Forms.Button btnRp30;
+        private System.Windows.Forms.Button btnRp29;
         private System.Windows.Forms.Button btnRp10;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnRp28;
+        private System.Windows.Forms.Button btnRp27;
         private System.Windows.Forms.Button btnRp22;
         private System.Windows.Forms.Button btnRp21;
         private System.Windows.Forms.Button btnRp9;
@@ -2904,9 +3014,7 @@
         private System.Windows.Forms.Button btnRp7;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Timer timerDateTime;
-        private System.Windows.Forms.Button btnPayout;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnLoyalty;
         private System.Windows.Forms.Button btnLogo;
         private System.Windows.Forms.Panel pnlBottomNavBack;
         private System.Windows.Forms.Button btnPayCash;
@@ -2992,6 +3100,15 @@
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelProductID;
         private System.Windows.Forms.Button btnAddProductConfirm;
+        private System.Windows.Forms.Panel pnlReport;
+        private System.Windows.Forms.Label labelReport;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel pnlLogoutConfirmation;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnLogoutConfirm;
+        private System.Windows.Forms.Button btnLogoutBack;
+        private System.Windows.Forms.Label labelLogoutConfirmation;
     }
 }
 
