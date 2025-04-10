@@ -1244,8 +1244,14 @@ namespace GasStationPOS
         {
             labelReview.Text = $"Transaction Review {currentlyChosenTransactionNum} of {transactionService.LatestTransactionNumber}";
 
+
+            Tuple<IEnumerable<ProductDTO>, decimal> prevTransactionProductsAndAmountTendered = await transactionService.GetTransactionProductListAsync(currentlyChosenTransactionNum);
+            
             // get a list of product dtos from one of the previous transactions, and update user list cart (READ ONLY) - CLEAR THE USER CART AFTER
-            IEnumerable<ProductDTO> previousTransactionProducts = await transactionService.GetTransactionProductListAsync(currentlyChosenTransactionNum);
+            IEnumerable<ProductDTO> previousTransactionProducts = prevTransactionProductsAndAmountTendered.Item1;
+
+            decimal prevTransactionAmountTendered = prevTransactionProductsAndAmountTendered.Item2;
+            decimal prevTransactionSubtotal = 0.0m;
 
             // clear all if there were any products in the cart data source
            MainFormDataUpdater.RemoveAllProductsFromCart(
@@ -1259,26 +1265,33 @@ namespace GasStationPOS
             {
                 if (productDTO is RetailProductDTO)
                 {
-                    MainFormDataUpdater.AddNewRetailProductToCart(
-                        this.userCartProductsDataList,
-                        (RetailProductDTO)productDTO,
-                        this.paymentDataWrapper,
-                        ref this.currentSelectedProductQuantity
-                    );
+                    // create deep copy of the RetailProduct
+                    RetailProductDTO rpDTOCopy = Program.GlobalMapper.Map<RetailProductDTO>((RetailProductDTO)productDTO); 
+
+                    rpDTOCopy.TotalPriceDollars = productDTO.TotalPriceDollars;
+                    rpDTOCopy.Quantity = productDTO.Quantity;
+
+                    this.userCartProductsDataList.Add(rpDTOCopy);
+
+                    prevTransactionSubtotal += rpDTOCopy.TotalPriceDollars;
                 }
                 else if (productDTO is FuelProductDTO)
                 {
-                    MainFormDataUpdater.AddNewFuelProductToCart(
-                        this.userCartProductsDataList,
-                        (FuelProductDTO)productDTO,
-                        this.paymentDataWrapper,
-                        this.fuelInputDataWrapper
-                    );
+                    // create deep copy of the FuelProductDTO
+                    FuelProductDTO fpDTOCopy = Program.GlobalMapper.Map<FuelProductDTO>((FuelProductDTO)productDTO);
+
+                    userCartProductsDataList.Add(fpDTOCopy);
+
+                    prevTransactionSubtotal += fpDTOCopy.TotalPriceDollars;
                 }
+
+                // Show the price by updating data sources
+                paymentDataWrapper.Subtotal         = prevTransactionSubtotal;
+                paymentDataWrapper.AmountTendered   = prevTransactionAmountTendered;
             }
         }
 
-            // === App Exit ===
+        // === App Exit ===
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
             bool transactionsDeletionSuccessful = transactionService.DeleteAllTransactions();

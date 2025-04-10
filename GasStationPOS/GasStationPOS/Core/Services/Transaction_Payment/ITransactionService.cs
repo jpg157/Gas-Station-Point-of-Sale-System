@@ -16,7 +16,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
 
         // Used in transaction review
         int LatestTransactionNumber { get; }
-        Task<IEnumerable<ProductDTO>> GetTransactionProductListAsync(int currentlyChosenTransactionNum);
+        Task<Tuple<IEnumerable<ProductDTO>, decimal>> GetTransactionProductListAsync(int currentlyChosenTransactionNum);
 
         /// <summary>
         /// Returns a valid chosen transaction number used when indexing through previous transactions (within

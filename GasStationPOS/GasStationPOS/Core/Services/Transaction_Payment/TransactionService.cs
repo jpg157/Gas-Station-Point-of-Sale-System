@@ -137,7 +137,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
         /// This method is asyncronous (to avoid blocking during data source load operations from transactionRepository get all method)
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<ProductDTO>> GetTransactionProductListAsync(int transactionNumber)
+        public async Task<Tuple<IEnumerable<ProductDTO>, decimal>> GetTransactionProductListAsync(int transactionNumber)
         {
             // ensure transaction number is within the valid range - from the first t.num to the current latest t.num
             int validTransactionNumber = GetChosenTransactionNumberWithinBounds(transactionNumber);
@@ -154,7 +154,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
             // if transaction was not found
             if (previousTransactionDbDto == null)
             {
-                return productDTOList;
+                return new Tuple<IEnumerable<ProductDTO>, decimal>(productDTOList, 0.0m);
             }
 
             // Load fuel and retail product data (as view dtos) into productDTOList from previous transaction database dto object
@@ -170,6 +170,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
 
                 // add unique fields not stored in the model
                 retailProductDTO.TotalPriceDollars = transactionRPItem.TotalItemPriceDollars;
+
                 retailProductDTO.Quantity = transactionRPItem.Quantity;
 
                 productDTOList.Add(retailProductDTO);
@@ -190,7 +191,9 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
                 productDTOList.Add(fuelProductDTO);
             }
 
-            return productDTOList;
+            decimal amountTendered = previousTransactionDbDto.TotalAmountDollars + previousTransactionDbDto.ChangeDollars;
+
+            return new Tuple<IEnumerable<ProductDTO>, decimal>(productDTOList, amountTendered);
         }
 
         /// <summary>
