@@ -1477,6 +1477,7 @@ namespace GasStationPOS
         private void btnCashTill_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Cash Register Opened!", "Opened", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            reset();
         }
 
         // ============================== REPORT =================================
@@ -1519,6 +1520,7 @@ namespace GasStationPOS
         private void btnMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Not Implemented!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            reset();
         }
     }
 }
