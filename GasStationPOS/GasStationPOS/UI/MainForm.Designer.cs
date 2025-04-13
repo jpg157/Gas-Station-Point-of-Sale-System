@@ -748,10 +748,10 @@
             // 
             // remainingText
             // 
-            this.remainingText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remainingText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remainingText.Location = new System.Drawing.Point(191, 55);
             this.remainingText.Name = "remainingText";
-            this.remainingText.Size = new System.Drawing.Size(122, 44);
+            this.remainingText.Size = new System.Drawing.Size(159, 44);
             this.remainingText.TabIndex = 2;
             this.remainingText.Text = "Remaining";
             this.remainingText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

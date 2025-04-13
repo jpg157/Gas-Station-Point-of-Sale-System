@@ -524,6 +524,8 @@ namespace GasStationPOS
             // Enable item selection
             listCart.SelectionMode = SelectionMode.One;
 
+            remainingText.Text = "Remaining";
+
             isBarcodeTextFocused = true;
             textboxBarcode.Focus();
         }
@@ -1382,6 +1384,7 @@ namespace GasStationPOS
 
             pnlReview.Visible = true;
             pnlBottomNavBack.Visible = true;
+            remainingText.Text = "Change Due";
 
             // Disable item selection from ui listbox
             listCart.SelectionMode = SelectionMode.None;
