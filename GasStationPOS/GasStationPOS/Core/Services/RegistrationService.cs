@@ -11,7 +11,7 @@ namespace GasStationPOS.Core.Services
     /// </summary>
     class RegistrationService
     {
-        // Not implemented (out of time)_
+        // Not implemented (out of time)
     }
 }
 

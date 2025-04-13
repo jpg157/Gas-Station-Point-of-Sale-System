@@ -9,6 +9,9 @@ using GasStationPOS.Core.Data.Models.TransactionModels;
 
 namespace GasStationPOS.Core.Data.Models.SessionModels
 {
+    /// <summary>
+    /// Session status enum. Not used.
+    /// </summary>
     public enum SessionStatus
     {
         OPEN,
@@ -40,8 +43,8 @@ namespace GasStationPOS.Core.Data.Models.SessionModels
         public List<Transaction> SessionTransactions { get; set; }
 
         // might change this later if we need more flexibility for category information
-        [Required(ErrorMessage = "RetailCategoryTotalSales is required")]
-        public Dictionary<RetailCategory, decimal> RetailCategoryTotalSales { get; set; } // <retailCategory, total sales ($) for that category>
+        //[Required(ErrorMessage = "RetailCategoryTotalSales is required")]
+        //public Dictionary<RetailCategory, decimal> RetailCategoryTotalSales { get; set; } // <retailCategory, total sales ($) for that category>
 
         [Required(ErrorMessage = "TotalSalesAmount is required")]
         [Range(0.0, 10000.0, ErrorMessage = "TotalSalesAmount must be between 0.0 and 10000.0")]

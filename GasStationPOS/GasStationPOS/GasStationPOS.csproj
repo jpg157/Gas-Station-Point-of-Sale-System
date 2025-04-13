@@ -103,7 +103,7 @@
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.Designer.cs">
       <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Core\Data\Database\Json\JsonDBConstants.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonFileConstants.cs" />
     <Compile Include="Core\Data\Database\Json\JsonFileSchemas\Products\RetailProductsJSONStructure.cs" />
     <Compile Include="Core\Data\Database\Json\JsonFileSchemas\User\UserDatabaseDTO.cs" />
     <Compile Include="Core\Data\Models\ProductModels\FuelProduct.cs" />
