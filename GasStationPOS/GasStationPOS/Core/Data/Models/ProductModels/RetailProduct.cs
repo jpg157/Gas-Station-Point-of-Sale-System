@@ -8,23 +8,30 @@ using System.Threading.Tasks;
 namespace GasStationPOS.Core.Data.Models.ProductModels
 {
 
-    // might change this later if we need more flexibility for category information
-    public enum RetailCategory
-    {
-        BEVERAGE,
-        SNACKS,
-        LOTTERY,
-        AUTOMOTIVE,
-        HOUSEHOLD_UTILS,
-        ELECTRONICS_ACCESSORIES
-    }
-    public enum ProductSizeVariation
-    {
-        SMALL,
-        MEDIUM,
-        LARGE
-    }
+    // For grouping by retail category. Not used.
+    //public enum RetailCategory
+    //{
+    //    BEVERAGE,
+    //    SNACKS,
+    //    LOTTERY,
+    //    AUTOMOTIVE,
+    //    HOUSEHOLD_UTILS,
+    //    ELECTRONICS_ACCESSORIES
+    //}
 
+    // Product size. Not used.
+    //public enum ProductSizeVariation
+    //{
+    //    SMALL,
+    //    MEDIUM,
+    //    LARGE
+    //}
+
+    /// <summary>
+    /// Session data model class.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public class RetailProduct : Product
     {
         //// might change this later if we need more flexibility for category information

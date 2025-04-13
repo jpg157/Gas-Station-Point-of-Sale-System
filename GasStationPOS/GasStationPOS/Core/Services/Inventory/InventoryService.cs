@@ -10,6 +10,13 @@ using GasStationPOS.Core.Data.Models.UserModels;
 
 namespace GasStationPOS.Core.Services.Inventory
 {
+
+    /// <summary>
+    /// Service class that provides inventory-related operations such as retrieving product data and checking product availability by barcode.
+    /// 
+    /// Author: Jason Lau
+    /// 
+    /// </summary>
     public class InventoryService : IInventoryService
     {
         private IRetailProductRepository        retailProductRepository;
@@ -30,7 +37,6 @@ namespace GasStationPOS.Core.Services.Inventory
         /// Gets all retail product data in the form of RetailProduct model data classes, 
         /// and converts them into the equivalent DTO.
         /// </summary>
-        /// <returns></returns>
         public IEnumerable<RetailProductDTO> GetAllRetailProductData()
         {
             IEnumerable<RetailProduct> retailProductModelDataList;
@@ -51,6 +57,11 @@ namespace GasStationPOS.Core.Services.Inventory
             return retailProductDTODataList;
         }
 
+        /// <summary>
+        /// Checks if the barcode retail product with the entered barcodeId exists.
+        /// Returns it if it exists, otherwise returns null.
+        /// </summary>
+        /// <param name="barcode"></param>
         public BarcodeRetailProductDTO CheckAndReturnIfBarcodeRetailProductExits(string barcode)
         {
             //bool barcodeRetailProductExistsInDb = false;
@@ -66,19 +77,5 @@ namespace GasStationPOS.Core.Services.Inventory
 
             return barcodeRetailProductDTO;
         }
-
-        //public RetailProductDTO GetRetailProductByBarcode(string barcode)
-        //{
-        //    // Step 1: Get the full barcode product (from JSON DB)
-        //    BarcodeRetailProduct bcRetailProduct = barcodeRetailProductRepository.Get(barcode);
-
-        //    if (bcRetailProduct == null)
-        //        return null;
-
-        //    // Step 2: Map the BarcodeRetailProduct model to a DTO
-        //    RetailProductDTO barcodeRetailProductDTO = Program.GlobalMapper.Map<RetailProductDTO>(bcRetailProduct);
-
-        //    return barcodeRetailProductDTO;
-        //}
     }
 }

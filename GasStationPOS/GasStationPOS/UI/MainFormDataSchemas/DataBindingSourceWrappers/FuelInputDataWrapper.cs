@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.UI.Constants;
 
-namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
+namespace GasStationPOS.UI.MainFormDataSchemas.DataBindingSourceWrappers
 {
     /// <summary>
     /// FuelInputDataWrapper class stores data from user input fuel products. It should be data binded with the corresponding UI controls.

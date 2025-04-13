@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.Core.Data.Models.ProductModels
 {
+    /// <summary>
+    /// Barcode retail product data model class.
+    /// 
+    /// Author: Mansib Talukder
+    /// </summary>
     public class BarcodeRetailProduct : RetailProduct
     {
         [Required(ErrorMessage = "BarcodeId is required")]

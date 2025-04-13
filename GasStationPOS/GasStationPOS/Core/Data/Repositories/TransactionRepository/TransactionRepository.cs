@@ -5,12 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
+using GasStationPOS.Core.Data.Database.Json.JsonFileSchemas;
 using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Database.Json;
 
 namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
 {
+    /// <summary>
+    /// Repository class that does crud operations on the data source.
+    /// Data source is currently a json file.
+    /// 
+    /// Author: Jason Lau
+    /// 
+    /// </summary>
     public class TransactionRepository : ITransactionRepository
     {
         /// <summary>
@@ -28,7 +35,7 @@ namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
 
             // 1. read and deserialize all of the json file into an object
             TransactionsJSONStructure transactionsJSONObjectWrapper;
-            using (FileStream readStream = File.OpenRead(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH)) // open transactions.json file in read mode
+            using (FileStream readStream = File.OpenRead(JsonFileConstants.TRANSACTIONS_JSON_FILE_PATH)) // open transactions.json file in read mode
             {
                 try
                 {
@@ -50,7 +57,7 @@ namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
             transactionsJSONObjectWrapper.Transactions.Add(transactionDatabaseDTO);
 
             // 3. write and serialize the json object to the same json file (overwriting previous contents with the additional transation added)
-            using (FileStream writeStream = File.Create(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH)) // File.Create mode overwrites the existing transactions.json file
+            using (FileStream writeStream = File.Create(JsonFileConstants.TRANSACTIONS_JSON_FILE_PATH)) // File.Create mode overwrites the existing transactions.json file
             {
                 await JsonSerializer.SerializeAsync(writeStream, transactionsJSONObjectWrapper, new JsonSerializerOptions{WriteIndented = true});
             }
@@ -60,11 +67,10 @@ namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
         /// Gets all transactions from the json file.
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public async Task<IEnumerable<TransactionDatabaseDTO>> GetAll()
         {
             TransactionsJSONStructure transactionsJSONObjectWrapper;
-            using (FileStream readStream = File.OpenRead(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH)) // open transactions.json file in read mode
+            using (FileStream readStream = File.OpenRead(JsonFileConstants.TRANSACTIONS_JSON_FILE_PATH)) // open transactions.json file in read mode
             {
                 try
                 {
@@ -92,7 +98,7 @@ namespace GasStationPOS.Core.Data.Repositories.TransactionRepository
         public void DeleteAll()
         {
             // Clear the file by writing an empty string to it
-            File.WriteAllText(JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH, string.Empty);
+            File.WriteAllText(JsonFileConstants.TRANSACTIONS_JSON_FILE_PATH, string.Empty);
         }
     }
 }

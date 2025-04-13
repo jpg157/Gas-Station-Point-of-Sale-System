@@ -81,22 +81,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Products\BarcodeRetailProductsJSONStructure.cs" />
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionDatabaseDTO.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonFileSchemas\Products\BarcodeRetailProductsJSONStructure.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonFileSchemas\Transaction\TransactionDatabaseDTO.cs" />
     <Compile Include="Core\Data\Models\ProductModels\BarcodeRetailProduct.cs" />
     <Compile Include="Core\Data\Models\TransactionModels\TransactionFuelProductItem.cs" />
     <Compile Include="Core\Data\Models\TransactionModels\TransactionRetailProductItem.cs" />
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\Transaction\TransactionsJSONStructure.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonFileSchemas\Transaction\TransactionsJSONStructure.cs" />
     <Compile Include="Core\Data\Repositories\Product\BarcodeRetailProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\Product\IBarcodeRetailProductRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\ITransactionRepository.cs" />
     <Compile Include="Core\Data\Repositories\TransactionRepository\TransactionRepository.cs" />
-    <Compile Include="Core\Services\Processor\BarcodeRetailProductFileProcessor.cs" />
+    <Compile Include="Core\Services\ProductCreation\ProductCreationService.cs" />
+    <Compile Include="Core\Services\ProductCreation\IProductCreationService.cs" />
     <Compile Include="Core\Services\Receipt\IReceiptService.cs" />
     <Compile Include="Core\Services\Receipt\ReceiptService.cs" />
-    <Compile Include="TransactionWrapper.cs" />
-    <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\BarcodeRetailProductListWrapper.cs" />
-    <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\FuelInputDataWrapper.cs" />
+    <Compile Include="UI\MainFormDataSchemas\DataBindingSourceWrappers\FuelInputDataWrapper.cs" />
     <Compile Include="UI\MainFormDataSchemas\DTOs\BarcodeRetailProductDTO.cs" />
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.cs">
       <SubType>UserControl</SubType>
@@ -104,10 +103,9 @@
     <Compile Include="UI\UserControls\Payment\CardPaymentUserControl.Designer.cs">
       <DependentUpon>CardPaymentUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CartItem.cs" />
     <Compile Include="Core\Data\Database\Json\JsonDBConstants.cs" />
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\RetailProductsJSONStructure.cs" />
-    <Compile Include="Core\Data\Database\Json\JsonToModelDTOs\UserDatabaseDTO.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonFileSchemas\Products\RetailProductsJSONStructure.cs" />
+    <Compile Include="Core\Data\Database\Json\JsonFileSchemas\User\UserDatabaseDTO.cs" />
     <Compile Include="Core\Data\Models\ProductModels\FuelProduct.cs" />
     <Compile Include="Core\Data\Models\ProductModels\Product.cs" />
     <Compile Include="Core\Data\Models\ProductModels\RetailProduct.cs" />
@@ -141,7 +139,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\MainFormDataSchemas\DTOs\FuelProductDTO.cs" />
-    <Compile Include="UI\MainFormDataSchemas\DataSourceWrappers\PaymentDataWrapper.cs" />
+    <Compile Include="UI\MainFormDataSchemas\DataBindingSourceWrappers\PaymentDataWrapper.cs" />
     <Compile Include="UI\MainFormDataSchemas\DTOs\ProductDTO.cs" />
     <Compile Include="UI\MainFormDataSchemas\DTOs\RetailProductDTO.cs" />
     <Compile Include="UI\MainFormDataUpdater.cs" />
@@ -201,7 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\DataValidation\" />
-    <Folder Include="Core\Data\Database\Json\JsonToModelDTOs\User\" />
     <Folder Include="Core\Data\Database\SQL\" />
     <Folder Include="Resources\" />
   </ItemGroup>

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.UI.Constants
 {
+    /// <summary>
+    /// Button name prefixes used for groups of like-buttons 
+    /// (ex. retail product add button, fuel pump button, quantity selection button).
+    /// </summary>
     public static class ButtonNamePrefixes
     {
         public static readonly string RETAIL_BUTTON_PREFIX      = "btnRp";

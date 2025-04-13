@@ -31,11 +31,6 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DTOs
         [StringLength(30, MinimumLength = 1, ErrorMessage = "ProductNameDescription must be between 1 and 30 characters")]
         public string ProductName { get; set; }
 
-        // Commented out properties for description (potentially future use)
-        // [Required(ErrorMessage = "Description is required")]
-        // [StringLength(500, MinimumLength = 1, ErrorMessage = "Description must be between 1 and 500 characters")]
-        // public string Description { get; set; }
-
         /// <summary>
         /// Gets or sets the unit price of the product in dollars.
         /// This property is required, and its value must be between 0.0 and 10,000.0 dollars.

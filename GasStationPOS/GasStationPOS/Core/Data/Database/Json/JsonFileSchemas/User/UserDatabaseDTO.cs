@@ -6,8 +6,13 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs
+namespace GasStationPOS.Core.Data.Database.Json.JsonFileSchemas
 {
+    /// <summary>
+    /// JSON file Data Transfer Object (DTO) for a retail product.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public class UserDatabaseDTO
     {
         [JsonPropertyName("Id")]

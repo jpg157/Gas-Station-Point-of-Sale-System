@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs
+namespace GasStationPOS.Core.Data.Database.Json.JsonFileSchemas
 {
     public class TransactionsJSONStructure
     {

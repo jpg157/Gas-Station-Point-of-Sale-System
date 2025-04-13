@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.Core.Database.Json
 {
-    public static class JsonDBConstants
+    /// <summary>
+    /// Stores paths to the json files used for data storage.
+    /// </summary>
+    public static class JsonFileConstants
     {
         // (Will change and add other db constants if we migrate to SQL database)
         private static readonly string BASE_DIRECTORY_PATH = AppDomain.CurrentDomain.BaseDirectory; // Base directory of the application
@@ -16,11 +19,9 @@ namespace GasStationPOS.Core.Database.Json
 
         // JSON File names ===
         private static readonly string RETAIL_PRODUCTS_JSON_FILE_NAME   = "retail_products.json";
-        private static readonly string FUEL_PRODUCTS_JSON_FILE_NAME     = "fuel_products.json";
         private static readonly string USERS_JSON_FILE_NAME             = "users.json";
         private static readonly string TRANSACTIONS_JSON_FILE_NAME      = "transactions.json";
         private static readonly string BARCODE_RETAIL_PRODUCTS_JSON_FILE_NAME = "barcode_retail_products.json";
-        //...
 
         // Public constants ===
         public static readonly string RETAIL_PRODUCTS_JSON_FILE_PATH            = Path.Combine(BASE_DIRECTORY_PATH, PATH_TO_JSON_DB, JSON_DB_NAME, RETAIL_PRODUCTS_JSON_FILE_NAME);

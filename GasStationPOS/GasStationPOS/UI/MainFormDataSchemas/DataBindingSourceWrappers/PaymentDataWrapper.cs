@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GasStationPOS.UI.Constants;
 
-namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
+namespace GasStationPOS.UI.MainFormDataSchemas.DataBindingSourceWrappers
 {
     /// <summary>
     /// PaymentDataWrapper class contains subtotal, amounttendered, and amountremaining
@@ -24,6 +24,7 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers
         private decimal subtotal;
         private decimal amountTendered;
         private decimal amountRemaining;
+
         public decimal Subtotal
         {
             get => subtotal;

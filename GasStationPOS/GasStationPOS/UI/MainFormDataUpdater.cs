@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.UI.Constants;
-using GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers;
+using GasStationPOS.UI.MainFormDataSchemas.DataBindingSourceWrappers;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 
 namespace GasStationPOS.UI
@@ -23,8 +23,6 @@ namespace GasStationPOS.UI
     /// </summary>
     public static class MainFormDataUpdater
     {
-        #region Event handlers that are attached to the view
-
         // Event handlers for updating Data (not UI) ===
 
         // All data that will be updated should be passed
@@ -60,11 +58,25 @@ namespace GasStationPOS.UI
             fuelInputDataWrapper.EnteredFuelGrade = selectedFuelGrade;
         }
 
+        /// <summary>
+        /// Updates the entered fuel price value variable stored in the UI.
+        /// </summary>
+        /// <param name="fuelInputDataWrapper"></param>
+        /// <param name="newEnteredFuelPrice"></param>
         public static void UpdateEnteredFuelPrice(FuelInputDataWrapper fuelInputDataWrapper, decimal newEnteredFuelPrice)
         {
             fuelInputDataWrapper.EnteredFuelPrice = newEnteredFuelPrice;
         }
 
+        /// <summary>
+        /// Adds a retail product to the cart by making a copy of the existing selected retail product dto (stored "beneath the selected retail product button" 
+        /// and adding to the list cart data source.
+        /// Updates payment information fields accordingly.
+        /// </summary>
+        /// <param name="userCartProductsDataList"></param>
+        /// <param name="rpDTO"></param>
+        /// <param name="paymentDataWrapper"></param>
+        /// <param name="currentSelectedQuantityRef"></param>
         public static void AddNewRetailProductToCart(
             BindingList<ProductDTO> userCartProductsDataList, 
             RetailProductDTO        rpDTO,
@@ -93,6 +105,13 @@ namespace GasStationPOS.UI
             currentSelectedQuantityRef = QuantityConstants.DEFAULT_RETAIL_PRODUCT_QUANTITY_VALUE;
         }
 
+        /// <summary>
+        /// Adds a fuel product to the list cart data source. Updates payment information fields accordingly.
+        /// </summary>
+        /// <param name="userCartProductsDataList"></param>
+        /// <param name="fpDTO"></param>
+        /// <param name="paymentDataWrapper"></param>
+        /// <param name="fuelInputDataWrapper"></param>
         public static void AddNewFuelProductToCart(
             BindingList<ProductDTO> userCartProductsDataList,
             FuelProductDTO fpDTO,
@@ -117,6 +136,12 @@ namespace GasStationPOS.UI
             fuelInputDataWrapper.ResetPaymentRelatedDataSourcesToInitValues();
         }
 
+        /// <summary>
+        /// Removes the selected product from the list cart data source, if it exists. UI updated via data binding.
+        /// </summary>
+        /// <param name="userCartProductsDataList"></param>
+        /// <param name="productToRemove"></param>
+        /// <param name="paymentDataWrapper"></param>
         public static void RemoveProductFromCart(
             BindingList<ProductDTO> userCartProductsDataList,
             ProductDTO productToRemove, // this productDTO is either a RetailProductDTO or a FuelProductDTO (using LSPrinciple)
@@ -134,6 +159,12 @@ namespace GasStationPOS.UI
             paymentDataWrapper.UpdatePaymentRelatedDataSources(priceChange);
         }
 
+        /// <summary>
+        /// Removes all products form the list cart data source. UI updated via data binding.
+        /// </summary>
+        /// <param name="userCartProductsDataList"></param>
+        /// <param name="paymentDataWrapper"></param>
+        /// <param name="currentSelectedProductQuantity"></param>
         public static void RemoveAllProductsFromCart(
             BindingList<ProductDTO> userCartProductsDataList, 
             PaymentDataWrapper paymentDataWrapper,
@@ -148,6 +179,5 @@ namespace GasStationPOS.UI
             // reset subtotal and amountRemaining
             paymentDataWrapper.ResetPaymentRelatedDataSourcesToInitValues(); // UI is automatically updated bc of the BindingSource attached
         }
-        #endregion
     }
 }

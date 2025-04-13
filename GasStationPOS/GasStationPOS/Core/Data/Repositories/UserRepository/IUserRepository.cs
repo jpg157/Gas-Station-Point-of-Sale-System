@@ -7,6 +7,9 @@ using GasStationPOS.Core.Data.Models.UserModels;
 
 namespace GasStationPOS.Core.Data.Repositories.UserRepository
 {
+    /// <summary>
+    /// Interface to repository class that does crud operations on the data source.
+    /// </summary>
     public interface IUserRepository
     {
         /// <summary>

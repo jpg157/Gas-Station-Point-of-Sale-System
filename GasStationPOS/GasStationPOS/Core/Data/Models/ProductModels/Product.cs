@@ -9,6 +9,11 @@ using System.Xml.Linq;
 
 namespace GasStationPOS.Core.Data.Models.ProductModels
 {
+    /// <summary>
+    /// Product data model abstract class.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public abstract class Product
     {
         [Required(ErrorMessage = "Id is required")]

@@ -11,6 +11,10 @@ using GasStationPOS.UI.Constants;
 
 namespace GasStationPOS.UI.UserControls.Payment
 {
+    /// <summary>
+    /// Cash payment user control for accepting cash input, 
+    /// and contains a cash value property that can be read by the MainForm.
+    /// </summary>
     public partial class CashPaymentUserControl : UserControl
     {
         // Variable to store the input for cash amount tendered

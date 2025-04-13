@@ -4,12 +4,12 @@ using GasStationPOS.Core.Database.Json;
 using GasStationPOS.Core.Services;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
-using GasStationPOS.Core.Services.Processor;
+using GasStationPOS.Core.Services.ProductCreation;
 using GasStationPOS.Core.Services.Receipt;
 using GasStationPOS.Core.Services.Transaction_Payment;
 using GasStationPOS.UI;
 using GasStationPOS.UI.Constants;
-using GasStationPOS.UI.MainFormDataSchemas.DataSourceWrappers;
+using GasStationPOS.UI.MainFormDataSchemas.DataBindingSourceWrappers;
 using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 using GasStationPOS.UI.UIFormValidation;
 using GasStationPOS.UI.UserControls.Payment;
@@ -20,6 +20,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,11 +56,12 @@ namespace GasStationPOS
         private readonly ITransactionService transactionService;
         private readonly IAuthenticationService authenticationService;
         private readonly IReceiptService receiptService;
+        private readonly IProductCreationService productCreationService;
 
         // ======================== BINDING SOURCES ========================
 
-        // binding sources allow for UI control data (Text, Label, ListBox contents, etc.) to be AUTOMATICALLY updated when connected to a data source
-        // - updates to the data source will be syncronized UI
+        // binding sources allow for UI control data (Text, Label, ListBox contents, etc.) to be automatically updated when connected to a data source
+        // - data source values will be syncronized with displayed UI control states or values.
 
         // USER CART data binding source (CONTENTS WILL CHANGE)
         private readonly BindingSource userCartProductsBindingSource;
@@ -119,6 +121,7 @@ namespace GasStationPOS
         public MainForm(IInventoryService inventoryService,
                         ITransactionService transactionService,
                         IAuthenticationService authenticationService,
+                        IProductCreationService productCreationService,
                         IReceiptService receiptService) // dependency injection of services
         {
             InitializeComponent();
@@ -127,6 +130,7 @@ namespace GasStationPOS
             this.inventoryService = inventoryService;
             this.transactionService = transactionService;
             this.authenticationService = authenticationService;
+            this.productCreationService = productCreationService;
             this.receiptService = receiptService;
 
             // === Initialize Main View STATE Data ===
@@ -172,7 +176,6 @@ namespace GasStationPOS
             this.SetRetailProductButtonDataFromSource(retailProductsDataList);
             this.SetFuelPumpButtonDataFromSource(fuelProductPumpNumberList);
             this.SetProductQuantityButtonDataFromSource(retailProductQuantitiesList);
-
             this.SetFuelGradeButtonData();
 
             // === Bind UI controls with the Binding sources ===
@@ -187,6 +190,7 @@ namespace GasStationPOS
             // === ADD EVENT HANDLERS TO EVENTS IN LOGIN FORM ===
             AssociateLoginFormEvents();
 
+            // Add application exit event handler
             Application.ApplicationExit += Application_ApplicationExit;
         }
 
@@ -197,8 +201,6 @@ namespace GasStationPOS
         /// 
         /// The label of each button is set to a value based on the corresponding retail product that it corresponds to
         /// Retail Product data is IEnumerable<RetailProductDTO> (data converted from json file / database in the presenter)
-        /// 
-        /// Method is called in the presenter - not in this main form class.
         /// </summary>
         private void SetRetailProductButtonDataFromSource(IEnumerable<RetailProductDTO> retailProductsDataList)
         {
@@ -218,7 +220,7 @@ namespace GasStationPOS
 
                 // ====== EVENT RELATED ======
 
-                // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
+                // ( More efficient to put here instead of in AssociateMainFormEvents() )
 
                 // 3. Associate MainFormDataUpdater.AddNewRetailProductToCart function to the click event of each retail product button
                 RetailProductDTO rpDtoReference = ((RetailProductDTO)retailProductButton.Tag);
@@ -237,6 +239,12 @@ namespace GasStationPOS
             }
         }
 
+        /// <summary>
+        /// Dynamically configures fuel pump buttons based on a list of fuel pump numbers.
+        /// Each button is assigned a label, a tag value representing the pump number,
+        /// and a click event handler.
+        /// </summary>
+        /// <param name="fuelPumpNumberList"></param>
         private void SetFuelPumpButtonDataFromSource(IEnumerable<int> fuelPumpNumberList)
         {
             foreach (int fuelPumpNumber in fuelPumpNumberList)
@@ -253,7 +261,7 @@ namespace GasStationPOS
 
                 // ====== EVENT RELATED ======
 
-                // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
+                // ( More efficient to put here instead of in AssociateMainFormEvents() )
 
                 // 3. Associate MainFormDataUpdater.UpdateSelectedPumpNumber function to the click event of each pump number update button
                 fuelPumpButton.Click += btnFuelPump_Click;
@@ -283,8 +291,6 @@ namespace GasStationPOS
         /// 
         /// The label of each button is set to a value based on the corresponding quantity that it corresponds to
         /// Quantity data is IEnumerable<int> (data converted from json file / database in the presenter)
-        /// 
-        /// Method is called in the presenter - not in this main form class.
         /// </summary>
         private void SetProductQuantityButtonDataFromSource(IEnumerable<int> retailProductQuantityDataList)
         {
@@ -302,7 +308,7 @@ namespace GasStationPOS
 
                 // ====== EVENT RELATED ======
 
-                // ( More efficient to put here instead of in AssociateAndRaiseViewEvents() )
+                // ( More efficient to put here instead of in AssociateMainFormEvents() )
 
                 // 3. Associate MainFormDataUpdater.UpdateSelectedProductQuantity function to the click event of each product quantity update button
                 updateQuantityButton.Click += delegate {
@@ -335,9 +341,9 @@ namespace GasStationPOS
 
         /// <summary>
         /// Sets the binding sources of the Labels:
-        /// labelPumpNum   <-> fuelProductInputDataBindingSource - FuelPumpNumber (decimal) 
-        /// labelFuelType   <-> fuelProductInputDataBindingSource - EnteredFuelGrade (decimal)
-        /// labelFuelPrice  <-> fuelProductInputDataBindingSource - EnteredFuelPrice (decimal)
+        /// labelPumpNum   <-> fuelProductInputDataBindingSource.FuelPumpNumber (decimal) 
+        /// labelFuelType   <-> fuelProductInputDataBindingSource.EnteredFuelGrade (decimal)
+        /// labelFuelPrice  <-> fuelProductInputDataBindingSource.EnteredFuelPrice (decimal)
         /// </summary>
         /// <param name="fuelProductInputDataBindingSource"></param>
         private void SetFuelProductInfoLabelsBindingSource(BindingSource fuelProductInputDataBindingSource)
@@ -356,9 +362,9 @@ namespace GasStationPOS
 
         /// <summary>
         /// Sets the binding sources of the Labels:
-        /// labelSubtotal   <-> paymentDataBindingSource - Subtotal (decimal)
-        /// labelTendered   <-> paymentDataBindingSource - AmountTendered (decimal)
-        /// labelRemaining  <-> paymentDataBindingSource - AmountRemaining (decimal)
+        /// labelSubtotal   <-> paymentDataBindingSource.Subtotal (decimal)
+        /// labelTendered   <-> paymentDataBindingSource.AmountTendered (decimal)
+        /// labelRemaining  <-> paymentDataBindingSource.AmountRemaining (decimal)
         /// </summary>
         /// <param name="paymentDataBindingSource"></param>
         private void SetPaymentInfoLabelsBindingSource(BindingSource paymentDataBindingSource)
@@ -380,7 +386,7 @@ namespace GasStationPOS
         #region Attach Eventhandlers to events of single standalone Buttons in the main form UI
 
         /// <summary>
-        /// Attaches EventHandler objects to buttons, that do not have data binding properties with data stored in the presenter (retail, fuel and quantity buttons do)
+        /// Attaches EventHandlers to main form buttons, that do not have data binding properties with data stored in the presenter (retail, fuel and quantity buttons do)
         /// </summary>
         private void AssociateMainFormEvents()
         {
@@ -412,6 +418,9 @@ namespace GasStationPOS
             btnReviewBackward.Click += ShowPreviousTransaction;
         }
 
+        /// <summary>
+        /// Attaches EventHandlers to login component buttons.
+        /// </summary>
         private void AssociateLoginFormEvents()
         {
             // === Login Button ===
@@ -1174,7 +1183,14 @@ namespace GasStationPOS
 
         // ======================================== BARCODE SCANNER ============================================
 
-
+        /// <summary>
+        /// Event handler for when data is entered into the textbox
+        /// When the barcode scanner scans, it inputs a digit string 
+        /// (translated from the barcode read) onto a textbox that is being focused. 
+        /// and presses enter.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the character is a letter and convert it to uppercase
@@ -1186,6 +1202,7 @@ namespace GasStationPOS
 
         /// <summary>
         /// Handles the logic for when a key is pressed in the barcode textbox, specifically when the Enter key is pressed.
+        /// (When the barcode scanner we used scans a product, the enter key is pressed as user input).
         /// It checks if the scanned barcode exists in the inventory and adds the corresponding product to the cart if found.
         /// </summary>
         private void textboxBarcode_KeyDown(object sender, KeyEventArgs e)
@@ -1244,8 +1261,8 @@ namespace GasStationPOS
         /// <summary>
         /// Event handler for the "Add Product" button click event.
         /// This method validates the input fields for barcode ID, product name, and price, 
-        /// creates a new <see cref="BarcodeRetailProduct"/> object, and adds it to the JSON file.
-        /// If the fields are incomplete or the price format is invalid, an error message is displayed.
+        /// and creates a new barcode retail product.
+        /// If the fields are incomplete or the price format or value is invalid, an error message is displayed.
         /// </summary>
         private void btnAddProductConfirm_Click(object sender, EventArgs e)
         {
@@ -1265,17 +1282,14 @@ namespace GasStationPOS
                 return;
             }
 
-            // Create new product object
-            var newProduct = new BarcodeRetailProduct
+            if (unitPrice <= 0.0m)
             {
-                Id = 0,
-                BarcodeId = barcodeId,
-                ProductName = productName,
-                UnitPriceDollars = unitPrice
-            };
+                MessageBox.Show("Please enter a positive price value.");
+                return;
+            }
 
-            // Add to JSON file
-            BarcodeRetailProductFileProcessor.AddNewProductToFile(newProduct);
+            // Add the new barcode retail product to the data storage
+            productCreationService.CreateBarcodeRetailProduct(barcodeId, productName, unitPrice);
 
             MessageBox.Show("Product Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

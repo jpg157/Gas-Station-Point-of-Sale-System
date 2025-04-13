@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.Core.Data.Models.ProductModels
 {
+    /// <summary>
+    /// Fuel grade of the fuel product.
+    /// </summary>
     public enum FuelGrade
     {
         REGULAR,
@@ -14,6 +17,11 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
         SUPREME
     }
 
+    /// <summary>
+    /// FuelProduct data model class.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public class FuelProduct : Product
     {
         // PriceDollars for FuelProduct (inherited from Product) is the PRICE ($)/LITRE.
@@ -42,7 +50,7 @@ namespace GasStationPOS.Core.Data.Models.ProductModels
     /// Util class (not part of the data model)
     /// - used for calculations for displaying in UI and storing in DB)
     /// </summary>
-    static class FuelGradeUtils
+    public static class FuelGradeUtils
     {
         /// <summary>
         /// Returns the fuel price (in dollars / litre) for the entered FuelGrade

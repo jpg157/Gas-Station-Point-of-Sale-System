@@ -6,8 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
-//using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs.Transaction;
+using GasStationPOS.Core.Data.Database.Json.JsonFileSchemas;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Data.Models.UserModels;
@@ -18,8 +17,13 @@ using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 namespace GasStationPOS.Core.Services.Transaction_Payment
 {
     /// <summary>
-    /// Service for transaction operations (create, delete all, get previous) - methods called from main form.
-    /// Uses transation repository for data source access.
+    /// Service for transaction operations 
+    /// (create new transaction, get all transactions,
+    /// delete all transactions, get previous) - methods called from main form.
+    /// Uses transation repository to access data storage.
+    /// 
+    /// Author: Jason Lau
+    /// 
     /// </summary>
     public class TransactionService : ITransactionService
     {
@@ -31,11 +35,11 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
         private int currentTransactionNumber;
 
         /// <summary>
-        /// The latest transaction number
+        /// The latest transaction number.
         /// </summary>
         public int LatestTransactionNumber
         {
-            get => Math.Max(currentTransactionNumber - 1, TransactionConstants.INITIAL_TRANSACTION_NUM); 
+            get => Math.Max(currentTransactionNumber - 1, TransactionConstants.INITIAL_TRANSACTION_NUM);
         }
 
         public TransactionService(ITransactionRepository transactionRepository)
@@ -44,6 +48,15 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
             this.currentTransactionNumber = TransactionConstants.INITIAL_TRANSACTION_NUM;
         }
 
+        /// <summary>
+        /// Creates a new transaction and stores in the data source.
+        /// This method is asyncronous.
+        /// </summary>
+        /// <param name="paymentMethod"></param>
+        /// <param name="totalAmountDollars"></param>
+        /// <param name="amountTenderedDollars"></param>
+        /// <param name="products"></param>
+        /// <returns></returns>
         public async Task<bool> CreateTransactionAsync(PaymentMethod paymentMethod, decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products)
         {
             // validate parameters
@@ -116,7 +129,7 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
         }
 
         /// <summary>
-        /// Deletes all transactions stored in the data source. Returns true if successful, otherwise false.
+        /// Deletes all transactions stored in the data storage. Returns true if successful, otherwise false.
         /// </summary>
         public bool DeleteAllTransactions()
         {
@@ -133,10 +146,11 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
 
         /// <summary>
         /// Returns a collection of all the product dtos in the previous transaction (within the bounds of the first and current latest transaction numbers)
+        /// and the amount tendered.
         /// Returns an empty collection if there were no previous transactions, or transaction was not found.
         /// This method is asyncronous (to avoid blocking during data source load operations from transactionRepository get all method)
         /// </summary>
-        /// <returns></returns>
+        /// <param name="transactionNumber"></param>
         public async Task<Tuple<IEnumerable<ProductDTO>, decimal>> GetTransactionProductListAsync(int transactionNumber)
         {
             // ensure transaction number is within the valid range - from the first t.num to the current latest t.num
@@ -219,48 +233,15 @@ namespace GasStationPOS.Core.Services.Transaction_Payment
             return validTransactionNumber;
         }
 
-        ///// <summary>
-        ///// Returns a collection of all the product dtos in the FIRST transaction.
-        ///// Returns an empty collection if there were no previous transactions, or transaction was not found.
-        ///// This method is asyncronous (to avoid blocking during data source load operations from transactionRepository get all method)
-        ///// </summary>
-        //public async Task<Tuple<IEnumerable<ProductDTO>, int>> GetFirstTransactionProductListAsync()
-        //{
-        //    return await GetProductsForTransactionNumberAsync(TransactionConstants.INITIAL_TRANSACTION_NUM);
-        //}
-
-        ///// <summary>
-        ///// Returns a collection of all the product dtos in the NEXT transaction. 
-        ///// If at the end of the transaction list, will return the prodcut list for the same transaction.
-        ///// Returns an empty collection if there were no previous transactions, or transaction was not found.
-        ///// This method is asyncronous (to avoid blocking during data source load operations from transactionRepository get all method)
-        ///// </summary>
-        //public async Task<Tuple<IEnumerable<ProductDTO>, int>> GetNextTransactionProductListAsync()
-        //{
-        //    // if current chosen transaction number has not reached the latest transaction number
-        //    if (currentlyChosenTransactionNum < currentTransactionNumber)
-        //    {
-        //        currentlyChosenTransactionNum++;
-        //    }
-        //   return await GetProductsForTransactionNumberAsync(currentlyChosenTransactionNum);
-        //}
-
-        ///// <summary>
-        ///// Returns a collection of all the product dtos in the PREVIOUS transaction. 
-        ///// If at the beginning of the transaction list, will return the prodcut list for the same transaction.
-        ///// Returns an empty collection if there were no previous transactions, or transaction was not found.
-        ///// This method is asyncronous (to avoid blocking during data source load operations from transactionRepository get all method)
-        ///// </summary>
-        //public async Task<Tuple<IEnumerable<ProductDTO>, int>> GetPreviousTransactionProductListAsync()
-        //{
-        //    // if current chosen transaction number has not reached the first transaction number
-        //    if (currentlyChosenTransactionNum > TransactionConstants.INITIAL_TRANSACTION_NUM)
-        //    {
-        //        currentlyChosenTransactionNum--;
-        //    }
-        //    return await GetProductsForTransactionNumberAsync(currentlyChosenTransactionNum);
-        //}
-
+        /// <summary>
+        /// Validates that the products list and products are not null, 
+        /// the total amount adds up correctly with the entered products,
+        /// and the amount tendered is not less than the total amount.
+        /// </summary>
+        /// <param name="totalAmountDollars"></param>
+        /// <param name="amountTenderedDollars"></param>
+        /// <param name="products"></param>
+        /// <returns></returns>
         private static bool ValidateTransactionPaymentFields(decimal totalAmountDollars, decimal amountTenderedDollars, IEnumerable<ProductDTO> products)
         {
             if (products == null) return false;

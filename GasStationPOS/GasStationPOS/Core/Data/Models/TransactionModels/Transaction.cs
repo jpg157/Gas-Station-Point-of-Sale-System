@@ -8,11 +8,20 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.Core.Data.Models.TransactionModels
 {
+    /// <summary>
+    /// For checking and recording the payment method.
+    /// </summary>
     public enum PaymentMethod
     {
         CASH,
         CARD
     }
+
+    /// <summary>
+    /// Transaction data model class.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public class Transaction
     {
         //[Required(ErrorMessage = "Id is required")]
@@ -81,6 +90,9 @@ namespace GasStationPOS.Core.Data.Models.TransactionModels
         //public decimal PSTDollars { get; set; }
     }
 
+    /// <summary>
+    /// Constants for transactions.
+    /// </summary>
     public class TransactionConstants
     {
         public static readonly string TransactionDatetimeFormat = "dddd, MMMM dd, yyyy HH:mm:ss";

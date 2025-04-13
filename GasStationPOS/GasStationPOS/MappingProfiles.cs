@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
+using GasStationPOS.Core.Data.Database.Json.JsonFileSchemas;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Data.Models.UserModels;
@@ -16,9 +16,9 @@ using GasStationPOS.UI.MainFormDataSchemas.DTOs;
 namespace GasStationPOS
 {
     /// <summary>
-    /// MappingProfiles class creates mappings between a Model and its corresponding DTO, for easier copying of data from the DTO instance to a model instance, and vice versa.
-    /// It also ensures the UI data matches the required data in the data model.
-    /// Can be used for UI - Model, and Database - Model
+    /// MappingProfiles class creates mappings between a Model and its corresponding DTO, for easier copying of instance fields from the DTO instance to a model instance, and vice versa.
+    /// Addionally, it is used for creating deep copies of model or dto objects.
+    /// Can be used for mapping between UI DTOs - Model, and JSON file DTOs - Model
     /// Source:
     /// https://docs.automapper.org/en/stable/Configuration.html#profile-instances
     /// 
@@ -87,10 +87,6 @@ namespace GasStationPOS
         /// </summary>
         private void CreateFuelProductMappingProfile()
         {
-            // PriceDollars for FuelProduct (inherited from Product) is the PRICE ($)/LITRE.
-            // To display the price of the FuelProduct in cents (¢):
-            // will need to manually divide the FuelProductDTO value by 100 to display in ¢
-
             // FuelProduct -> FuelProductDTO
             CreateMap<FuelProduct, FuelProductDTO>()
                 .ForMember(dest => dest.FuelGrade, opt => opt.MapFrom(src => src.FuelGrade))
@@ -173,8 +169,5 @@ namespace GasStationPOS
                 .ForMember(dest => dest.PaymentMethod, opt => opt.MapFrom(src => Enum.Parse(typeof(PaymentMethod), src.PaymentMethod)))
                 .ForMember(dest => dest.TransactionDateTime, opt => opt.MapFrom(src => DateTime.ParseExact(src.TransactionDateTime, TransactionConstants.TransactionDatetimeFormat, new CultureInfo("en-CA")))); // formatted string -> DateTime
         }
-
-        // more mappings here later (receipt etc.)
-
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
-using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
+using GasStationPOS.Core.Data.Database.Json.JsonFileSchemas;
 using GasStationPOS.Core.Data.Models.TransactionModels;
 using GasStationPOS.Core.Data.Models.UserModels;
 using GasStationPOS.Core.Database.Json;
@@ -34,7 +34,7 @@ namespace GasStationPOS.Core.Services.Receipt
         };
         private string PhoneNumber = "(604)-XXX-XXXX";
         private int ReceiptNumber = 0;
-        private string TransactionsPath = JsonDBConstants.TRANSACTIONS_JSON_FILE_PATH;
+        private string TransactionsPath = JsonFileConstants.TRANSACTIONS_JSON_FILE_PATH;
 
         ITransactionService transactionService;
 
@@ -91,7 +91,7 @@ namespace GasStationPOS.Core.Services.Receipt
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

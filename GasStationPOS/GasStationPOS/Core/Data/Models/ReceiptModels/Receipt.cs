@@ -8,6 +8,9 @@ using GasStationPOS.Core.Data.Models.TransactionModels;
 
 namespace GasStationPOS.Core.Data.Models.ReceiptModels
 {
+    /// <summary>
+    /// Receipt data model class. Not used.
+    /// </summary>
     public class Receipt
     {
         public const string VENDOR_NAME             = "Shakestack Gas Station";

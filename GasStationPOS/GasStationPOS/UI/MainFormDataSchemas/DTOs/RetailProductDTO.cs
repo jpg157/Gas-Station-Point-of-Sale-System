@@ -20,11 +20,9 @@ namespace GasStationPOS.UI.MainFormDataSchemas.DTOs
     /// </summary>
     public class RetailProductDTO : ProductDTO
     {
-        //// might change this later if we need more flexibility for category information
+        //// might include this later if we need more flexibility for category information
         //[Required(ErrorMessage = "Retail Category is required")]
         //public RetailCategory RetailCategory { get; set; }
-
-        // Unique DTO fields (not included in the model)
 
     }
 }

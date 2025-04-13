@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 using GasStationPOS.Core.Data.Models.ProductModels;
 using GasStationPOS.Core.Data.Models.TransactionModels;
 
-namespace GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs
+namespace GasStationPOS.Core.Data.Database.Json.JsonFileSchemas
 {
+    /// <summary>
+    /// JSON file Data Transfer Object (DTO) for a transaction.
+    /// Includes string versions of the DateTime and PaymentMethod enum fields.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public class TransactionDatabaseDTO
     {
         //[Required(ErrorMessage = "Id is required")]

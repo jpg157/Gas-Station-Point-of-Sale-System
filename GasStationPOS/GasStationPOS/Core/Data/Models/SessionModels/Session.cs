@@ -16,6 +16,9 @@ namespace GasStationPOS.Core.Data.Models.SessionModels
         PAUSED
     }
 
+    /// <summary>
+    /// Session data model class. Not used.
+    /// </summary>
     public class Session
     {
         [Required(ErrorMessage = "Id is required")]

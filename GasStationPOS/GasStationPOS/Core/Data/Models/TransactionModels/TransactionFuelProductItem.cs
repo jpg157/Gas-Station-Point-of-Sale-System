@@ -7,6 +7,11 @@ using GasStationPOS.Core.Data.Models.ProductModels;
 
 namespace GasStationPOS.Core.Data.Models.TransactionModels
 {
+    /// <summary>
+    /// Data class for storing transaction fuel product items in the json file.
+    /// 
+    /// Author: Jason Lau
+    /// </summary>
     public class TransactionFuelProductItem
     {
         public FuelProduct FuelProduct { get; set; }

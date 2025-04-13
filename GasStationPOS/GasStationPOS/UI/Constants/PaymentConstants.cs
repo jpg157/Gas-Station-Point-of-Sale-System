@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.UI.Constants
 {
-    class PaymentConstants
+    /// <summary>
+    /// Constants used for payment information.
+    /// </summary>
+    public static class PaymentConstants
     {
         public static readonly decimal INITIAL_AMOUNT_DOLLARS = 0.0m;
     }

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace GasStationPOS.UI.UIFormValidation
 {
+    /// <summary>
+    /// Validator class for the login form.
+    /// </summary>
     public static class LoginFormValidator
     {
+        /// <summary>
+        /// Validates the username and password string values.
+        /// </summary>
         public static bool ValidateFields(string enteredUsername, string enteredPassword)
         {
             // Check if inputs are empty

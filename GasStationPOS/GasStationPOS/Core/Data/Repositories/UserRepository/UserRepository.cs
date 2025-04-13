@@ -5,12 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using GasStationPOS.Core.Data.Database.Json.JsonToModelDTOs;
+using GasStationPOS.Core.Data.Database.Json.JsonFileSchemas;
 using GasStationPOS.Core.Data.Models.UserModels;
 using GasStationPOS.Core.Database.Json;
 
 namespace GasStationPOS.Core.Data.Repositories.UserRepository
 {
+    /// <summary>
+    /// Repository class that does crud operations on the data source.
+    /// Data source is currently a json file.
+    /// </summary>
     public class UserRepository : IUserRepository
     {
         /// <summary>
@@ -25,7 +29,7 @@ namespace GasStationPOS.Core.Data.Repositories.UserRepository
             UserDatabaseDTO userDbDTO;
             User            user;
 
-            string jsonData = File.ReadAllText(JsonDBConstants.USERS_JSON_FILE_PATH);
+            string jsonData = File.ReadAllText(JsonFileConstants.USERS_JSON_FILE_PATH);
 
             using (JsonDocument document = JsonDocument.Parse(jsonData))
             {
@@ -56,7 +60,6 @@ namespace GasStationPOS.Core.Data.Repositories.UserRepository
 
                 // If user was not found:
                 return null;
-
             }
         }
     }

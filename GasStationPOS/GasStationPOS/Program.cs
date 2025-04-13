@@ -9,6 +9,7 @@ using GasStationPOS.Core.Data.Repositories.TransactionRepository;
 using GasStationPOS.Core.Data.Repositories.UserRepository;
 using GasStationPOS.Core.Services.Auth;
 using GasStationPOS.Core.Services.Inventory;
+using GasStationPOS.Core.Services.ProductCreation;
 using GasStationPOS.Core.Services.Receipt;
 using GasStationPOS.Core.Services.Transaction_Payment;
 
@@ -65,10 +66,17 @@ namespace GasStationPOS
             IInventoryService           inventoryService        = new InventoryService(retailProductRepository, barcodeRetailProductRepository);
             ITransactionService         transactionService      = new TransactionService(transactionRepository);
             IAuthenticationService      authenticationService   = new AuthenticationService(userRepository);
+            IProductCreationService     productCreationService  = new ProductCreationService(barcodeRetailProductRepository);
             IReceiptService             receiptService          = new ReceiptService(transactionService);
 
             // UI layer
-            MainForm mainForm = new MainForm(inventoryService, transactionService, authenticationService, receiptService);
+            MainForm mainForm = new MainForm(
+                inventoryService:       inventoryService,
+                transactionService:     transactionService,
+                authenticationService:  authenticationService, 
+                productCreationService: productCreationService, 
+                receiptService:         receiptService
+            );
 
             Application.Run(mainForm);
         }
