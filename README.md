@@ -1,6 +1,6 @@
 # Gas Station POS System
 
-A full-featured Point of Sale (POS) system clone for gas stations, inspired by real-world systems like Petro-Canada's.
+A Point of Sale (POS) system clone for gas stations, inspired by real-world systems like Petro-Canada's.
 
 ## Features:
 - 🚗 Simulated fuel pump selection and control (e.g., Pump 1–8)
