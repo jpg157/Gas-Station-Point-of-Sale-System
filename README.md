@@ -3,11 +3,11 @@
 A Point of Sale (POS) system clone for gas stations, inspired by real-world systems like Petro-Canada's.
 
 ## Features
-- Simulated fuel pump selection and control (e.g., Pump 1–8)
-- Fuel type selection (Regular, Plus, Supreme)
+- Simulated fuel pump selection and control
+- Fuel type selection - "Regular", "Plus", or "Supreme"
 - Transaction management: simulate purchases, print receipts
-- Store item scanning and cart system (e.g., snacks, drinks)
-- Simulated payment input (cash or card)
+- Store item scanning and cart system
+- Simulated payment input - cash or card
 - Interface for cashier to view simulated transaction logs
 - Basic login system for cashier/admin roles
 
