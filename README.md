@@ -14,8 +14,8 @@ A Point of Sale (POS) system clone for gas stations, inspired by real-world syst
 Created with C#, .NET, and Windows Forms.
 
 ## Team
-*   [Mansib Talukder](https://github.com/MansibTR)
 *   [Jason Lau](https://github.com/jpg157)
+*   [Mansib Talukder](https://github.com/MansibTR)
 *   [Vincent Fung](https://github.com/sireoh)
 
 *This project is for educational and simulation purposes only. It does not handle or process real financial transactions and is not connected to any live payment networks. It is not affiliated with Petro-Canada or any gas station company.*
