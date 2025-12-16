@@ -4,7 +4,7 @@ A Point of Sale (POS) system clone for gas stations, inspired by real-world syst
 
 ## Features
 - Simulated fuel pump selection and control
-- Fuel type selection, with options for "Regular", "Plus", or "Supreme"
+- Fuel type selection, with the options "Regular", "Plus", or "Supreme"
 - Store item scanning and cart system
 - Simulated payment input with cash or card
 - Simulated transactions and purchases
