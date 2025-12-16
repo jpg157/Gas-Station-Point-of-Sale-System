@@ -4,11 +4,12 @@ A Point of Sale (POS) system clone for gas stations, inspired by real-world syst
 
 ## Features
 - Simulated fuel pump selection and control
-- Fuel type selection - "Regular", "Plus", or "Supreme"
-- Transaction management: simulate purchases, print receipts
+- Fuel type selection. The user can select either "Regular", "Plus", or "Supreme"
 - Store item scanning and cart system
-- Simulated payment input - cash or card
-- Interface for cashier to view simulated transaction logs
+- Simulated payment input with cash or card
+- Simulated transactions and purchases
+- Receipts in the form of .txt files
+- Interface for cashier to view transaction logs
 - Basic login system for cashier/admin roles
 
 Created with C#, .NET, and Windows Forms.
